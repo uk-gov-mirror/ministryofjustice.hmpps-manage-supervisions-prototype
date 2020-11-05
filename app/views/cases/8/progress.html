@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/key_details/8_Armstrong.html" %}
+{% endblock %}
+
+
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="/cases/day/2020-06-17/recently-allocated" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Progress</h1>
+  </div>
+</div>
+
+<div id="intervention-progress">
+  <p class="govuk-body">
+    You can see Dylan Adam Armstrong's progress on this page.
+  </p>
+
+  <h2 class="govuk-heading-m">Initial assessment</h2>
+
+  <p class="govuk-body">
+    This is the initial assessment date scheduled by the probation practitioner and service user.
+  </p>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Probation practioner</th>
+        <th scope="col" class="govuk-table__header">Date</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Liam Johnson</td>
+          <td class="govuk-table__cell">06/10/2020</td>
+          <td class="govuk-table__cell">
+            {% if intervention.monitor.initialAssessmentCompleted %}
+            <strong class="govuk-tag">
+              completed
+            </strong>
+            {% else %}
+            <strong class="govuk-tag">
+              completed
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+{% endblock %}
