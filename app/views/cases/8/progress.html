@@ -50,21 +50,28 @@ Case summary
     <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Liam Johnson</td>
-          <td class="govuk-table__cell">06/10/2020</td>
+          <td class="govuk-table__cell">Wednesday 15 September 2020</td>
           <td class="govuk-table__cell">
-            {% if intervention.monitor.initialAssessmentCompleted %}
-            <strong class="govuk-tag">
-              completed
+            <strong class="govuk-tag govuk-tag--grey">
+              scheduled
             </strong>
-            {% else %}
-            <strong class="govuk-tag">
-              completed
-            </strong>
-            {% endif %}
           </td>
         </tr>
     </tbody>
   </table>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="case-notes">Add case notes</a> 
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="appointment">Schedule an appointment</a> 
+          </li>
+      </ul> 
+  </div>
   </div>
 
 {% endblock %}
