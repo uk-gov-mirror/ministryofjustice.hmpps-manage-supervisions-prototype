@@ -23,10 +23,18 @@ Case summary
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Schedule an appointment</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Book an appointment</h1>
   </div>
 </div>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="case-note-title">
+    Title
+  </label>
+  <input class="govuk-input">
+</div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <form action="appointment-confirm" method="post" class="form">
@@ -69,9 +77,16 @@ Case summary
 
   <div class="govuk-form-group">
     <label class="govuk-label govuk-label--s" for="width-5">
-      Time
+      Start time
     </label>
-    <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text"></div>
+    <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-label--s" for="width-5">
+      End time
+    </label>
+    <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+  </div>
 
   <button class="govuk-button send-message">
     Save
@@ -79,6 +94,7 @@ Case summary
 </form>
   </div>
   </div>
+</div>
 </div>
 
 {% endblock %}
