@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
 
-
 {% block pageTitle %}
 Case summary
 {% endblock %}
@@ -8,25 +7,20 @@ Case summary
 {% block bodyStart %}
 
 {% block keyDetails %}
-{% include "includes/new-service-user/v1/service-user-banner.html" %}
+{% include "includes/new-service-user/v2/service-user-banner.html" %}
 {% endblock %}
 
-
 {% endblock %}
-
 
 {% block beforeContent %}
 <a href="case-list" class="govuk-back-link">Back to my cases</a>
 {% endblock %}
 
-
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
-
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
@@ -36,17 +30,7 @@ Case summary
           <a class="moj-sub-navigation__link govuk-link--no-visited-state"
             href="case-history.html">Case history</a>
         </li>
-        <!--
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="probationrecord.html">Probation record</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state" href="">Risk register</a>
-        </li>
-      -->
       </ul>
-
     </nav>
   </div>
 </div>
@@ -54,7 +38,6 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case summary</h1>
-
     <div class="govuk-!-margin-bottom-8">
       <h2 class="govuk-heading-m">Offences</h2>
       <h3 class="govuk-heading-s">Drive motor vehicle when alcohol level above limit</h3>
@@ -65,6 +48,7 @@ Case summary
       <p class="govuk-body secondary-text-col">Contrary to section 5(1)(a) of the Road Traffic Act 1988 and schedule 2
         to the Road Traffic Offenders Act 1988.</p>
     </div>
+
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     <div class="govuk-!-margin-bottom-8">
@@ -98,9 +82,9 @@ Case summary
         </dl>
       </div>
     </div>
-          
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
         Personal details
@@ -148,7 +132,9 @@ Case summary
         </div>
       </dl>
     </div>
+
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
         Risks
@@ -188,7 +174,9 @@ Case summary
           </div>
       </dl>
     </div>
+
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
         Needs
@@ -208,6 +196,7 @@ Case summary
     </div>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
         Documents
@@ -246,13 +235,8 @@ Case summary
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="appointment">Schedule an appointment</a> 
         </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="case-notes-add">Add case notes</a> 
-        </li>
       </ul> 
     </div>
-
 </div>
-
 
 {% endblock %}

@@ -1,31 +1,26 @@
 {% extends "layout.html" %}
 
-
 {% block pageTitle %}
-Case summary
+Case history
 {% endblock %}
 
 {% block bodyStart %}
 
 {% block keyDetails %}
-{% include "includes/new-service-user/v1/service-user-banner.html" %}
+{% include "includes/new-service-user/v2/service-user-banner.html" %}
 {% endblock %}
 
-
 {% endblock %}
-
 
 {% block beforeContent %}
 <a href="case-list" class="govuk-back-link">Back to my cases</a>
 {% endblock %}
 
-
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
-
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
@@ -35,47 +30,29 @@ Case summary
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
             href="case-history.html">Case history</a>
         </li>
-        <!--
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="probationrecord.html">Probation record</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state" href="">Risk register</a>
-        </li>
-      -->
       </ul>
-
     </nav>
   </div>
 </div>
 
 <div class="govuk-grid-row">
-
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case history</h1>
   </div>
-
-    <div class="govuk-grid-column-one-third">
-      <ul class="govuk-list">
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="appointment">Schedule an appointment</a> 
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="case-notes-add">Add case notes</a> 
-        </li>
-      </ul> 
-    </div>
-
+  <div class="govuk-grid-column-one-third">
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="appointment">Schedule an appointment</a> 
+      </li>
+    </ul> 
   </div>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
     {% block filter %}
-    {% include "includes/new-service-user/v1/filter.html" %}
+    {% include "includes/new-service-user/v2/filter.html" %}
     {% endblock %}
-
   <table class="govuk-table" style="max-width:none;">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
@@ -83,7 +60,6 @@ Case summary
         <th scope="col" class="govuk-table__header">Details</th>
       </tr>
     </thead>
-
     <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Item</td>
@@ -99,8 +75,7 @@ Case summary
         </tr>
     </tbody>
   </table>
-
   </div>
-  </div>  
+</div>  
 
 {% endblock %}
