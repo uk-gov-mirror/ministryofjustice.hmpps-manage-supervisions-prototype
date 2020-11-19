@@ -23,8 +23,16 @@ Case history
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
-            href="case-detail.html">Case summary</a>
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="overview.html">Overview</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="sentence-summary.html">Sentence summary</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="service-user-details.html">Service user details</a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
@@ -36,42 +44,44 @@ Case history
 </div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case history</h1>
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link govuk-link--no-visited-state" href="appointment">Schedule an appointment</a> 
-      </li>
-    </ul> 
-  </div>
-</div>
-
-<div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    
+    <a href="case-history-add" class="govuk-button">
+      Add to case history
+      </a>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case history</h1>
+
     {% block filter %}
     {% include "includes/new-service-user/v2/filter.html" %}
     {% endblock %}
+
   <table class="govuk-table" style="max-width:none;">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Date</th>
+        <th scope="col" class="govuk-table__header" width="230px">Date and time</th>
         <th scope="col" class="govuk-table__header">Details</th>
+        <th scope="col" class="govuk-table__header" width="150">Added by</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Item</td>
-          <td class="govuk-table__cell">Item</td>
+          <td class="govuk-table__cell">18 Nov 2020 at 12:44pm</td>
+          <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+          <td class="govuk-table__cell">Mark Berridge</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Item</td>
-          <td class="govuk-table__cell">Item</td>
+          <td class="govuk-table__cell">18 Nov 2020 at 12:40pm</td>
+          <td class="govuk-table__cell">Vivamus ut dapibus enim. Curabitur aliquet ipsum at euismod consequat.</td>
+          <td class="govuk-table__cell">Mark Berridge</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Item</td>
-          <td class="govuk-table__cell">Item</td>
+          <td class="govuk-table__cell">18 Nov 2020 at 12:35pm</td>
+          <td class="govuk-table__cell">Nullam est neque, blandit ut consectetur in, auctor eget lacus. Mauris mattis enim ac neque ultrices, vitae semper purus faucibus. Phasellus maximus metus nec lorem eleifend malesuada. Integer sed varius orci, nec semper ex.</td>
+          <td class="govuk-table__cell">Mark Berridge</td>
         </tr>
     </tbody>
   </table>
