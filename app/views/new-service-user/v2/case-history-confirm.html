@@ -29,24 +29,21 @@ Case history
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="overview.html">Overview</a>
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" href="overview.html">Overview</a>
         </li>
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="appointments.html">Appointments</a>
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" href="appointments.html">Appointments</a>
         </li>
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="risks-and-needs.html">Risks and needs</a>
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" href="risks-and-needs.html">Risks and
+            needs</a>
         </li>
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="interventions.html">Interventions</a>
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" href="interventions.html">Interventions</a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
-            href="case-history.html">Case history</a>
+            href="case-notes-add.html">Case notes</a>
         </li>
       </ul>
     </nav>
@@ -55,14 +52,29 @@ Case history
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case notes</h1>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <div class="app-case-updates">
+    </div>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="case-notes-add">
+          Add case notes
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="case-history">
+          Case notes history
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
     
-    <a href="case-history-add" class="govuk-button">
-      Add to case history
-      </a>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
     <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case history</h1>
 
     {% block filter %}
@@ -81,17 +93,17 @@ Case history
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">18 Nov 2020 at 12:44pm</td>
           <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-          <td class="govuk-table__cell">Jane Smith</td>
+          <td class="govuk-table__cell">Mark Berridge</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">18 Nov 2020 at 12:40pm</td>
           <td class="govuk-table__cell">Vivamus ut dapibus enim. Curabitur aliquet ipsum at euismod consequat.</td>
-          <td class="govuk-table__cell">Jane Smith</td>
+          <td class="govuk-table__cell">Mark Berridge</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">18 Nov 2020 at 12:35pm</td>
           <td class="govuk-table__cell">Nullam est neque, blandit ut consectetur in, auctor eget lacus. Mauris mattis enim ac neque ultrices, vitae semper purus faucibus. Phasellus maximus metus nec lorem eleifend malesuada. Integer sed varius orci, nec semper ex.</td>
-          <td class="govuk-table__cell">Jane Smith</td>
+          <td class="govuk-table__cell">Mark Berridge</td>
         </tr>
     </tbody>
   </table>

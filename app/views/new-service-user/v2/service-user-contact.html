@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case history
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v2/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+                            href="overview.html">Overview</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+                            href="appointments.html">Appointments</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+                            href="risks-and-needs.html">Risks and
+                            needs</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+                            href="interventions.html">Interventions</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+                            href="case-notes-add.html">Case notes</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Contact with service user</h1>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Case note type</h2>
+            <form action="case-history-confirm" method="post" class="form">
+                <form>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                <div class="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live"
+                                            name="where-do-you-live" type="radio" value="england">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                            Phone call
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live-2"
+                                            name="where-do-you-live" type="radio" value="scotland">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                            Email
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live-3"
+                                            name="where-do-you-live" type="radio" value="wales">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                            Text
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live-3"
+                                            name="where-do-you-live" type="radio" value="wales">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                            Letter
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live-3"
+                                            name="where-do-you-live" type="radio" value="wales">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                            Other
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+                <form action="case-history-confirm" method="post" class="form">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <h2 class="govuk-heading-m">From</h2>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live"
+                                    type="radio" value="wales">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                    Probation practitioner
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                                <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live"
+                                    type="radio" value="wales">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                    Service user
+                                </label>
+                            </div>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
+                                    Notes
+                                </label>
+                                <textarea class="govuk-textarea" rows="5" style="max-width:none;"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h2 class="govuk-heading-s">Your notes will be saved in case note history.</h2>
+                    <button class="govuk-button send-message">
+                        Save
+                    </button>
+                </form>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
