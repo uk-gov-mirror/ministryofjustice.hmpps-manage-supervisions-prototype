@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v2/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="overview.html">Overview</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="service-user-details.html">Service user details</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="risks-and-needs.html">Risks and needs</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="probation-record.html">Probation record</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="appointments.html">Appointments</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="case-history.html">Case history</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Service user details</h1>
+      
+          <div class="govuk-!-margin-bottom-7">
+            <h2 class="govuk-heading-m">
+              Personal details
+            </h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Dylan Adam Armstrong
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Other names
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Shorty
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  27 September 1984 (35 years old)
+                </dd>
+              </div>
+            </dl>
+          </div>
+      
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+          <div class="govuk-!-margin-bottom-7">
+            <h2 class="govuk-heading-m">
+              Contact details
+            </h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  1 Grey Lane<br> Sheffield<br> South Yorkshire<br> S10 1AG
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Phone number
+                </dt>
+                <dd class="govuk-summary-list__value"> 
+                  077 0090 0077
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Email
+                </dt>
+                <dd class="govuk-summary-list__value"> 
+                  example@example.com
+                </dd>
+              </div>
+            </dl>
+          </div>
+      
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+          <div class="govuk-!-margin-bottom-7">
+            <h2 class="govuk-heading-m">
+              Equality information
+            </h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Gender
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Male
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Ethnicity
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  White: British
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Nationality
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 British
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Preferred language	
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 English
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Religion or belief	
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  None
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Sexual orientation		
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Heterosexual
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Disabilities			
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Autism spectrum condition
+                </dd>
+              </div>
+            </dl>
+          </div>
+      
+          </div>
+          </div>
+      
+    
+
+
+
+{% endblock %}
