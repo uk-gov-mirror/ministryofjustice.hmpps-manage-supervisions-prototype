@@ -13,7 +13,7 @@ Probation record
 
 
 {% block beforeContent %}
-<a href="/cases/day/2020-06-17/case-list" class="govuk-back-link">Back to cases</a>
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
 {% endblock %}
 
 
@@ -25,23 +25,11 @@ Probation record
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="overview.html">Overview</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="service-user-details.html">Service user details</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="risks-and-needs.html">Risks and needs</a>
+          <a href="case-summary.html">Case summary</a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
             href="probation-record.html">Probation record</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="appointments.html">Appointments</a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state"
@@ -59,49 +47,10 @@ Probation record
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-        <div class="govuk-!-margin-bottom-8">
-          <h2 class="govuk-heading-m">Offences</h2>
-          <h3 class="govuk-heading-s">Drive motor vehicle when alcohol level above limit</h3>
-          <p class="govuk-body govuk-!-margin-bottom-2">On Friday 10th June at Green Avenue, Sheffield drove a motor
-            vehicle namely BMW registration AB12 ZZZ on a road namely Green Avenue, Sheffield, after consuming so much
-            alcohol that the proportion of it in your breath, namely 117 microgrammes of alcohol in 100 millilitres of
-            breath, exceeded the prescribed limit. </p>
-          <p class="govuk-body secondary-text-col">Contrary to section 5(1)(a) of the Road Traffic Act 1988 and schedule 2
-            to the Road Traffic Offenders Act 1988.</p>
-        </div>
-    
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    
-        <div class="govuk-!-margin-bottom-8">
-          <h2 class="govuk-heading-m">Sentence</h2>
-          <div class="govuk-!-margin-bottom-7">
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                 Community order
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  12 months
-                </dd>
-                </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Rehabilitative Activity Requirement (RAR)
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  15 days
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-    
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     
     <div class="govuk-!-margin-bottom-8">
       <h2 class="govuk-heading-m">
-        Orders <span class="secondary-text-col">(1)</span>
+        Current orders <span class="secondary-text-col">(1)</span>
       </h2>
       <div class="current-order-wrapper">
         <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="probationrecord/event1.html">ORA Adult Custody (inc
@@ -116,44 +65,10 @@ Probation record
           <li>Curfew Arrangement </li>
           <li>Participate or co-op with Programme or Activities</li>
         </ul>
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="max-width: 727px;">
       </div>
     </div>
 
-    <div class="govuk-!-margin-bottom-8">
-      <h2 class="govuk-heading-m">
-        Documents
-      </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              CPS pack
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <a href="#">View</a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Court order
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <a href="#">View</a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Equality information
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <a href="#">View</a>
-            </dd>
-          </div>
-      </dl>
-    </div>
-
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="max-width: 727px;">
-
 
     <div class="govuk-!-margin-bottom-8">
 
@@ -232,6 +147,15 @@ Probation record
 
     <h2 class="govuk-heading-m">Last OASys assessment </h2>
     <p class="govuk-body">OASys Assessment Layer 3<br><span class="secondary-text-col">Completed on 18 Jan 2020</p>
+
+    <div class="govuk-!-margin-bottom-8">
+      <h2 class="govuk-heading-m">
+        Documents
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <p class="govuk-body"><a href="#">CPS pack</a><br>
+        <a href="#">Court order</a></p>
+    </div>
 
   </div>
 
