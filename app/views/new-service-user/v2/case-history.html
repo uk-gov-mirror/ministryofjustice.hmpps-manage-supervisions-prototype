@@ -32,7 +32,7 @@ Case history
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
-            href="case-history.html">Case history</a>
+            href="case-history.html">Contact history</a>
         </li>
       </ul>
     </nav>
@@ -40,26 +40,15 @@ Case history
 </div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case history</h1>
-  </div>
-  <div class="govuk-tabs" data-module="govuk-tabs">
-    <div class="app-case-updates">
-    </div>
-    <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="case-notes-add">
-          Add case notes
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="case-history">
-          Case notes history
-        </a>
-      </li>
-    </ul>
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Contact history</h1>
+    <a class="govuk-button moj-button-menu__item govuk-button--secondary" href="case-notes-type-add">
+      Add to contact history
+    </a>
   </div>
 </div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -68,89 +57,9 @@ Case history
     {% include "includes/new-service-user/v2/filter.html" %}
     {% endblock %}
 
-  <table class="govuk-table" style="max-width:none;">
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header" width="230px">Date and time</th>
-        <th scope="col" class="govuk-table__header">Details</th>
-        <!--<th scope="col" class="govuk-table__header" width="50"></th>-->
-        <th scope="col" class="govuk-table__header" width="150">Added by</th>
-        <th scope="col" class="govuk-table__header" width="150">Action</th>
-      </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">13 Nov 2020 at 12:30pm</td>
-          <td class="govuk-table__cell">Conducted Mr. Armstrong's induction appointment. 
-            <br>Diversity: No diversity issues declared. 
-            <br>Health issues: Stated none.
-            <br>Risk: classified as medium risk.
-            <br>Strengths: Lives in his own home with his partner and in full time employment.</td>
-          <!-- <td class="govuk-table__cell">
-            <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
-              ˅
-            </button>
-          </td> -->
-          <td class="govuk-table__cell">Mark Berridge</td>
-          <td class="govuk-table__cell">
-            <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Update
-            </a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row system">
-          <td class="govuk-table__cell">11 Nov 2020 at 11:15am</td>
-          <td class="govuk-table__cell">Induction appointment booked for 13 Nov 2020 at 12:30pm.</td>
-          <!-- <td class="govuk-table__cell">
-            <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
-              ˅
-            </button>
-          </td> -->
-          <td class="govuk-table__cell"> </td>
-          <td class="govuk-table__cell">
-            <a href="appointments" class="govuk-link govuk-link--no-visited-state">
-              View
-            </a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">7 Nov 2020 at 12:45pm</td>
-          <td class="govuk-table__cell">
-            <div class="content">
-            <p>
-              Mr. Armstrong did not turn up for his induction appointment. I rang Mr. Armstrong three times once it appeared that he was late for the appointment, with no success. 
-            </p>
-            </div>
-          </td>
-          <!-- <td class="govuk-table__cell">
-            <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
-              ˅
-            </button>
-          </td> -->
-          <td class="govuk-table__cell">Mark Berridge</td>
-          <td class="govuk-table__cell">
-            <a href="#" class="govuk-link govuk-link--no-visited-state">
-              Update
-            </a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row system">
-          <td class="govuk-table__cell">5 Nov 2020 at 11:15am</td>
-          <td class="govuk-table__cell">Induction appointment booked for 7 Nov 2020 at 12:30pm.</td>
-          <!-- <td class="govuk-table__cell">
-            <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
-              ˅
-            </button>
-          </td> -->
-          <td class="govuk-table__cell"> </td>
-          <td class="govuk-table__cell">
-            <a href="appointments" class="govuk-link govuk-link--no-visited-state">
-              View
-            </a>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+    {% block historyList %}
+    {% include "includes/new-service-user/v2/case-history-data.html" %}
+    {% endblock %}
   </div>
 </div> 
 {% endblock %}

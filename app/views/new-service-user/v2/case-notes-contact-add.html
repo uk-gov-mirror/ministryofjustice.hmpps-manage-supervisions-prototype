@@ -13,26 +13,49 @@ Case history
 {% endblock %}
 
 {% block beforeContent %}
-<a href="case-notes-add" class="govuk-back-link">Back to my case notes</a>
+<a href="case-history" class="govuk-back-link">Back to contact history</a>
 {% endblock %}
 
 {% block content %}
 <main>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Contact with service user</h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Add contact with service user to contact history</h1>
         </div>
     </div>
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-m">Case note type</h2>
             <form action="case-history-confirm" method="post" class="form">
                 <form>
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h2 class="govuk-fieldset__heading">Contact type</h2>
+                            </legend>
                             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                                 <div class="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live"
+                                            name="where-do-you-live" type="radio" value="england">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                            Planned office visit
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live"
+                                            name="where-do-you-live" type="radio" value="england">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                            Home visit
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live"
+                                            name="where-do-you-live" type="radio" value="england">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                            Video call
+                                        </label>
+                                    </div>
                                     <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="where-do-you-live"
                                             name="where-do-you-live" type="radio" value="england">
@@ -62,41 +85,49 @@ Case history
                                         </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="where-do-you-live-3"
-                                            name="where-do-you-live" type="radio" value="wales">
-                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                                            Other
+                                        <input class="govuk-radios__input" id="where-do-you-live-5" name="where-do-you-live" type="radio" value="wales" data-aria-controls="conditional-contact">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
+                                          Other
                                         </label>
-                                    </div>
+                                      </div>
+                                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                                        <div class="govuk-form-group">
+                                          <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
+                                            Contact type
+                                          </label>
+                                          <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false"></div>
+                                      </div>
                                 </div>
                             </div>
                         </fieldset>
                     </div>
-                </form>
-                <form action="case-history-confirm" method="post" class="form">
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <h2 class="govuk-heading-m">From</h2>
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h2 class="govuk-fieldset__heading">Contact initiated by</h2>
+                            </legend>
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live"
                                     type="radio" value="wales">
                                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                                    Probation practitioner
+                                    Responsible officer
                                 </label>
                             </div>
-                            <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                            <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live"
                                     type="radio" value="wales">
                                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
                                     Service user
                                 </label>
                             </div>
+                            </fieldset>
+                    </div>
                             <div class="govuk-form-group">
                                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                    <h1 class="govuk-fieldset__heading">
-                                      Date occured
-                                    </h1>
+                                    <h2 class="govuk-fieldset__heading">
+                                      Date of contact
+                                    </h2>
                                   </legend>
                                   <div id="passport-issued-hint" class="govuk-hint">
                                     For example, 12 11 2007
@@ -133,12 +164,9 @@ Case history
                                 <textarea class="govuk-textarea" rows="5" style="max-width:none;"></textarea>
                             </div>
                         </fieldset>
-                    </div>
-                    <h2 class="govuk-heading-s">Your notes will be saved in case note history.</h2>
-                    <button class="govuk-button send-message">
-                        Save
+                        <button class="govuk-button send-message">
+                        Add to contact history
                     </button>
-                </form>
             </form>
         </div>
     </div>
