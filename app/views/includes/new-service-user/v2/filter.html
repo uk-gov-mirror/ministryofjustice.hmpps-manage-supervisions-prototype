@@ -1,9 +1,17 @@
+<section class="govuk-!-margin-bottom-6" style="max-width: 100%; border: 0;">
+  <div>
+    <input type="text" placeholder="Search..." class="app-filter-button" style="width: 400px;">
+    <button type="button" class="govuk-button" style="height: 45px; margin-bottom: 0px;">Search</button>
+  </div>
+</section>
+
 <section class="app-filter-card govuk-!-margin-bottom-6" style="max-width: 100%; border: 0;">
   <p class="govuk-heading-s">Filters</p>
 
 
   <div class="app-filter-container">
-    <button id="button-courtroom" type="button" class="app-filter-button" data-controls="courtroom-selection" onclick="event.stopPropagation(); toggleFilter(this)" style="width: 200px;">Date</button>
+    <button id="button-courtroom" type="button" class="app-filter-button" data-controls="courtroom-selection"
+      onclick="event.stopPropagation(); toggleFilter(this)" style="width: 200px;">Date</button>
     <div id="courtroom-selection" class="app-filter-selection govuk-visually-hidden">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -43,7 +51,8 @@
   </div>
 
   <div class="app-filter-container">
-    <button id="button-record" type="button" class="app-filter-button" data-controls="probation-record-selection" onclick="event.stopPropagation(); toggleFilter(this)" style="width: 244px;">Entry type</button>
+    <button id="button-record" type="button" class="app-filter-button" data-controls="probation-record-selection"
+      onclick="event.stopPropagation(); toggleFilter(this)" style="width: 244px;">Entry type</button>
     <div id="probation-record-selection" class="app-filter-selection govuk-visually-hidden">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -83,7 +92,8 @@
   </div>
 
   <div class="app-filter-container">
-    <button id="button-session" type="button" class="app-filter-button" data-controls="session-selection" onclick="event.stopPropagation(); toggleFilter(this)" style="width: 250px;">Added by</button>
+    <button id="button-session" type="button" class="app-filter-button" data-controls="session-selection"
+      onclick="event.stopPropagation(); toggleFilter(this)" style="width: 250px;">Added by</button>
     <div id="session-selection" class="app-filter-selection govuk-visually-hidden">
 
       {{ govukCheckboxes({
@@ -115,17 +125,24 @@
   <button type="button" class="govuk-button app-apply-filters-button" onclick="applyFilters()">Apply filters</button>
 
   <div class="selected-filters govuk-visually-hidden">
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Applied filters</span> <a href="#" class="govuk-body-s govuk-!-margin-left-2" onclick="event.preventDefault(); applyFilters(true)">Clear all</a></p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Applied filters</span> <a href="#"
+        class="govuk-body-s govuk-!-margin-left-2" onclick="event.preventDefault(); applyFilters(true)">Clear all</a>
+    </p>
 
-    <p class="applied-record govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 app-selected-filters--label govuk-visually-hidden">Filter type 1</p>
+    <p
+      class="applied-record govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 app-selected-filters--label govuk-visually-hidden">
+      Filter type 1</p>
     <div class="app-filters-applied-record"></div>
 
-    <p class="applied-courtroom govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 app-selected-filters--label govuk-visually-hidden">Filter type 2</p>
+    <p
+      class="applied-courtroom govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 app-selected-filters--label govuk-visually-hidden">
+      Filter type 2</p>
     <div class="app-filters-applied-courtroom"></div>
 
-    <p class="applied-session govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 app-selected-filters--label govuk-visually-hidden">Filter type 3</p>
+    <p
+      class="applied-session govuk-body-s govuk-!-margin-top-2 govuk-!-margin-bottom-0 app-selected-filters--label govuk-visually-hidden">
+      Filter type 3</p>
     <div class="app-filters-applied-session"></div>
 
   </div>
-
 </section>
