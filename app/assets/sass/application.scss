@@ -751,3 +751,20 @@ a.morelink:visited {
         margin-top: 15px;
     }
 }
+
+tr.case-history {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: flex-start;
+}
+.expanded-row-content {
+    display: grid;
+    grid-column: 1/-1;
+    justify-content: flex-start;
+}
+.hide-row {
+    display: none;
+}
+tr.system td{
+    background-color: #ccc;
+  }
