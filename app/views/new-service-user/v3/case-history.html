@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case history
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v3/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="case-summary.html">Case summary</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="probation-record.html">Orders</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="case-history.html">Contact history</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Contact history</h1>
+    <a class="govuk-button moj-button-menu__item govuk-button--secondary" href="case-notes-type-add">
+      Add to contact history
+    </a>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% block filter %}
+    {% include "includes/new-service-user/v3/filter.html" %}
+    {% endblock %}
+
+    {% block historyList %}
+    {% include "includes/new-service-user/v3/case-history-data.html" %}
+    {% endblock %}
+  </div>
+</div> 
+{% endblock %}
