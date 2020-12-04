@@ -36,66 +36,66 @@ Case history
                             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                                 <div class="govuk-radios">
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="contact-type"
-                                            name="contact-type" type="radio" value="england">
-                                        <label class="govuk-label govuk-radios__label" for="contact-type">
+                                        <input class="govuk-radios__input" id="contact-history-type"
+                                            name="contact-history-type" type="radio" value="england">
+                                        <label class="govuk-label govuk-radios__label" for="contact-history-type">
                                             Planned office visit
                                         </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="contact-type-2"
-                                            name="contact-type" type="radio" value="england">
-                                        <label class="govuk-label govuk-radios__label" for="contact-type-2">
+                                        <input class="govuk-radios__input" id="contact-history-type-2"
+                                            name="contact-history-type" type="radio" value="england">
+                                        <label class="govuk-label govuk-radios__label" for="contact-history-type-2">
                                             Home visit
                                         </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="contact-type-3"
-                                            name="contact-type" type="radio" value="england">
-                                        <label class="govuk-label govuk-radios__label" for="contact-type-3">
+                                        <input class="govuk-radios__input" id="contact-history-type-3"
+                                            name="contact-history-type" type="radio" value="england">
+                                        <label class="govuk-label govuk-radios__label" for="contact-history-type-3">
                                             Video call
                                         </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="contact-type-4"
-                                            name="contact-type" type="radio" value="england">
-                                        <label class="govuk-label govuk-radios__label" for="contact-type-4">
+                                        <input class="govuk-radios__input" id="contact-history-type-4"
+                                            name="contact-history-type" type="radio" value="england">
+                                        <label class="govuk-label govuk-radios__label" for="contact-history-type-4">
                                             Phone call
                                         </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="contact-type-5"
-                                            name="contact-type" type="radio" value="scotland">
-                                        <label class="govuk-label govuk-radios__label" for="contact-type-5">
+                                        <input class="govuk-radios__input" id="contact-history-type-5"
+                                            name="contact-history-type" type="radio" value="scotland">
+                                        <label class="govuk-label govuk-radios__label" for="contact-history-type-5">
                                             Email
                                         </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="contact-type-6"
-                                            name="contact-type" type="radio" value="wales">
-                                        <label class="govuk-label govuk-radios__label" for="contact-type-6">
+                                        <input class="govuk-radios__input" id="contact-history-type-6"
+                                            name="contact-history-type" type="radio" value="wales">
+                                        <label class="govuk-label govuk-radios__label" for="contact-history-type-6">
                                             Text
                                         </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="contact-type-7"
-                                            name="contact-type" type="radio" value="wales">
-                                        <label class="govuk-label govuk-radios__label" for="contact-type-7">
+                                        <input class="govuk-radios__input" id="contact-history-type-7"
+                                            name="contact-history-type" type="radio" value="wales">
+                                        <label class="govuk-label govuk-radios__label" for="contact-history-type-7">
                                             Letter
                                         </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="contact-type-8" name="contact-type" type="radio" value="wales" data-aria-controls="conditional-contact">
-                                        <label class="govuk-label govuk-radios__label" for="contact-type-8">
+                                        <input class="govuk-radios__input" id="contact-history-type-8" name="contact-history-type" type="radio" value="wales" data-aria-controls="conditional-contact-history">
+                                        <label class="govuk-label govuk-radios__label" for="contact-history-type-8">
                                           Other
                                         </label>
                                       </div>
-                                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-history">
                                         <div class="govuk-form-group">
-                                          <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
+                                          <label class="govuk-label govuk-!-font-weight-bold" for="contact-history-by-email">
                                             Contact type
                                           </label>
-                                          <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false"></div>
+                                          <input class="govuk-input govuk-!-width-two-thirds" id="contact-history-by-email" name="contact-history-by-email" type="email" spellcheck="false"></div>
                                       </div>
                                 </div>
                             </div>
@@ -163,7 +163,21 @@ Case history
                                 </label>
                                 <textarea class="govuk-textarea" rows="5" style="max-width:none;"></textarea>
                             </div>
-                        </fieldset>
+
+
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                  <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                        Counts towards Rehabilitation Activity Requirement (RAR)
+                                      </label>
+                                    </div>
+                                  </div>
+                                </fieldset>
+                              </div>
+                              
                         <button class="govuk-button send-message">
                         Add to contact history
                     </button>
