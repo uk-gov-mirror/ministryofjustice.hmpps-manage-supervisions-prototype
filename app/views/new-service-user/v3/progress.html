@@ -1,0 +1,319 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v3/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="progress.html">Dylan's progress</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="details.html">Dylan's details</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="sentence.html">Dylan's sentence</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's progress</h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Sentence status
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Community order
+          </dt>
+          <dd class="govuk-summary-list__value">
+            6 months, 23 days completed
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Requirements
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Rehabiliation Activity Requirement (RAR)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            15 days
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Completed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0 days completed
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Fine
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £1,000
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Appointments
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Next appointment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span class="govuk-body govuk-!-font-weight-bold">Planned office visit</span><br>
+            Wednesday 25 August from 1pm to 2pm<br>
+            <a href="#">Change appointment</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last appointment 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span class="govuk-body govuk-!-font-weight-bold">Phone call</span><br>
+            Tuesday 25 July 2021 from 3pm to 4pm<br>
+            Attended - complied
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Attendance
+      </h2>
+      <h3 class="govuk-heading-s">
+        Attended
+      </h3>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Complied
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span class="govuk-body govuk-!-font-weight-bold">21 Attended appointments</span><br>
+            14 Education training and employment<br>
+            7 Planned office visit</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Failed to comply
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span class="govuk-body govuk-!-font-weight-bold">0 Appointments</span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <h3 class="govuk-heading-s">
+      Absent
+    </h3>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Acceptable
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <span class="govuk-body govuk-!-font-weight-bold">11 Absent</span><br>
+          4 Rescheduled<br>
+          4 Other<br>
+          2 Professional judgement decision<br>
+          1 Suspended</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unacceptable
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <span class="govuk-body govuk-!-font-weight-bold">2 Absent</span><br>
+          2 Planned office visit
+        </dd>
+      </div>
+    </dl>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Breaches
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Breach
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="#">Community Order / SSO Breach</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Breach initiated 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            27 Oct 2020
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Risks
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ROSHA score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Medium
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            RSR score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Medium
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other risk information
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Risk to staff
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Needs
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Criminogenic needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Accomodation<br>
+            Relationships<br>
+            Thinking and attitudes
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+
+
+    
+
+
+  </div>
+
+<div class="govuk-grid-column-one-third">
+
+  <h2 class="govuk-heading-m">
+    Actions</h2>
+
+  <p class="govuk-body ">
+    <a href="#">Update risk assessment</a><br>
+    Last updated 1 August 2021
+  </p>
+  <p class="govuk-body ">
+    <a href="#">Update risk management plan</a><br>
+    Last updated 1 August 2021
+  </p>
+  <p class="govuk-body ">
+    <a href="#">Update sentence plan</a><br>
+    Last updated 31 July 2021
+  </p>
+  <p class="govuk-body ">
+    <a href="#">Update attendance</a><br>
+    Last updated 31 July 2021
+  </p>
+  <p class="govuk-body ">
+    <a href="#">Start a breach</a><br>
+  </p>
+
+  <a class="govuk-button" href="appointments-add">Book appointment</a>
+
+
+</div>
+
+</div>      
+
+{% endblock %}
