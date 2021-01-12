@@ -101,12 +101,21 @@ Case summary
       </dl>
     </div>
 
+    <p class="govuk-body ">
+      <a href="#">Update sentence plan</a><br>
+      Last updated 31 July 2021
+    </p>
+
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
+            <h2 class="govuk-heading-m">
         Appointments
       </h2>
+            <p class="govuk-body" style="float: right; line-height: 0px;">
+        <a href="appointments-add">Book appointment</a>
+      </p>
+      
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -118,18 +127,9 @@ Case summary
             <a href="#">Change appointment</a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Last appointment 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <span class="govuk-body govuk-!-font-weight-bold">Phone call</span><br>
-            Tuesday 25 July 2021 from 3pm to 4pm<br>
-            Attended - complied
-          </dd>
-        </div>
       </dl>
     </div>
+
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -137,57 +137,87 @@ Case summary
       <h2 class="govuk-heading-m">
         Attendance
       </h2>
-      <h3 class="govuk-heading-s">
-        Attended
-      </h3>
+      
+      <p class="govuk-body " style="float: right; line-height: 0px;">
+        <a href="#">Update attendance</a>
+      </p>
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Complied
+            Last attended
           </dt>
           <dd class="govuk-summary-list__value">
-            <span class="govuk-body govuk-!-font-weight-bold">21 Attended appointments</span><br>
-            14 Education training and employment<br>
-            7 Planned office visit</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Failed to comply
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <span class="govuk-body govuk-!-font-weight-bold">0 Appointments</span>
+            <span class="govuk-body govuk-!-font-weight-bold">Phone call</span><br>
+            Tuesday 25 July 2021<br>
+            Attended - Complied
           </dd>
         </div>
       </dl>
-    </div>
+      
+      <div class="govuk-!-margin-bottom-7">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              View more attendance details
+            </span>
+          </summary>
+          <div class="govuk-details__text">
 
-    <h3 class="govuk-heading-s">
-      Absent
-    </h3>
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Acceptable
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <span class="govuk-body govuk-!-font-weight-bold">11 Absent</span><br>
-          4 Rescheduled<br>
-          4 Other<br>
-          2 Professional judgement decision<br>
-          1 Suspended</a>
-        </dd>
+            <h3 class="govuk-heading-m">
+              Attended
+            </h3>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Complied
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <span class="govuk-body govuk-!-font-weight-bold">21 Attended appointments</span><br>
+                  14 Education training and employment<br>
+                  7 Planned office visit</a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Failed to comply
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <span class="govuk-body govuk-!-font-weight-bold">0 Appointments</span>
+                </dd>
+              </div>
+            </dl>
+      
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <h3 class="govuk-heading-m">
+              Absent
+            </h3>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Acceptable
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <span class="govuk-body govuk-!-font-weight-bold">11 Absent</span><br>
+                  4 Rescheduled<br>
+                  4 Other<br>
+                  2 Professional judgement decision<br>
+                  1 Suspended</a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Unacceptable
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <span class="govuk-body govuk-!-font-weight-bold">2 Absent</span><br>
+                  2 Planned office visit
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </details>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Unacceptable
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <span class="govuk-body govuk-!-font-weight-bold">2 Absent</span><br>
-          2 Planned office visit
-        </dd>
-      </div>
-    </dl>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -195,6 +225,9 @@ Case summary
       <h2 class="govuk-heading-m">
         Breaches
       </h2>
+      <p class="govuk-body " style="float: right; line-height: 0px;">
+        <a href="#">Start a breach</a>
+      </p>
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -257,6 +290,15 @@ Case summary
       </dl>
     </div>
 
+    <p class="govuk-body ">
+      <a href="#">Update risk assessment</a><br>
+      Last updated 1 August 2021
+    </p>
+    <p class="govuk-body ">
+      <a href="#">Update risk management plan</a><br>
+      Last updated 1 August 2021
+    </p>
+
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     <div class="govuk-!-margin-bottom-7">
@@ -269,7 +311,7 @@ Case summary
             Criminogenic needs
           </dt>
           <dd class="govuk-summary-list__value">
-            Accomodation<br>
+            Accommodation<br>
             Relationships<br>
             Thinking and attitudes
           </dd>
@@ -277,42 +319,10 @@ Case summary
       </dl>
     </div>
 
-
-
-    
-
-
   </div>
+</div>
 
 <div class="govuk-grid-column-one-third">
-
-  <h2 class="govuk-heading-m">
-    Actions</h2>
-
-  <p class="govuk-body ">
-    <a href="#">Update risk assessment</a><br>
-    Last updated 1 August 2021
-  </p>
-  <p class="govuk-body ">
-    <a href="#">Update risk management plan</a><br>
-    Last updated 1 August 2021
-  </p>
-  <p class="govuk-body ">
-    <a href="#">Update sentence plan</a><br>
-    Last updated 31 July 2021
-  </p>
-  <p class="govuk-body ">
-    <a href="#">Update attendance</a><br>
-    Last updated 31 July 2021
-  </p>
-  <p class="govuk-body ">
-    <a href="#">Start a breach</a><br>
-  </p>
-
-  <a class="govuk-button" href="appointments-add">Book appointment</a>
-
-
-</div>
 
 </div>      
 
