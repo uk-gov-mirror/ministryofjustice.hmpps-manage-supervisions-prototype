@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v3/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="sentence" class="govuk-back-link">Back to Dylan's sentence</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="progress.html">Dylan's progress</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="details.html">Dylan's details</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="sentence.html">Dylan's sentence</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's previous responsible officers</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">Previous responsible officers <span class="secondary-text-col">(1)</span></h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Allocated until 		
+          </dt>
+          <dd class="govuk-summary-list__value">
+            19 Nov 2019
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name	
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Gary Millar
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone number		
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0114 123 0000
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email		
+          </dt>
+          <dd class="govuk-summary-list__value">
+            example@example.com
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provider		
+          </dt>
+          <dd class="govuk-summary-list__value">
+            CPA South Yorkshire
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Local Delivery Unit (LDU)		
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Rotherham
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Team
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Rotherham LMC
+          </dd>
+        </div> 
+      </dl>
+    </div>
+
+
+  </div>
+</div>      
+
+{% endblock %}
