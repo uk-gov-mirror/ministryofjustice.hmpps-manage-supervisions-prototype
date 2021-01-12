@@ -39,286 +39,35 @@ Case summary
   </div>
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's progress</h1>
-  </div>
+{% include "includes/new-service-user/v3/progress-sentence-data.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-!-margin-bottom-7">
+        <h2 class="govuk-heading-m">
+    Appointments
+  </h2>
+  
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Next appointment
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No appointments booked
+      </dd>
+    </div>
+  </dl>
 </div>
 
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-
-
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Sentence status
-      </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Community order
-          </dt>
-          <dd class="govuk-summary-list__value">
-            6 months, 23 days completed
-          </dd>
-        </div>
-      </dl>
-    </div>
-
-    <div class="govuk-!-margin-bottom-7">
-      <p class="govuk-body">
-        <a href="#">Update sentence plan</a><br>
-        Last updated 31 July 2021
-      </p>
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Requirements
-      </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Rehabiliation Activity Requirement (RAR)
-          </dt>
-          <dd class="govuk-summary-list__value">
-            15 days
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Completed
-          </dt>
-          <dd class="govuk-summary-list__value">
-            0 days completed
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Fine
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £1,000
-          </dd>
-        </div>
-      </dl>
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-    <div class="govuk-!-margin-bottom-7">
-            <h2 class="govuk-heading-m">
-        Appointments
-      </h2>
-      
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Next appointment
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <span class="govuk-body govuk-!-font-weight-bold">Planned office visit</span><br>
-            Wednesday 25 August from 1pm to 2pm<br>
-            <a href="#">Change appointment</a>
-          </dd>
-        </div>
-      </dl>
-    </div>
-
-    <div class="govuk-!-margin-bottom-7">
-      <p class="govuk-body">
-        <a href="appointments-add">Book appointment</a>
-      </p>
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Attendance
-      </h2>
-      
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Last attended
-          </dt>
-          <dd class="govuk-summary-list__value">None
-            <!--<span class="govuk-body govuk-!-font-weight-bold">Phone call</span><br>
-            Tuesday 25 July 2021<br>
-            Attended - Complied-->
-          </dd>
-        </div>
-      </dl>
-     
-      <div class="govuk-!-margin-bottom-7">
-        <!-- <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              View more attendance details
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-
-            <h3 class="govuk-heading-m">
-              Attended
-            </h3>
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Complied
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <span class="govuk-body govuk-!-font-weight-bold">21 Attended appointments</span><br>
-                  14 Education training and employment<br>
-                  7 Planned office visit</a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Failed to comply
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <span class="govuk-body govuk-!-font-weight-bold">0 Appointments</span>
-                </dd>
-              </div>
-            </dl>
-      
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-            <h3 class="govuk-heading-m">
-              Absent
-            </h3>
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Acceptable
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <span class="govuk-body govuk-!-font-weight-bold">11 Absent</span><br>
-                  4 Rescheduled<br>
-                  4 Other<br>
-                  2 Professional judgement decision<br>
-                  1 Suspended</a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Unacceptable
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <span class="govuk-body govuk-!-font-weight-bold">2 Absent</span><br>
-                  2 Planned office visit
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </details>-->
-        <p class="govuk-body">
-          <a href="#">Update attendance</a>
-        </p>
-      </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Breaches
-      </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Breaches
-          </dt>
-          <dd class="govuk-summary-list__value">
-            None
-          </dd>
-        </div>
-      </dl>
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Risks
-      </h2>
-    
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            ROSHA score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Medium
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            OGRS score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            0.5
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            RSR score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            3 - 6.89% - Medium
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Other risk information
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Risk to staff
-          </dd>
-        </div>
-      </dl>
-
-    <p class="govuk-body ">
-      <a href="#">Update risk assessment</a><br>
-      Last updated 1 August 2021
-    </p>
-    <p class="govuk-body ">
-      <a href="#">Update risk management plan</a><br>
-      Last updated 1 August 2021
-    </p>
-
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Needs
-      </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Criminogenic needs
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Accommodation<br>
-            Relationships<br>
-            Thinking and attitudes
-          </dd>
-        </div>
-      </dl>
-    </div>
-
-  </div>
+<div class="govuk-!-margin-bottom-7">
+  <p class="govuk-body">
+    <a href="appointment-add">Book appointment</a>
+  </p>
 </div>
 
-<div class="govuk-grid-column-one-third">
+{% include "includes/new-service-user/v3/progress-attendance-breach-data.html" %}
 
-</div>      
+{% include "includes/new-service-user/v3/progress-risk-data.html" %}
 
 {% endblock %}
