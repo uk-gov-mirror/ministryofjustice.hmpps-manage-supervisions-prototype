@@ -151,29 +151,29 @@ Case summary
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                       <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="frequency-1" name="frequency"
-                            type="radio" value="england">
+                          <input class="govuk-radios__input" id="frequency-1" name="frequency" type="radio"
+                            value="england">
                           <label class="govuk-label govuk-radios__label" for="frequency-1">
                             Daily
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="frequency-2" name="frequency"
-                            type="radio" value="scotland">
+                          <input class="govuk-radios__input" id="frequency-2" name="frequency" type="radio"
+                            value="scotland">
                           <label class="govuk-label govuk-radios__label" for="frequency-2">
                             Weekly
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="frequency-3" name="frequency"
-                            type="radio" value="wales">
+                          <input class="govuk-radios__input" id="frequency-3" name="frequency" type="radio"
+                            value="wales">
                           <label class="govuk-label govuk-radios__label" for="frequency-3">
-                            Fortnightly
+                            Every 2 weeks
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="frequency-4" name="frequency"
-                            type="radio" value="wales">
+                          <input class="govuk-radios__input" id="frequency-4" name="frequency" type="radio"
+                            value="wales">
                           <label class="govuk-label govuk-radios__label" for="frequency-4">
                             Monthly
                           </label>
@@ -297,6 +297,29 @@ Case summary
         <textarea class="govuk-textarea" rows="5" style="max-width:none;"></textarea>
       </div>
 
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Add to your Outlook calendar
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Send a text message to Dylan
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
+        Appointment(s) will be added to the nDelius contact log.
+      </div>
+
       <!-- <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
           <div class="govuk-checkboxes">
@@ -313,7 +336,6 @@ Case summary
       <button class="govuk-button send-message">
         Book appointment
       </button>
-
     </form>
   </div>
 </div>
