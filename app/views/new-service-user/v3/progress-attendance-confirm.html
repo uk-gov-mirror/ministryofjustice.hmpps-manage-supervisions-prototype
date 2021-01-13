@@ -17,6 +17,13 @@ Case summary
 {% endblock %}
 
 {% block content %}
+<div class="moj-banner moj-banner--success">
+  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+  <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  <div class="moj-banner__message">
+  <span class="moj-banner__assistive">Success</span>Attendance updated</div>
+</div>
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -45,9 +52,12 @@ Case summary
   </div>
 </div>
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      
+  
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
     <div class="govuk-!-margin-bottom-7">
             <h2 class="govuk-heading-m">
         Appointments
@@ -59,7 +69,9 @@ Case summary
             Next appointment
           </dt>
           <dd class="govuk-summary-list__value">
-            No appointments booked
+            <span class="govuk-body govuk-!-font-weight-bold">Planned office visit</span><br>
+            Wednesday 31 August from 1pm to 2pm<br>
+            <a href="appointment-update">Change appointment</a>
           </dd>
         </div>
       </dl>
@@ -77,20 +89,20 @@ Case summary
   <h2 class="govuk-heading-m">
     Attendance
   </h2>
-  
+
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Last attended
       </dt>
-      <dd class="govuk-summary-list__value">No appointments attended
-        <!--<span class="govuk-body govuk-!-font-weight-bold">Phone call</span><br>
-        Tuesday 25 July 2021<br>
-        Attended - Complied-->
+      <dd class="govuk-summary-list__value">
+        <span class="govuk-body govuk-!-font-weight-bold">Planned office visit</span><br>
+        Wednesday 25 August 2021<br>
+        Attended - Complied
       </dd>
     </div>
   </dl>
-  
+
     {% include "includes/new-service-user/v3/progress-attendance-breach-data.html" %}
 
     {% include "includes/new-service-user/v3/progress-risk-data.html" %}

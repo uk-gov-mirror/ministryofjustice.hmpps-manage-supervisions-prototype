@@ -768,3 +768,82 @@ tr.case-history {
 tr.system td{
     background-color: #ccc;
   }
+
+.graph {
+        float: left;
+        width: 100%;
+        margin-top: -2px;
+        margin-bottom: 0.25rem;
+}
+
+.graph div {
+    position: relative;
+    display: block;
+    background: #C1DFE4;
+    height: 37px;
+}
+
+.graph div .amount {
+    font-family: "GDS Transport", Arial, sans-serif;
+    display: block;
+    height: 100%;
+    background: #00703c;
+    line-height: 1.8em;
+    color: #fff;
+    text-align: right;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding-right: 0.75rem;
+}
+    .graph div .amount--none {
+        font-family: "GDS Transport", Arial, sans-serif;
+        display: block;
+        height: 100%;
+        background: #C1DFE4;
+        line-height: 1.8em;
+        color: #0b0c0c;
+        text-align: left;
+        font-size: 1.3em;
+        font-weight: 700;
+        padding-left: 0.75rem;
+    }
+
+.graph-two {
+    float: left;
+    width: 100%;
+    margin-top: -2px;
+    margin-bottom: 0.25rem;
+}
+
+.graph-two div {
+position: relative;
+display: block;
+background: #fde4d7;
+height: 37px;
+}
+
+.graph-two div .amount-two {
+font-family: "GDS Transport", Arial, sans-serif;
+display: block;
+height: 100%;
+background: #f47738;
+line-height: 1.8em;
+color: #fff;
+text-align: left;
+font-size: 1.3em;
+font-weight: 700;
+padding-right: 0.75rem;
+}
+
+.graph-two div .amount-two--none {
+    font-family: "GDS Transport", Arial, sans-serif;
+    display: block;
+    height: 100%;
+    background: #fde4d7;
+    line-height: 1.8em;
+    color: #0b0c0c;
+    text-align: keft;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding-left: 0.75rem;
+    }

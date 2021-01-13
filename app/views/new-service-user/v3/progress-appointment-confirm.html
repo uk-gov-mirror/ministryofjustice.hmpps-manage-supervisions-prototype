@@ -46,38 +46,65 @@ Case summary
   </div>
 </div>
 
-{% include "includes/new-service-user/v3/progress-sentence-data.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's progress</h1>
+  </div>
+</div>
 
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+            <h2 class="govuk-heading-m">
+        Appointments
+      </h2>
+      
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Next appointment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span class="govuk-body govuk-!-font-weight-bold">Planned office visit</span><br>
+            Wednesday 25 August from 1pm to 2pm<br>
+            <a href="appointment-update">Change appointment</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="govuk-!-margin-bottom-7">
+      <p class="govuk-body">
+        <a class="govuk-button" href="appointment-add">Book appointment</a>
+      </p>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 <div class="govuk-!-margin-bottom-7">
-        <h2 class="govuk-heading-m">
-    Appointments
+  <h2 class="govuk-heading-m">
+    Attendance
   </h2>
-  
+
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Next appointment
+        Last attended
       </dt>
-      <dd class="govuk-summary-list__value">
-        <span class="govuk-body govuk-!-font-weight-bold">Planned office visit</span><br>
-        Wednesday 25 August from 1pm to 2pm<br>
-        <a href="appointment-update">Change appointment</a>
+      <dd class="govuk-summary-list__value">No appointments attended
+        <!--<span class="govuk-body govuk-!-font-weight-bold">Phone call</span><br>
+        Tuesday 25 July 2021<br>
+        Attended - Complied-->
       </dd>
     </div>
   </dl>
-</div>
 
-<div class="govuk-!-margin-bottom-7">
-  <p class="govuk-body">
-    <a href="appointment-add">Book appointment</a>
-  </p>
-</div>
+    {% include "includes/new-service-user/v3/progress-attendance-breach-data.html" %}
 
-{% include "includes/new-service-user/v3/progress-attendance-breach-data.html" %}
+    {% include "includes/new-service-user/v3/progress-risk-data.html" %}
 
-{% include "includes/new-service-user/v3/progress-risk-data.html" %}
-
-{% endblock %}
+    {% endblock %}
