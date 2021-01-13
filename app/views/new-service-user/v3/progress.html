@@ -39,33 +39,40 @@ Case summary
   </div>
 </div>
 
-{% include "includes/new-service-user/v3/progress-sentence-data.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's progress</h1>
+  </div>
+</div>
 
-<div class="govuk-!-margin-bottom-7">
-        <h2 class="govuk-heading-m">
-    Appointments
-  </h2>
-  
-  <dl class="govuk-summary-list govuk-summary-list--no-border">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Next appointment
-      </dt>
-      <dd class="govuk-summary-list__value">
-        No appointments booked
-      </dd>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+    <div class="govuk-!-margin-bottom-7">
+            <h2 class="govuk-heading-m">
+        Appointments
+      </h2>
+      
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Next appointment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No appointments booked
+          </dd>
+        </div>
+      </dl>
     </div>
-  </dl>
-</div>
 
-<div class="govuk-!-margin-bottom-7">
-  <p class="govuk-body">
-    <a href="appointment-add">Book appointment</a>
-  </p>
-</div>
+    <div class="govuk-!-margin-bottom-7">
+      <p class="govuk-body">
+        <a class="govuk-button" href="appointment-add">Book appointment</a>
+      </p>
+    </div>
 
-{% include "includes/new-service-user/v3/progress-attendance-breach-data.html" %}
+    {% include "includes/new-service-user/v3/progress-attendance-breach-data.html" %}
 
-{% include "includes/new-service-user/v3/progress-risk-data.html" %}
+    {% include "includes/new-service-user/v3/progress-risk-data.html" %}
 
-{% endblock %}
+    {% endblock %}
