@@ -795,6 +795,18 @@ tr.system td{
     font-weight: 700;
     padding-right: 0.75rem;
 }
+    .graph div .amount--none {
+        font-family: "GDS Transport", Arial, sans-serif;
+        display: block;
+        height: 100%;
+        background: #C1DFE4;
+        line-height: 1.8em;
+        color: #0b0c0c;
+        text-align: left;
+        font-size: 1.3em;
+        font-weight: 700;
+        padding-left: 0.75rem;
+    }
 
 .graph-two {
     float: left;
@@ -817,8 +829,21 @@ height: 100%;
 background: #f47738;
 line-height: 1.8em;
 color: #fff;
-text-align: right;
+text-align: left;
 font-size: 1.3em;
 font-weight: 700;
 padding-right: 0.75rem;
 }
+
+.graph-two div .amount-two--none {
+    font-family: "GDS Transport", Arial, sans-serif;
+    display: block;
+    height: 100%;
+    background: #fde4d7;
+    line-height: 1.8em;
+    color: #0b0c0c;
+    text-align: keft;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding-left: 0.75rem;
+    }
