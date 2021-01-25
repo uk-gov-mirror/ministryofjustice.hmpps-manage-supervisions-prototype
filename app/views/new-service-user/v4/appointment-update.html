@@ -20,7 +20,8 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Change appointment</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Rearrange time with Dylan
+    </h1>
   </div>
 </div>
 
@@ -29,62 +30,14 @@ Case summary
     <form action="progress-appointment-confirm" method="post" class="form">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Appointment type
-            </h1>
-          </legend>
-          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-            <div class="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio"
-                  value="england" checked>
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                  Planned office visit
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio"
-                  value="scotland">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                  Home visit
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio"
-                  value="wales">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                  Video call
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio"
-                  value="wales">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-                  Phone call
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-5" name="where-do-you-live" type="radio"
-                  value="wales" data-aria-controls="conditional-contact">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
-                  Other
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
-                    Appointment type
-                  </label>
-                  <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email"
-                    type="email" spellcheck="false"></div>
-              </div>
-            </div>
-          </div>
-
-        </fieldset>
+        <p class="govuk-body">
+          <strong>How would you like to speak with Dylan?</strong><br>
+          Planned office visit<br>
+          <a href="#">Change</a>
+        </p>
+        </label>
       </div>
+
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -128,7 +81,7 @@ Case summary
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h1 class="govuk-fieldset__heading">
-              Is this a repeat appointment?
+              Would you like this to repeat?
             </h1>
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -292,7 +245,7 @@ Case summary
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
-          Additional information about this appointment
+          Additional information
         </label>
         <textarea class="govuk-textarea" rows="5" style="max-width:none;"></textarea>
       </div>
@@ -317,7 +270,7 @@ Case summary
       </div>
 
       <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
-        Appointments are added to the nDelius contact log.
+        This will be added to the nDelius contact log.
       </div>
 
       <!-- <div class="govuk-form-group">
@@ -335,14 +288,31 @@ Case summary
 
       <div style="display:flex;">
       <button class="govuk-button send-message">
-        Update appointment
+        Rearrange time with Dylan
       </button>
     </div>
       <p class="govuk-body" style="color:	#d4351c; text-decoration: underline;">
-      Delete appointment
+        Delete time with Dylan
     </p>
     </form>
   </div>
+
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body">
+      <strong>Preferred language</strong><br>
+      English
+    </p>
+    <p class="govuk-body">
+      <strong>Disabilities and adjustments</strong><br>
+      Autism spectrum condition
+    </p>
+    <p class="govuk-body">
+      <strong>Employment status</strong><br>
+      Full-time employed
+    </p>
+  </div>
+
+
 </div>
 
 {% endblock %}
