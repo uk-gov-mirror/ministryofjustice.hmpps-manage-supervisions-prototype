@@ -52,56 +52,49 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-
-  <!--PROGRESSED SENTENCE STATUS-->
-
-  <div class="govuk-panel govuk-panel--appointment">
-    <h1 class="govuk-panel__title">
-      Next appointment
-    </h1>
-    <div class="govuk-panel__body">
-      <strong>Planned office visit</strong><br>
-      Wednesday 31 August from 1pm to 2pm
+    <div class="govuk-panel govuk-panel--appointment-none">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-7">[Visualisation]</h2>
     </div>
-  </div>
 
+    <!--<img src="/public/images/visualisation.png">-->
+
+  <!--NEW SENTENCE STATUS-->
   <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
         Dylan's sentence
       </h2>
-        <!--<div class="graph">
+        <div class="graph">
           <div>
               <span class="amount--none">
                   <span>0 of 12 months</span>
               </span>
           </div>
-      </div>-->
-      <div class="graph">
-        <div>
-            <span class="amount" style="width:54%">
-                <span>6 of 12 months</span>
-            </span>
-        </div>
       </div>
     </div>
-    
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
         Dylan's Rehabilitation Activity Requirement (RAR)
       </h2>
-      <!--<div class="graph">
+      <div class="graph">
         <div>
             <span class="amount--none">
                 <span>0 of 15 days</span>
             </span>
         </div>
-      </div>-->
-      <div class="graph">
-        <div>
-            <span class="amount" style="width:33%">
-                <span>5 of 15 days</span>
-            </span>
-        </div>
+      </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <!--NO TIME ARRANGED-->
+    <div class="govuk-panel govuk-panel--appointment-none">
+      <h1 class="govuk-panel__title">
+        You haven't arranged time with Dylan
+      </h1>
+      <div class="govuk-panel__body">
+        <button class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+          Arrange time with Dylan
+        </button>
       </div>
     </div>
 
@@ -172,7 +165,7 @@ Case summary
       <dt class="govuk-summary-list__key">
         Last attended
       </dt>
-      <dd class="govuk-summary-list__value">No appointments attended
+      <dd class="govuk-summary-list__value">You haven't spoken with Dylan yet
         <!--<span class="govuk-body govuk-!-font-weight-bold">Phone call</span><br>
         Tuesday 25 July 2021<br>
         Attended - Complied-->
@@ -247,95 +240,32 @@ Case summary
     <p class="govuk-body govuk-!-font-weight-bold">
       <a href="update-attendance">Update attendance</a>
     </p>-->
-  </div>
-
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-<div class="govuk-!-margin-bottom-7">
-  <h2 class="govuk-heading-m">
-    Breaches
-  </h2>
-  <dl class="govuk-summary-list govuk-summary-list--no-border">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Breaches
-      </dt>
-      <dd class="govuk-summary-list__value">
-        None
-      </dd>
     </div>
-  </dl>
-</div>
 
-<!--
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      <div class="govuk-!-margin-bottom-7">
-        <h2 class="govuk-heading-m">Dylan's plan</h2>
-        <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3" style="max-width:none;">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <p class="govuk-heading-s govuk-!-margin-bottom-0">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">
-                    Risk assessment
-                  </a>
-                </p>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                Last updated 1 August 2021
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <p class="govuk-heading-s govuk-!-margin-bottom-0">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">
-                    Risk management plan
-                  </a>
-                </p>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                <strong class="govuk-tag govuk-tag--grey">
-                  Not started
-                </strong>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <p class="govuk-heading-s govuk-!-margin-bottom-0">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">
-                    Sentence plan
-                  </a>
-                </p>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                <strong class="govuk-tag govuk-tag--grey">
-                  Not started
-                </strong>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>-->
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Breaches
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Breaches
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+      </dl>
+    </div>
 
   </div>
 </div>
 
 <div class="govuk-grid-column-one-third">
 
-  <div class="govuk-!-margin-bottom-7">
-    <h2 class="govuk-heading-m">Actions</h2>
-    <!--<a class="govuk-button govuk-!-margin-bottom-6" href="appointment-add">Book an appointment</a>-->
-    <p class="govuk-body govuk-!-font-weight-bold">
-      <a href="appointment-update">Book an appointment</a>
-    </p>
-    <p class="govuk-body govuk-!-font-weight-bold">
-      <a href="appointment-update">Change next appointment</a>
-    </p>
-    <p class="govuk-body govuk-!-font-weight-bold">
-      <a href="appointment-update">Update attendance</a>
-    </p>
-  </div>
+  {% include "includes/new-service-user/v4/progress-actions.html" %}
 
 </div>      
     {% endblock %}

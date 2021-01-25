@@ -20,23 +20,13 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Rearrange time with Dylan
-    </h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Arrange a planned office visit with Dylan</h1>
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="progress-appointment-confirm" method="post" class="form">
-
-      <div class="govuk-form-group">
-        <p class="govuk-body">
-          <strong>How would you like to speak with Dylan?</strong><br>
-          Planned office visit<br>
-          <a href="#">Change</a>
-        </p>
-        </label>
-      </div>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -55,7 +45,7 @@ Case summary
                   Day
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
-                  name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="25"></div>
+                  name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -63,7 +53,7 @@ Case summary
                   Month
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
-                  name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="08"></div>
+                  name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -71,7 +61,7 @@ Case summary
                   Year
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
-                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="2021"></div>
+                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
             </div>
           </div>
         </fieldset>
@@ -180,7 +170,7 @@ Case summary
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="repeat-app-2" name="repeat-app" type="radio"
-                value="wales" data-aria-controls="single-appointment" checked>
+                value="wales" data-aria-controls="single-appointment">
               <label class="govuk-label govuk-radios__label" for="repeat-app">
                 No
               </label>
@@ -194,7 +184,7 @@ Case summary
           Time
         </label>
         <select class="govuk-select" id="sort" name="sort">
-          <option value="time-option"></option>
+          <option value="time-option" selected></option>
           <option value="time-option">9:00am</option>
           <option value="time-option">9:30am</option>
           <option value="time-option">10:00am</option>
@@ -203,7 +193,7 @@ Case summary
           <option value="time-option">11:30am</option>
           <option value="time-option">12:00pm</option>
           <option value="time-option">12:30pm</option>
-          <option value="time-option" selected>1:00pm</option>
+          <option value="time-option">1:00pm</option>
           <option value="time-option">1:30pm</option>
           <option value="time-option">2:00pm</option>
           <option value="time-option">2:30pm</option>
@@ -215,7 +205,7 @@ Case summary
         </select>
         <span class="govuk-body" style="margin:0 0.75rem 0 0.75rem;">to</span>
         <select class="govuk-select" id="sort" name="sort">
-          <option value="time-option"></option>
+          <option value="time-option" selected></option>
           <option value="time-option">9:00am</option>
           <option value="time-option">9:30am</option>
           <option value="time-option">10:00am</option>
@@ -226,7 +216,7 @@ Case summary
           <option value="time-option">12:30pm</option>
           <option value="time-option">1:00pm</option>
           <option value="time-option">1:30pm</option>
-          <option value="time-option" selected>2:00pm</option>
+          <option value="time-option">2:00pm</option>
           <option value="time-option">2:30pm</option>
           <option value="time-option">3:00pm</option>
           <option value="time-option">3:30pm</option>
@@ -254,13 +244,13 @@ Case summary
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
           <div class="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
                 Add to your Outlook calendar
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" checked>
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
               <label class="govuk-label govuk-checkboxes__label" for="waste-2">
                 Send a text message to Dylan
               </label>
@@ -286,14 +276,9 @@ Case summary
         </fieldset>
       </div> -->
 
-      <div style="display:flex;">
       <button class="govuk-button send-message">
-        Rearrange time with Dylan
+        Arrange time with Dylan
       </button>
-    </div>
-      <p class="govuk-body" style="color:	#d4351c; text-decoration: underline;">
-        Delete time with Dylan
-    </p>
     </form>
   </div>
 
@@ -311,8 +296,7 @@ Case summary
       Full-time employed
     </p>
   </div>
-
-
+  
 </div>
 
 {% endblock %}
