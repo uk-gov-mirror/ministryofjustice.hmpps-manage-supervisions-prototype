@@ -52,11 +52,9 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-panel govuk-panel--appointment-none">
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-7">[Visualisation]</h2>
+    <div class="govuk-!-margin-bottom-7">
+      <img src="/public/images/visualisation-start.png" style="border: 1px solid #b1b4b6" width="100%">
     </div>
-
-    <!--<img src="/public/images/visualisation.png">-->
 
   <!--NEW SENTENCE STATUS-->
   <div class="govuk-!-margin-bottom-7">
@@ -84,19 +82,17 @@ Case summary
       </div>
     </div>
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
     <!--NO TIME ARRANGED-->
-    <div class="govuk-panel govuk-panel--appointment-none">
+    <!--<div class="govuk-panel govuk-panel--appointment-none">
       <h1 class="govuk-panel__title">
         You haven't arranged time with Dylan
       </h1>
       <div class="govuk-panel__body">
-        <button class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+        <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
           Arrange time with Dylan
-        </button>
+        </a>
       </div>
-    </div>
+    </div>-->
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -172,6 +168,10 @@ Case summary
       </dd>
     </div>
   </dl>
+
+  <p class="govuk-body govuk-!-font-weight-bold">
+    <a href="update-attendance">Update attendance</a>
+  </p>
   
  
   <div class="govuk-!-margin-bottom-7">
@@ -265,7 +265,17 @@ Case summary
 
 <div class="govuk-grid-column-one-third">
 
-  {% include "includes/new-service-user/v4/progress-actions.html" %}
+   <!--NO TIME ARRANGED-->
+   <div class="govuk-panel govuk-panel--appointment-none">
+    <h1 class="govuk-panel__body" style="margin-top: 0px;"><strong>
+      You do not have any time arranged with Dylan</strong>
+    </h1>
+    <div class="govuk-panel__body">
+      <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+        Arrange time with Dylan
+      </a>
+    </div>
+  </div>
 
 </div>      
     {% endblock %}

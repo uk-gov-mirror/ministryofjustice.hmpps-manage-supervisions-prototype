@@ -21,7 +21,7 @@ Case summary
   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
   <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
   <div class="moj-banner__message">
-  <span class="moj-banner__assistive">Success</span>Attendance updated</div>
+  <span class="moj-banner__assistive">Success</span>You’ve updated attendance for Wednesday 25 August</div>
 </div>
 
 
@@ -59,8 +59,9 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-panel govuk-panel--appointment-none">
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-7">[Visualisation]</h2>
+   
+    <div class="govuk-!-margin-bottom-7">
+      <img src="/public/images/visualisation.png" style="border: 1px solid #b1b4b6" width="100%">
     </div>
   
   <!--PROGRESSED SENTENCE STATUS-->
@@ -102,22 +103,6 @@ Case summary
         </div>
       </div>
     </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-  <!--TIME ARRANGED-->
-  <div class="govuk-panel govuk-panel--appointment">
-    <h1 class="govuk-panel__title">
-      You’re next speaking with Dylan on
-    </h1>
-    <div class="govuk-panel__body">
-      <strong>Wednesday 31 August from 1pm to 2pm</strong><br>
-      Planned office visit<br><br>
-      <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
-        Rearrange time with Dylan
-      </a>
-    </div>
-  </div>
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -193,6 +178,10 @@ Case summary
           </dd>
         </div>
       </dl>
+
+      <p class="govuk-body govuk-!-font-weight-bold">
+        <a href="update-attendance">Update attendance</a>
+      </p>
  
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -218,8 +207,28 @@ Case summary
 
 <div class="govuk-grid-column-one-third">
 
-  {% include "includes/new-service-user/v4/progress-actions.html" %}
+   <!--TIME ARRANGED-->
+   <div class="govuk-panel govuk-panel--appointment">
+    <h1 class="govuk-panel__title">
+      You’re next speaking with Dylan on
+    </h1>
+    <div class="govuk-panel__body">
+      <strong>Wednesday 31 August from 1pm to 2pm</strong><br>
+      Planned office visit<br><br>
+      <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
+        Rearrange time with Dylan
+      </a>
+    </div>
+  </div>
 
+  <!--ARRANGE A NEW TIME-->
+  <div class="govuk-panel govuk-panel--appointment-none">
+    <div class="govuk-panel__body">
+      <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+        Arrange time with Dylan
+      </a>
+    </div>
+  </div>
 </div>     
 
     {% endblock %}
