@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v4/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="timeline" class="govuk-back-link">Back to Dylan's activity</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Phone call</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-!-margin-bottom-7">
+
+    <div class="moj-timeline">
+
+      <div class="moj-timeline__item">
+      
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Phone call</h2>
+      
+        <p class="moj-timeline__byline">by Mark Berridge</p>
+      
+      </div>
+      
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-07T12:32:00.000Z">25 August at 13:00pm</time>
+      </p>
+      
+      <div class="moj-timeline__description">
+        <p>The shoes had been there for as long as anyone could remember. In fact, it was difficult for anyone to come up with a date they had first appeared. It had seemed they'd always been there and yet they seemed so out of place. Why nobody had removed them was a question that had been asked time and again, but while they all thought it, nobody had ever found the energy to actually do it. So, the shoes remained on the steps, out of place in one sense, but perfectly normal in another.</p>
+        <p>I guess we could discuss the implications of the phrase "meant to be." That is if we wanted to drown ourselves in a sea of backwardly referential semantics and other mumbo-jumbo. Maybe such a discussion would result in the determination that "meant to be" is exactly as meaningless a phrase as it seems to be, and that none of us is actually meant to be doing anything at all. But that's my existential underpants underpinnings showing. It's the way the cookie crumbles. And now I want a cookie.</p>
+        <p>The chair sat in the corner where it had been for over 25 years. The only difference was there was someone actually sitting in it. How long had it been since someone had done that? Ten years or more he imagined. Yet there was no denying the presence in the chair now.</p>
+        <p>She asked the question even though she didn't really want to hear the answer. It was a no-win situation since she already knew. If he told the truth, she'd get confirmation of her worst fears. If he lied, she'd know that he wasn't who she thought he was which would be almost as bad. Yet she asked the question anyway and waited for his answer.</p>
+      
+      </div>
+    
+      </div>
+      </div>
+
+      <div class="moj-timeline__description">
+        <a href="timeline" class="govuk-button govuk-button--secondary">Back to Dylan's activity</a>
+      </div>
+
+  </div>
+
+<div class="govuk-grid-column-one-third">
+
+</div>      
+    {% endblock %}

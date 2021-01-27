@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v4/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Complete attendance</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-!-margin-bottom-7">
+
+            <div class="moj-timeline">
+                <div class="moj-timeline__item">
+                    <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Planned office visit</h2>
+                    <p class="moj-timeline__byline">by Mark Berridge</p>  
+                    </div>
+                    <p class="moj-timeline__date">
+                        <time datetime="2019-05-28T10:15:00.000Z">31 August 2021 at 1:00pm</time>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <form action="timeline-confirm" method="post" class="form">
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
+                  Additional information
+                </label>
+                <div id="event-name-hint" class="govuk-hint">
+                  Guidance from the CRISS model
+                </div>
+                <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
+              </div>
+        
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
+                  Upload files
+                </label>
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+              </div>
+        
+              <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
+                This will be added to the nDelius contact log.
+              </div>
+        
+
+            <button class="govuk-button send-message">
+                Complete attendance
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
