@@ -19,56 +19,36 @@ Case summary
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Complete attendance</h1>
-    </div>
-</div>
-
-<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-!-margin-bottom-7">
-
-            <div class="moj-timeline">
-                <div class="moj-timeline__item">
-                    <div class="moj-timeline__header">
-                    <h2 class="moj-timeline__title">Planned office visit</h2>
-                    <p class="moj-timeline__byline">by Mark Berridge</p>  
-                    </div>
-                    <p class="moj-timeline__date">
-                        <time datetime="2019-05-28T10:15:00.000Z">21 February 2021 at 1:00pm</time>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <form action="timeline-confirm" method="post" class="form">
-
+        <form action="attendance-add-4" method="post" class="form">
 
             <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
-                  Additional information
-                </label>
-                <div id="event-name-hint" class="govuk-hint">
-                  You can use the CRISS model if appropriate
-                </div>
-                <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Was Dylan's absence acceptable?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
-        
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
-                  Upload files
-                </label>
-                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
-              </div>
-        
-              <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
-                This will be added to the nDelius contact log.
-              </div>
-        
 
             <button class="govuk-button send-message">
-                Complete attendance
+                Save and continue
             </button>
         </form>
     </div>
