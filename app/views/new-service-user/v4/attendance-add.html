@@ -17,92 +17,55 @@ Case summary
 {% endblock %}
 
 {% block content %}
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Complete attendance</h1>
-    </div>
-</div>
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-!-margin-bottom-7">
-
-            <div class="moj-timeline">
-                <div class="moj-timeline__item">
-                    <div class="moj-timeline__header">
-                    <h2 class="moj-timeline__title">Planned office visit</h2>
-                    <p class="moj-timeline__byline">by Mark Berridge</p>  
-                    </div>
-                    <p class="moj-timeline__date">
-                        <time datetime="2019-05-28T10:15:00.000Z">23 February 2021 at 1:00pm</time>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-
         <form action="attendance-add-2" method="post" class="form">
+
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        <h1 class="govuk-fieldset__heading">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-label--l">
                             Did Dylan comply?
                         </h1>
+                        <div id="event-name-hint" class="govuk-hint">
+                            Office visit on 23 February 2021 at 1:00pm
+                          </div>
                     </legend>
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="frequency-1" name="frequency"
-                                    type="radio" value="england">
-                                <label class="govuk-label govuk-radios__label" for="frequency-1">
+                                <input class="govuk-radios__input" id="repeat-app-1" name="repeat-app" type="radio"
+                                    value="wales" data-aria-controls="recurring-appointment">
+                                <label class="govuk-label govuk-radios__label" for="repeat-app-1">
                                     Yes
                                 </label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="frequency-2" name="frequency"
-                                    type="radio" value="scotland">
-                                <label class="govuk-label govuk-radios__label" for="frequency-2">
-                                    No - sent home due to behavioural issues
+                                <input class="govuk-radios__input" id="repeat-app-2" name="repeat-app" type="radio"
+                                    value="wales" data-aria-controls="attendance-no">
+                                <label class="govuk-label govuk-radios__label" for="repeat-app-2">
+                                    No
                                 </label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="frequency-3" name="frequency" type="radio"
-                                  value="wales" data-aria-controls="conditional-absence">
-                                <label class="govuk-label govuk-radios__label" for="frequency-3">
-                                  No - Dylan did not attend 
+                                <input class="govuk-radios__input" id="repeat-app-2" name="repeat-app" type="radio"
+                                    value="wales" data-aria-controls="attendance-absent">
+                                <label class="govuk-label govuk-radios__label" for="repeat-app-2">
+                                    Dylan was absent
                                 </label>
-                              </div>
-                            
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="frequency-4" name="frequency" type="radio"
-                                  value="wales" data-aria-controls="conditional-contact">
-                                <label class="govuk-label govuk-radios__label" for="frequency-4">
-                                  No - other
-                                </label>
-                              </div>
-                              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                                <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-!-font-weight-bold" for="frequency-5">
-                                    Give details
-                                  </label>
-                                  <input class="govuk-input govuk-!-width-two-thirds" id="frequency-5" name="contact-by-email"
-                                    type="email" spellcheck="false"></div>
-                              </div>
-                        </div>
+                            </div>
                     </div>
-                </fieldset>
+                   </fieldset>   
             </div>
-            </fieldset>
 
             <button class="govuk-button send-message">
                 Save and continue
             </button>
         </form>
     </div>
+
 </div>
 
 {% endblock %}
