@@ -697,6 +697,7 @@ tr.system td{
         color: #ffffff;
         background: #1d70b8;
         margin-bottom: 2rem;
+        padding: 20px;
     }
 
 .govuk-panel__title {
@@ -719,6 +720,18 @@ tr.system td{
 @media (min-width: 40.0625em) {
 .govuk-panel__body {
     font-size: 24px;
+    line-height: 1.4;
+    }
+}
+
+.govuk-panel__small {
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+@media (min-width: 40.0625em) {
+.govuk-panel__small {
+    font-size: 19px;
     line-height: 1.4;
     }
 }
