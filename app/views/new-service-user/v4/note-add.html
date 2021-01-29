@@ -21,23 +21,13 @@ Case summary
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="timeline-confirm" method="post" class="form">
+        <form action="timeline" method="post" class="form">
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--l" for="event-name">
-                Add session notes
+                Add a note
               </label>
-                <div id="event-name-hint" class="govuk-hint">
-                  Notes may include the session purpose, change in circumstances, and next steps
-                </div>
                 <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
-              </div>
-        
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
-                  Upload files
-                </label>
-                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
               </div>
         
               <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
@@ -46,7 +36,7 @@ Case summary
         
 
             <button class="govuk-button send-message">
-                Confirm attendance
+                Add note
             </button>
         </form>
     </div>

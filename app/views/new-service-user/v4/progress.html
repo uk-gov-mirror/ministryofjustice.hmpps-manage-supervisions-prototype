@@ -129,25 +129,35 @@ Case summary
         </h2>
       
         <div class="moj-timeline">
+
           <div class="moj-timeline__item">
-            
-            <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Office visit</h2>
-            
-              <p class="moj-timeline__byline">by Mark Berridge</p>
-            
-            </div>
-            
-            <p class="moj-timeline__date">
-              <time datetime="2019-06-14T14:01:00.000Z">23 February 2021 at 1:00pm</time>
+          
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Office visit</h2>
+          
+            <p class="moj-timeline__byline">by Mark Berridge</p>
+          
+          </div>
+          
+          <p class="moj-timeline__date">
+            <time datetime="2019-06-14T14:01:00.000Z">23 February 2021 at 1:00pm</time>
+          </p>
+    
+          <div class="moj-timeline__description">
+            <div class="moj-banner moj-banner--warning">
+    
+              <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+              <path d="M13.6,15.4h-2.3v-4.5h2.3V15.4z M13.6,19.8h-2.3v-2.2h2.3V19.8z M0,23.2h25L12.5,2L0,23.2z" /></svg>
+              
+              <div class="moj-banner__message">
+              <span class="moj-banner__assistive">Warning</span>Attendance not confirmed.    <a href="attendance-add.html">Confirm attendance</a></div>
+              
+              </div> 
+         
             </p>
-            
-            <div class="moj-timeline__description">
-              <a href="attendance-add" class="govuk-button govuk-button--secondary">Confirm attendance</a>
-            </div>
-            
-            </div>
-            
+          </div>
+        
+          </div>
           
           <div class="moj-timeline__item">
           
@@ -163,8 +173,11 @@ Case summary
           </p>
           
           <div class="moj-timeline__description">
-            <p>The shoes had been there for as long as anyone could remember. In fact, it was difficult for anyone to come up with a date they had first appeared. It had seemed they'd always been there and yet they seemed so out of place. Why nobody had removed them was a question that had been asked time and again, but while they all thought it, nobody had ever found the energy to actually do it. So, the shoes remained on the steps, out of place in one sense, but perfectly normal in another.</p>
-            <a href="#">View full details</a></div>
+            <div class="note-panel">
+              <p>The shoes had been there for as long as anyone could remember. In fact, it was difficult for anyone to come up with a date they had first appeared. It had seemed they'd always been there and yet they seemed so out of place. Why nobody had removed them was a question that had been asked time and again, but while they all thought it, nobody had ever found the energy to actually do it. So, the shoes remained on the steps, out of place in one sense, but perfectly normal in another.</p>
+            <a href="timeline-entry">View full details</a>
+          </div>
+          </div>
           
           </div>
            
@@ -182,19 +195,22 @@ Case summary
           </p>
           
           <div class="moj-timeline__description">
-            <ul class="moj-timeline__documents">
-              <li class="moj-timeline__document-item">
-                <a class="moj-timeline__document-link" href="#">Induction pack</a>
-              </li>
-              <li class="moj-timeline__document-item">
-                <a class="moj-timeline__document-link" href="#">Email to social worker</a>
-              </li>
-            </ul>
+            <div class="note-panel">
+              <ul class="moj-timeline__documents">
+                <li class="moj-timeline__document-item">
+                  <a class="moj-timeline__document-link" href="#">Induction pack</a>
+                </li>
+                <li class="moj-timeline__document-item">
+                  <a class="moj-timeline__document-link" href="#">Email to social worker</a>
+                </li>
+              </ul>
+            </div>
           </div>
           
           </div>
         
           </div>
+          
       
           <p class="govuk-body">
             <a href="timeline"><strong>View all activity</strong></a>
@@ -203,20 +219,5 @@ Case summary
           </div>
     
       </div>
-
-<div class="govuk-grid-column-one-third">
-
-   <!--NO TIME ARRANGED-->
-   <div class="govuk-panel govuk-panel--appointment-none">
-    <h1 class="govuk-panel__body" style="margin-top: 0px;"><strong>
-      You do not have any time arranged with Dylan</strong>
-    </h1>
-    <div class="govuk-panel__body">
-      <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
-        Arrange time with Dylan
-      </a>
-    </div>
-  </div>
-
-</div>      
+  
     {% endblock %}
