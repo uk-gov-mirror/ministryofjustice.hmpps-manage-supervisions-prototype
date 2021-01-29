@@ -28,7 +28,7 @@ Case summary
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
-            href="timeline.html">Dylan's activity</a>
+            href="timeline.html">Dylan's sessions</a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
@@ -49,17 +49,92 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's activity</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's sessions</h1>
   </div>
 </div>
 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<!--TIME ARRANGED-->
+<div class="govuk-panel govuk-panel--appointment">
+  <h1 class="govuk-panel__title">
+    You’re next speaking with Dylan on
+  </h1>
+  <div class="govuk-panel__body">
+    <strong>Wednesday 23 February from 1pm to 2pm</strong><br>
+    Office visit<br><br>
+    <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
+      Rearrange time with Dylan
+    </a>
+  </div>
+</div>
+
+</div>
+<div class="govuk-grid-column-one-third">
+
+<!--ARRANGE A NEW TIME-->
+<div class="govuk-panel govuk-panel--appointment-none">
+  <div class="govuk-panel__body">
+    <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+      Arrange time with Dylan
+    </a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+  <div class="govuk-!-margin-bottom-7">
+    <h2 class="govuk-heading-m">
+      Session to do list
+    </h2>
+    <!--CARD START-->
+
+    <ul class="govuk-grid-row card-group">
+
+      <li class="govuk-grid-column-full card-group__item">
+        <div class="card card--clickable" data-test="">
+          <h2 class="govuk-heading-s card__heading">
+            <a class="govuk-link card__link" href="#">Complete attendance</a>
+          </h2>
+          <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
+            Office visit on 23 February 2021 at 1:00pm
+          </p>
+        </div>
+      </li>
+      <li class="govuk-grid-column-full card-group__item">
+        <div class="card card--clickable" data-test="">
+          <h2 class="govuk-heading-s card__heading">
+            <a class="govuk-link card__link" href="#">Add session notes</a>
+          </h2>
+          <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
+            Office visit on 23 February 2021 at 1:00pm
+          </p>
+        </div>
+      </li>
+  
+    </ul>
+    <!--CARD END-->
+  </div>
+    
+    </div>
+</div>
+
+      
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
-        Summary up to and including 24 February 2021
+        Session summary
       </h2>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
@@ -85,7 +160,17 @@ Case summary
           </div>
         </div>
       </div>
-
+      <div class="govuk-grid-column-one-quarter">
+        <!--NO TIME ARRANGED-->
+        <div class="govuk-panel govuk-panel--appointment-timeline">
+          <h1 class="govuk-panel__body" style="margin-top: 0px;"><strong>
+           Email and text messages</strong>
+          </h1>
+          <div class="govuk-panel__title">
+            10
+          </div>
+        </div>
+      </div>
       <div class="govuk-grid-column-one-quarter">
         <!--NO TIME ARRANGED-->
         <div class="govuk-panel govuk-panel--appointment-timeline">
@@ -108,22 +193,11 @@ Case summary
   <div class="govuk-grid-column-two-thirds">
     
     <div class="govuk-!-margin-bottom-7">
-
+      <h2 class="govuk-heading-m">
+        Session history
+      </h2>
     <div class="moj-timeline">
-      <div class="moj-timeline__item">
-      
-        <div class="moj-timeline__header">
-          <a href="timeline-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
-            Add an activity
-          </a>
-    
-    </h2>
-        </div>
-        
-        <div class="moj-timeline__description">
-        </div>
-        
-        </div>
+
       <div class="moj-timeline__item">
       
       <div class="moj-timeline__header">
@@ -136,12 +210,21 @@ Case summary
       <p class="moj-timeline__date">
         <time datetime="2019-06-14T14:01:00.000Z">23 February 2021 at 1:00pm</time>
       </p>
-      
+
       <div class="moj-timeline__description">
-        <a href="attendance-add" class="govuk-button govuk-button--secondary">Confirm attendance</a>
+        <div class="moj-banner moj-banner--warning">
+
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M13.6,15.4h-2.3v-4.5h2.3V15.4z M13.6,19.8h-2.3v-2.2h2.3V19.8z M0,23.2h25L12.5,2L0,23.2z" /></svg>
+          
+          <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Warning</span>Attendance not completed.    <a href="attendance-add.html">Complete attendance</a></div>
+          
+          </div> 
+     
+        </p>
       </div>
-      <a class="govuk-body" href="notes-add">Add session notes</a>
-      
+    
       </div>
       
       <div class="moj-timeline__item">
@@ -158,8 +241,11 @@ Case summary
       </p>
       
       <div class="moj-timeline__description">
-        <p>The shoes had been there for as long as anyone could remember. In fact, it was difficult for anyone to come up with a date they had first appeared. It had seemed they'd always been there and yet they seemed so out of place. Why nobody had removed them was a question that had been asked time and again, but while they all thought it, nobody had ever found the energy to actually do it. So, the shoes remained on the steps, out of place in one sense, but perfectly normal in another.</p>
-        <a href="timeline-entry">View full details</a></div>
+        <div class="note-panel">
+          <p>The shoes had been there for as long as anyone could remember. In fact, it was difficult for anyone to come up with a date they had first appeared. It had seemed they'd always been there and yet they seemed so out of place. Why nobody had removed them was a question that had been asked time and again, but while they all thought it, nobody had ever found the energy to actually do it. So, the shoes remained on the steps, out of place in one sense, but perfectly normal in another.</p>
+        <a href="timeline-entry">View full details</a>
+      </div>
+      </div>
       
       </div>
        
@@ -177,19 +263,22 @@ Case summary
       </p>
       
       <div class="moj-timeline__description">
-        <ul class="moj-timeline__documents">
-          <li class="moj-timeline__document-item">
-            <a class="moj-timeline__document-link" href="#">Induction pack</a>
-          </li>
-          <li class="moj-timeline__document-item">
-            <a class="moj-timeline__document-link" href="#">Email to social worker</a>
-          </li>
-        </ul>
+        <div class="note-panel">
+          <ul class="moj-timeline__documents">
+            <li class="moj-timeline__document-item">
+              <a class="moj-timeline__document-link" href="#">Induction pack</a>
+            </li>
+            <li class="moj-timeline__document-item">
+              <a class="moj-timeline__document-link" href="#">Email to social worker</a>
+            </li>
+          </ul>
+        </div>
       </div>
       
       </div>
     
       </div>
+      
       </div>
 
   </div>
