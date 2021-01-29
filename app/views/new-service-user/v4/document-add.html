@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v4/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="timeline" class="govuk-back-link">Back to Dylan's activity</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="document-add-2" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What would you like to upload?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="repeat-app" name="repeat-app" type="radio"
+                  value="wales" data-aria-controls="single-appointment">
+                <label class="govuk-label govuk-radios__label" for="repeat-app">
+                  Email or text message with Dylan
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="repeat-app-2" name="repeat-app" type="radio"
+                  value="wales" data-aria-controls="single-appointment">
+                <label class="govuk-label govuk-radios__label" for="repeat-app-2">
+                  Communication from a third party
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="repeat-app-3" name="repeat-app" type="radio"
+                  value="wales" data-aria-controls="recurring-appointment">
+                <label class="govuk-label govuk-radios__label" for="repeat-app-3">
+                  Other
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="recurring-appointment">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="frequency-3">
+                    Give details
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="frequency-3" name="contact-by-email"
+                    type="email" spellcheck="false">
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </fieldset>
+
+
+
+
+            <button class="govuk-button send-message">
+                Save and continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
