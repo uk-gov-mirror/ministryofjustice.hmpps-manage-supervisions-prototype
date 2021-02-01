@@ -57,20 +57,6 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<!--TIME ARRANGED-->
-<div class="govuk-panel govuk-panel--appointment">
-  <h1 class="govuk-panel__title">
-    Your next session with Dylan is on
-  </h1>
-  <div class="govuk-panel__body">
-    <strong>Wednesday 23 February from 1pm to 2pm</strong><br>
-    Office visit<br><br>
-    <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
-      Rearrange time with Dylan
-    </a>
-  </div>
-</div>
-
   <div class="govuk-!-margin-bottom-7">
     <h2 class="govuk-heading-m">
       Session to do list
@@ -104,9 +90,27 @@ Case summary
     <!--CARD END-->
   </div>
 
+
+  <h2 class="govuk-heading-m">
+    Next session
+  </h2>
+
+  <div class="govuk-!-margin-bottom-9">
+    <div class="govuk-panel govuk-panel--appointment">
+      <div class="govuk-panel__body">
+        <strong>Wednesday 23 February from 1pm to 2pm</strong><br>
+        Office visit<br><br>
+        <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
+          Rearrange time with Dylan
+        </a>
+      </div>
+    </div>
+  </div>
+
+
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
-        Session history
+        Past sessions
       </h2>
 
       <details class="govuk-details" data-module="govuk-details">
@@ -168,7 +172,6 @@ Case summary
 
       </details>
 
-
     <div class="moj-timeline">
 
       <div class="moj-timeline__item">
@@ -176,7 +179,8 @@ Case summary
       <div class="moj-timeline__header">
         <h2 class="moj-timeline__title">Office visit</h2>
       
-        <p class="moj-timeline__byline">by Mark Berridge</p>
+        <p class="moj-timeline__byline">by Mark Berridge
+        </p>
       
       </div>
       
@@ -205,7 +209,11 @@ Case summary
       <div class="moj-timeline__header">
         <h2 class="moj-timeline__title">Phone call</h2>
       
-        <p class="moj-timeline__byline">by Mark Berridge</p>
+        <p class="moj-timeline__byline">by Mark Berridge
+          &NonBreakingSpace;<strong class="govuk-tag govuk-tag--green">
+            Complied
+          </strong>
+        </p>
       
       </div>
       
@@ -257,6 +265,12 @@ Case summary
   </div>
 
 <div class="govuk-grid-column-one-third">
+
+<!--TIME ARRANGED-->
+
+  <h2 class="govuk-heading-m">
+    Actions
+  </h2>
   <p class="govuk-body">
     <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
       Arrange time with Dylan

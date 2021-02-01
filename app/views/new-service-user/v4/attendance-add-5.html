@@ -21,32 +21,38 @@ Case summary
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="timeline-confirm" method="post" class="form">
+        <form action="attendance-add-6" method="post" class="form">
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--l" for="event-name">
-                Add session notes
-              </label>
-                <div id="event-name-hint" class="govuk-hint">
-                  Notes may include the session purpose, change in circumstances, and next steps
-                </div>
-                <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
-              </div>
-        
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
-                  Upload files
-                </label>
-                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Would you like to add notes about this session?
+                    </h1>
+                  </legend>
+                  <div id="contact-hint" class="govuk-hint">
+                    Notes can also be added later
+                  </div>
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="contact">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="contact-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+              
+                </fieldset>
               </div>
-        
-              <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
-                This will be added to the nDelius contact log.
-              </div>
-        
 
             <button class="govuk-button send-message">
-                Confirm attendance
+                Save and continue
             </button>
         </form>
     </div>
