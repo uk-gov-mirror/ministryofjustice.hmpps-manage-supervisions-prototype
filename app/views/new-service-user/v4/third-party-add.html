@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v4/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="timeline" class="govuk-back-link">Back to Dylan's activity</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="timeline" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--l" for="event-name">
+                Record communication with a third party
+              </label>
+                <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
+              </div>
+        
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
+                  Upload files
+                </label>
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+              </div>
+        
+              <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
+                This will be added to the nDelius contact log.
+              </div>
+        
+
+            <button class="govuk-button send-message">
+                Save and continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
