@@ -32,13 +32,14 @@ Case summary
           <a class="moj-sub-navigation__link govuk-link--no-visited-state"
             href="progress.html">Progress</a>
         </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
-            href="timeline.html">Sessions</a>
-        </li>
+
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
             href="plan.html">Plan</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="timeline.html">Previous sessions</a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
@@ -55,115 +56,13 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's sessions</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's previous sessions</h1>
   </div>
 </div>
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Session to do list
-      </h2>
-      <!--CARD START-->
-  
-      <ul class="govuk-grid-row card-group">
-  
-        <li class="govuk-grid-column-full card-group__item">
-          <div class="card card--clickable" data-test="">
-            <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
-              No tasks
-            </p>
-          </div>
-        </li>
-    
-      </ul>
-      <!--CARD END-->
-    </div>
-
-    
-  <h2 class="govuk-heading-m">
-    Next session
-  </h2>
-
-  <div class="govuk-!-margin-bottom-9">
-    <div class="govuk-panel govuk-panel--appointment">
-      <div class="govuk-panel__body">
-        <strong>Wednesday 23 February from 1pm to 2pm</strong><br>
-        Office visit<br><br>
-        <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
-          Rearrange time with Dylan
-        </a>
-      </div>
-    </div>
-  </div>
-
-        <h2 class="govuk-heading-m">
-          Previous sessions
-        </h2>
-
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              View summary
-            </span>
-          </summary>
-          
-          <div class="govuk-!-margin-bottom-7" style="margin-top: 20px;">
-            <h2 class="govuk-heading-m">
-              Summary up to and including 24 February 2021
-            </h2>
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-quarter">
-              <!--NO TIME ARRANGED-->
-              <div class="govuk-panel govuk-panel--appointment-timeline">
-                <h1 class="govuk-panel__small" style="margin-top: 0px;"><strong>
-                Office and home visits</strong>
-                </h1>
-                <div class="govuk-panel__title">
-                  3
-                </div>
-              </div>
-            </div>
-            <div class="govuk-grid-column-one-quarter">
-              <!--NO TIME ARRANGED-->
-              <div class="govuk-panel govuk-panel--appointment-timeline">
-                <h1 class="govuk-panel__small" style="margin-top: 0px;"><strong>
-                Phone and video calls</strong>
-                </h1>
-                <div class="govuk-panel__title">
-                  6
-                </div>
-              </div>
-            </div>
-
-            <div class="govuk-grid-column-one-quarter">
-              <!--NO TIME ARRANGED-->
-              <div class="govuk-panel govuk-panel--appointment-timeline">
-                <h1 class="govuk-panel__small" style="margin-top: 0px;"><strong>
-                Email and text messages</strong>
-                </h1>
-                <div class="govuk-panel__title">
-                  10
-                </div>
-              </div>
-            </div>
-            <div class="govuk-grid-column-one-quarter">
-              <!--NO TIME ARRANGED-->
-              <div class="govuk-panel govuk-panel--appointment-timeline">
-                <h1 class="govuk-panel__small" style="margin-top: 0px;"><strong>
-                Communication with others</strong>
-                </h1>
-                <div class="govuk-panel__title">
-                  12
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </details>
 
         <div class="moj-timeline">
 
@@ -173,8 +72,8 @@ Case summary
             <h2 class="moj-timeline__title">Office visit</h2>
           
             <p class="moj-timeline__byline">by Mark Berridge
-              &NonBreakingSpace;<strong class="govuk-tag govuk-tag--green">
-                Complied
+              &NonBreakingSpace;<strong class="govuk-tag govuk-tag--red">
+                Failed to comply
               </strong>
             </p>
           
@@ -250,24 +149,72 @@ Case summary
           </div>
 
     </div>
-
     <div class="govuk-grid-column-one-third">
-<!--TIME ARRANGED-->
-<h2 class="govuk-heading-m">
-  Actions
-</h2>
-<p class="govuk-body">
-  <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
-    Arrange time with Dylan
-  </a>
-  <p class="govuk-body">
-    <a href="unplanned-add">Record unplanned contact with Dylan</a>
-  </p>
-  <p class="govuk-body">
-    <a href="third-party-add">Record communication with a third party</a>
-  </p>
+
+      <div class="govuk-!-margin-bottom-7">
     
-      </div>    
+    <!--TIME ARRANGED-->
+      <h2 class="govuk-heading-m">
+        Actions
+      </h2>
+      <p class="govuk-body">
+        <a href="timeline-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+          Add a note or document
+        </a>
+        </p>
+        </div>
+    
+        <h2 class="govuk-heading-m">Dylan's session summary</h2>
+        <p class="govuk-body">Summary up to and including 24 February 2021</p>
+    
+        <div class="govuk-!-margin-bottom-7">
+          <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3" style="max-width:none;">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Office and home visits
+                  </p>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  3
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Phone and video calls
+                  </p>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  6
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Email and text messages
+                  </p>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  10
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Communication with others
+                  </p>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  12
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+    </div>       
     
     
 </div>
