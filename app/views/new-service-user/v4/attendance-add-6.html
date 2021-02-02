@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="timeline" class="govuk-back-link">Back to Dylan's activity</a>
+<a href="timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
 {% endblock %}
 
 {% block content %}
@@ -40,14 +40,15 @@ Case summary
                 <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
               </div>
         
-              <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
-                This will be added to the nDelius contact log.
-              </div>
-        
 
-            <button class="govuk-button send-message">
-                Confirm attendance
-            </button>
+              <div style="display:flex;">
+                <button class="govuk-button send-message">
+                 Confirm attendance
+                </button>
+              </div>
+                <p class="govuk-hint">
+                  This will be added to the nDelius contact log.              
+                </p>
         </form>
     </div>
 </div>
