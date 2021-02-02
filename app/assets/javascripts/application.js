@@ -7,7 +7,8 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
-
+})
+  /*
   $(window).click(function () {
     toggleFilter()
   })
@@ -176,3 +177,4 @@ new MOJFrontend.ButtonMenu({
       return false;
     });
   });
+*/
