@@ -13,22 +13,19 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="timeline" class="govuk-back-link">Back to Dylan's activity</a>
+<a href="timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="timeline-confirm" method="post" class="form">
+    <form action="timeline" method="post" class="form">
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--l" for="event-name">
           Add notes
         </label>
-        <div id="event-name-hint" class="govuk-hint">
-          Notes may include the session purpose, change in circumstances, and next steps
-        </div>
         <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
       </div>
 
@@ -37,10 +34,6 @@ Case summary
           Upload files
         </label>
         <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
-      </div>
-
-      <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
-        This will be added to the nDelius contact log.
       </div>
 
       <!-- <div class="govuk-form-group">
@@ -56,11 +49,14 @@ Case summary
         </fieldset>
       </div> -->
 
-      <button class="govuk-button send-message">
-        Add activity
-      </button>
-    </form>
-  </div>
+      <div style="display:flex;">
+        <button class="govuk-button send-message">
+         Add note or document
+        </button>
+      </div>
+        <p class="govuk-hint">
+          This will be added to the nDelius contact log.              
+        </p>
 
   <div class="govuk-grid-column-one-third">
     
