@@ -42,7 +42,7 @@ Case summary
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
-            href="details.html">Details</a>
+            href="details.html">Personal details</a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link govuk-link--no-visited-state"
@@ -63,42 +63,45 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<!--TIME ARRANGED-->
-<div class="govuk-panel govuk-panel--appointment">
-  <h1 class="govuk-panel__title">
-    Your next session with Dylan is on
-  </h1>
-  <div class="govuk-panel__body">
-    <strong>Wednesday 23 February from 1pm to 2pm</strong><br>
-    Office visit<br><br>
-    <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
-      Rearrange time with Dylan
-    </a>
-  </div>
-</div>
-
-  <div class="govuk-!-margin-bottom-7">
-    <h2 class="govuk-heading-m">
-      Session to do list
-    </h2>
-    <!--CARD START-->
-
-    <ul class="govuk-grid-row card-group">
-
-      <li class="govuk-grid-column-full card-group__item">
-        <div class="card card--clickable" data-test="">
-          <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
-            No tasks
-          </p>
-        </div>
-      </li>
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Session to do list
+      </h2>
+      <!--CARD START-->
   
-    </ul>
-    <!--CARD END-->
-  </div>
+      <ul class="govuk-grid-row card-group">
+  
+        <li class="govuk-grid-column-full card-group__item">
+          <div class="card card--clickable" data-test="">
+            <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
+              No tasks
+            </p>
+          </div>
+        </li>
     
+      </ul>
+      <!--CARD END-->
+    </div>
+
+    
+  <h2 class="govuk-heading-m">
+    Next session
+  </h2>
+
+  <div class="govuk-!-margin-bottom-9">
+    <div class="govuk-panel govuk-panel--appointment">
+      <div class="govuk-panel__body">
+        <strong>Wednesday 23 February from 1pm to 2pm</strong><br>
+        Office visit<br><br>
+        <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
+          Rearrange time with Dylan
+        </a>
+      </div>
+    </div>
+  </div>
+
         <h2 class="govuk-heading-m">
-          Session history
+          Previous sessions
         </h2>
 
         <details class="govuk-details" data-module="govuk-details">
@@ -109,6 +112,9 @@ Case summary
           </summary>
           
           <div class="govuk-!-margin-bottom-7" style="margin-top: 20px;">
+            <h2 class="govuk-heading-m">
+              Summary up to and including 24 February 2021
+            </h2>
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-quarter">
               <!--NO TIME ARRANGED-->
@@ -246,16 +252,20 @@ Case summary
     </div>
 
     <div class="govuk-grid-column-one-third">
-      <p class="govuk-body">
-        <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
-          Arrange time with Dylan
-        </a>
-        <p class="govuk-body">
-          <a href="document-add">Upload a document</a>
-        </p>
-        <p class="govuk-body">
-          <a href="note-add">Add a note</a>
-        </p>
+<!--TIME ARRANGED-->
+<h2 class="govuk-heading-m">
+  Actions
+</h2>
+<p class="govuk-body">
+  <a href="appointment-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+    Arrange time with Dylan
+  </a>
+  <p class="govuk-body">
+    <a href="unplanned-add">Record unplanned contact with Dylan</a>
+  </p>
+  <p class="govuk-body">
+    <a href="third-party-add">Record communication with a third party</a>
+  </p>
     
       </div>    
     
