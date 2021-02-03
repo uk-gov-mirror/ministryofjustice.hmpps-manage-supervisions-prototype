@@ -20,50 +20,48 @@ Case summary
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="attendance-add-2" method="post" class="form">
-
+        <form action="/new-service-user/v4/attendance-add-2" method="post" class="form">
 
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading govuk-label--l">
-                            Did Dylan comply?
-                        </h1>
-                        <div id="event-name-hint" class="govuk-hint">
-                            Office visit on 23 February 2021 at 1:00pm
-                          </div>
-                    </legend>
-                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                        <div class="govuk-radios">
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="repeat-app-1" name="repeat-app" type="radio"
-                                    value="wales" data-aria-controls="recurring-appointment">
-                                <label class="govuk-label govuk-radios__label" for="repeat-app-1">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="repeat-app-2" name="repeat-app" type="radio"
-                                    value="wales" data-aria-controls="attendance-no">
-                                <label class="govuk-label govuk-radios__label" for="repeat-app-2">
-                                    No
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="repeat-app-2" name="repeat-app" type="radio"
-                                    value="wales" data-aria-controls="attendance-absent">
-                                <label class="govuk-label govuk-radios__label" for="repeat-app-2">
-                                    Dylan was absent
-                                </label>
-                            </div>
-                    </div>
-                   </fieldset>   
+              <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+                  Did Dylan comply?
+                </h2>
+                <div id="event-name-hint" class="govuk-hint">
+                    Office visit on 8 February 2021 at 1:00pm
+                  </div>
+              </legend>
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="comply-yes" name="comply" type="radio" value="true">
+                  <label class="govuk-label govuk-radios__label" for="comply-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="over18-no" name="comply" type="radio" value="false">
+                  <label class="govuk-label govuk-radios__label" for="comply-no">
+                    No
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="over18-absent" name="comply" type="radio">
+                    <label class="govuk-label govuk-radios__label" for="comply-absent">
+                      Dylan was absent
+                    </label>
+                  </div>
+              </div>
+              </fieldset>
             </div>
-
-            <button class="govuk-button send-message">
+    
+            <button class="govuk-button" data-module="govuk-button">
                 Save and continue
             </button>
-        </form>
+    
+          </form>
+     
+
     </div>
 
 </div>
