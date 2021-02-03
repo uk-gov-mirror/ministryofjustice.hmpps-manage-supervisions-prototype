@@ -17,51 +17,65 @@ Case summary
 {% endblock %}
 
 {% block content %}
-
+          
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="timeline" method="post" class="form">
+
+    <form action="timeline-add-3" method="post" class="form">
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--l" for="event-name">
-          Add notes
-        </label>
-        <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
-          Upload files
-        </label>
-        <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
-      </div>
-
-      <!-- <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-          <div class="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                Counts towards Rehabilitation Activity Requirement (RAR)
-              </label>
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What did the unplanned communication involve?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="document-type" name="document-type" type="radio"
+                  value="england">
+                <label class="govuk-label govuk-radios__label" for="document-type">
+                  Unplanned visit from Dylan
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="document-type-2" name="document-type" type="radio"
+                  value="england">
+                <label class="govuk-label govuk-radios__label" for="document-type-2">
+                  Call, text or email from Dylan
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="document-type-3" name="document-type" type="radio"
+                  value="england">
+                <label class="govuk-label govuk-radios__label" for="document-type-3">
+                  Call, text or email from you
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="document-type-4" name="document-type" type="radio" value="wales" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="document-type-4">
+                  Other
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
+                      Give details
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false"></div>
+              </div>
             </div>
           </div>
         </fieldset>
-      </div> -->
-
-      <div style="display:flex;">
-        <button class="govuk-button send-message">
-         Add note or document
-        </button>
       </div>
-        <p class="govuk-hint">
-          This will be added to the nDelius contact log.              
-        </p>
+      <button class="govuk-button send-message">
+        Save and continue
+      </button>
+    </form>
 
-  <div class="govuk-grid-column-one-third">
-    
   </div>
-  
 </div>
 
 {% endblock %}
