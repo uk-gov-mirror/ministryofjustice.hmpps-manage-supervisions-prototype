@@ -44,5 +44,16 @@ router.post('/new-service-user/v4/attendance-add-2', function (req, res) {
       res.redirect('/new-service-user/v4/appointment-add-5')
     }
   })
+
+  router.post('/new-service-user/v4/appointment-update-4', function (req, res) {
+  
+    let updatenotes = req.session.data['update-notes']
+  
+    if (updatenotes === 'true') {
+      res.redirect('/new-service-user/v4/appointment-update-4')
+    } else {
+      res.redirect('/new-service-user/v4/appointment-update-5')
+    }
+  })
   
 module.exports = router
