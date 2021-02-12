@@ -19,41 +19,25 @@ Case summary
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form action="appointment-add-5" method="post" class="form">
+    <form action="progress" method="post" class="form">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h2 class="govuk-fieldset__heading">
-              Would you like to add additional information about this session?
-            </h2>
-          </legend>
-          <div class="govuk-radios govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="appointment-notes-yes" name="appointment-notes" type="radio" value="true">
-              <label class="govuk-label govuk-radios__label" for="appointment-notes-yes">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="appointment-notes-no" name="appointment-notes" type="radio" value="false">
-              <label class="govuk-label govuk-radios__label" for="appointment-notes-no">
-                No
-              </label>
-            </div>
-          </div>
-          </fieldset>
-        </div>
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+          Add additional information
+        </label>
+        </h1>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
 
-        <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-        </button>
 
-      </form>
-
-    </div>
+      <button class="govuk-button send-message">
+        Arrange session with Dylan
+      </button>
+    </form>
+  </div>
+  
 </div>
 
 {% endblock %}
