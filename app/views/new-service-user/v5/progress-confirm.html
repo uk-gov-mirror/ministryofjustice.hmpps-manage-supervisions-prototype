@@ -1,0 +1,208 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v5/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+<div class="moj-banner moj-banner--success">
+  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+  <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  <div class="moj-banner__message">
+  <span class="moj-banner__assistive">Success</span><strong>Sessioned arrange with Dylan</strong> - Office visit on 22 February 2021 at 1:00pm</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="progress.html">Progress</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
+            href="plan.html">Plan</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="timeline.html">Previous sessions</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="details.html">Personal details</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="sentence.html">Sentence</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's progress</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="moj-banner">
+      
+      <div class="moj-banner__message">
+      
+      <h2 class="govuk-heading-m">This will be updated as the sentence progresses.</h2>
+      </div>
+      
+      </div> 
+
+
+
+    <div class="govuk-!-margin-bottom-7">
+      <!--CARD START-->
+      <h2 class="govuk-heading-m">To do list</h2>
+
+      <ul class="govuk-grid-row card-group">
+  
+        <li class="govuk-grid-column-full card-group__item">
+          <div class="card card--clickable" data-test="">
+            <h2 class="govuk-heading-s card__heading">
+              <a class="govuk-link card__link" href="attendance-add">Confirm attendance</a>
+            </h2>
+            <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
+              Office visit on 8 February 2021 at 1:00pm
+            </p>
+          </div>
+        </li>
+        <li class="govuk-grid-column-full card-group__item">
+          <div class="card card--clickable" data-test="">
+            <h2 class="govuk-heading-s card__heading">
+              <a class="govuk-link card__link" href="notes-add">Add session notes</a>
+            </h2>
+            <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
+              Office visit on 8 February 2021 at 1:00pm
+            </p>
+          </div>
+        </li>
+    
+      </ul>
+      <!--CARD END-->
+    </div>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Risks
+      </h2>
+    
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ROSHA score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Medium
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            OGRS score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0.5
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            RSR score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            3 - 6.89% - Medium
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Needs
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Criminogenic needs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Accommodation<br>
+            Relationships<br>
+            Thinking and attitudes
+          </dd>
+        </div>
+      </dl>
+    </div>
+    
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  <!--TIME ARRANGED-->
+  <h2 class="govuk-heading-m">
+    Actions
+  </h2>
+  <p class="govuk-body">
+    <a href="appointment-add" class="govuk-button govuk-button" style="margin-bottom: 0;">
+      Arrange a session with Dylan
+    </a>
+    </p>
+    <p class="govuk-body">
+      <a href="timeline" style="margin-bottom: 0;">
+      View previous sessions
+    </a>
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Next session
+    </h2>
+  <div class="govuk-!-margin-bottom-9">
+    <div class="govuk-panel govuk-panel--appointment-timeline">
+      <div class="govuk-panel__body">
+        <strong>Monday 8 February from<br>1pm to 2pm</strong><br>
+        Office visit<br><br>
+        <a href="appointment-update" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0;">
+          Rearrange session with Dylan
+        </a>
+      </div>
+    </div>
+    <p class="govuk-body">
+    <a href="progress-2" style="margin-bottom: 0;">
+    View 6 months into sentence
+  </a>
+  </p>
+
+  </div>
+
+  
+  </div>
+    
+</div>
+  
+    {% endblock %}
