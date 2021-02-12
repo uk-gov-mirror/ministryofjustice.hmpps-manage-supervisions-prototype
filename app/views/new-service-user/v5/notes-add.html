@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v5/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="timeline-confirm" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--l" for="event-name">
+                Add session notes
+              </label>
+                <div id="event-name-hint" class="govuk-hint">
+                  Notes may include the session purpose, change in circumstances, and next steps
+                </div>
+                <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
+              </div>
+        
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
+                  Upload files
+                </label>
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+              </div>
+        
+              <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
+                This will be added to the nDelius contact log.
+              </div>
+        
+
+            <button class="govuk-button send-message">
+                Add session notes
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
