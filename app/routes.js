@@ -5,10 +5,41 @@ const router = express.Router()
 
 
 // Branching
+
+//Iteration 5
+router.post('/new-service-user/v5/attendance-add-2', function (req, res) {
+  
+  let complybranch = req.session.data['comply']
+
+  if (complybranch === 'false') {
+    res.redirect('/new-service-user/v5/attendance-add-2')
+  } 
+  if (complybranch === 'true') {
+      res.redirect('/new-service-user/v5/attendance-add-4')
+    } 
+  else {
+    res.redirect('/new-service-user/v5/attendance-add-3')
+  }
+})
+
+router.post('/new-service-user/v5/attendance-add-6', function (req, res) {
+
+  let sessionnotes = req.session.data['session-notes']
+
+  if (sessionnotes === 'true') {
+    res.redirect('/new-service-user/v5/attendance-add-6')
+  } else {
+    res.redirect('/new-service-user/v5/timeline-confirm')
+  }
+})
+
+
+
+
+
+
+// Iteration 4
 router.post('/new-service-user/v4/attendance-add-2', function (req, res) {
-    // Get the answer from session data
-    // The name between the quotes is the same as the 'name' attribute on the input elements
-    // However in JavaScript we can't use hyphens in variable names
   
     let complybranch = req.session.data['comply']
   
