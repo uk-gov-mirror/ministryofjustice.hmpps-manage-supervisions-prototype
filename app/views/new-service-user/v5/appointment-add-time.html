@@ -1,0 +1,213 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v5/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+      Choose a time
+    </h1>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Dylan's circumstances
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          <strong>Preferred language</strong><br>
+          English
+        </p>
+        <p class="govuk-body">
+          <strong>Disabilities and adjustments</strong><br>
+          Autism spectrum condition
+        </p>
+        <p class="govuk-body">
+          <strong>Employment status</strong><br>
+          Full-time employed
+        </p>      </div>
+    </details>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="appointment-add-3" method="post" class="form">
+        
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+          Time
+        </label>
+        <br>
+        <div class="wrapper govuk-!-margin-bottom-7" id="donate">
+            <label class="govuk-label"><input type="radio" name="toggle"><span>12:00pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>12:15pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>12:30pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>12:45pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>1:00pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>1:15pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>1:30pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>1:45pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>2:00pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>2:15pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>2:30pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>2:45pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>3:00pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>3:15pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>3:30pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>3:45pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>4:00pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>4:15pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>4:30pm</span></label>
+            <label class="govuk-label"><input type="radio" name="toggle"><span>4:45pm</span></label> 
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+          Duration
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="1 hour">
+      </div>
+
+
+      
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes govuk-checkboxes--conditional" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="repeat-app-1" name="repeat-app" type="checkbox"
+                  value="wales" data-aria-controls="recurring-appointment">
+                <label class="govuk-label govuk-checkboxes__label" for="repeat-app-1">
+                  I would like this to repeat
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="recurring-appointment">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                        Frequency
+                      </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="frequency-1" name="frequency" type="radio"
+                            value="england">
+                          <label class="govuk-label govuk-radios__label" for="frequency-1">
+                            Daily
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="frequency-2" name="frequency" type="radio"
+                            value="scotland">
+                          <label class="govuk-label govuk-radios__label" for="frequency-2">
+                            Weekly
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="frequency-3" name="frequency" type="radio"
+                            value="wales">
+                          <label class="govuk-label govuk-radios__label" for="frequency-3">
+                            Every 2 weeks
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="frequency-4" name="frequency" type="radio"
+                            value="wales">
+                          <label class="govuk-label govuk-radios__label" for="frequency-4">
+                            Monthly
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                        End date
+                      </h1>
+                    </legend>
+                    <div id="passport-issued-hint" class="govuk-hint">
+                      For example, 12 11 2007
+                    </div>
+                    <div class="govuk-date-input" id="passport-issued">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                            id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*"
+                            inputmode="numeric"></div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                            id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*"
+                            inputmode="numeric"></div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                            id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*"
+                            inputmode="numeric"></div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </fieldset>
+
+      <!--
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+          Location
+        </label>
+        <textarea class="govuk-textarea" rows="1" style="max-width:none;"></textarea>
+      </div>
+    -->
+    <div class="govuk-!-margin-bottom-7">
+      <p class="govuk-body">The session will be added to your Outlook calendar and a text message sent to Dylan.<br><a href="#">Change</a></p>
+    </div>
+
+      <button class="govuk-button send-message">
+        Save and continue
+      </button>
+    </form>
+  </div>
+  
+</div>
+
+{% endblock %}
