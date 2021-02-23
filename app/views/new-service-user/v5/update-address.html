@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="details" class="govuk-back-link">Back to Dylan's details</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-!-margin-bottom-7">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
+                  Update address
+                </h1>
+              </legend>
+            <h2 class="govuk-heading-m">
+                Current details
+            </h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Address
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        1 Grey Lane<br>
+                        Sheffield<br>
+                        South Yorkshire<br>
+                        S10 1AG
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="appointment-add-2" method="post" class="form">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend">
+                        Does this replace the current main address?
+                    </legend>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="main-address" name="main-address"
+                                    type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="main-address">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="additional-address" name="additional-address"
+                                    type="radio" value="no">
+                                <label class="govuk-label govuk-radios__label" for="additional-address">
+                                    No, it is an additional address
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button send-message">
+                Save and continue
+            </button>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock %}
