@@ -467,6 +467,64 @@ a:link {
     margin-right: 0;
 }
 
+// Radio time structure
+.wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    // #donate {
+    //     justify-content: center;
+    //     align-items: center;
+    //     text-align: center;
+    // }
+    #donate label {
+        padding: 10px;
+    }
+    #donate label span {
+        width: 90%!important;
+    }
+}
+
+
+// Radio styles
+
+#donate label {
+    padding-bottom: 15px;
+}
+
+#donate label span {
+    display: inline-block;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    margin: 0em;
+    padding: 6px 7px 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border-image: initial;
+    background-color: #f3f2f1;
+    box-shadow: 0 2px 0 #929191;
+    width: 60%;
+    height: 38px;
+}
+
+#donate label input {
+    position:absolute;
+    top:-20px;
+    visibility: hidden;
+}
+
+#donate input:checked + span {
+    background-color: #00703c;
+    box-shadow: 0 2px 0 #002d18;
+    color: white;
+}
 
 // Overall attendance counts
 
