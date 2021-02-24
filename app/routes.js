@@ -29,7 +29,7 @@ router.post('/new-service-user/v5/attendance-add-6', function (req, res) {
   if (sessionnotes === 'true') {
     res.redirect('/new-service-user/v5/attendance-add-6')
   } else {
-    res.redirect('/new-service-user/v5/timeline-confirm')
+    res.redirect('/new-service-user/v5/attendance-add-7')
   }
 })
 
