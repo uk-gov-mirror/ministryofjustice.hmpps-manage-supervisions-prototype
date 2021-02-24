@@ -65,7 +65,10 @@ Case summary
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Address
+            Main address<br>
+            <label id="more-detail-hint" class="govuk-hint">
+              From Aug 2019
+             </label>
           </dt>
           <dd class="govuk-summary-list__value">
             1 Grey Lane<br>
@@ -73,15 +76,70 @@ Case summary
             South Yorkshire<br>
             S10 1AG
           </dd>
+          <!--<dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Update<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>-->
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Phone number 
+           Temporary address<br>
+           <label class="govuk-label" for="telephone-number">
+            Mum's house<br>
+           </label>
+           <label id="more-detail-hint" class="govuk-hint">
+            Jan 2019 - Aug 2019
+           </label>
+          </label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <br>
+            5 Grey Lane<br>
+            Sheffield<br>
+            South Yorkshire<br>
+            S10 1AG
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="update-address">
+              <br>Update<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Main phone number 
           </dt>
           <dd class="govuk-summary-list__value">
             07700 900 077
           </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="update-number">
+              Update<span class="govuk-visually-hidden"> phone number</span>
+            </a>
+          </dd>
         </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other phone numbers<br>
+            <label class="govuk-label" for="telephone-number">
+             Mum's mobile<br>
+            </label>
+           </label>
+           </dt>
+           <dd class="govuk-summary-list__value">
+             <br>
+             07700 900 789
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a class="govuk-link" href="update-additional-number">
+               <br>Update<span class="govuk-visually-hidden"> address</span>
+             </a>
+           </dd>
+        </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Email
@@ -89,15 +147,20 @@ Case summary
           <dd class="govuk-summary-list__value">
             example@example.com
           </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="update-email">
+              Update<span class="govuk-visually-hidden"> email address</span>
+            </a>
+          </dd>
         </div>
       </dl>
     </div>
 
     <a class="govuk-body" href="sentence-address-book-personal">View address book</a>
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    <div class="govuk-!-margin-bottom-0">
+    <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
         Personal details
       </h2>
@@ -109,10 +172,12 @@ Case summary
           <dd class="govuk-summary-list__value">
             Dylan Adam Armstrong
           </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Other names
+            Aliases
           </dt>
           <dd class="govuk-summary-list__value">
             Dee
