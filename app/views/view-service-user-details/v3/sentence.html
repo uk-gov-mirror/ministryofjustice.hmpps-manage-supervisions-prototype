@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner-v2.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="progress.html">Dylan's progress</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="details.html">Dylan's details</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="sentence.html">Dylan's sentence</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's sentence</h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Community Order
+      </h2>
+      <p class="govuk-body">Using violence to secure entry (Criminal Law Act/CJ and Public Order Act) - 19563</p>
+
+      <div class="govuk-!-margin-bottom-7">
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Started</p>
+            <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>18 Feb 2020</strong></p>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Ends</p>
+            <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>17 Feb 2021</strong></p>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Length</p>
+            <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>12 months</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-!-margin-bottom-7">
+        <h3 class="govuk-heading-m">
+          Order requirements
+        </h3>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              RAR
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15 days
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Fine		
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £1,000
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-!-margin-bottom-7">
+        <h3 class="govuk-heading-m">
+          Offence details
+        </h3>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Offence date		
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15 January 2020
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Conviction date	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12 February 2020
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Court	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Sheffield Magistrates' Court
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Responsible court		
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Sheffield Magistrates' Court
+            </dd>
+          </div>
+          </dl>
+        </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <h2 class="govuk-heading-m">
+    Court documents</h2>
+    <p class="govuk-body ">
+      <span class="govuk-!-font-weight-bold"><a href="#">Pre-sentence report</a></span><br>
+       Last updated 3 August 2020
+     </p>
+   <p class="govuk-body ">
+    <span class="govuk-!-font-weight-bold"><a href="#">Order</a></span><br>
+     Last updated 3 August 2020
+   </p>
+   <p class="govuk-body ">
+    <span class="govuk-!-font-weight-bold"><a href="#">CPS pack</a></span><br>
+     Last updated 2 August 2020
+   </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <h2 class="govuk-heading-m">Dylan's history</h2>
+    <p class="govuk-body">
+        <span class="govuk-!-font-weight-bold">
+          Probation status
+        </span>
+        <br>
+        Previously known
+    </p>
+    <p class="govuk-body">
+      <a href="#">
+        <span class="govuk-!-font-weight-bold">
+          Previous orders (5)
+        </span>
+      </a>
+      <br>
+    </p>
+    <p class="govuk-body">
+      <a href="#">
+        <span class="govuk-!-font-weight-bold">
+          Previous responsible officers (1)
+        </span>
+      </a>
+    </p>
+
+  </div>
+
+</div>      
+
+{% endblock %}

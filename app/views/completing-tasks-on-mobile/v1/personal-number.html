@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="details" class="govuk-back-link">Back to Dylan's details</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-!-margin-bottom-7">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
+                  Update phone number
+                </h1>
+              </legend>
+            <h2 class="govuk-heading-m">
+                Current details
+            </h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Phone number
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        07700 900 077
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="personal-number-update" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+                  Does this replace the existing main phone number?
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="comply-yes" name="comply" type="radio" value="true">
+                  <label class="govuk-label govuk-radios__label" for="comply-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="over18-absent" name="comply" type="radio">
+                    <label class="govuk-label govuk-radios__label" for="comply-absent">
+                        No, it's an additional phone number
+                    </label>
+                  </div>
+              </div>
+              </fieldset>
+            </div>
+    
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+    
+          </form>
+     
+
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case history
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner-v1.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="case-summary.html">Case summary</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="probation-record.html">Orders</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="case-history.html">Contact history</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Contact history</h1>
+    <a class="govuk-button moj-button-menu__item govuk-button--secondary" href="case-notes-type-add">
+      Add to contact history
+    </a>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% block filter %}
+    {% include "includes/filter-v2.html" %}
+    {% endblock %}
+
+    <table class="govuk-table" style="max-width:none;">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" width="230px">Date and time</th>
+          <th scope="col" class="govuk-table__header">Details</th>
+          <!--<th scope="col" class="govuk-table__header" width="50"></th>-->
+          <th scope="col" class="govuk-table__header" width="150">Added by</th>
+          <th scope="col" class="govuk-table__header" width="150">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row system" style="background-color: #f3f2f1;">
+          <td class="govuk-table__cell">30 Nov 2020 at 1:12pm</td>
+          <td class="govuk-table__cell">       
+            <a href="#">Appointment booked</a><br>
+            <span class="govuk-body govuk-!-font-weight-bold">Planned office visit</span><br>
+            Friday 4 December at 12:30pm</td>
+          <!-- <td class="govuk-table__cell">
+            <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
+              ˅
+            </button>
+          </td> -->
+          <td class="govuk-table__cell"> </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr> 
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">30 Nov 2020 at 12:30pm</td>
+            <td class="govuk-table__cell">Conducted Mr. Armstrong's induction appointment. 
+              <br>Diversity: No diversity issues declared. 
+              <br>Health issues: Stated none.
+              <br>Risk: classified as medium risk.
+              <br>Strengths: Lives in his own home with his partner and in full time employment.</td>
+            <!-- <td class="govuk-table__cell">
+              <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
+                ˅
+              </button>
+            </td> -->
+            <td class="govuk-table__cell">Mark Berridge</td>
+            <td class="govuk-table__cell">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                Update
+              </a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row system" style="background-color: #f3f2f1;">
+            <td class="govuk-table__cell">29 Nov 2020 at 3:15pm</td>
+            <td class="govuk-table__cell">
+              <a href="#">Appointment booked</a><br>
+              <span class="govuk-body govuk-!-font-weight-bold">Induction</span><br>
+              Tuesday 30 November at 9:30pm</td>
+            <!-- <td class="govuk-table__cell">
+              <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
+                ˅
+              </button>
+            </td> -->
+            <td class="govuk-table__cell"> </td>
+            <td class="govuk-table__cell">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">29 Nov 2020 at 12:45pm</td>
+            <td class="govuk-table__cell">
+              <div class="content">
+              <p>
+                Mr. Armstrong did not turn up for his induction appointment. I rang Mr. Armstrong three times once it appeared that he was late for the appointment, with no success. 
+              </p>
+              </div>
+            </td>
+            <!-- <td class="govuk-table__cell">
+              <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
+                ˅
+              </button>
+            </td> -->
+            <td class="govuk-table__cell">Mark Berridge</td>
+            <td class="govuk-table__cell">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                Update
+              </a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row system" style="background-color: #f3f2f1;">
+            <td class="govuk-table__cell">28 Nov 2020 at 11:15am</td>
+            <td class="govuk-table__cell"><a href="#">
+              <a href="#">Appointment booked</a><br>
+              <span class="govuk-body govuk-!-font-weight-bold">Induction</span><br>
+              Monday 29 November at 9:30pm.</td>
+            <!-- <td class="govuk-table__cell">
+              <button type="button" class="govuk-button collapsible" style="height: 45px; margin-bottom: 0px;">
+                ˅
+              </button>
+            </td> -->
+            <td class="govuk-table__cell"> </td>
+            <td class="govuk-table__cell">
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div> 
+{% endblock %}
