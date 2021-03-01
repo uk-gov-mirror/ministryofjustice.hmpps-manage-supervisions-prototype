@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner-v2.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="appointment-update-4" method="post" class="form">
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Would you like to add additional information about this session?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="update-notes" name="update-notes" type="radio" value="true" checked>
+                      <label class="govuk-label govuk-radios__label" for="update-notes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="update-notes-2" name="update-notes" type="radio" value="false">
+                      <label class="govuk-label govuk-radios__label" for="update-notes-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+              
+                </fieldset>
+              </div>
+
+            <button class="govuk-button send-message">
+                Save and continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

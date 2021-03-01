@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="details" class="govuk-back-link">Back to Dylan's details</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="personal-number-additional-add" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+                  What do you want to do?
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="comply-yes" name="comply" type="radio" value="true">
+                  <label class="govuk-label govuk-radios__label" for="comply-yes">
+                    Add a new additional number
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="over18-absent" name="comply" type="radio">
+                    <label class="govuk-label govuk-radios__label" for="comply-absent">
+                        Edit an existing number
+                    </label>
+                  </div>
+              </div>
+              </fieldset>
+            </div>
+    
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+    
+          </form>
+     
+
+    </div>
+
+</div>
+
+
+{% endblock %}

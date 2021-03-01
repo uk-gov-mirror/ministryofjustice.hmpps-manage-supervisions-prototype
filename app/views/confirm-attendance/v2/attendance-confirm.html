@@ -1,0 +1,223 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner-v2.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+<div class="moj-banner moj-banner--success">
+  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+  <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  <div class="moj-banner__message">
+  <span class="moj-banner__assistive">Success</span><strong>Attendance confirmed</strong> - Office visit on 8 February 2021 at 1:00pm</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="#">Progress</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
+            href="#">Plan</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="#">Previous sessions</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
+            href="#">Personal details</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="#">Sentence</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's previous sessions</h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+        <div class="moj-timeline">
+
+          <div class="moj-timeline__item">
+          
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Office visit</h2>
+          
+            <p class="moj-timeline__byline">by Mark Berridge
+              &NonBreakingSpace;<strong class="govuk-tag govuk-tag--green">
+                Comply
+              </strong>
+            </p>
+          
+          </div>
+          
+          <p class="moj-timeline__date">
+            <time datetime="2019-06-14T14:01:00.000Z">8 February 2021 at 1:00pm</time>
+          </p>
+    
+          <div class="moj-timeline__description">
+            <div class="note-panel">
+              <p>Dylan arrived on time and presented well for his induction appointment. He filled in all the paperwork required without any resistance and said he understood the process. He mentioned his mum had talked to him a lot over the weekend and helped him to calm down. His mum appears to be a positive influence in his life, which I would like to explore further with him.
+              </p>
+              <a href="#">View full details</a>
+            </div>
+          </div>
+        
+          </div>
+          
+          <div class="moj-timeline__item">
+          
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Phone call</h2>
+          
+            <p class="moj-timeline__byline">by Mark Berridge
+              &NonBreakingSpace;<strong class="govuk-tag govuk-tag--red">
+                Failed to comply
+              </strong>
+            </p>
+          
+          </div>
+          
+          <p class="moj-timeline__date">
+            <time datetime="2019-06-07T12:32:00.000Z">3 February at 13:00pm</time>
+          </p>
+          
+          <div class="moj-timeline__description">
+            <div class="note-panel">
+              <p>I called Dylan to confirm he had understood where he needed to be and when for his induction appointment. He was rude and abusive and in general very hostile in reaction to his sentence saying this wasn’t his fault. He mentioned he “doesn’t have time for this”. I reiterated that he must be at the office on Monday as part of his sentence requirements and if he doesn’t it’s going to reflect very poorly.
+              </p>
+            <a href="#">View full details</a>
+          </div>
+          </div>
+          
+          </div>
+           
+          <div class="moj-timeline__item">
+          
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Communication with a third party</h2>
+          
+            <p class="moj-timeline__byline">by Mark Berridge</p>
+          
+          </div>
+          
+          <p class="moj-timeline__date">
+            <time datetime="2019-05-28T10:15:00.000Z">2 February at 10:15pm</time>
+          </p>
+          
+          <div class="moj-timeline__description">
+            <div class="note-panel">
+              <ul class="moj-timeline__documents">
+                <!--<li class="moj-timeline__document-item">
+                  <a class="moj-timeline__document-link" href="#">Induction pack</a>
+                </li>-->
+                <li class="moj-timeline__document-item">
+                  <a class="moj-timeline__document-link" href="#">Email to social worker</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          </div>
+        
+          </div>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+      <div class="govuk-!-margin-bottom-7">
+    
+    <!--TIME ARRANGED-->
+      <h2 class="govuk-heading-m">
+        Actions
+      </h2>
+      <p class="govuk-body">
+        <a href="#" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+          Add a note or document
+        </a>
+        </p>
+        </div>
+    
+        <h2 class="govuk-heading-m">Dylan's session summary</h2>
+        <p class="govuk-body">Summary up to and including 8 February 2021</p>
+    
+        <div class="govuk-!-margin-bottom-7">
+          <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3" style="max-width:none;">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Office and home visits
+                  </p>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  3
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Phone and video calls
+                  </p>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  6
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Email and text messages
+                  </p>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  10
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Communication with others
+                  </p>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  12
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+    </div>       
+    
+    
+</div>
+    {% endblock %}
