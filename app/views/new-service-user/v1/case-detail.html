@@ -1,0 +1,258 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v1/service-user-banner.html" %}
+{% endblock %}
+
+
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="case-detail.html">Case summary</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="case-history.html">Case history</a>
+        </li>
+        <!--
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="probationrecord.html">Probation record</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" href="">Risk register</a>
+        </li>
+      -->
+      </ul>
+
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case summary</h1>
+
+    <div class="govuk-!-margin-bottom-8">
+      <h2 class="govuk-heading-m">Offences</h2>
+      <h3 class="govuk-heading-s">Drive motor vehicle when alcohol level above limit</h3>
+      <p class="govuk-body govuk-!-margin-bottom-2">On Friday 10th June at Green Avenue, Sheffield drove a motor
+        vehicle namely BMW registration AB12 ZZZ on a road namely Green Avenue, Sheffield, after consuming so much
+        alcohol that the proportion of it in your breath, namely 117 microgrammes of alcohol in 100 millilitres of
+        breath, exceeded the prescribed limit. </p>
+      <p class="govuk-body secondary-text-col">Contrary to section 5(1)(a) of the Road Traffic Act 1988 and schedule 2
+        to the Road Traffic Offenders Act 1988.</p>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-8">
+      <h2 class="govuk-heading-m">Sentence</h2>
+      <div class="govuk-!-margin-bottom-7">
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Community order
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12 months
+            </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Unpaid work
+            </dt>
+            <dd class="govuk-summary-list__value">
+              120 hours
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Rehabilitative Activity Requirement (RAR)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              45 days
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+          
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Personal details
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dylan Adam Armstrong
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Gender
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Male
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            27 September 1984 (35 years old)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            British
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 Grey Lane<br> Sheffield<br> South Yorkshire<br> S10 1AG
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Risks
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            OGRS Score
+          </dt>
+          <dd class="govuk-summary-list__value">
+            50
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            RM2000 Score
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Medium
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ROSHA Score
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Medium
+          </dd>
+        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              SARA Score
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Low
+            </dd>
+          </div>
+      </dl>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Needs
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Criminogenic needs
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Thinking and attitudes<br>
+              Relationships<br>
+              Accommodation<br>
+            </dd>
+          </div>
+      </dl>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Documents
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              CPS pack
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#">View</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Court order
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#">View</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Equality information
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#">View</a>
+            </dd>
+          </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="appointment">Schedule an appointment</a> 
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="case-notes-add">Add case notes</a> 
+        </li>
+      </ul> 
+    </div>
+
+</div>
+
+
+{% endblock %}

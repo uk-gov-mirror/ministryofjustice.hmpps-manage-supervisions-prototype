@@ -1,0 +1,349 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v5/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="progress.html">Progress</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
+            href="plan.html">Plan</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="timeline.html">Previous sessions</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="details.html">Personal details</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="sentence.html">Sentence</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's details</h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Contact details
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Main address<br>
+            <label id="more-detail-hint" class="govuk-hint">
+              From Aug 2019
+             </label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 Grey Lane<br>
+            Sheffield<br>
+            South Yorkshire<br>
+            S10 1AG
+          </dd>
+          <!--<dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Update<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>-->
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Temporary address<br>
+           <label class="govuk-label" for="telephone-number">
+            Mum's house<br>
+           </label>
+           <label id="more-detail-hint" class="govuk-hint">
+            Jan 2019 - Aug 2019
+           </label>
+          </label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <br>
+            5 Grey Lane<br>
+            Sheffield<br>
+            South Yorkshire<br>
+            S10 1AG
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="update-address">
+              <br>Update<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Main phone number 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            07700 900 077
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="update-number">
+              Update<span class="govuk-visually-hidden"> phone number</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other phone numbers<br>
+            <label class="govuk-label" for="telephone-number">
+             Mum's mobile<br>
+            </label>
+           </label>
+           </dt>
+           <dd class="govuk-summary-list__value">
+             <br>
+             07700 900 789
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a class="govuk-link" href="update-additional-number">
+               <br>Update<span class="govuk-visually-hidden"> address</span>
+             </a>
+           </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            example@example.com
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="update-email">
+              Update<span class="govuk-visually-hidden"> email address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <a class="govuk-body" href="sentence-address-book-personal">View address book</a>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Personal details
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dylan Adam Armstrong
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Aliases
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dee
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            27 September 1984 (35 years old)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Preferred language	
+          </dt>
+          <dd class="govuk-summary-list__value">
+            English
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Disabilities and adjustments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Autism spectrum condition
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="govuk-!-margin-bottom-7">
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View more personal details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Nationality	
+              </dt>
+              <dd class="govuk-summary-list__value">
+                British
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Ethnicity	
+              </dt>
+              <dd class="govuk-summary-list__value">
+                White: British
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Religion or belief	
+              </dt>
+              <dd class="govuk-summary-list__value">
+                None
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Gender		
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Male
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Sexual orientation	
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Heterosexual
+              </dd>
+            </div>
+          </dl>
+        </div>
+    </details>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-margin-bottom-7">
+      <h2 class="govuk-heading-m">
+        Circumstances
+      </h2>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Employment status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Full-time employed
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Housing status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Living alone
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Safeguarding issues
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+
+    <div class="govuk-!-margin-bottom-7">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            View more circumstances
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Test	
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Test
+                </dd>
+              </div>
+            </dl>
+          </div>
+      </details>
+      </div>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+<!--
+  <h2 class="govuk-heading-m">
+    Personal documents</h2>
+
+      <div class="moj-timeline__description">
+      <div class="note-panel">
+        <ul class="moj-timeline__documents">
+          <li class="moj-timeline__document-item">
+            <a class="moj-timeline__document-link" href="#"><strong>Induction pack</strong></a><br>
+            <span style="padding-left: 25px;">Last updated 3 Dec 2020</span>
+          </li>
+        </ul>
+      </div>
+    </div>  
+    
+  -->
+  
+  </div>
+
+</div>      
+
+{% endblock %}

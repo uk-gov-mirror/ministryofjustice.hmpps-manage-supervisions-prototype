@@ -1,0 +1,310 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v2/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="case-list" class="govuk-back-link">Back to my cases</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
+            href="case-summary.html">Case summary</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="probation-record.html">Orders</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            href="case-history.html">Contact history</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Case summary</h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-!-margin-bottom-8">
+  <h2 class="govuk-heading-m">Offences</h2>
+  <h3 class="govuk-heading-s">Drive motor vehicle when alcohol level above limit</h3>
+  <p class="govuk-body govuk-!-margin-bottom-2">On Friday 10th June at Green Avenue, Sheffield drove a motor
+    vehicle namely BMW registration AB12 ZZZ on a road namely Green Avenue, Sheffield, after consuming so much
+    alcohol that the proportion of it in your breath, namely 117 microgrammes of alcohol in 100 millilitres of
+    breath, exceeded the prescribed limit. </p>
+  <p class="govuk-body secondary-text-col">Contrary to section 5(1)(a) of the Road Traffic Act 1988 and schedule 2
+    to the Road Traffic Offenders Act 1988.</p>
+</div>
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Service user details</h2>
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button govuk-!-font-size-19" id="accordion-default-heading-1">
+              Personal details
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Dylan Adam Armstrong
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Other names
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Shorty
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                27 September 1984 (35 years old)
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button govuk-!-font-size-19" id="accordion-default-heading-2">
+              Contact details
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1 Grey Lane<br> Sheffield<br> South Yorkshire<br> S10 1AG
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Phone number
+              </dt>
+              <dd class="govuk-summary-list__value"> 
+                077 0090 0077
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email
+              </dt>
+              <dd class="govuk-summary-list__value"> 
+                example@example.com
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button govuk-!-font-size-19" id="accordion-default-heading-2">
+              Equality information
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Gender
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Male
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Ethnicity
+              </dt>
+              <dd class="govuk-summary-list__value">
+                White: British
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Nationality
+              </dt>
+              <dd class="govuk-summary-list__value">
+               British
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Preferred language	
+              </dt>
+              <dd class="govuk-summary-list__value">
+               English
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Religion or belief	
+              </dt>
+              <dd class="govuk-summary-list__value">
+                None
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Sexual orientation		
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Heterosexual
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Disabilities			
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Autism spectrum condition
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button govuk-!-font-size-19" id="accordion-default-heading-2">
+              Risks and needs
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Risks</h2>
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                OGRS Score
+              </dt>
+              <dd class="govuk-summary-list__value">
+                50
+              </dd>
+            </div>
+            <!--<div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                RM2000 Score
+              </dt>
+              <dd class="govuk-summary-list__value">
+               Medium
+              </dd>
+            </div>-->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                ROSHA Score
+              </dt>
+              <dd class="govuk-summary-list__value">
+               Medium
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                RSR Score
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Low
+              </dd>
+            </div>
+              <!--<div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  SARA Score
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 Low
+                </dd>
+              </div>-->
+          </dl>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Needs</h2>
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Criminogenic needs
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Accommodation<br>
+                Relationships<br>
+                Thinking and attitudes
+              </dd>
+            </div>
+        </dl>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+  <h2 class="govuk-heading-m">
+    Sentence</h2>
+
+  <p class="govuk-body "><span class="govuk-!-font-weight-bold">Community order</span><br>
+    12 months<br>
+    <span class="secondary-text-col">12 months remaining</span></p>
+
+  <p class="govuk-body"><span class="govuk-!-font-weight-bold">
+    Rehabilitation Activity<br>Requirement (RAR)</span><br>
+    15 days<br>
+    <span class="secondary-text-col">5 days complete<br>
+    8 days remaining</span>
+  </p>
+
+  <h2 class="govuk-heading-m">
+    Next appointment</h2>
+  <p class="govuk-body"><span class="govuk-!-font-weight-bold">
+    <a href="case-history">Planned office visit</a></span><br>
+    Friday 4 December at 12:30
+  </p>
+
+  <a class="govuk-button" href="appointments-add">Book appointment</a>
+
+</div>
+
+</div>      
+
+{% endblock %}
