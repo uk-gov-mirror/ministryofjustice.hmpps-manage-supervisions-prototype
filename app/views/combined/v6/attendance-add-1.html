@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v5/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="attendance-add-2" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+                  Did Dylan comply?
+                </h2>
+                <div id="event-name-hint" class="govuk-hint" style="margin-top:5px ;">
+                    Office visit on 1 March 2021 at 1:00pm
+                  </div>
+              </legend>
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="comply-yes" name="comply" type="radio" value="true">
+                  <label class="govuk-label govuk-radios__label" for="comply-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="over18-no" name="comply" type="radio" value="false">
+                  <label class="govuk-label govuk-radios__label" for="comply-no">
+                    No
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="over18-absent" name="comply" type="radio">
+                    <label class="govuk-label govuk-radios__label" for="comply-absent">
+                      Dylan was absent
+                    </label>
+                  </div>
+              </div>
+              </fieldset>
+            </div>
+    
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+    
+          </form>
+     
+
+    </div>
+
+</div>
+
+{% endblock %}
