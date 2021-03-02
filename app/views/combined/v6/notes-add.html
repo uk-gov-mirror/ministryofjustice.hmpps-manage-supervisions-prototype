@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/new-service-user/v5/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="timeline-confirm" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--l" for="event-name">
+                Add session notes
+              </label>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    You may want to use the CRISS format to write session notes
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>What has happened in their life since the previous session?</li>
+                  <li>Clarify role boundaries and assess any change in risk</li>
+                  <li>Review previous sessions and tasks and record progress against the sentence plan</li>
+                  <li>Summarise the purpose of the session</li>
+                  <li>Set and agree tasks and confirm the next session</li>
+                </ul>
+                </div>
+              </details>
+                <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
+              </div>
+        
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="case-note-description">
+                  Upload files
+                </label>
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+              </div>
+        
+              <div id="more-detail-hint" class="govuk-hint govuk-!-margin-bottom-7">
+                This will be added to the nDelius contact log.
+              </div>
+        
+
+            <button class="govuk-button send-message">
+                Add session notes
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
