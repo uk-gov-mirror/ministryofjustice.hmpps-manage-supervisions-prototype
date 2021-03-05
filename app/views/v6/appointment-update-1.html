@@ -21,13 +21,45 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="appointment-update-2" method="post" class="form">
-
       <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
-          Why are you rearranging this session?
-        </label>
-        </h1>
-        <input class="govuk-input" id="event-name" name="event-name" type="text">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading govuk-label--l">
+              What would you like to do?
+            </h1>
+         
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rearrange-session-yes" name="rearrange-session" type="radio" value="true" data-aria-controls="conditional-rearrange">
+              <label class="govuk-label govuk-radios__label" for="rearrange-session-yes">
+                Rearrange this session
+              </label>
+            </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-rearrange">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="rearrange-session-yes-reason">
+                    <strong>Why do you need to make this change?</strong>
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="rearrange-session-yes-reason" name="rearrange-session-reason" type="tel">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="rearrange-session-no" name="rearrange-session" type="radio" value="false" data-aria-controls="conditional-cancel">
+                <label class="govuk-label govuk-radios__label" for="rearrange-session-no">
+                  Cancel this session
+                </label>
+              </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-cancel">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="rearrange-session-no-reason">
+                      <strong>Why do you need to make this change?</strong>
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="rearrange-session-no-reason" name="rearrange-session-reason" type="tel">
+                  </div>
+                </div>
+          </div>
+        </fieldset>
       </div>
 
       <div style="display:flex;">
@@ -35,9 +67,7 @@ Case summary
           Save and continue
         </button>
       </div>
-        <p class="govuk-body">
-          <a style="color:	#d4351c; text-decoration: underline;" href="appointment-delete">Delete session</a>
-      </p>
+
     </form>
   </div>
 

@@ -6,30 +6,69 @@ const router = express.Router()
 
 // Branching
 
-//Iteration 5
-router.post('/new-service-user/v5/attendance-add-2', function (req, res) {
+//Iteration 6
+router.post('/v6/attendance-add-2', function (req, res) {
   
   let complybranch = req.session.data['comply']
 
   if (complybranch === 'false') {
-    res.redirect('/new-service-user/v5/attendance-add-2')
+    res.redirect('/v6/attendance-add-2')
   } 
   if (complybranch === 'true') {
-      res.redirect('/new-service-user/v5/attendance-add-4')
+      res.redirect('/v6/attendance-add-4')
     } 
   else {
-    res.redirect('/new-service-user/v5/attendance-add-3')
+    res.redirect('/v6/attendance-add-3')
   }
 })
 
-router.post('/new-service-user/v5/attendance-add-6', function (req, res) {
+router.post('/v6/attendance-add-6', function (req, res) {
 
   let sessionnotes = req.session.data['session-notes']
 
   if (sessionnotes === 'true') {
-    res.redirect('/new-service-user/v5/attendance-add-6')
+    res.redirect('/v6/attendance-add-6')
   } else {
-    res.redirect('/new-service-user/v5/attendance-add-7')
+    res.redirect('/v6/attendance-add-7')
+  }
+})
+
+router.post('/v6/appointment-update-2', function (req, res) {
+
+  let rearrangesession = req.session.data['rearrange-session']
+
+  if (rearrangesession === 'true') {
+    res.redirect('/v6/appointment-update-2')
+  } else {
+    res.redirect('/v6/appointment-update-5-cancel')
+  }
+})
+
+
+//Iteration 5
+router.post('/v5/attendance-add-2', function (req, res) {
+  
+  let complybranch = req.session.data['comply']
+
+  if (complybranch === 'false') {
+    res.redirect('/v5/attendance-add-2')
+  } 
+  if (complybranch === 'true') {
+      res.redirect('/v5/attendance-add-4')
+    } 
+  else {
+    res.redirect('/v5/attendance-add-3')
+  }
+})
+
+router.post('/v5/attendance-add-6', function (req, res) {
+
+  let sessionnotes = req.session.data['session-notes']
+
+  if (sessionnotes === 'true') {
+    res.redirect('/v5/attendance-add-6')
+  } else {
+    res.redirect('/v5/attendance-add-7')
   }
 })
 
