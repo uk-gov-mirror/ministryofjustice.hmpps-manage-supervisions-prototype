@@ -15,61 +15,40 @@
       </thead>
 
       <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="progress" class="govuk-link govuk-link--no-visited-state">
-              Dylan Adam Armstrong
-            </a>
-          </td>
-          <td class="govuk-table__cell">
-            <ul>
-              <li class="govuk-!-margin-bottom-1">Previously known</li>
-              <li class="secondary-text-col">Order ended 24 Nov 2016</li>
-            </ul>
-          </td>
-          <td class="govuk-table__cell">Community Order</td>
-            <td class="govuk-table__cell">Medium</td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--grey">
-              unscheduled
-            </strong>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="" class="govuk-link--no-visited-state">
-              Džiugas Atraskevicius
-            </a>
-          </td>
-          <td class="govuk-table__cell">
-            Current
-          </td>
-          <td class="govuk-table__cell">
-            CJA - Indeterminate Public Prot.</td>
-            <td class="govuk-table__cell">Medium</td>
+        {% for case in caseListData.caseList %}
+          <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              Monday 7 December at 9:30am
+              <a href="{{ case.link }}" class="govuk-link govuk-link--no-visited-state">
+                {{ case.name }}
+              </a>
             </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="" class="govuk-link--no-visited-state">
-              Spencer Gill
-            </a>
-          </td>
-          <td class="govuk-table__cell">No record</span>
             <td class="govuk-table__cell">
-              ORA Suspended Sentence Order
+              <ul>
+                {% for line in case.status %}
+                  {% if loop.index0 == 0 %}
+                    <li class="govuk-!-margin-bottom-1">{{ line }}</li>
+                  {% else %}
+                    <li class="secondary-text-col">{{ line }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
             </td>
-          <td class="govuk-table__cell">High</td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--grey">
-              unscheduled
-            </strong>
-          </td>
+            <td class="govuk-table__cell">{{ case.type }}</td>
+            <td class="govuk-table__cell">{{ case.risk }}</td>
+            <td class="govuk-table__cell">
+              {% if case.nextAppointment %}
+                {{ case.nextAppointment }}
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Unscheduled
+              </strong>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
         </tr>
       </tbody>
-      
+
     </table>
   </div>
 </div>
