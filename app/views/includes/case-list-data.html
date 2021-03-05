@@ -18,7 +18,7 @@
         {% for case in caseListData.caseList %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <a href="progress" class="govuk-link govuk-link--no-visited-state">
+              <a href="{{ case.link }}" class="govuk-link govuk-link--no-visited-state">
                 {{ case.name }}
               </a>
             </td>
@@ -32,9 +32,13 @@
             <td class="govuk-table__cell">{{ case.type }}</td>
             <td class="govuk-table__cell">{{ case.risk }}</td>
             <td class="govuk-table__cell">
-              <strong class="govuk-tag govuk-tag--grey">
+              {% if case.nextAppointment %}
                 {{ case.nextAppointment }}
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Unscheduled
               </strong>
+              {% endif %}
             </td>
           </tr>
         {% endfor %}
