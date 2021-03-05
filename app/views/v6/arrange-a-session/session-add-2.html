@@ -20,33 +20,33 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
-      When would you like to arrange this session?
-    </h1>
-    
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Dylan's circumstances
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body">
-          <strong>Preferred language</strong><br>
-          English
-        </p>
-        <p class="govuk-body">
-          <strong>Disabilities and adjustments</strong><br>
-          Autism spectrum condition
-        </p>
-        <p class="govuk-body">
-          <strong>Employment status</strong><br>
-          Full-time employed
-        </p>      
-      </div>
-    </details>
-
-    <form action="appointment-update-4" method="post" class="form">
+    <form autocomplete="off" action="session-add-3" method="post" class="form">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+        When would you like to arrange this session?
+      </h1> 
+       
+      <!--DYLANS CIRCUMSTANCES-->
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Dylan's circumstances
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            <strong>Preferred language</strong><br>
+            English
+          </p>
+          <p class="govuk-body">
+            <strong>Disabilities and adjustments</strong><br>
+            Autism spectrum condition
+          </p>
+          <p class="govuk-body">
+            <strong>Employment status</strong><br>
+            Full-time employed
+          </p>
+        </div>
+      </details>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -64,16 +64,17 @@ Case summary
         </fieldset>
       </div>
 
+      <!--autocomplete-->
       <div class="govuk-form-group">
         <div class="autocomplete">
           <label class="govuk-label govuk-!-font-weight-bold" for="myInput">
             Time
           </label>
-          <input class="govuk-input govuk-input--width-5" id="myInput" type="text" name="myStartime" placeholder="1:00pm">
+          <input class="govuk-input govuk-input--width-5" id="myInput" type="text" name="myStartime">
           </div>
           <span class="govuk-body" style="margin:0 0.75rem 0 0.75rem;">to</span>
           <div class="autocomplete">
-          <input class="govuk-input govuk-input--width-5" id="myInput-2" type="text" name="myEndtime" placeholder="2:00pm">
+          <input class="govuk-input govuk-input--width-5" id="myInput-2" type="text" name="myEndtime">
         </div>
       </div>
 
@@ -130,7 +131,7 @@ Case summary
                     </div>
                   </fieldset>
                 </div>
-                
+
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -147,27 +148,18 @@ Case summary
                   </fieldset>
                 </div>
 
+
               </div>
             </div>
           </div>
       </div>
-      </fieldset>
-
-      <!--
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
-          Location
-        </label>
-        <textarea class="govuk-textarea" rows="1" style="max-width:none;"></textarea>
-      </div>
-    -->
 
       <button class="govuk-button send-message">
         Save and continue
       </button>
     </form>
   </div>
-  
+
 </div>
 
 {% endblock %}
