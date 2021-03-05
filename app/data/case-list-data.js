@@ -1,4 +1,4 @@
-{
+module.exports = {
   "caseList": [
     {
       "name": "Dylan Adam Armstrong",
