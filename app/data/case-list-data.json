@@ -1,0 +1,32 @@
+{
+  "caseList": [
+    {
+      "name": "Dylan Adam Armstrong",
+      "status": [
+        "Previously known",
+        "Order ended 24 Nov 2016"
+      ],
+      "type": "Community Order",
+      "risk": "Medium",
+      "nextAppointment": "unscheduled"
+    },
+    {
+      "name": "Džiugas Atraskevicius",
+      "status": [
+        "Current"
+      ],
+      "type": "CJA - Indeterminate Public Prot.",
+      "risk": "Medium",
+      "nextAppointment": "Monday 7 December at 9:30am"
+    },
+    {
+      "name": "Spencer Gill",
+      "status": [
+        "No record"
+      ],
+      "type": "ORA Suspended Sentence Order",
+      "risk": "High",
+      "nextAppointment": "unscheduled"
+    }
+  ]
+}
