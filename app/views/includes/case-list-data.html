@@ -37,7 +37,7 @@
             <td class="govuk-table__cell">{{ case.risk }}</td>
             <td class="govuk-table__cell">
               {% if case.nextAppointment %}
-                {{ case.nextAppointment }}
+                {{ case.nextAppointment | dateAndTimeWithDayAndWithoutYear }}
               {% else %}
               <strong class="govuk-tag govuk-tag--grey">
                 Unscheduled
