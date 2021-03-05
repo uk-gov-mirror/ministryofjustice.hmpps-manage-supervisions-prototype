@@ -25,7 +25,11 @@
             <td class="govuk-table__cell">
               <ul>
                 {% for line in case.status %}
-                  <li class="govuk-!-margin-bottom-1">{{ line }}</li>
+                  {% if loop.index0 == 0 %}
+                    <li class="govuk-!-margin-bottom-1">{{ line }}</li>
+                  {% else %}
+                    <li class="secondary-text-col">{{ line }}</li>
+                  {% endif %}
                 {% endfor %}
               </ul>
             </td>
