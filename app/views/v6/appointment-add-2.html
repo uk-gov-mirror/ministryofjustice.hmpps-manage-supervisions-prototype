@@ -19,38 +19,34 @@ Case summary
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <!--DYLANS CIRCUMSTANCES-->
-    <!--<details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Dylan's circumstances
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body">
-          <strong>Preferred language</strong><br>
-          English
-        </p>
-        <p class="govuk-body">
-          <strong>Disabilities and adjustments</strong><br>
-          Autism spectrum condition
-        </p>
-        <p class="govuk-body">
-          <strong>Employment status</strong><br>
-          Full-time employed
-        </p>
-      </div>
-    </details>-->
-  </div>
-</div>
-
-<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form autocomplete="off" action="appointment-add-3" method="post" class="form">
       <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
         When would you like to arrange this session?
       </h1> 
+       
+      <!--DYLANS CIRCUMSTANCES-->
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Dylan's circumstances
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            <strong>Preferred language</strong><br>
+            English
+          </p>
+          <p class="govuk-body">
+            <strong>Disabilities and adjustments</strong><br>
+            Autism spectrum condition
+          </p>
+          <p class="govuk-body">
+            <strong>Employment status</strong><br>
+            Full-time employed
+          </p>
+        </div>
+      </details>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -69,7 +65,6 @@ Case summary
       </div>
 
       <!--autocomplete-->
-
       <div class="govuk-form-group">
         <div class="autocomplete">
           <label class="govuk-label govuk-!-font-weight-bold" for="myInput">
