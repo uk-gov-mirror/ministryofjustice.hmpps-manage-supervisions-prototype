@@ -18,35 +18,8 @@ Case summary
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <nav class="moj-sub-navigation" aria-label="Sub navigation">
-      <ul class="moj-sub-navigation__list">
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
-            href="progress.html">Progress</a>
-        </li>
-
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
-            href="plan.html">Plan</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="timeline.html">Previous sessions</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="details.html">Personal details</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="sentence.html">Sentence</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
+{% set currentNavSection = 'progress' %}
+{% include "includes/navigation.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -96,12 +69,12 @@ Case summary
       </div>
     </div>
   </div>
-  
+
     <!--<div class="moj-banner">
       <div class="moj-banner__message">
         <h2 class="govuk-heading-m">This will be updated as the sentence progresses.</h2>
       </div>
-    </div>--> 
+    </div>-->
 
     <!--TO DO LIST-->
     <!--<div class="govuk-!-margin-bottom-7">
@@ -126,7 +99,7 @@ Case summary
               Office visit on 1 March 2021 at 1:00pm
             </p>
           </div>
-        </li>  
+        </li>
       </ul>
     </div>
 
@@ -136,7 +109,7 @@ Case summary
       <h2 class="govuk-heading-m">
         Risks
       </h2>
-    
+
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -184,7 +157,7 @@ Case summary
         </div>
       </dl>
     </div>
-    
+
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -214,9 +187,9 @@ Case summary
     </div>
   </div>
 
-  
+
   </div>
-    
+
 </div>
-  
+
     {% endblock %}

@@ -18,35 +18,8 @@ Case summary
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <nav class="moj-sub-navigation" aria-label="Sub navigation">
-      <ul class="moj-sub-navigation__list">
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="progress.html">Progress</a>
-        </li>
-
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state" 
-            href="plan.html">Plan</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="timeline.html">Previous sessions</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
-            href="details.html">Personal details</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link govuk-link--no-visited-state" aria-current="page"
-            href="sentence.html">Sentence</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
+{% set currentNavSection = 'sentence' %}
+{% include "includes/navigation.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -57,7 +30,7 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    
+
       <div class="govuk-!-margin-bottom-7">
         <h2 class="govuk-heading-m">
           Community Order
@@ -82,7 +55,7 @@ Case summary
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            End date		
+            End date
           </dt>
           <dd class="govuk-summary-list__value">
             4 January 2022
@@ -108,7 +81,7 @@ Case summary
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Fine		
+              Fine
             </dt>
             <dd class="govuk-summary-list__value">
               £1,000
@@ -126,7 +99,7 @@ Case summary
           <dl class="govuk-summary-list govuk-summary-list--no-border">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Offence date		
+                Offence date
               </dt>
               <dd class="govuk-summary-list__value">
                 15 November 2020
@@ -134,7 +107,7 @@ Case summary
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Conviction date	
+                Conviction date
               </dt>
               <dd class="govuk-summary-list__value">
                 12 December 2020
@@ -142,7 +115,7 @@ Case summary
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Court	
+                Court
               </dt>
               <dd class="govuk-summary-list__value">
                 Sheffield Magistrates' Court
@@ -150,7 +123,7 @@ Case summary
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Responsible court		
+                Responsible court
               </dt>
               <dd class="govuk-summary-list__value">
                 Sheffield Magistrates' Court
@@ -188,7 +161,7 @@ Case summary
             </li>
           </ul>
         </div>
-      </div>    
+      </div>
 
    </div>
     <h2 class="govuk-heading-m">Dylan's history</h2>
@@ -218,6 +191,6 @@ Case summary
     </p>
   </div>
 
-</div><!--END GRID ROW-->     
+</div><!--END GRID ROW-->
 
 {% endblock %}
