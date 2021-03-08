@@ -1,5 +1,3 @@
-const fs = require('fs')
-const path = require('path')
 const { DateTime } = require('luxon')
 
 module.exports = function (env) {
@@ -14,7 +12,7 @@ module.exports = function (env) {
   // example: Monday 7 December at 9:30am
   filters.dateAndTimeWithDayAndWithoutYear = date => {
     var datetime = DateTime.fromISO(date)
-    return datetime.toFormat('cccc d MMMM') + ' at ' + datetime.toFormat('h:mma').toLowerCase();
+    return datetime.toFormat('cccc d MMMM') + ' at ' + datetime.toFormat('h:mma').toLowerCase()
   }
 
   return filters
