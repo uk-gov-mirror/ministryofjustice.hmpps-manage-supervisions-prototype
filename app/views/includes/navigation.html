@@ -1,0 +1,43 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'progress' %}
+            aria-current="page"
+            {% endif %}
+            href="progress.html">Progress</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'plan' %}
+            aria-current="page"
+            {% endif %}
+            href="plan.html">Plan</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'timeline' %}
+            aria-current="page"
+            {% endif %}
+            href="timeline.html">Previous sessions</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'details' %}
+            aria-current="page"
+            {% endif %}
+            href="details.html">Personal details</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link govuk-link--no-visited-state"
+            {% if currentNavSection == 'sentence' %}
+            aria-current="page"
+            {% endif %}
+            href="sentence.html">Sentence</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
