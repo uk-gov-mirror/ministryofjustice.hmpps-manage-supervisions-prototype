@@ -1,5 +1,5 @@
 module.exports = {
-  'caseList': [
+  'cases': [
     {
       'name': 'Dylan Adam Armstrong',
       'link': 'progress',
