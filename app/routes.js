@@ -78,7 +78,6 @@ router.post('/v5/attendance-add-2', function (req, res) {
 })
 
 router.post('/v5/attendance-add-6', function (req, res) {
-
   let sessionnotes = req.session.data['session-notes']
 
   if (sessionnotes === 'true') {
