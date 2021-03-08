@@ -1,4 +1,4 @@
-{
+module.exports = {
   "caseList": [
     {
       "name": "Dylan Adam Armstrong",
@@ -19,7 +19,7 @@
       ],
       "type": "CJA - Indeterminate Public Prot.",
       "risk": "Medium",
-      "nextAppointment": "Monday 7 December at 9:30am"
+      "nextAppointment": "2020-12-07T09:30:00"
     },
     {
       "name": "Spencer Gill",
