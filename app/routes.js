@@ -43,6 +43,16 @@ router.post('/v6/confirm-attendance/attendance-add-4b', function (req, res) {
   }
 })
 
+router.post('/v6/confirm-attendance/attendance-add-7b', function (req, res) {
+  let sessionnotes = req.session.data['session-notes']
+
+  if (sessionnotes === 'true') {
+    res.redirect('/v6/confirm-attendance/attendance-add-7b')
+  } else {
+    res.redirect('/v6/confirm-attendance/attendance-add-8b-remove-RAR')
+  }
+})
+
 router.post('/v6/confirm-attendance/attendance-add-7', function (req, res) {
   let sessionnotes = req.session.data['session-notes']
 
