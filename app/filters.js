@@ -21,5 +21,11 @@ module.exports = function (env) {
     return datetime.toFormat('d MMMM yyyy')
   }
 
+  // example: 7 Dec 2021
+  filters.dateWithYearShortMonth = date => {
+    const datetime = DateTime.fromISO(date)
+    return datetime.toFormat('d MMM yyyy')
+  }
+
   return filters
 }
