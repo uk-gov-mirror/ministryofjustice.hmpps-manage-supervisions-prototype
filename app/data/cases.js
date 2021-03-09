@@ -7,7 +7,7 @@ module.exports = {
         'dateOfBirth': '1984-09-27',
         'age': 35
       },
-      'PNCID': '2012/123400000F',
+      'PNC': '2012/123400000F',
       'CRN': 'J678910',
       'currentOrder': {
         'type': 'Community Order',
