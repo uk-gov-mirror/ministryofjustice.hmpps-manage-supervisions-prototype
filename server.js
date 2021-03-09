@@ -209,6 +209,7 @@ if (useCookieSessionStore === 'true') {
 // Load global datasets into nunjucks environment
 const casesData = require(path.join(__dirname, 'app/data/case-list-data.js'))
 utils.addGlobalData(nunjucksAppEnv, 'casesData', casesData)
+utils.addGlobalData(nunjucksAppEnv, 'case', casesData.cases[0])
 
 // Automatically store all data users enter
 if (useAutoStoreData === 'true') {
