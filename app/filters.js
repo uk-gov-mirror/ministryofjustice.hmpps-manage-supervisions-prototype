@@ -11,8 +11,14 @@ module.exports = function (env) {
 
   // example: Monday 7 December at 9:30am
   filters.dateAndTimeWithDayAndWithoutYear = date => {
-    var datetime = DateTime.fromISO(date)
+    const datetime = DateTime.fromISO(date)
     return datetime.toFormat('cccc d MMMM') + ' at ' + datetime.toFormat('h:mma').toLowerCase()
+  }
+
+  // example: 7 December 2021
+  filters.dateWithYear = date => {
+    const datetime = DateTime.fromISO(date)
+    return datetime.toFormat('d MMMM yyyy')
   }
 
   return filters

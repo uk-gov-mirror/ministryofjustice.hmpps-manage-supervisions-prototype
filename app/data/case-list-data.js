@@ -1,7 +1,13 @@
 module.exports = {
   'cases': [
     {
-      'name': 'Dylan Adam Armstrong',
+      'serviceUserPersonalDetails': {
+        'name': 'Dylan Adam Armstrong',
+        'dateOfBirth': '1984-09-27',
+        'age': 35
+      },
+      'PNCID': '2012/123400000F',
+      'CRN': 'J678910',
       'link': 'progress',
       'status': [
         'Previously known',
@@ -12,7 +18,9 @@ module.exports = {
       'nextAppointment': null
     },
     {
-      'name': 'Džiugas Atraskevicius',
+      'serviceUserPersonalDetails': {
+        'name': 'Džiugas Atraskevicius'
+      },
       'link': '',
       'status': [
         'Current'
@@ -22,7 +30,9 @@ module.exports = {
       'nextAppointment': '2020-12-07T09:30:00'
     },
     {
-      'name': 'Spencer Gill',
+      'serviceUserPersonalDetails': {
+        'name': 'Spencer Gill'
+      },
       'link': '',
       'status': [
         'No record'
