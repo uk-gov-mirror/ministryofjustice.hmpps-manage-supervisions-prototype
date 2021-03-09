@@ -41,14 +41,15 @@ Case summary
         <p class="govuk-body">
           <strong>Employment status</strong><br>
           Full-time employed
-        </p>      </div>
+        </p>
+      </div>
     </details>
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="session-add-3" method="post" class="form">
+    <form action="appointment-add-3" method="post" class="form">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -67,7 +68,8 @@ Case summary
                   Day
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
-                  name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -75,7 +77,8 @@ Case summary
                   Month
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
-                  name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -83,7 +86,8 @@ Case summary
                   Year
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
-                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
             </div>
           </div>
         </fieldset>
@@ -137,20 +141,21 @@ Case summary
       </div>
 
 
-      
+
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <div class="govuk-checkboxes govuk-checkboxes--conditional" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="repeat-app-1" name="repeat-app" type="checkbox"
-                  value="wales" data-aria-controls="recurring-appointment">
+                <input class="govuk-checkboxes__input" id="repeat-app-1" name="repeat-app" type="checkbox" value="wales"
+                  data-aria-controls="recurring-appointment">
                 <label class="govuk-label govuk-checkboxes__label" for="repeat-app-1">
                   I would like this to repeat
                 </label>
               </div>
-              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="recurring-appointment">
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                id="recurring-appointment">
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -210,7 +215,8 @@ Case summary
                           </label>
                           <input class="govuk-input govuk-date-input__input govuk-input--width-2"
                             id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*"
-                            inputmode="numeric"></div>
+                            inputmode="numeric">
+                        </div>
                       </div>
                       <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
@@ -219,7 +225,8 @@ Case summary
                           </label>
                           <input class="govuk-input govuk-date-input__input govuk-input--width-2"
                             id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*"
-                            inputmode="numeric"></div>
+                            inputmode="numeric">
+                        </div>
                       </div>
                       <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
@@ -228,7 +235,8 @@ Case summary
                           </label>
                           <input class="govuk-input govuk-date-input__input govuk-input--width-4"
                             id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*"
-                            inputmode="numeric"></div>
+                            inputmode="numeric">
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -253,7 +261,7 @@ Case summary
       </button>
     </form>
   </div>
-  
+
 </div>
 
 {% endblock %}
