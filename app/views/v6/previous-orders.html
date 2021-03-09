@@ -13,88 +13,37 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="sentence" class="govuk-back-link">Back to Dylan's sentence</a>
+<a href="sentence" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}'s sentence</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's previous orders</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}'s previous orders</h1>
   </div>
 </div>
 
-    <div class="govuk-!-margin-bottom-8">
+<div class="govuk-!-margin-bottom-8">
 
-      <h2 class="govuk-heading-m">Previous orders</h2>
-      <p class="govuk-heading-s govuk-!-margin-bottom-0"><a class="govuk-link govuk-link--no-visited-state" href="#">ORA
-          Community Order (12 Months)</a></p>
-      <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Careless driving - 80400</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Ended on 17 May 2018</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="govuk-heading-s govuk-!-margin-bottom-0"><a class="govuk-link govuk-link--no-visited-state" href="#">ORA
-          Suspended Sentence Order (12 Months)</a></p>
-      <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Common assault and battery - 10501</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Ended on 10 Aug 2016</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="govuk-heading-s govuk-!-margin-bottom-0"><a class="govuk-link govuk-link--no-visited-state" href="#">CJA
-          Std Determinate Custody (42 Months)
-        </a></p>
-      <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Kidnapping - 03601</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Ended on 26 June 2015</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="govuk-heading-s govuk-!-margin-bottom-0"><a class="govuk-link govuk-link--no-visited-state" href="#">CJA
-          Community Order (12 Months)
+  <h2 class="govuk-heading-m">Previous orders</h2>
 
-        </a></p>
-      <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Assaults occasioning actual bodily harm - 00806</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Ended on 10 Jan 2012</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="govuk-heading-s govuk-!-margin-bottom-0"><a class="govuk-link govuk-link--no-visited-state" href="#">CJA
-          Community Order (12 Months)
-        </a></p>
-      <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Offences against Public Order (Summary) - 12500</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Ended on 30 June 2010</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  {% for order in case.previousOrders %}
+    <p class="govuk-heading-s govuk-!-margin-bottom-0">
+      <a class="govuk-link govuk-link--no-visited-state" href="#">
+        {{ order.title }}
+      </a>
+    </p>
 
-
-
-    
-
-
-  </div>
-
-<div class="govuk-grid-column-one-third">
-
-
+    <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ order.description }}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Ended on {{ order.endDate | dateWithYearShortMonth }}</td>
+        </tr>
+      </tbody>
+    </table>
+  {% endfor %}
 </div>
-
-</div>      
 
 {% endblock %}

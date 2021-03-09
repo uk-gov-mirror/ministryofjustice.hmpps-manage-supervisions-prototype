@@ -15,25 +15,23 @@
       </thead>
 
       <tbody class="govuk-table__body">
-        {% for case in caseListData.caseList %}
+        {% for case in casesData.cases %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <a href="{{ case.link }}" class="govuk-link govuk-link--no-visited-state">
-                {{ case.name }}
+                {{ case.serviceUserPersonalDetails.name }}
               </a>
             </td>
             <td class="govuk-table__cell">
               <ul>
-                {% for line in case.status %}
-                  {% if loop.index0 == 0 %}
-                    <li class="govuk-!-margin-bottom-1">{{ line }}</li>
-                  {% else %}
-                    <li class="secondary-text-col">{{ line }}</li>
-                  {% endif %}
-                {% endfor %}
+                <li class="govuk-!-margin-bottom-1">{{ case.status }}</li>
+
+                {% if case.previousOrderStatus %}
+                  <li class="secondary-text-col">{{ case.previousOrderStatus }}</li>
+                {% endif %}
               </ul>
             </td>
-            <td class="govuk-table__cell">{{ case.type }}</td>
+            <td class="govuk-table__cell">{{ case.currentOrder.type }}</td>
             <td class="govuk-table__cell">{{ case.risk }}</td>
             <td class="govuk-table__cell">
               {% if case.nextAppointment %}

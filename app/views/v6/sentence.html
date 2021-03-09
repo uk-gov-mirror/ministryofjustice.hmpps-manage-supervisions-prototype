@@ -23,7 +23,7 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's sentence</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}'s sentence</h1>
   </div>
 </div>
 
@@ -33,16 +33,16 @@ Case summary
 
       <div class="govuk-!-margin-bottom-7">
         <h2 class="govuk-heading-m">
-          Community Order
+          {{ case.currentOrder.type }}
         </h2>
-        <p class="govuk-body">Using violence to secure entry (Criminal Law Act/CJ and Public Order Act) - 19563</p>
+        <p class="govuk-body">{{ case.currentOrder.description }}</p>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Length
           </dt>
           <dd class="govuk-summary-list__value">
-            12 months
+            {{ case.currentOrder.length }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -50,7 +50,7 @@ Case summary
             Start date
           </dt>
           <dd class="govuk-summary-list__value">
-            5 January 2021
+            {{ case.currentOrder.startDate | dateWithYear }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -58,7 +58,7 @@ Case summary
             End date
           </dt>
           <dd class="govuk-summary-list__value">
-            4 January 2022
+            {{ case.currentOrder.endDate | dateWithYear }}
           </dd>
         </div>
         </dl>
@@ -71,22 +71,16 @@ Case summary
           Requirements
         </h3>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Rehabilitation Activity Requirement (RAR)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              15 days
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Fine
-            </dt>
-            <dd class="govuk-summary-list__value">
-              £1,000
-            </dd>
-          </div>
+          {% for requirement in case.currentOrder.requirements %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {{ requirement.type }}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ requirement.value }}
+              </dd>
+            </div>
+          {% endfor %}
         </dl>
       </div>
 
@@ -102,7 +96,7 @@ Case summary
                 Offence date
               </dt>
               <dd class="govuk-summary-list__value">
-                15 November 2020
+                {{ case.currentOrder.offenceDate | dateWithYear }}
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -110,7 +104,7 @@ Case summary
                 Conviction date
               </dt>
               <dd class="govuk-summary-list__value">
-                12 December 2020
+                {{ case.currentOrder.convictionDate | dateWithYear }}
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -118,7 +112,7 @@ Case summary
                 Court
               </dt>
               <dd class="govuk-summary-list__value">
-                Sheffield Magistrates' Court
+                {{ case.currentOrder.court }}
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -126,7 +120,7 @@ Case summary
                 Responsible court
               </dt>
               <dd class="govuk-summary-list__value">
-                Sheffield Magistrates' Court
+                {{ case.currentOrder.responsibleCourt }}
               </dd>
             </div>
             </dl>
@@ -143,34 +137,24 @@ Case summary
       <div class="moj-timeline__description">
         <div class="note-panel">
           <ul class="moj-timeline__documents">
+            {% for doc in case.currentOrder.courtDocuments %}
             <li class="moj-timeline__document-item" style="margin-bottom: 20px;">
-              <a class="moj-timeline__document-link" href="#"><strong>Pre-sentence report</strong></a><br>
-              <span style="padding-left: 25px;">Last updated 3 Dec 2020</span>
+              <a class="moj-timeline__document-link" href="#"><strong>{{ doc.name }}</strong></a><br>
+              <span style="padding-left: 25px;">Last updated {{ doc.lastUpdateDate | dateWithYearShortMonth }}</span>
             </li>
-            <li class="moj-timeline__document-item" style="margin-bottom: 20px;">
-              <a class="moj-timeline__document-link" href="#"><strong>Order</strong></a><br>
-              <span style="padding-left: 25px;">Last updated 3 Dec 2020</span>
-            </li>
-            <li class="moj-timeline__document-item" style="margin-bottom: 20px;">
-              <a class="moj-timeline__document-link" href="#"><strong>CPS pack</strong></a><br>
-              <span style="padding-left: 25px;">Last updated 3 Dec 2020</span>
-            </li>
-            <li class="moj-timeline__document-item">
-              <a class="moj-timeline__document-link" href="#"><strong>Previous convictions</strong></a><br>
-              <span style="padding-left: 25px;">Last updated 3 Dec 2020</span>
-            </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
 
    </div>
-    <h2 class="govuk-heading-m">Dylan's history</h2>
+    <h2 class="govuk-heading-m">{{ case.serviceUserPersonalDetails.firstName }}'s history</h2>
 
     <!--TIME ARRANGED-->
 <div class="govuk-panel govuk-panel--appointment-timeline">
   <div class="govuk-panel__body">
     <strong>Probation status</strong><br>
-    Previously known
+    {{ case.status  }}
   </div>
 </div>
 
