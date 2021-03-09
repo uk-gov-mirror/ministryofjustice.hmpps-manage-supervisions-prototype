@@ -3,6 +3,7 @@ module.exports = {
     {
       'serviceUserPersonalDetails': {
         'name': 'Dylan Adam Armstrong',
+        'firstName': 'Dylan',
         'dateOfBirth': '1984-09-27',
         'age': 35
       },
