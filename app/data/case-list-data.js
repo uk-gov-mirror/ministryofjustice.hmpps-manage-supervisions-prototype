@@ -48,6 +48,33 @@ module.exports = {
           }
         ]
       },
+      'previousOrders': [
+        {
+          'title': 'ORA Community Order (12 Months)',
+          'description': 'Careless driving - 80400',
+          'endDate': '2018-05-17'
+        },
+        {
+          'title': 'ORA Suspended Sentence Order (12 Months)',
+          'description': 'Common assault and battery - 10501',
+          'endDate': '2016-08-10'
+        },
+        {
+          'title': 'CJA Std Determinate Custody (42 Months)',
+          'description': 'Kidnapping - 03601',
+          'endDate': '2015-06-26'
+        },
+        {
+          'title': 'CJA Community Order (12 Months)',
+          'description': 'Assaults occasioning actual bodily harm - 00806',
+          'endDate': '2012-01-10'
+        },
+        {
+          'title': 'CJA Community Order (12 Months)',
+          'description': 'Offences against Public Order (Summary) - 12500',
+          'endDate': '2010-06-30'
+        }
+      ],
       'link': 'progress',
       'status': 'Previously known',
       'previousOrderStatus': 'Order ended 24 Nov 2016',
