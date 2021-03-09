@@ -19,12 +19,12 @@ Case summary
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form action="/new-service-user/v4/session-add-4" method="post" class="form">
+    <form action="appointment-add-4" method="post" class="form">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h2 class="govuk-fieldset__heading">
               Would you like to add additional information about this session?
@@ -32,28 +32,30 @@ Case summary
           </legend>
           <div class="govuk-radios govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="appointment-notes-yes" name="appointment-notes" type="radio" value="true">
+              <input class="govuk-radios__input" id="appointment-notes-yes" name="appointment-notes" type="radio"
+                value="true">
               <label class="govuk-label govuk-radios__label" for="appointment-notes-yes">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="appointment-notes-no" name="appointment-notes" type="radio" value="false">
+              <input class="govuk-radios__input" id="appointment-notes-no" name="appointment-notes" type="radio"
+                value="false">
               <label class="govuk-label govuk-radios__label" for="appointment-notes-no">
                 No
               </label>
             </div>
           </div>
-          </fieldset>
-        </div>
+        </fieldset>
+      </div>
 
-        <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-        </button>
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
 
-      </form>
+    </form>
 
-    </div>
+  </div>
 </div>
 
 {% endblock %}
