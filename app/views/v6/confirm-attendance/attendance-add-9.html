@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-!-margin-bottom-7">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Attendance confirmed
+        </h1>
+        <div class="govuk-panel__body">
+          <strong>Office visit</strong><br>Wednesday 10 March from 1pm to 2pm
+        </div>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Next steps</h2>
+
+
+    <a href="../arrange-a-session/session-add-1" class="govuk-button">
+      Arrange a session
+    </a>
+
+    <div style="margin-top: 20px;">
+      <a class="govuk-body" href="../timeline">Back to Dylan's previous sessions</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

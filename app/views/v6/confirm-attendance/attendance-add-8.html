@@ -13,37 +13,87 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="../timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
+<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-!-margin-bottom-7">
-          <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">
-              Attendance confirmed
-            </h1>
-            <div class="govuk-panel__body">
-              <strong>Office visit</strong><br>Wednesday 10 March from 1pm to 2pm
-            </div>
-          </div>
+    <form action="attendance-add-9" method="post" class="form">
+
+      <h1 class="govuk-heading-l">Check your answers</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            RAR activity
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Thinking skills, attitudes and behaviour
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> RAR activity</span>
+            </a>
+          </dd>
         </div>
-  
-        <h2 class="govuk-heading-m">Next steps</h2>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dylan complied
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> compliance</span>
+            </a>
+          </dd>
+        </div>
+        <!--<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason for not complying
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Behavioural issues
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> reason for not complying</span>
+            </a>
+          </dd>
+        </div>--->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Session notes
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> session notes</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
 
+      <p class="govuk-body">You're confirming attendance for:</p>
 
-    <a href="../arrange-a-session/session-add-1" class="govuk-button">
-      Arrange next session
-    </a>
+      <div class="govuk-inset-text">
+        <strong>Office visit</strong><br>
+        Wednesday 10 March from 1pm to 2pm
+      </div>
 
-  <div style="margin-top: 20px;">
-    <a class="govuk-body" href="../timeline">Back to Dylan's previous sessions</a>
+      <button class="govuk-button" data-module="govuk-button">
+        Confirm attendance
+      </button>
+
+    </form>
+
   </div>
-
-  </div>
-</div> 
+</div>
 
 {% endblock %}
