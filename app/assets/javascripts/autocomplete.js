@@ -104,5 +104,9 @@ var times = [
 ]
 
 /* initiate the autocomplete function on the "myInput" element, and pass along the times array as possible autocomplete values: */
-autocomplete(document.getElementById('myInput'), times)
-autocomplete(document.getElementById('myInput-2'), times)
+if (document.getElementById('myInput')) {
+  autocomplete(document.getElementById('myInput'), times)
+}
+if (document.getElementById('myInput-2')) {
+  autocomplete(document.getElementById('myInput-2'), times)
+}
