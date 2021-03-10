@@ -101,7 +101,11 @@ module.exports = {
       'status': 'Previously known',
       'previousOrderStatus': 'Order ended 24 Nov 2016',
       'risk': 'Medium',
-      'nextAppointment': null
+      'nextAppointment': {
+        'startTime': '2021-04-23T13:00',
+        'endTime': '2021-04-23T14:00',
+        'type': 'Office visit'
+      }
     },
     {
       'serviceUserPersonalDetails': {
@@ -113,7 +117,11 @@ module.exports = {
         'type': 'CJA - Indeterminate Public Prot.'
       },
       'risk': 'Medium',
-      'nextAppointment': '2020-12-07T09:30:00'
+      'nextAppointment': {
+        'startTime': '2020-12-07T09:30',
+        'endTime': '2020-12-07T10:30',
+        'type': 'Office visit'
+      }
     },
     {
       'serviceUserPersonalDetails': {

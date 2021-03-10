@@ -116,8 +116,12 @@ Case summary
     <div class="govuk-!-margin-bottom-9">
       <div class="govuk-panel govuk-panel--appointment-timeline">
         <div class="govuk-panel__body">
-          <strong>Wednesday 23 April from<br>1pm to 2pm</strong><br>
-          Office visit<br><br>
+          <strong>
+            {{ case.nextAppointment.startTime | dateWithDayAndWithoutYear }} from<br>
+            {{ case.nextAppointment.startTime | govukTime }} to {{ case.nextAppointment.endTime | govukTime }}
+          </strong><br>
+          {{ case.nextAppointment.type }}<br>
+          <br>
           <a href="arrange-a-session/session-update-1" class="govuk-button govuk-button--secondary"
             data-module="govuk-button" style="margin-bottom: 0;">
             Rearrange or cancel session
@@ -125,10 +129,7 @@ Case summary
         </div>
       </div>
     </div>
-
-
   </div>
-
 </div>
 
 {% endblock %}

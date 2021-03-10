@@ -9,22 +9,27 @@ module.exports = function (env) {
    */
   var filters = {}
 
-  // example: Monday 7 December at 9:30am
-  filters.dateAndTimeWithDayAndWithoutYear = date => {
-    const datetime = DateTime.fromISO(date)
-    return datetime.toFormat('cccc d MMMM') + ' at ' + datetime.toFormat('h:mma').toLowerCase()
+  // example: Monday 7 December
+  filters.dateWithDayAndWithoutYear = datetimeString => {
+    return DateTime.fromISO(datetimeString).toFormat('cccc d MMMM')
+  }
+
+  // example: 3:30pm
+  // example: 1am
+  filters.govukTime = datetimeString => {
+    const datetime = DateTime.fromISO(datetimeString)
+    const hourMinuteFormat = datetime.minute === 0 ? 'ha' : 'h:mma'
+    return datetime.toFormat(hourMinuteFormat).toLowerCase()
   }
 
   // example: 7 December 2021
-  filters.dateWithYear = date => {
-    const datetime = DateTime.fromISO(date)
-    return datetime.toFormat('d MMMM yyyy')
+  filters.dateWithYear = datetimeString => {
+    return DateTime.fromISO(datetimeString).toFormat('d MMMM yyyy')
   }
 
   // example: 7 Dec 2021
-  filters.dateWithYearShortMonth = date => {
-    const datetime = DateTime.fromISO(date)
-    return datetime.toFormat('d MMM yyyy')
+  filters.dateWithYearShortMonth = datetimeString => {
+    return DateTime.fromISO(datetimeString).toFormat('d MMM yyyy')
   }
 
   return filters
