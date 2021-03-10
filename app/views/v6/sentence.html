@@ -42,7 +42,7 @@ Case summary
             Length
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ case.currentOrder.length }}
+            {{ case.currentOrder.lengthInMonths }} months
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -71,7 +71,7 @@ Case summary
           Requirements
         </h3>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
-          {% for requirement in case.currentOrder.requirements %}
+          {% for requirement in [case.currentOrder.requirements.rar, case.currentOrder.requirements.fine] %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 {{ requirement.type }}

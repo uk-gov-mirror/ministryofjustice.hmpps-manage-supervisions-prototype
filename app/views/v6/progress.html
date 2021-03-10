@@ -35,75 +35,29 @@ Case summary
       <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
         Sentence
       </h2>
-      <!--<div class="graph">
-        <div>
-            <span class="amount--none">
-                <span>0 of 12 months</span>
-            </span>
-        </div>
-    </div>-->
+
       <div class="graph">
         <div>
-          <span class="amount" style="width:54%">
-            <span>6 of 12 months</span>
+          <span class="amount" style="width:{{ progressPercentage(case.currentOrder.progressInMonths, case.currentOrder.lengthInMonths) }}%">
+            <span>{{ case.currentOrder.progressInMonths }} of {{ case.currentOrder.lengthInMonths }} months</span>
           </span>
         </div>
       </div>
     </div>
+
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
         Rehabilitation Activity Requirement (RAR)
       </h2>
-      <!--<div class="graph">
-      <div>
-          <span class="amount--none">
-              <span>0 of 15 days</span>
-          </span>
-      </div>
-    </div>-->
+
       <div class="graph">
         <div>
-          <span class="amount" style="width:33%">
-            <span>5 of 15 days</span>
+          <span class="amount" style="width:{{ progressPercentage(case.currentOrder.requirements.rar.progressInDays, case.currentOrder.requirements.rar.lengthInDays) }}%">
+            <span>{{ case.currentOrder.requirements.rar.progressInDays }} of {{ case.currentOrder.requirements.rar.lengthInDays }} days</span>
           </span>
         </div>
       </div>
     </div>
-
-    <!--<div class="moj-banner">
-      <div class="moj-banner__message">
-        <h2 class="govuk-heading-m">This will be updated as the sentence progresses.</h2>
-      </div>
-    </div>-->
-
-    <!--TO DO LIST-->
-    <!--<div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">To do list</h2>
-      <ul class="govuk-grid-row card-group">
-        <li class="govuk-grid-column-full card-group__item">
-          <div class="card card--clickable" data-test="">
-            <h2 class="govuk-heading-s card__heading">
-              <a class="govuk-link card__link" href="attendance-add-1">Confirm attendance</a>
-            </h2>
-            <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
-              Office visit on 1 March 2021 at 1:00pm
-            </p>
-          </div>
-        </li>
-        <li class="govuk-grid-column-full card-group__item">
-          <div class="card card--clickable" data-test="">
-            <h2 class="govuk-heading-s card__heading">
-              <a class="govuk-link card__link" href="notes-add">Add session notes</a>
-            </h2>
-            <p class="govuk-body card__description" style="text-decoration: none!important; border-bottom-style: none!important;">
-              Office visit on 1 March 2021 at 1:00pm
-            </p>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">-->
 
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
@@ -111,30 +65,16 @@ Case summary
       </h2>
 
       <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            ROSHA score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Medium
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            OGRS score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            0.5
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            RSR score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            3 - 6.89% - Medium
-          </dd>
-        </div>
+        {% for riskIndicator in case.riskIndicators %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {{ riskIndicator.type }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ riskIndicator.value }}
+            </dd>
+          </div>
+        {% endfor %}
       </dl>
     </div>
 
@@ -150,9 +90,7 @@ Case summary
             Criminogenic needs
           </dt>
           <dd class="govuk-summary-list__value">
-            Accommodation<br>
-            Relationships<br>
-            Thinking and attitudes
+            {{ case.criminogenicNeeds | join('<br>') | safe }}
           </dd>
         </div>
       </dl>
@@ -178,8 +116,12 @@ Case summary
     <div class="govuk-!-margin-bottom-9">
       <div class="govuk-panel govuk-panel--appointment-timeline">
         <div class="govuk-panel__body">
-          <strong>Wednesday 23 April from<br>1pm to 2pm</strong><br>
-          Office visit<br><br>
+          <strong>
+            {{ case.nextAppointment.startTime | dateWithDayAndWithoutYear }} from<br>
+            {{ case.nextAppointment.startTime | govukTime }} to {{ case.nextAppointment.endTime | govukTime }}
+          </strong><br>
+          {{ case.nextAppointment.type }}<br>
+          <br>
           <a href="arrange-a-session/session-update-1" class="govuk-button govuk-button--secondary"
             data-module="govuk-button" style="margin-bottom: 0;">
             Rearrange or cancel session
@@ -187,10 +129,7 @@ Case summary
         </div>
       </div>
     </div>
-
-
   </div>
-
 </div>
 
 {% endblock %}

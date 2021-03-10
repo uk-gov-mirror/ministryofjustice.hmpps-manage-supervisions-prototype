@@ -12,23 +12,26 @@ module.exports = {
       'currentOrder': {
         'type': 'Community Order',
         'description': 'Using violence to secure entry (Criminal Law Act/CJ and Public Order Act) - 19563',
-        'length': '12 months',
+        'lengthInMonths': 12,
+        'progressInMonths': 6,
         'startDate': '2021-01-05',
         'endDate': '2022-01-04',
         'offenceDate': '2020-11-15',
         'convictionDate': '2020-12-12',
         'court': "Sheffield Magistrates' Court",
         'responsibleCourt': "Sheffield Magistrates' Court",
-        'requirements': [
-          {
+        'requirements': {
+          'rar': {
             'type': 'Rehabilitation Activity Requirement (RAR)',
-            'value': '15 days'
+            'value': '15 days',
+            'lengthInDays': 15,
+            'progressInDays': 5
           },
-          {
+          'fine': {
             'type': 'Fine',
             'value': '£1000'
           }
-        ],
+        },
         'courtDocuments': [
           {
             'name': 'Pre-sentence report',
@@ -75,11 +78,34 @@ module.exports = {
           'endDate': '2010-06-30'
         }
       ],
+      'riskIndicators': [
+        {
+          'type': 'ROSHA score',
+          'value': 'Medium'
+        },
+        {
+          'type': 'OGRS score',
+          'value': '0.5'
+        },
+        {
+          'type': 'RSR score',
+          'value': '3 - 6.89% - Medium'
+        }
+      ],
+      'criminogenicNeeds': [
+        'Accommodation',
+        'Relationships',
+        'Thinking and attitudes'
+      ],
       'link': 'progress',
       'status': 'Previously known',
       'previousOrderStatus': 'Order ended 24 Nov 2016',
       'risk': 'Medium',
-      'nextAppointment': null
+      'nextAppointment': {
+        'startTime': '2021-04-23T13:00',
+        'endTime': '2021-04-23T14:00',
+        'type': 'Office visit'
+      }
     },
     {
       'serviceUserPersonalDetails': {
@@ -91,7 +117,11 @@ module.exports = {
         'type': 'CJA - Indeterminate Public Prot.'
       },
       'risk': 'Medium',
-      'nextAppointment': '2020-12-07T09:30:00'
+      'nextAppointment': {
+        'startTime': '2020-12-07T09:30',
+        'endTime': '2020-12-07T10:30',
+        'type': 'Office visit'
+      }
     },
     {
       'serviceUserPersonalDetails': {

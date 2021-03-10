@@ -23,6 +23,7 @@ const documentationRoutes = require('./docs/documentation_routes.js')
 const packageJson = require('./package.json')
 const routes = require('./app/routes.js')
 const utils = require('./lib/utils.js')
+const helpers = require('./lib/helpers.js')
 const extensions = require('./lib/extensions/extensions.js')
 
 // Variables for v6 backwards compatibility
@@ -210,6 +211,7 @@ if (useCookieSessionStore === 'true') {
 const casesData = require(path.join(__dirname, 'app/data/cases.js'))
 utils.addGlobalData(nunjucksAppEnv, 'casesData', casesData)
 utils.addGlobalData(nunjucksAppEnv, 'case', casesData.cases[0])
+helpers.addHelpers(nunjucksAppEnv)
 
 // Automatically store all data users enter
 if (useAutoStoreData === 'true') {
