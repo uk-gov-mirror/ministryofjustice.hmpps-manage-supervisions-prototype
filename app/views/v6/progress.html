@@ -65,30 +65,16 @@ Case summary
       </h2>
 
       <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            ROSHA score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Medium
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            OGRS score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            0.5
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            RSR score
-          </dt>
-          <dd class="govuk-summary-list__value">
-            3 - 6.89% - Medium
-          </dd>
-        </div>
+        {% for riskIndicator in case.riskIndicators %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {{ riskIndicator.type }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ riskIndicator.value }}
+            </dd>
+          </div>
+        {% endfor %}
       </dl>
     </div>
 
@@ -104,9 +90,7 @@ Case summary
             Criminogenic needs
           </dt>
           <dd class="govuk-summary-list__value">
-            Accommodation<br>
-            Relationships<br>
-            Thinking and attitudes
+            {{ case.criminogenicNeeds | join('<br>') | safe }}
           </dd>
         </div>
       </dl>

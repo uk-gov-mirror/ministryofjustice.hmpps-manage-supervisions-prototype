@@ -78,6 +78,25 @@ module.exports = {
           'endDate': '2010-06-30'
         }
       ],
+      'riskIndicators': [
+        {
+          'type': 'ROSHA score',
+          'value': 'Medium'
+        },
+        {
+          'type': 'OGRS score',
+          'value': '0.5'
+        },
+        {
+          'type': 'RSR score',
+          'value': '3 - 6.89% - Medium'
+        }
+      ],
+      'criminogenicNeeds': [
+        'Accommodation',
+        'Relationships',
+        'Thinking and attitudes'
+      ],
       'link': 'progress',
       'status': 'Previously known',
       'previousOrderStatus': 'Order ended 24 Nov 2016',
