@@ -52,8 +52,8 @@ Case summary
 
       <div class="graph">
         <div>
-          <span class="amount" style="width:33%">
-            <span>5 of 15 days</span>
+          <span class="amount" style="width:{{ progressPercentage(case.currentOrder.requirements.rar.progressInDays, case.currentOrder.requirements.rar.lengthInDays) }}%">
+            <span>{{ case.currentOrder.requirements.rar.progressInDays }} of {{ case.currentOrder.requirements.rar.lengthInDays }} days</span>
           </span>
         </div>
       </div>

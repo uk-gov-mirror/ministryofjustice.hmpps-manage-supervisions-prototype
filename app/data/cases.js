@@ -20,16 +20,18 @@ module.exports = {
         'convictionDate': '2020-12-12',
         'court': "Sheffield Magistrates' Court",
         'responsibleCourt': "Sheffield Magistrates' Court",
-        'requirements': [
-          {
+        'requirements': {
+          'rar': {
             'type': 'Rehabilitation Activity Requirement (RAR)',
-            'value': '15 days'
+            'value': '15 days',
+            'lengthInDays': 15,
+            'progressInDays': 5
           },
-          {
+          'fine': {
             'type': 'Fine',
             'value': '£1000'
           }
-        ],
+        },
         'courtDocuments': [
           {
             'name': 'Pre-sentence report',
