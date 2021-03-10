@@ -12,7 +12,8 @@ module.exports = {
       'currentOrder': {
         'type': 'Community Order',
         'description': 'Using violence to secure entry (Criminal Law Act/CJ and Public Order Act) - 19563',
-        'length': '12 months',
+        'lengthInMonths': 12,
+        'progressInMonths': 6,
         'startDate': '2021-01-05',
         'endDate': '2022-01-04',
         'offenceDate': '2020-11-15',
