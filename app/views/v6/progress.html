@@ -38,7 +38,7 @@ Case summary
 
       <div class="graph">
         <div>
-          <span class="amount" style="width:54%">
+          <span class="amount" style="width:{{ progressPercentage(case.currentOrder.progressInMonths, case.currentOrder.lengthInMonths) }}%">
             <span>{{ case.currentOrder.progressInMonths }} of {{ case.currentOrder.lengthInMonths }} months</span>
           </span>
         </div>
