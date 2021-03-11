@@ -29,6 +29,8 @@
 {% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
+{% from "_components/timeline-item/macro.njk"         import appTimelineItem %}
+{% from "_components/warning-banner/macro.njk"        import appWarningBanner %}
 
 
 {% block head %}
@@ -42,13 +44,7 @@
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
-  
-
-   
-
 {% endblock %}
-
-
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 

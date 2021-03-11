@@ -105,7 +105,83 @@ module.exports = {
         'startTime': '2021-04-23T13:00',
         'endTime': '2021-04-23T14:00',
         'type': 'Office visit'
-      }
+      },
+      'contactHistory': [
+        {
+          'type': 'Office visit',
+          'probationPractitioner': 'Mark Berridge',
+          'startTime': '2021-04-23T13:00',
+          'outcome': null,
+        },
+        {
+          'type': 'Text message from Service User',
+          'receivedAt': '2021-04-22T13:00',
+          'contents': 'Hi Mark, got the email. I’ll be there. D.'
+        },
+        {
+          'type': 'Email to Service User',
+          'sentAt': '2021-04-10T13:00',
+          'truncatedContents': `Hi Dylan,
+
+          It’s really important that you come back in to see me. I understand that my last letter was sent to your old room so I’m trying you on the email address you provided me. We talked at the beginning of your probation about what might happen if you refuse to comply...`
+        },
+        {
+          'type': 'Email to a third party',
+          'sentAt': '2021-03-31T13:00',
+          'truncatedContents': `Dear Jane
+
+          I’m writing to enquire after Dylan and confirm he is settled in his new room? I have written to him about his non compliance in our last meeting and need to confirm that the letter has reached him?...`
+        },
+        {
+          'type': 'Office visit',
+          'probationPractitioner': 'Mark Berridge',
+          'startTime': '2021-03-16T13:00',
+          'outcome': {
+            'comply': false,
+          },
+          'contents': 'Dylan turned up for his appointment on time however he refused to talk about anything with me until “his new room was sorted out” I explained it wasn’t possible to move him until the 19th to which he stormed out of the meeting.'
+        },
+        {
+          'type': 'Email from a third party',
+          'receivedAt': '2021-03-12T13:00',
+          'truncatedContents': `Dear Mark,
+
+          Thanks for your email, I’ve received Dylan’s request and we have a room available on the ground floor coming available on the 19th of March.
+
+          All the best,...`
+        },
+        {
+          'type': 'Email to a third party',
+          'sentAt': '2021-02-27T13:00',
+          'truncatedContents': `Dear Jane
+
+          I’m writing to confirm that you have received my application on behalf of Dylan to change the room he has been allocated at the hostel. He now has part time work with very early shifts and is struggling with some of the noisier occupants on his floor. The email was sent...`
+        },
+        {
+          'type': 'Office visit',
+          'probationPractitioner': 'Mark Berridge',
+          'startTime': '2021-02-08T13:00',
+          'outcome': {
+            'comply': true,
+          },
+          'truncatedContents': 'Dylan arrived on time and presented well for his induction appointment. He filled in all the paperwork required without any resistance and said he understood the process. He mentioned his mum had talked to him a lot over the weekend and helped him to calm down. His mum appears to be a positive influence in his life, which I would like to explore further with him.'
+        },
+        {
+          'type': 'Phone call',
+          'probationPractitioner': 'Mark Berridge',
+          'startTime': '2021-02-03T13:00',
+          'outcome': {
+            'comply': false,
+          },
+          'truncatedContents': 'I called Dylan to confirm he had understood where he needed to be and when for his induction appointment. He was rude and abusive and in general very hostile in reaction to his sentence saying this wasn’t his fault. He mentioned he “doesn’t have time for this”. I reiterated that he must be at the office on Monday as part of his sentence requirements and if he doesn’t it’s going to reflect very poorly.'
+        },
+        {
+          'type': 'Communication with a third party',
+          'probationPractitioner': 'Mark Berridge',
+          'sentAt': '2021-02-02T22:15',
+          'attachments': ['Email to social worker']
+        }
+      ]
     },
     {
       'serviceUserPersonalDetails': {
