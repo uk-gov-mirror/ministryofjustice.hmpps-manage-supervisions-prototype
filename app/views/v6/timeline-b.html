@@ -22,276 +22,66 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's previous sessions</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}'s previous sessions</h1>
   </div>
 </div>
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <div class="moj-timeline">
+      {% for entry in case.contactHistory %}
+        {% if entry.outcome %}
+          {% set tagText = 'Comply' if entry.outcome.comply else 'Failed to comply' %}
+          {% set tagColour = 'green' if entry.outcome.comply else 'red' %}
+        {% else %}
+          {% set tagText = null %}
+          {% set tagColour = null %}
+        {% endif %}
 
-      <!--ATTENDANCE NOT CONFIRMED-->
-      <div class="moj-timeline__item">
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Office visit</h2>
-          <p class="moj-timeline__byline">by Mark Berridge
-          </p>
-        </div>
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-14T14:01:00.000Z">23 April 2021 at 1:00pm</time>
-        </p>
-        <div class="moj-timeline__description">
-          <div class="moj-banner moj-banner--warning">
-            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-              <path d="M13.6,15.4h-2.3v-4.5h2.3V15.4z M13.6,19.8h-2.3v-2.2h2.3V19.8z M0,23.2h25L12.5,2L0,23.2z" />
-            </svg>
-            <div class="moj-banner__message">
-              <span class="moj-banner__assistive">Warning</span>Attendance not confirmed. <a
-                href="confirm-attendance/attendance-add-1b.html">Confirm attendance</a>
+        {% if entry.contents %}
+          {% set body %}
+            <div class="note-panel">
+              <p style="margin-bottom: 0px;">{{ entry.contents | nl2br | safe }}</p>
             </div>
-          </div>
-          </p>
-        </div>
-      </div>
+          {% endset %}
+        {% elseif entry.truncatedContents %}
+          {% set body %}
+            <div class="note-panel">
+              <p>{{ entry.truncatedContents | nl2br | safe }}</p>
+              <a href="#">View full details</a>
+            </div>
+          {% endset %}
+        {% elseif entry.attachments %}
+          {% set body %}
+            <div class="note-panel">
+              <ul class="moj-timeline__documents">
+                {% for attachment in entry.attachments %}
+                  <li class="moj-timeline__document-item">
+                    <a class="moj-timeline__document-link" href="#">{{ attachment }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endset %}
+        {% elseif entry.type === 'Office visit' and not entry.outcome %}
+          {% set body %}
+            {{ appWarningBanner('Attendance not confirmed. <a href="confirm-attendance/attendance-add-1b.html">Confirm attendance</a>') }}
+          {% endset %}
+        {% endif %}
 
-      <div class="moj-timeline__item">
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Text message from Dylan</h2>
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-14T14:01:00.000Z">22 April 2021 at 1:00pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <p style="margin-bottom: 0px;">Hi Mark, got the email. I’ll be there. D.</p>
-          </div>
-        </div>
-
-      </div>
-      <div class="moj-timeline__item">
-
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Email to Dylan</h2>
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-14T14:01:00.000Z">10 April 2021 at 1:00pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <p>
-              Hi Dylan,
-            </p>
-            <p>
-              It’s really important that you come back in to see me. I understand that my last letter was sent to your
-              old room so I’m trying you on the email address you provided me.
-              We talked at the beginning of your probation about what might happen if you refuse to comply...
-            </p>
-            <a href="#">View full details</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="moj-timeline__item">
-
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">
-            Email to a third party</h2>
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-14T14:01:00.000Z">31 March 2021 at 1:00pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <p>
-              Dear Jane
-            </p>
-            <p>
-              I’m writing to enquire after Dylan and confirm he is settled in his new room? I have written to him about
-              his non compliance in our last meeting and need to confirm that the letter has reached him?...
-            </p>
-
-            <a href="#">View full details</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="moj-timeline__item">
-
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Office visit</h2>
-
-          <p class="moj-timeline__byline">by Mark Berridge
-            &NonBreakingSpace;{{ govukTag({text: 'Failed to comply', classes: 'govuk-tag--red'}) }}
-          </p>
-
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-14T14:01:00.000Z">16 March 2021 at 1:00pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <p style="margin-bottom: 0px;">
-              Dylan turned up for his appointment on time however he refused to talk about anything with me until “his
-              new room was sorted out” I explained it wasn’t possible to move him until the 19th to which he stormed out
-              of the meeting.
-            </p>
-          </div>
-        </div>
-
-      </div>
-      <div class="moj-timeline__item">
-
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Email from a third party</h2>
-
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-14T14:01:00.000Z">12 March 2021 at 1:00pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <p>
-              Dear Mark,
-            </p>
-            <p>
-              Thanks for your email, I’ve received Dylan’s request and we have a room available on the ground floor
-              coming available on the 19th of March.
-            </p>
-            <p>
-              All the best,...
-            </p>
-            <a href="#">View full details</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="moj-timeline__item">
-
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Email to a third party</h2>
-
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-14T14:01:00.000Z">27 February 2021 at 1:00pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <p>
-              Dear Jane,
-            </p>
-            <p>
-              I’m writing to confirm that you have received my application on behalf of Dylan to change the room he has
-              been allocated at the hostel. He now has part time work with very early shifts and is struggling with some
-              of the noisier occupants on his floor. The email was sent...
-            </p>
-            <a href="#">View full details</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="moj-timeline__item">
-
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Office visit</h2>
-
-          <p class="moj-timeline__byline">by Mark Berridge
-            &NonBreakingSpace;{{ govukTag({text: 'Comply', classes: 'govuk-tag--green'}) }}
-          </p>
-
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-14T14:01:00.000Z">8 February 2021 at 1:00pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <p>Dylan arrived on time and presented well for his induction appointment. He filled in all the paperwork
-              required without any resistance and said he understood the process. He mentioned his mum had talked to him
-              a lot over the weekend and helped him to calm down. His mum appears to be a positive influence in his
-              life, which I would like to explore further with him.
-            </p>
-            <a href="#">View full details</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="moj-timeline__item">
-
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Phone call</h2>
-
-          <p class="moj-timeline__byline">by Mark Berridge
-            &NonBreakingSpace;{{ govukTag({text: 'Failed to comply', classes: 'govuk-tag--red'}) }}
-          </p>
-
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-06-07T12:32:00.000Z">3 February at 13:00pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <p>I called Dylan to confirm he had understood where he needed to be and when for his induction appointment.
-              He was rude and abusive and in general very hostile in reaction to his sentence saying this wasn’t his
-              fault. He mentioned he “doesn’t have time for this”. I reiterated that he must be at the office on Monday
-              as part of his sentence requirements and if he doesn’t it’s going to reflect very poorly.
-            </p>
-            <a href="timeline-entry-call">View full details</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="moj-timeline__item">
-
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Communication with a third party</h2>
-
-          <p class="moj-timeline__byline">by Mark Berridge</p>
-
-        </div>
-
-        <p class="moj-timeline__date">
-          <time datetime="2019-05-28T10:15:00.000Z">2 February at 10:15pm</time>
-        </p>
-
-        <div class="moj-timeline__description">
-          <div class="note-panel">
-            <ul class="moj-timeline__documents">
-              <!--<li class="moj-timeline__document-item">
-                  <a class="moj-timeline__document-link" href="#">Induction pack</a>
-                </li>-->
-              <li class="moj-timeline__document-item">
-                <a class="moj-timeline__document-link" href="#">Email to social worker</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
+        {{ appTimelineItem({
+            title: entry.type | replace('Service User', case.serviceUserPersonalDetails.firstName),
+            time: entry.startTime or entry.sentAt or entry.receivedAt,
+            author: entry.probationPractitioner,
+            tagText: tagText,
+            tagColour: tagColour,
+            body: body})
+           }}
+      {% endfor %}
     </div>
-
   </div>
+
   <div class="govuk-grid-column-one-third">
 
     <div class="govuk-!-margin-bottom-7">
