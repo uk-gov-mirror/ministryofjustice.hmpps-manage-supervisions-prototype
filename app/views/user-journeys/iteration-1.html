@@ -1,0 +1,82 @@
+{% extends "layout-index.html" %}
+
+{% block pageTitle %}
+Prototypes | Steel thread | HMPPS
+{% endblock %}
+
+{% block beforeContent %}
+<a href="/" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="moj-timeline">
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Iteration 1 - Quick proof of concept</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>Tested 13 November 2020</time>
+        </p>
+        <div class="moj-timeline__description">
+          <p class="govuk-body">Initial look at what a user may need in order to prepare for an appointment with a new
+            service user.</p>
+          <p class="govuk-body">Presenting screens to users for feedback.</p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Outputs
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  Received positive comments that GOV.UK style is better than the current system.
+                </li>
+                <li>
+                  Didn't get to the core user needs.
+                </li>
+                <li>
+                  <strong>Next steps</strong> - Run co-design workshops with Probation Practitioners on "How
+                  might we make the start of the probation journey better?".
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <figure>
+      <a class="image-thumbnail-link" href="/public/images/view-list-of-new-cases/view-list-of-new-cases-01.png">
+        <img class="image-thumbnail" src="/public/images/view-list-of-new-cases/view-list-of-new-cases-01.png">
+      </a>
+      <a class="image-thumbnail-link" href="/public/images/identify-the-service-user/identify-the-service-user-01.png">
+        <img class="image-thumbnail" src="/public/images/identify-the-service-user/identify-the-service-user-01.png">
+      </a>
+    </figure>
+    <figure>
+      <a class="image-thumbnail-link" href="/public/images/view-service-user-details/view-service-user-details-01.png">
+        <img class="image-thumbnail" src="/public/images/view-service-user-details/view-service-user-details-01.png">
+      </a>
+
+    </figure>
+    <figure>
+      <a class="image-thumbnail-link" href="/public/images/arrange-a-session/arrange-a-session-01.png">
+        <img class="image-thumbnail" src="/public/images/arrange-a-session/arrange-a-session-01.png">
+      </a>
+    </figure>
+    <figure>
+      <a class="image-thumbnail-link" href="/public/images/view-session-notes/view-session-notes-01.png">
+        <img class="image-thumbnail" src="/public/images/view-session-notes/view-session-notes-01.png">
+      </a>
+      <a class="image-thumbnail-link" href="/public/images/add-session-notes/add-session-notes-01.png">
+        <img class="image-thumbnail" src="/public/images/add-session-notes/add-session-notes-01.png">
+      </a>
+    </figure>
+  </div>
+</div>
+
+{% endblock %}
