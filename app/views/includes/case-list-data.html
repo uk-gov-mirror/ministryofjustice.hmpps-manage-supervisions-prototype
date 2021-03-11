@@ -37,9 +37,7 @@
               {% if case.nextAppointment %}
                 {{ case.nextAppointment.startTime | dateWithDayAndWithoutYear }} at {{ case.nextAppointment.startTime | govukTime }}
               {% else %}
-                <strong class="govuk-tag govuk-tag--grey">
-                  Unscheduled
-                </strong>
+                {{ govukTag({text: 'Unscheduled', classes: 'govuk-tag--grey'}) }}
               {% endif %}
             </td>
           </tr>

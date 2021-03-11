@@ -130,9 +130,7 @@ Case summary
           <h2 class="moj-timeline__title">Office visit</h2>
 
           <p class="moj-timeline__byline">by Mark Berridge
-            &NonBreakingSpace;<strong class="govuk-tag govuk-tag--red">
-              Failed to comply
-            </strong>
+            &NonBreakingSpace;{{ govukTag({text: 'Failed to comply', classes: 'govuk-tag--red'}) }}
           </p>
 
         </div>
@@ -175,8 +173,6 @@ Case summary
             <p>
               All the best,...
             </p>
-
-            </p>
             <a href="#">View full details</a>
           </div>
         </div>
@@ -215,9 +211,7 @@ Case summary
           <h2 class="moj-timeline__title">Office visit</h2>
 
           <p class="moj-timeline__byline">by Mark Berridge
-            &NonBreakingSpace;<strong class="govuk-tag govuk-tag--green">
-              Comply
-            </strong>
+            &NonBreakingSpace;{{ govukTag({text: 'Comply', classes: 'govuk-tag--green'}) }}
           </p>
 
         </div>
@@ -245,9 +239,7 @@ Case summary
           <h2 class="moj-timeline__title">Phone call</h2>
 
           <p class="moj-timeline__byline">by Mark Berridge
-            &NonBreakingSpace;<strong class="govuk-tag govuk-tag--red">
-              Failed to comply
-            </strong>
+            &NonBreakingSpace;{{ govukTag({text: 'Failed to comply', classes: 'govuk-tag--red'}) }}
           </p>
 
         </div>
