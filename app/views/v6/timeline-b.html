@@ -70,7 +70,7 @@ Case summary
 
         {{ appTimelineItem({
             title: entry.type | replace('Service User', case.serviceUserPersonalDetails.firstName),
-            time: entry.startTime or entry.sentAt or entry.receivedAt,
+            time: entry.timestamp,
             author: entry.probationPractitioner,
             tagText: tagText,
             tagColour: tagColour,

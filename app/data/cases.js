@@ -102,7 +102,7 @@ module.exports = {
       'previousOrderStatus': 'Order ended 24 Nov 2016',
       'risk': 'Medium',
       'nextAppointment': {
-        'startTime': '2021-04-23T13:00',
+        'timestamp': '2021-04-23T13:00',
         'endTime': '2021-04-23T14:00',
         'type': 'Office visit'
       },
@@ -110,24 +110,24 @@ module.exports = {
         {
           'type': 'Office visit',
           'probationPractitioner': 'Mark Berridge',
-          'startTime': '2021-04-23T13:00',
+          'timestamp': '2021-04-23T13:00',
           'outcome': null,
         },
         {
           'type': 'Text message from Service User',
-          'receivedAt': '2021-04-22T13:00',
+          'timestamp': '2021-04-22T13:00',
           'contents': 'Hi Mark, got the email. I’ll be there. D.'
         },
         {
           'type': 'Email to Service User',
-          'sentAt': '2021-04-10T13:00',
+          'timestamp': '2021-04-10T13:00',
           'contents': `Hi Dylan,
 
           It’s really important that you come back in to see me. I understand that my last letter was sent to your old room so I’m trying you on the email address you provided me. We talked at the beginning of your probation about what might happen if you refuse to comply...`
         },
         {
           'type': 'Email to a third party',
-          'sentAt': '2021-03-31T13:00',
+          'timestamp': '2021-03-31T13:00',
           'contents': `Dear Jane
 
           I’m writing to enquire after Dylan and confirm he is settled in his new room? I have written to him about his non compliance in our last meeting and need to confirm that the letter has reached him?
@@ -138,7 +138,7 @@ module.exports = {
         {
           'type': 'Office visit',
           'probationPractitioner': 'Mark Berridge',
-          'startTime': '2021-03-16T13:00',
+          'timestamp': '2021-03-16T13:00',
           'outcome': {
             'comply': false,
           },
@@ -146,7 +146,7 @@ module.exports = {
         },
         {
           'type': 'Email from a third party',
-          'receivedAt': '2021-03-12T13:00',
+          'timestamp': '2021-03-12T13:00',
           'contents': `Dear Mark,
 
           Thanks for your email, I’ve received Dylan’s request and we have a room available on the ground floor coming available on the 19th of March.
@@ -156,7 +156,7 @@ module.exports = {
         },
         {
           'type': 'Email to a third party',
-          'sentAt': '2021-02-27T13:00',
+          'timestamp': '2021-02-27T13:00',
           'contents': `Dear Jane
 
           I’m writing to confirm that you have received my application on behalf of Dylan to change the room he has been allocated at the hostel. He now has part time work with very early shifts and is struggling with some of the noisier occupants on his floor.
@@ -167,7 +167,7 @@ module.exports = {
         {
           'type': 'Office visit',
           'probationPractitioner': 'Mark Berridge',
-          'startTime': '2021-02-08T13:00',
+          'timestamp': '2021-02-08T13:00',
           'outcome': {
             'comply': true,
           },
@@ -176,7 +176,7 @@ module.exports = {
         {
           'type': 'Phone call',
           'probationPractitioner': 'Mark Berridge',
-          'startTime': '2021-02-03T13:00',
+          'timestamp': '2021-02-03T13:00',
           'outcome': {
             'comply': false,
           },
@@ -185,7 +185,7 @@ module.exports = {
         {
           'type': 'Communication with a third party',
           'probationPractitioner': 'Mark Berridge',
-          'sentAt': '2021-02-02T22:15',
+          'timestamp': '2021-02-02T22:15',
           'attachments': ['Email to social worker']
         }
       ]
@@ -201,7 +201,7 @@ module.exports = {
       },
       'risk': 'Medium',
       'nextAppointment': {
-        'startTime': '2020-12-07T09:30',
+        'timestamp': '2020-12-07T09:30',
         'endTime': '2020-12-07T10:30',
         'type': 'Office visit'
       }
