@@ -22,6 +22,12 @@ module.exports = function (env) {
     return datetime.toFormat(hourMinuteFormat).toLowerCase()
   }
 
+  // example: 3:30pm
+  // example: 1:00am
+  filters.govukTimeWithMinutes = datetimeString => {
+    return DateTime.fromISO(datetimeString).toFormat('h:mma').toLowerCase()
+  }
+
   // example: 7 December 2021
   filters.dateWithYear = datetimeString => {
     return DateTime.fromISO(datetimeString).toFormat('d MMMM yyyy')
