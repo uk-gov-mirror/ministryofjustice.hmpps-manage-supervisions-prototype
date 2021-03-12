@@ -40,16 +40,14 @@ Case summary
         {% endif %}
 
         {% if entry.contents %}
+          {% set truncatedContents = entry.contents | truncate(300) %}
+          {% set isTruncated = (truncatedContents !== entry.contents) %}
           {% set body %}
             <div class="note-panel">
-              <p style="margin-bottom: 0px;">{{ entry.contents | nl2br | safe }}</p>
-            </div>
-          {% endset %}
-        {% elseif entry.truncatedContents %}
-          {% set body %}
-            <div class="note-panel">
-              <p>{{ entry.truncatedContents | nl2br | safe }}</p>
-              <a href="#">View full details</a>
+              <p class="{{ 'govuk-!-margin-bottom-0' if not isTruncated }}">{{ truncatedContents | nl2br | safe }}</p>
+              {% if isTruncated %}
+                <a href="#">View full details</a>
+              {% endif %}
             </div>
           {% endset %}
         {% elseif entry.attachments %}
