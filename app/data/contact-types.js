@@ -28,12 +28,6 @@ module.exports = {
       'AFTC'
     ]
   },
-  'EDTEST': {
-    'description': 'Ed Test contact type',
-    'requiresLocation': 'N',
-    'nsis': null,
-    'outcomes': null
-  },
   'DLNRBRA': {
     'description': 'Biometric Reporting Appointment (NS)',
     'requiresLocation': 'Y',
@@ -128,30 +122,13 @@ module.exports = {
     'description': 'Other Appointment (NS)',
     'requiresLocation': 'Y',
     'nsis': [
-      'LDN012',
-      'GEN02',
-      'GEN04',
-      'GEN08',
-      'GEN10',
+      'LDN010',
       'GEN01',
       'RARP',
-      'RARP',
-      'APCP',
-      'LDN011',
-      'GEN07',
-      'GEN09',
-      'GEN06',
-      'GEN05',
-      'GEN03',
       'LDN020',
-      'LDN015',
       'LDN014',
-      'LDN013',
       'LDN019',
-      'LDN018',
-      'LDN017',
-      'LDN010',
-      'LDN016'
+      'LDN018'
     ],
     'outcomes': [
       'ATTC',
@@ -224,7 +201,6 @@ module.exports = {
     'description': 'Appointment with External Agency (NS)',
     'requiresLocation': 'B',
     'nsis': [
-      'RARP',
       'RARP'
     ],
     'outcomes': [
@@ -310,10 +286,7 @@ module.exports = {
   'C243': {
     'description': 'Alcohol Group Work Session (NS)',
     'requiresLocation': 'Y',
-    'nsis': [
-      'LDN013',
-      'GEN04'
-    ],
+    'nsis': null,
     'outcomes': [
       'ATTC',
       'CO40',
@@ -342,10 +315,7 @@ module.exports = {
   'C242': {
     'description': 'Drug Group Work Session (NS)',
     'requiresLocation': 'Y',
-    'nsis': [
-      'LDN013',
-      'GEN04'
-    ],
+    'nsis': null,
     'outcomes': [
       'ATTC',
       'CO40',
@@ -400,10 +370,7 @@ module.exports = {
   'C240': {
     'description': 'Drug Test (NS)',
     'requiresLocation': 'Y',
-    'nsis': [
-      'GEN04',
-      'APR01'
-    ],
+    'nsis': null,
     'outcomes': [
       'ATTC',
       'CO40',
@@ -456,9 +423,7 @@ module.exports = {
   'C133': {
     'description': 'Clinic Appointment (NS)',
     'requiresLocation': 'B',
-    'nsis': [
-      'GEN04'
-    ],
+    'nsis': null,
     'outcomes': [
       'ATTC',
       'CO40',
@@ -500,10 +465,7 @@ module.exports = {
   'C090': {
     'description': 'Drug Key Worker Session (NS)',
     'requiresLocation': 'Y',
-    'nsis': [
-      'LDN013',
-      'GEN04'
-    ],
+    'nsis': null,
     'outcomes': [
       'ATTC',
       'CO40',
@@ -532,10 +494,7 @@ module.exports = {
   'C089': {
     'description': 'Alcohol Key Worker Session (NS)',
     'requiresLocation': 'Y',
-    'nsis': [
-      'LDN013',
-      'GEN04'
-    ],
+    'nsis': null,
     'outcomes': [
       'ATTC',
       'CO40',
@@ -591,24 +550,10 @@ module.exports = {
     'nsis': [
       'NPS007',
       'LDN014',
-      'GEN02',
-      'GEN04',
-      'GEN08',
-      'LDN012',
       'LDN019',
       'LDN018',
-      'LDN011',
       'LDN010',
-      'LDN016',
-      'LDN013',
-      'LDN017',
       'LDN020',
-      'LDN015',
-      'GEN07',
-      'GEN09',
-      'GEN06',
-      'GEN05',
-      'GEN03',
       'NPS006',
       'NPS011',
       'NPS005',
@@ -616,7 +561,6 @@ module.exports = {
       'NPS010',
       'NPS008',
       'NPS002',
-      'GEN10',
       'GEN01',
       'NPS009',
       'NPS003',
@@ -635,37 +579,20 @@ module.exports = {
     'requiresLocation': 'B',
     'nsis': [
       'NPS006',
-      'GEN09',
-      'GEN06',
-      'GEN03',
-      'GEN02',
-      'GEN04',
-      'GEN10',
-      'GEN05',
-      'GEN08',
       'GEN01',
-      'GEN07',
-      'LDN012',
-      'LDN017',
       'LDN020',
-      'LDN015',
       'LDN014',
       'LDN019',
       'LDN018',
-      'LDN011',
       'LDN010',
-      'LDN016',
-      'LDN013',
       'NPS011',
       'NPS004',
       'NPS002',
-      'RARP',
       'RARP',
       'NPS010',
       'NPS001',
       'NPS008',
       'NPS005',
-      'APCP',
       'NPS003',
       'NPS009',
       'NPS007'
@@ -794,10 +721,8 @@ module.exports = {
     'nsis': [
       'GEN01',
       'NPS009',
-      'APCP',
       'NPS001',
       'NPS005',
-      'RARP',
       'RARP',
       'NPS011',
       'NPS004',
@@ -807,26 +732,11 @@ module.exports = {
       'NPS003',
       'NPS002',
       'NPS008',
-      'LDN012',
       'LDN019',
       'LDN018',
-      'LDN011',
       'LDN010',
-      'LDN016',
-      'LDN013',
-      'LDN017',
       'LDN020',
-      'LDN015',
-      'LDN014',
-      'GEN07',
-      'GEN09',
-      'GEN06',
-      'GEN08',
-      'GEN05',
-      'GEN03',
-      'GEN02',
-      'GEN04',
-      'GEN10'
+      'LDN014'
     ],
     'outcomes': [
       'ATTC',
@@ -859,27 +769,12 @@ module.exports = {
     'requiresLocation': 'N',
     'nsis': [
       'NPS002',
-      'GEN10',
-      'GEN07',
-      'GEN09',
-      'GEN06',
-      'GEN05',
-      'GEN03',
-      'GEN02',
-      'GEN04',
-      'GEN08',
       'GEN01',
-      'LDN017',
       'LDN020',
-      'LDN015',
       'LDN014',
       'LDN019',
       'LDN018',
-      'LDN011',
       'LDN010',
-      'LDN016',
-      'LDN013',
-      'LDN012',
       'NPS010',
       'NPS009',
       'NPS005',
@@ -980,7 +875,7 @@ module.exports = {
     'description': 'Programme Session (NS)',
     'requiresLocation': 'Y',
     'nsis': [
-      'GEN08',
+      'GEN01',
       'NPS003',
       'NPS007',
       'NPS006',
@@ -992,26 +887,11 @@ module.exports = {
       'NPS005',
       'NPS004',
       'NPS001',
-      'LDN012',
       'LDN019',
       'LDN018',
-      'LDN011',
       'LDN010',
-      'LDN016',
-      'LDN013',
-      'LDN017',
       'LDN020',
-      'LDN015',
-      'LDN014',
-      'GEN05',
-      'GEN10',
-      'GEN01',
-      'GEN03',
-      'GEN02',
-      'GEN04',
-      'GEN07',
-      'GEN09',
-      'GEN06'
+      'LDN014'
     ],
     'outcomes': [
       'ATTC',
