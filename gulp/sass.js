@@ -51,5 +51,5 @@ gulp.task('sass-v6', function () {
       ]
     }).on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.paths.public + '/v6/stylesheets/'))
+    .pipe(gulp.dest(config.paths.public + '/prototype/stylesheets/'))
 })

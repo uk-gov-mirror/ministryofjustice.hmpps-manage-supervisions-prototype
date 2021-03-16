@@ -22,7 +22,7 @@ If any pages or routes exist in both apps, the one in version 7 will win.
 
 1. Rename your **app** folder to **v6**
 
-1. Find and replace all instances of **/public/** to **/public/v6/** in your code.
+1. Find and replace all instances of **/public/** to **/public/prototype/** in your code.
 In Atom, press **cmd shift F**. It looks like this:
 ![Screenshot of Atom find and replace](/public/images/docs/backwards-compatibility-atom.png)
 
@@ -32,7 +32,7 @@ In Atom, press **cmd shift F**. It looks like this:
 
 1. Move your **v6** folder into the new **app** folder.
 
-1. Update **app/config.js** to your settings, in particular the **serviceName**. You can then safely remove **app/v6/config.js**.
+1. Update **app/config.js** to your settings, in particular the **serviceName**. You can then safely remove **app/prototype/config.js**.
 
 1. On the command line, in your prototype folder, run **npm install**, then **npm start**.
 
@@ -42,7 +42,7 @@ In Atom, press **cmd shift F**. It looks like this:
 
 You can now create new pages using version 7 by working in the app/views folder.
 
-You can update old pages by moving them from app/v6/views to app/views. You will then need to update the code on these pages to work with version 7. See the [updating your code guide in the GOV.UK Design System](https://design-system.service.gov.uk/get-started/updating-your-code/).
+You can update old pages by moving them from app/prototype/views to app/views. You will then need to update the code on these pages to work with version 7. See the [updating your code guide in the GOV.UK Design System](https://design-system.service.gov.uk/get-started/updating-your-code/).
 
 ## Updating from versions older than 6.3.0
 
