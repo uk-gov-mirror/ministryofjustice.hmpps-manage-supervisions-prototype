@@ -16,31 +16,32 @@
 
       <tbody class="govuk-table__body">
         {% for case in casesData.cases %}
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <a href="{{ case.link }}" class="govuk-link govuk-link--no-visited-state">
-                {{ case.serviceUserPersonalDetails.name }}
-              </a>
-            </td>
-            <td class="govuk-table__cell">
-              <ul>
-                <li class="govuk-!-margin-bottom-1">{{ case.status }}</li>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="{{ case.link }}" class="govuk-link govuk-link--no-visited-state">
+              {{ case.serviceUserPersonalDetails.name }}
+            </a>
+          </td>
+          <td class="govuk-table__cell">
+            <ul>
+              <li class="govuk-!-margin-bottom-1">{{ case.status }}</li>
 
-                {% if case.previousOrderStatus %}
-                  <li class="secondary-text-col">{{ case.previousOrderStatus }}</li>
-                {% endif %}
-              </ul>
-            </td>
-            <td class="govuk-table__cell">{{ case.currentOrder.type }}</td>
-            <td class="govuk-table__cell">{{ case.risk }}</td>
-            <td class="govuk-table__cell">
-              {% if case.nextAppointment %}
-                {{ case.nextAppointment.startTime | dateWithDayAndWithoutYear }} at {{ case.nextAppointment.startTime | govukTime }}
-              {% else %}
-                {{ govukTag({text: 'Unscheduled', classes: 'govuk-tag--grey'}) }}
+              {% if case.previousOrderStatus %}
+              <li class="secondary-text-col">{{ case.previousOrderStatus }}</li>
               {% endif %}
-            </td>
-          </tr>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">{{ case.currentOrder.type }}</td>
+          <td class="govuk-table__cell">{{ case.risk }}</td>
+          <td class="govuk-table__cell">
+            {% if case.nextAppointment %}
+            {{ case.nextAppointment.timestamp | dateWithDayAndWithoutYear }} at {{ case.nextAppointment.timestamp |
+            govukTime }}
+            {% else %}
+            {{ govukTag({text: 'Unscheduled', classes: 'govuk-tag--grey'}) }}
+            {% endif %}
+          </td>
+        </tr>
         {% endfor %}
       </tbody>
 
