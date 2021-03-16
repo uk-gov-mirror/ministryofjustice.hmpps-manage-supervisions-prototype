@@ -31,7 +31,7 @@ Case summary
             Type of session
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session-other'] else data['type-of-session'] }}
+            {{ 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session'] == 'Other' else data['type-of-session'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="session-add-1">

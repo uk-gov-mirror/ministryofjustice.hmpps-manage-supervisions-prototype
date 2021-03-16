@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+<a href="../progress" class="govuk-back-link">Back to Dylan's progress</a>
 {% endblock %}
 
 {% block content %}
@@ -27,7 +27,8 @@ Case summary
           Session arranged
         </h1>
         <div class="govuk-panel__body">
-          <strong>Office visit</strong><br>Wednesday 23 April from 1pm to 2pm
+          <strong>{{ 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session'] == 'Other' else data['type-of-session'] }}</strong><br>
+          {{ data['session-date'] | dateWithDayAndWithoutYear }} from {{ data['session-start-time'] }} to {{ data['session-end-time'] }}
         </div>
       </div>
     </div>
