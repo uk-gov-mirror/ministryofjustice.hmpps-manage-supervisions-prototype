@@ -117,8 +117,8 @@ Case summary
       <div class="govuk-panel govuk-panel--appointment-timeline">
         <div class="govuk-panel__body">
           <strong>
-            {{ case.nextAppointment.startTime | dateWithDayAndWithoutYear }} from<br>
-            {{ case.nextAppointment.startTime | govukTime }} to {{ case.nextAppointment.endTime | govukTime }}
+            {{ case.nextAppointment.timestamp | dateWithDayAndWithoutYear }} from<br>
+            {{ case.nextAppointment.timestamp | govukTime }} to {{ case.nextAppointment.endTime | govukTime }}
           </strong><br>
           {{ case.nextAppointment.type }}<br>
           <br>
