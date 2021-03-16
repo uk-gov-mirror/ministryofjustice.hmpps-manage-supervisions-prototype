@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+session-end-time{% extends "layout.html" %}
 
 {% block pageTitle %}
 Case summary
@@ -23,8 +23,8 @@ Case summary
     <form autocomplete="off" action="session-add-3" method="post" class="form">
       <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
         When would you like to arrange this session?
-      </h1> 
-       
+      </h1>
+
       <!--DYLANS CIRCUMSTANCES-->
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -58,7 +58,7 @@ Case summary
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <input class="govuk-input govuk-date-input__input" type="date" id="date" name="date" value=""
+                <input class="govuk-input govuk-date-input__input" type="date" id="session-date" name="session-date" value="{{ data['session-date'] }}"
                   placeholder="DD/MM/YYYY">
               </div>
         </fieldset>
@@ -67,14 +67,14 @@ Case summary
       <!--autocomplete-->
       <div class="govuk-form-group">
         <div class="autocomplete">
-          <label class="govuk-label govuk-!-font-weight-bold" for="myInput">
+          <label class="govuk-label govuk-!-font-weight-bold" for="session-start-time">
             Time
           </label>
-          <input class="govuk-input govuk-input--width-5" id="myInput" type="text" name="myStartime">
+          <input class="govuk-input govuk-input--width-5" id="session-start-time" type="text" name="session-start-time" value="{{ data['session-start-time'] }}">
           </div>
           <span class="govuk-body" style="margin:0 0.75rem 0 0.75rem;">to</span>
           <div class="autocomplete">
-          <input class="govuk-input govuk-input--width-5" id="myInput-2" type="text" name="myEndtime">
+          <input class="govuk-input govuk-input--width-5" id="session-end-time" type="text" name="session-end-time" value="{{ data['session-end-time'] }}">
         </div>
       </div>
 

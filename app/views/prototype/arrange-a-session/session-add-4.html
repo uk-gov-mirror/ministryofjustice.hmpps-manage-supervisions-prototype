@@ -44,10 +44,10 @@ Case summary
             Date
           </dt>
           <dd class="govuk-summary-list__value">
-            Wednesday 23 April
+            {{ data['session-date'] | dateWithDayAndWithoutYear }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="session-add-2">
               Change<span class="govuk-visually-hidden"> date</span>
             </a>
           </dd>
@@ -57,10 +57,10 @@ Case summary
             Time
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">1pm to 2pm</p>
+            <p class="govuk-body">{{ data['session-start-time'] }} to {{ data['session-end-time'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="session-add-2">
               Change<span class="govuk-visually-hidden"> time</span>
             </a>
           </dd>
