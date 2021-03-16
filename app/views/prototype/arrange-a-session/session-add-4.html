@@ -31,10 +31,10 @@ Case summary
             Type of session
           </dt>
           <dd class="govuk-summary-list__value">
-            Office visit
+            {{ 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session-other'] else data['type-of-session'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="session-add-1">
               Change<span class="govuk-visually-hidden"> type of session</span>
             </a>
           </dd>
