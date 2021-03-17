@@ -38,11 +38,11 @@ Case summary
     </p>
     <p class="govuk-body">
       Give details of the session to {{ case.serviceUserPersonalDetails.firstName }}.<br>
-      {{ case.serviceUserPersonalDetails.firstName }}’s phone number is <strong>07700 900 796</strong>.</p>
+      {{ case.serviceUserPersonalDetails.firstName }}’s phone number is <strong>{{ case.serviceUserPersonalDetails.phone }}</strong>.</p>
 
-    <!--<p class="govuk-body">You may want to send a text message to {{ case.serviceUserPersonalDetails.firstName }}. {{ case.serviceUserPersonalDetails.firstName }}’s phone number is <strong>07700 900 796</strong>. <a href="#">Update phone number</a>.</p>-->
+    <!--<p class="govuk-body">You may want to send a text message to {{ case.serviceUserPersonalDetails.firstName }}. {{ case.serviceUserPersonalDetails.firstName }}’s phone number is <strong>{{ case.serviceUserPersonalDetails.phone }}</strong>. <a href="#">Update phone number</a>.</p>-->
     <!--<p class="govuk-body">The session will be added to your Outlook calendar.</p>
-          <p class="govuk-body">A text message will be sent to {{ case.serviceUserPersonalDetails.firstName }} on <strong>07700 900 796</strong>. <a href="#">Update phone number</a>.</p>-->
+          <p class="govuk-body">A text message will be sent to {{ case.serviceUserPersonalDetails.firstName }} on <strong>{{ case.serviceUserPersonalDetails.phone }}</strong>. <a href="#">Update phone number</a>.</p>-->
     <p class="govuk-body"><a href="../progress">Back to {{ case.serviceUserPersonalDetails.firstName }}’s progress</a></p>
 
 
