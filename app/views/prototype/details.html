@@ -41,10 +41,7 @@ Case summary
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            1 Grey Lane<br>
-            Sheffield<br>
-            South Yorkshire<br>
-            S10 1AG
+            {{ case.serviceUserPersonalDetails.address.join('<br>') | safe }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">

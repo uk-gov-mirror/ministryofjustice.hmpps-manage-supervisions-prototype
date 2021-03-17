@@ -5,7 +5,13 @@ module.exports = {
         'name': 'Dylan Adam Armstrong',
         'firstName': 'Dylan',
         'dateOfBirth': '1984-09-27',
-        'age': 35
+        'age': 35,
+        'address': [
+          '1 Grey Lane',
+          'Sheffield',
+          'South Yorkshire',
+          'S10 1AG'
+        ]
       },
       'PNC': '2012/123400000F',
       'CRN': 'J678910',
