@@ -63,7 +63,7 @@ Case summary
             Phone number
           </dt>
           <dd class="govuk-summary-list__value">
-            07700 900 077
+            {{ case.serviceUserPersonalDetails.phone }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -71,38 +71,37 @@ Case summary
             Email
           </dt>
           <dd class="govuk-summary-list__value">
-            example@example.com
+            {{ case.serviceUserPersonalDetails.email }}
           </dd>
         </div>
       </dl>
     </div>
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    {% for contact in case.personalContacts %}
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">Pippa Wade</h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Relationship to {{ case.serviceUserPersonalDetails.firstName }}
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Mum
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            2 Grey Lane<br>
-            Sheffield<br>
-            South Yorkshire<br>
-            S10 1AG
-          </dd>
-        </div>
-      </dl>
-    </div>
+      <div class="govuk-!-margin-bottom-7">
+        <h2 class="govuk-heading-m">{{ contact.name }}</h2>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Relationship to {{ case.serviceUserPersonalDetails.firstName }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ contact.relationship }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ contact.address.join('<br>') | safe }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    {% endfor %}
 
   </div>
 </div>

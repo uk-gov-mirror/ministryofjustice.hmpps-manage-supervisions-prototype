@@ -49,7 +49,7 @@ Case summary
             Phone number
           </dt>
           <dd class="govuk-summary-list__value">
-            07700 900 077
+            {{ case.serviceUserPersonalDetails.phone }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -57,7 +57,7 @@ Case summary
             Email
           </dt>
           <dd class="govuk-summary-list__value">
-            example@example.com
+            {{ case.serviceUserPersonalDetails.email }}
           </dd>
         </div>
       </dl>
@@ -89,7 +89,7 @@ Case summary
             Aliases
           </dt>
           <dd class="govuk-summary-list__value">
-            Dee
+            {{ case.serviceUserPersonalDetails.aliases.join(', ') }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -97,7 +97,7 @@ Case summary
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            27 September 1984 (35 years old)
+            {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years old)
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -105,7 +105,7 @@ Case summary
             Preferred language
           </dt>
           <dd class="govuk-summary-list__value">
-            English
+            {{ case.serviceUserPersonalDetails.preferredLanguage }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -113,7 +113,7 @@ Case summary
             Disabilities and adjustments
           </dt>
           <dd class="govuk-summary-list__value">
-            Autism spectrum condition
+            {{ case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }}
           </dd>
         </div>
       </dl>
@@ -189,7 +189,7 @@ Case summary
             Employment status
           </dt>
           <dd class="govuk-summary-list__value">
-            Full-time employed
+            {{ case.serviceUserPersonalDetails.circumstances.employment }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -197,7 +197,7 @@ Case summary
             Housing status
           </dt>
           <dd class="govuk-summary-list__value">
-            Living alone
+            {{ case.serviceUserPersonalDetails.circumstances.housingStatus }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -205,7 +205,7 @@ Case summary
             Safeguarding issues
           </dt>
           <dd class="govuk-summary-list__value">
-            None
+            {{ case.serviceUserPersonalDetails.circumstances.safeguardingIssues.join(', ') or 'None' }}
           </dd>
         </div>
       </dl>

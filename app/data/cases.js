@@ -11,8 +11,30 @@ module.exports = {
           'Sheffield',
           'South Yorkshire',
           'S10 1AG'
-        ]
+        ],
+        'phone': '07700 900 077',
+        'email': 'example@example.com',
+        'aliases': ['Dee'],
+        'preferredLanguage': 'English',
+        'disabilitiesAndAdjustments': ['Autism spectrum condition'],
+        'circumstances': {
+          'employment': 'Full-time employed',
+          'housingStatus': 'Living alone',
+          'safeguardingIssues': []
+        }
       },
+      'personalContacts': [
+        {
+          'name': 'Pippa Wade',
+          'relationship': 'Mum',
+          'address': [
+            '2 Grey Lane',
+            'Sheffield',
+            'South Yorkshire',
+            'S10 1AG'
+          ]
+        }
+      ],
       'PNC': '2012/123400000F',
       'CRN': 'J678910',
       'currentOrder': {
