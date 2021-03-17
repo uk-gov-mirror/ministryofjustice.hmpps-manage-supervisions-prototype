@@ -41,7 +41,7 @@ Case summary
         Aliases
       </dt>
       <dd class="govuk-summary-list__value">
-        Dee
+        {{ case.serviceUserPersonalDetails.aliases.join(', ') }}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -49,7 +49,7 @@ Case summary
         Date of birth
       </dt>
       <dd class="govuk-summary-list__value">
-        27 September 1984 (35 years old)
+        {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years old)
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -57,7 +57,7 @@ Case summary
         Preferred language
       </dt>
       <dd class="govuk-summary-list__value">
-        English
+        {{ case.serviceUserPersonalDetails.preferredLanguage }}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -65,7 +65,7 @@ Case summary
         Disabilities and adjustments
       </dt>
       <dd class="govuk-summary-list__value">
-        Autism spectrum condition
+        {{ case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -73,7 +73,7 @@ Case summary
         Nationality
       </dt>
       <dd class="govuk-summary-list__value">
-        British
+        {{ case.serviceUserPersonalDetails.nationality }}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -81,7 +81,7 @@ Case summary
         Ethnicity
       </dt>
       <dd class="govuk-summary-list__value">
-        White: British
+        {{ case.serviceUserPersonalDetails.ethnicity }}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -89,7 +89,7 @@ Case summary
         Religion or belief
       </dt>
       <dd class="govuk-summary-list__value">
-        None
+        {{ case.serviceUserPersonalDetails.religion }}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -97,7 +97,7 @@ Case summary
         Gender
       </dt>
       <dd class="govuk-summary-list__value">
-        Male
+        {{ case.serviceUserPersonalDetails.gender }}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -105,14 +105,10 @@ Case summary
         Sexual orientation
       </dt>
       <dd class="govuk-summary-list__value">
-        Heterosexual
+        {{ case.serviceUserPersonalDetails.sexualOrientation }}
       </dd>
     </div>
   </dl>
-</div>
-
-</div>
-
 </div>
 
 {% endblock %}

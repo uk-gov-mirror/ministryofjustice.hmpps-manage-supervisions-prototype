@@ -16,6 +16,11 @@ module.exports = {
         'email': 'example@example.com',
         'aliases': ['Dee'],
         'preferredLanguage': 'English',
+        'nationality': 'British',
+        'ethnicity': 'White: British',
+        'religion': 'None',
+        'gender': 'Male',
+        'sexualOrientation': 'Heterosexual',
         'disabilitiesAndAdjustments': ['Autism spectrum condition'],
         'circumstances': {
           'employment': 'Full-time employed',
