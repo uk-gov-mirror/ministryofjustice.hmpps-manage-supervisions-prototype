@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
+<a href="timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}'s previous sessions</a>
 {% endblock %}
 
 {% block content %}
@@ -26,7 +26,7 @@ Case summary
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h2 class="govuk-fieldset__heading">
-              Did Dylan comply?
+              Did {{ case.serviceUserPersonalDetails.firstName }} comply?
             </h2>
           </legend>
           <div class="govuk-radios govuk-radios">
@@ -45,7 +45,7 @@ Case summary
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="over18-absent" name="comply" type="radio">
               <label class="govuk-label govuk-radios__label" for="comply-absent">
-                Dylan was absent
+                {{ case.serviceUserPersonalDetails.firstName }} was absent
               </label>
             </div>
           </div>

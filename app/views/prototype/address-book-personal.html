@@ -13,14 +13,14 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="details" class="govuk-back-link">Back to Dylan's details</a>
+<a href="details" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}'s details</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's address book</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}'s address book</h1>
   </div>
 </div>
 
@@ -47,7 +47,7 @@ Case summary
 
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
-        Dylan's contact details
+        {{ case.serviceUserPersonalDetails.firstName }}'s contact details
       </h2>
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
@@ -87,7 +87,7 @@ Case summary
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Relationship to Dylan
+            Relationship to {{ case.serviceUserPersonalDetails.firstName }}
           </dt>
           <dd class="govuk-summary-list__value">
             Mum

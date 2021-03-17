@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="timeline" class="govuk-back-link">Back to Dylan's previous sessions</a>
+<a href="timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}'s previous sessions</a>
 {% endblock %}
 
 {% block content %}
@@ -27,7 +27,7 @@ Case summary
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              How did Dylan not comply?
+              How did {{ case.serviceUserPersonalDetails.firstName }} not comply?
             </h1>
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">

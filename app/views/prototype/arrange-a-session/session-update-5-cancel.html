@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+<a href="progress" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}'s progress</a>
 {% endblock %}
 
 {% block content %}
@@ -31,7 +31,7 @@ Case summary
             Reason for cancelling
           </dt>
           <dd class="govuk-summary-list__value">
-            Dylan's work shift has changed
+            {{ case.serviceUserPersonalDetails.firstName }}'s work shift has changed
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">

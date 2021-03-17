@@ -13,14 +13,14 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="details" class="govuk-back-link">Back to Dylan's details</a>
+<a href="details" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}'s details</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's address book</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}'s address book</h1>
   </div>
 </div>
 

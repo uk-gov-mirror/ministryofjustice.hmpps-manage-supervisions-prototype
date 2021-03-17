@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+<a href="progress" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}'s progress</a>
 {% endblock %}
 
 {% block content %}
@@ -37,13 +37,13 @@ Case summary
       Remove this session from your calendar.
     </p>
     <p class="govuk-body">
-      Let Dylan know.<br>
-      Dylan's phone number is <strong>07700 900 796</strong>.</p>
+      Let {{ case.serviceUserPersonalDetails.firstName }} know.<br>
+      {{ case.serviceUserPersonalDetails.firstName }}'s phone number is <strong>07700 900 796</strong>.</p>
 
-    <!--<p class="govuk-body">You may want to send a text message to Dylan. Dylan's phone number is <strong>07700 900 796</strong>. <a href="#">Update phone number</a>.</p>-->
+    <!--<p class="govuk-body">You may want to send a text message to {{ case.serviceUserPersonalDetails.firstName }}. {{ case.serviceUserPersonalDetails.firstName }}'s phone number is <strong>07700 900 796</strong>. <a href="#">Update phone number</a>.</p>-->
     <!--<p class="govuk-body">The session will be added to your Outlook calendar.</p>
-          <p class="govuk-body">A text message will be sent to Dylan on <strong>07700 900 796</strong>. <a href="#">Update phone number</a>.</p>-->
-    <p class="govuk-body"><a href="../progress">Back to Dylan's progress</a></p>
+          <p class="govuk-body">A text message will be sent to {{ case.serviceUserPersonalDetails.firstName }} on <strong>07700 900 796</strong>. <a href="#">Update phone number</a>.</p>-->
+    <p class="govuk-body"><a href="../progress">Back to {{ case.serviceUserPersonalDetails.firstName }}'s progress</a></p>
 
 
 

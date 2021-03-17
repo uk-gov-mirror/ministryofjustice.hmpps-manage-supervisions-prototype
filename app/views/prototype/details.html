@@ -23,7 +23,7 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's details</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}'s details</h1>
   </div>
 </div>
 
@@ -82,7 +82,7 @@ Case summary
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Dylan Adam Armstrong
+            {{ case.serviceUserPersonalDetails.name }}
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
