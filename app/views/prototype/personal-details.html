@@ -25,90 +25,55 @@ Case summary
 </div>
 
 <div class="govuk-!-margin-bottom-7">
-  <dl class="govuk-summary-list govuk-summary-list--no-border">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.name }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Aliases
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.aliases.join(', ') }}
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years old)
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Preferred language
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.preferredLanguage }}
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Disabilities and adjustments
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }}
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Nationality
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.nationality }}
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Ethnicity
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.ethnicity }}
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Religion or belief
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.religion }}
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Gender
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.gender }}
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Sexual orientation
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ case.serviceUserPersonalDetails.sexualOrientation }}
-      </dd>
-    </div>
-  </dl>
+  {% set dateOfBirthAndAge %}
+    {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years old)
+  {% endset %}
+
+  {{ govukSummaryList({
+    classes: 'govuk-summary-list--no-border',
+    rows: [
+      {
+        key: { text: "Name" },
+        value: { text: case.serviceUserPersonalDetails.name }
+      },
+      {
+        key: { text: "Aliases" },
+        value: { text: case.serviceUserPersonalDetails.aliases.join(', ') }
+      },
+      {
+        key: { text: "Date of birth" },
+        value: { text: dateOfBirthAndAge }
+      },
+      {
+        key: { text: "Preferred language" },
+        value: { text: case.serviceUserPersonalDetails.preferredLanguage }
+      },
+      {
+        key: { text: "Disabilities and adjustments" },
+        value: { text: case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }
+      },
+      {
+        key: { text: "Nationality" },
+        value: { text: case.serviceUserPersonalDetails.nationality }
+      },
+      {
+        key: { text: "Ethnicity" },
+        value: { text: case.serviceUserPersonalDetails.ethnicity }
+      },
+      {
+        key: { text: "Religion or belief" },
+        value: { text: case.serviceUserPersonalDetails.religion }
+      },
+      {
+        key: { text: "Gender" },
+        value: { text: case.serviceUserPersonalDetails.gender }
+      },
+      {
+        key: { text: "Sexual orientation" },
+        value: { text: case.serviceUserPersonalDetails.sexualOrientation }
+      }
+    ]
+  }) }}
 </div>
 
 {% endblock %}

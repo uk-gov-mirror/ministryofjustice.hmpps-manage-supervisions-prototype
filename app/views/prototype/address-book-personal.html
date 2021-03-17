@@ -49,32 +49,24 @@ Case summary
       <h2 class="govuk-heading-m">
         {{ case.serviceUserPersonalDetails.firstName }}’s contact details
       </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ case.serviceUserPersonalDetails.address.join('<br>') | safe }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ case.serviceUserPersonalDetails.phone }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ case.serviceUserPersonalDetails.email }}
-          </dd>
-        </div>
-      </dl>
+
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: { text: "Address" },
+            value: { html: case.serviceUserPersonalDetails.address.join('<br>') }
+          },
+          {
+            key: { text: "Phone number" },
+            value: { text: case.serviceUserPersonalDetails.phone }
+          },
+          {
+            key: { text: "Email" },
+            value: { text: case.serviceUserPersonalDetails.email }
+          }
+        ]
+      }) }}
     </div>
 
     {% for contact in case.personalContacts %}
@@ -82,24 +74,20 @@ Case summary
 
       <div class="govuk-!-margin-bottom-7">
         <h2 class="govuk-heading-m">{{ contact.name }}</h2>
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Relationship to {{ case.serviceUserPersonalDetails.firstName }}
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ contact.relationship }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ contact.address.join('<br>') | safe }}
-            </dd>
-          </div>
-        </dl>
+
+        {{ govukSummaryList({
+          classes: 'govuk-summary-list--no-border',
+          rows: [
+            {
+              key: { text: "Relationship to " + case.serviceUserPersonalDetails.firstName },
+              value: { text: contact.relationship }
+            },
+            {
+              key: { text: "Address" },
+              value: { html: contact.address.join('<br>') }
+            }
+          ]
+        }) }}
       </div>
     {% endfor %}
 

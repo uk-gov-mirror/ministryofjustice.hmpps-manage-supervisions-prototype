@@ -51,56 +51,36 @@ Case summary
 
       <div class="govuk-!-margin-bottom-7">
         <h2 class="govuk-heading-m">{{ contact.name }}</h2>
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Phone number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ contact.phone }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Email
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ contact.email }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Provider
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ contact.provider }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Local Delivery Unit (LDU)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ contact.localDeliveryUnit }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Team
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ contact.team }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Allocated until
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ contact.allocatedUntilDate | dateWithYear }}
-            </dd>
-          </div>
-        </dl>
+
+        {{ govukSummaryList({
+          classes: 'govuk-summary-list--no-border',
+          rows: [
+            {
+              key: { text: "Phone number" },
+              value: { text: contact.phone }
+            },
+            {
+              key: { text: "Email" },
+              value: { text: contact.email }
+            },
+            {
+              key: { text: "Provider" },
+              value: { text: contact.provider }
+            },
+            {
+              key: { text: "Local Delivery Unit (LDU)" },
+              value: { text: contact.localDeliveryUnit }
+            },
+            {
+              key: { text: "Team" },
+              value: { text: contact.team }
+            },
+            {
+              key: { text: "Allocated until" },
+              value: { text: contact.allocatedUntilDate | dateWithYear }
+            }
+          ]
+        }) }}
       </div>
     {% endfor %}
 
