@@ -44,59 +44,65 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">Gary Millar</h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            0114 123 0000
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email
-          </dt>
-          <dd class="govuk-summary-list__value">
-            example@example.com
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Provider
-          </dt>
-          <dd class="govuk-summary-list__value">
-            CPA South Yorkshire
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Local Delivery Unit (LDU)
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Rotherham
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Team
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Rotherham LMC
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Allocated until
-          </dt>
-          <dd class="govuk-summary-list__value">
-            19 November 2019
-          </dd>
-        </div>
-      </dl>
-    </div>
+    {% set hr = joiner('<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">') %}
+
+    {% for contact in case.professionalContacts %}
+      {{ hr() | safe }}
+
+      <div class="govuk-!-margin-bottom-7">
+        <h2 class="govuk-heading-m">{{ contact.name }}</h2>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ contact.phone }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ contact.email }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ contact.provider }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Local Delivery Unit (LDU)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ contact.localDeliveryUnit }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Team
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ contact.team }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Allocated until
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ contact.allocatedUntilDate | dateWithYear }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    {% endfor %}
 
   </div>
 </div>

@@ -40,6 +40,17 @@ module.exports = {
           ]
         }
       ],
+      'professionalContacts': [
+        {
+          'name': 'Gary Millar',
+          'phone': '0114 123 0000',
+          'email': 'example@example.com',
+          'provider': 'CPA South Yorkshire',
+          'localDeliveryUnit': 'Rotherham',
+          'team': 'Rotherham LMC',
+          'allocatedUntilDate': '2019-11-19'
+        }
+      ],
       'PNC': '2012/123400000F',
       'CRN': 'J678910',
       'currentOrder': {
