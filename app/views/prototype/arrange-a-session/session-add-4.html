@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+<a href="../progress" class="govuk-back-link">Back to Dylan's progress</a>
 {% endblock %}
 
 {% block content %}
@@ -31,10 +31,10 @@ Case summary
             Type of session
           </dt>
           <dd class="govuk-summary-list__value">
-            Office visit
+            {{ 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session'] == 'Other' else data['type-of-session'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="session-add-1">
               Change<span class="govuk-visually-hidden"> type of session</span>
             </a>
           </dd>
@@ -44,10 +44,10 @@ Case summary
             Date
           </dt>
           <dd class="govuk-summary-list__value">
-            Wednesday 23 April
+            {{ data['session-date'] | dateWithDayAndWithoutYear }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="session-add-2">
               Change<span class="govuk-visually-hidden"> date</span>
             </a>
           </dd>
@@ -57,36 +57,52 @@ Case summary
             Time
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">1pm to 2pm</p>
+            <p class="govuk-body">{{ data['session-start-time'] }} to {{ data['session-end-time'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="session-add-2">
               Change<span class="govuk-visually-hidden"> time</span>
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            RAR activity
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Thinking skills, attitudes and behaviour
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> RAR activity</span>
-            </a>
-          </dd>
-        </div>
+        {% if data['session-counts-towards-rar'] == 'Yes' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              RAR activity
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['session-rar-category'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="session-add-3">
+                Change<span class="govuk-visually-hidden"> RAR activity</span>
+              </a>
+            </dd>
+          </div>
+        {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Counts towards RAR?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['session-counts-towards-rar'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="session-add-3">
+                Change<span class="govuk-visually-hidden"> RAR activity</span>
+              </a>
+            </dd>
+          </div>
+        {% endif %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Calendar note
           </dt>
           <dd class="govuk-summary-list__value">
-            None
+            {{ data['session-notes'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="session-add-3">
               Change<span class="govuk-visually-hidden"> calendar note</span>
             </a>
           </dd>

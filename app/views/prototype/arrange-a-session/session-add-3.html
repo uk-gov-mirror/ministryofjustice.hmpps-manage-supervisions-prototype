@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+<a href="../progress" class="govuk-back-link">Back to Dylan's progress</a>
 {% endblock %}
 
 {% block content %}
@@ -22,127 +22,102 @@ Case summary
     <div class="govuk-grid-column-two-thirds">
 
         <form action="session-add-4" method="post" class="form">
+          {% set rarCategoryHtml %}
+            {{ govukRadios({
+                 fieldset: {
+                   legend: {
+                     text: "What will this session count towards?",
+                     classes: 'govuk-!-font-weight-bold'
+                   }
+                 },
+                 name: 'session-rar-category',
+                 items: [
+                   {
+                     text: "Employment, Training and Education",
+                     value: 'Employment, Training and Education',
+                     checked: checked("session-rar-category", "Employment, Training and Education")
+                   },
+                   {
+                     text: "Wellbeing – both physical and mental",
+                     value: 'Wellbeing – both physical and mental',
+                     checked: checked("session-rar-category", "Wellbeing – both physical and mental")
+                   },
+                   {
+                     text: "Finance, benefit and debt",
+                     value: 'Finance, benefit and debt',
+                     checked: checked("session-rar-category", "Finance, benefit and debt")
+                   },
+                   {
+                     text: "Relationships",
+                     value: 'Relationships',
+                     checked: checked("session-rar-category", "Relationships")
+                   },
+                   {
+                     text: "Restorative Justice Interventions",
+                     value: 'Restorative Justice Interventions',
+                     checked: checked("session-rar-category", "Restorative Justice Interventions")
+                   },
+                   {
+                     text: "Substance Misuse",
+                     value: 'Substance Misuse',
+                     checked: checked("session-rar-category", "Substance Misuse")
+                   },
+                   {
+                     text: "Alcohol Treatment Requirements or Mental Health Treatment Requirements",
+                     value: 'Alcohol Treatment Requirements or Mental Health Treatment Requirements',
+                     checked: checked("session-rar-category", "Alcohol Treatment Requirements or Mental Health Treatment Requirements")
+                   },
+                   {
+                     text: "Thinking skills, attitudes and behaviour",
+                     value: 'Thinking skills, attitudes and behaviour',
+                     checked: checked("session-rar-category", "Thinking skills, attitudes and behaviour")
+                   }
+                 ]
+                 }) }}
+          {% endset %}
 
-          <!--COMPLETED RAR DAYS-->
-          <!---
-          <details class="govuk-details" data-module="govuk-details" style="margin-top:5px;">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Dylan's completed RAR days
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <table class="govuk-table">
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Relationships</th>
-                    <td class="govuk-table__cell">2 days</td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Thinking skills, attitudes and behaviour
-                    </th>
-                    <td class="govuk-table__cell">4 days</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </details>-->
+          {{ govukRadios({
+               fieldset: {
+                 legend: {
+                   text: "Would you like this to count towards RAR?",
+                   classes: "govuk-label--l"
+                 }
+               },
+               hint: {
+                 html: 'This will account for one day of Rehabilitation Activity Requirement (RAR).'
+               },
+               name: 'session-counts-towards-rar',
+               items: [
+                 {
+                   text: 'Yes',
+                   value: 'Yes',
+                   checked: checked('session-counts-towards-rar', 'Yes'),
+                   conditional: {
+                     html: rarCategoryHtml
+                   }
+                 },
+                 {
+                   text: 'No',
+                   value: 'No',
+                   checked: checked('session-counts-towards-rar', 'No')
+                 }
+               ]
+               }) }}
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Would you like this to count towards RAR?
-                </h1>
-              </legend>
-                <div id="event-name-hint" class="govuk-hint">
-                  This will account for one day of Rehabilitation Activity Requirement (RAR).
-                </div>
-             
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                  <label class="govuk-label govuk-radios__label" for="contact-2">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-                      <div class="govuk-radios">
-                        <p class="govuk-body"><strong>What will this session count towards?</strong></p>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-                          <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                            Employment, Training and Education
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                            Wellbeing – both physical and mental
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
-                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                            Finance, benefit and debt
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
-                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-                            Relationships
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="where-do-you-live-5" name="where-do-you-live" type="radio" value="northern-ireland">
-                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
-                            Restorative Justice Interventions
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="where-do-you-live-6" name="where-do-you-live" type="radio" value="northern-ireland">
-                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
-                            Substance Misuse
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="where-do-you-live-7" name="where-do-you-live" type="radio" value="northern-ireland">
-                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-7">
-                            Alcohol Treatment Requirements or Mental Health Treatment Requirements
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="where-do-you-live-8" name="where-do-you-live" type="radio" value="northern-ireland">
-                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-8">
-                            Thinking skills, attitudes and behaviour
-                          </label>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-                    <label class="govuk-label govuk-radios__label" for="contact">
-                      No
-                    </label>
-                  </div>
-              </div>
-            </fieldset>
-          </div>
+           {{ govukTextarea({
+                label: {
+                  text: 'Add a calendar note (optional)',
+                  classes: 'govuk-label--l'
+                },
+                name: 'session-notes',
+                value: data['session-notes'] 
+              }) }}
 
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--l" for="more-detail">
-              Add a calendar note (optional)
-            </label>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="4" aria-describedby="more-detail-hint"></textarea> 
-            </div>
 
-            <button class="govuk-button send-message">
-                Save and continue
-            </button>
+
+           {{ govukButton({
+             text: "Save and continue"
+           }) }}
         </form>
     </div>
 </div>

@@ -95,18 +95,16 @@ function autocomplete (inp, arr) {
   })
 }
 
-/* An array containing all the country names in the world: */
 var times = [
-  '9:00am', '9:15am', '9:30am', '9:45am', '10:00am', '10:15am', '10:30am', '10:45am',
-  '11:00am', '11:15am', '11:30am', '11:45am', '12:00pm', '12:15pm', '12:30pm', '12:45pm',
-  '1:00pm', '1:15pm', '1:30pm', '1:45pm', '2:00pm', '2:15pm', '2:30pm', '2:45pm',
-  '3:00pm', '3:15pm', '3:30pm', '3:45pm', '4:00pm', '4:15pm', '4:30pm', '4:45pm'
+  '9am', '9:15am', '9:30am', '9:45am', '10am', '10:15am', '10:30am', '10:45am',
+  '11am', '11:15am', '11:30am', '11:45am', '12pm', '12:15pm', '12:30pm', '12:45pm',
+  '1pm', '1:15pm', '1:30pm', '1:45pm', '2pm', '2:15pm', '2:30pm', '2:45pm',
+  '3pm', '3:15pm', '3:30pm', '3:45pm', '4pm', '4:15pm', '4:30pm', '4:45pm'
 ]
 
-/* initiate the autocomplete function on the "myInput" element, and pass along the times array as possible autocomplete values: */
-if (document.getElementById('myInput')) {
-  autocomplete(document.getElementById('myInput'), times)
+if (document.getElementById('session-start-time')) {
+  autocomplete(document.getElementById('session-start-time'), times)
 }
-if (document.getElementById('myInput-2')) {
-  autocomplete(document.getElementById('myInput-2'), times)
+if (document.getElementById('session-end-time')) {
+  autocomplete(document.getElementById('session-end-time'), times)
 }
