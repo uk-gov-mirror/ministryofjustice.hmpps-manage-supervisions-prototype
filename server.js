@@ -27,13 +27,13 @@ const helpers = require('./lib/helpers.js')
 const extensions = require('./lib/extensions/extensions.js')
 
 // Variables for v6 backwards compatibility
-// Set false by default, then turn on if we find /app/v6/routes.js
+// Set false by default, then turn on if we find /app/prototype/routes.js
 var useV6 = false
 var v6App
 var v6Routes
 
 try {
-  v6Routes = require('./app/v6/routes.js')
+  v6Routes = require('./app/prototype/routes.js')
   useV6 = true
 } catch (e) {
   // No routes.js in app/v6 so we can continue with useV6 false
@@ -43,7 +43,7 @@ const app = express()
 const documentationApp = express()
 
 if (useV6) {
-  console.log('/app/v6/routes.js detected - using v6 compatibility mode')
+  console.log('/app/prototype/routes.js detected - using v6 compatibility mode')
   v6App = express()
 }
 
@@ -143,7 +143,7 @@ app.use(bodyParser.urlencoded({
 if (useV6) {
   var v6Views = [
     path.join(__dirname, '/node_modules/govuk_template_jinja/views/layouts'),
-    path.join(__dirname, '/app/v6/views/'),
+    path.join(__dirname, '/app/prototype/views/'),
     path.join(__dirname, '/lib/v6') // for old unbranded template
   ]
   nunjucksConfig.express = v6App
@@ -156,9 +156,9 @@ if (useV6) {
   v6App.set('view engine', 'html')
 
   // Backward compatibility with GOV.UK Elements
-  app.use('/public/v6/', express.static(path.join(__dirname, '/node_modules/govuk_template_jinja/assets')))
-  app.use('/public/v6/', express.static(path.join(__dirname, '/node_modules/govuk_frontend_toolkit')))
-  app.use('/public/v6/javascripts/govuk/', express.static(path.join(__dirname, '/node_modules/govuk_frontend_toolkit/javascripts/govuk/')))
+  app.use('/public/prototype/', express.static(path.join(__dirname, '/node_modules/govuk_template_jinja/assets')))
+  app.use('/public/prototype/', express.static(path.join(__dirname, '/node_modules/govuk_frontend_toolkit')))
+  app.use('/public/prototype/javascripts/govuk/', express.static(path.join(__dirname, '/node_modules/govuk_frontend_toolkit/javascripts/govuk/')))
 }
 
 // Add global variable to determine if DoNotTrack is enabled.
@@ -286,7 +286,7 @@ if (useDocumentation) {
 if (useV6) {
   // Clone app locals to v6 app locals
   v6App.locals = Object.assign({}, app.locals)
-  v6App.locals.asset_path = '/public/v6/'
+  v6App.locals.asset_path = '/public/prototype/'
 
   // Create separate router for v6
   app.use('/', v6App)

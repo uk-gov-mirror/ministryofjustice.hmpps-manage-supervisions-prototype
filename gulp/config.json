@@ -3,7 +3,7 @@
     "public": "public/",
     "assets" : "app/assets/",
     "docsAssets" : "docs/assets/",
-    "v6Assets": "app/v6/assets/",
+    "v6Assets": "app/prototype/assets/",
     "nodeModules": "node_modules/",
     "lib": "lib/"
   }

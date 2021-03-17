@@ -6,70 +6,70 @@ const router = express.Router()
 // Branching
 
 //  Iteration 6
-router.post('/v6/confirm-attendance/attendance-add-4', function (req, res) {
+router.post('/prototype/confirm-attendance/attendance-add-4', function (req, res) {
   let complybranch = req.session.data['comply']
 
   if (complybranch === 'false') {
-    res.redirect('/v6/confirm-attendance/attendance-add-4')
+    res.redirect('/prototype/confirm-attendance/attendance-add-4')
   }
   if (complybranch === 'true') {
-    res.redirect('/v6/confirm-attendance/attendance-add-6')
+    res.redirect('/prototype/confirm-attendance/attendance-add-6')
   } else {
-    res.redirect('/v6/confirm-attendance/attendance-add-5')
+    res.redirect('/prototype/confirm-attendance/attendance-add-5')
   }
 })
 
-router.post('/v6/confirm-attendance/attendance-add-7', function (req, res) {
+router.post('/prototype/confirm-attendance/attendance-add-7', function (req, res) {
   let sessionnotes = req.session.data['session-notes']
 
   if (sessionnotes === 'true') {
-    res.redirect('/v6/confirm-attendance/attendance-add-7')
+    res.redirect('/prototype/confirm-attendance/attendance-add-7')
   } else {
-    res.redirect('/v6/confirm-attendance/attendance-add-8')
+    res.redirect('/prototype/confirm-attendance/attendance-add-8')
   }
 })
 
 //  Iteration 6 - version b - Remove RAR
-router.post('/v6/confirm-attendance/attendance-add-4b', function (req, res) {
+router.post('/prototype/confirm-attendance/attendance-add-4b', function (req, res) {
   let complybranch = req.session.data['comply']
 
   if (complybranch === 'false') {
-    res.redirect('/v6/confirm-attendance/attendance-add-4b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-4b')
   }
   if (complybranch === 'true') {
-    res.redirect('/v6/confirm-attendance/attendance-add-6b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-6b')
   } else {
-    res.redirect('/v6/confirm-attendance/attendance-add-5b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-5b')
   }
 })
 
-router.post('/v6/confirm-attendance/attendance-add-7b', function (req, res) {
+router.post('/prototype/confirm-attendance/attendance-add-7b', function (req, res) {
   let sessionnotes = req.session.data['session-notes']
 
   if (sessionnotes === 'true') {
-    res.redirect('/v6/confirm-attendance/attendance-add-7b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-7b')
   } else {
-    res.redirect('/v6/confirm-attendance/attendance-add-8b-remove-RAR')
+    res.redirect('/prototype/confirm-attendance/attendance-add-8b-remove-RAR')
   }
 })
 
-router.post('/v6/confirm-attendance/attendance-add-7', function (req, res) {
+router.post('/prototype/confirm-attendance/attendance-add-7', function (req, res) {
   let sessionnotes = req.session.data['session-notes']
 
   if (sessionnotes === 'true') {
-    res.redirect('/v6/confirm-attendance/attendance-add-7b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-7b')
   } else {
-    res.redirect('/v6/confirm-attendance/attendance-add-8b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-8b')
   }
 })
 
-router.post('/v6/arrange-a-session/session-update-2', function (req, res) {
+router.post('/prototype/arrange-a-session/session-update-2', function (req, res) {
   let rearrangesession = req.session.data['rearrange-session']
 
   if (rearrangesession === 'true') {
-    res.redirect('/v6/arrange-a-session/session-update-2')
+    res.redirect('/prototype/arrange-a-session/session-update-2')
   } else {
-    res.redirect('/v6/arrange-a-session/session-update-5-cancel')
+    res.redirect('/prototype/arrange-a-session/session-update-5-cancel')
   }
 })
 
