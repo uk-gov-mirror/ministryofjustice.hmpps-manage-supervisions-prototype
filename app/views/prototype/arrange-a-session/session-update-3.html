@@ -24,27 +24,25 @@ Case summary
       When would you like to arrange this session?
     </h1>
 
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          {{ case.serviceUserPersonalDetails.firstName }}’s circumstances
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body">
-          <strong>Preferred language</strong><br>
-          English
-        </p>
-        <p class="govuk-body">
-          <strong>Disabilities and adjustments</strong><br>
-          Autism spectrum condition
-        </p>
-        <p class="govuk-body">
-          <strong>Employment status</strong><br>
-          Full-time employed
-        </p>
-      </div>
-    </details>
+    {% set circumstancesHTML %}
+      <p class="govuk-body">
+        <strong>Preferred language</strong><br>
+        {{ case.serviceUserPersonalDetails.preferredLanguage }}
+      </p>
+      <p class="govuk-body">
+        <strong>Disabilities and adjustments</strong><br>
+        {{ case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }}
+      </p>
+      <p class="govuk-body">
+        <strong>Employment status</strong><br>
+        {{ case.serviceUserPersonalDetails.circumstances.employment }}
+      </p>
+    {% endset %}
+
+    {{ govukDetails({
+      summaryText: case.serviceUserPersonalDetails.firstName + "’s circumstances",
+      html: circumstancesHTML
+    }) }}
 
     <form action="session-update-4" method="post" class="form">
 
