@@ -22,6 +22,26 @@ Case summary
     <div class="govuk-grid-column-two-thirds">
 
         <form action="session-add-4" method="post" class="form">
+          {% set rarCategories = [
+            'Employment, Training and Education',
+            'Wellbeing – both physical and mental',
+            'Finance, benefit and debt',
+            'Relationships',
+            'Restorative Justice Interventions',
+            'Substance Misuse',
+            'Alcohol Treatment Requirements or Mental Health Treatment Requirements',
+            'Thinking skills, attitudes and behaviour'
+          ] %}
+
+          {% set rarRadioItems = [] %}
+          {% for rarCategory in rarCategories %}
+            {% set rarRadioItems = (rarRadioItems.push({
+              text: rarCategory,
+              value: rarCategory,
+              checked: checked("session-rar-category", rarCategory)
+            }), rarRadioItems) %}
+          {% endfor %}
+
           {% set rarCategoryHtml %}
             {{ govukRadios({
                  fieldset: {
@@ -31,48 +51,7 @@ Case summary
                    }
                  },
                  name: 'session-rar-category',
-                 items: [
-                   {
-                     text: "Employment, Training and Education",
-                     value: 'Employment, Training and Education',
-                     checked: checked("session-rar-category", "Employment, Training and Education")
-                   },
-                   {
-                     text: "Wellbeing – both physical and mental",
-                     value: 'Wellbeing – both physical and mental',
-                     checked: checked("session-rar-category", "Wellbeing – both physical and mental")
-                   },
-                   {
-                     text: "Finance, benefit and debt",
-                     value: 'Finance, benefit and debt',
-                     checked: checked("session-rar-category", "Finance, benefit and debt")
-                   },
-                   {
-                     text: "Relationships",
-                     value: 'Relationships',
-                     checked: checked("session-rar-category", "Relationships")
-                   },
-                   {
-                     text: "Restorative Justice Interventions",
-                     value: 'Restorative Justice Interventions',
-                     checked: checked("session-rar-category", "Restorative Justice Interventions")
-                   },
-                   {
-                     text: "Substance Misuse",
-                     value: 'Substance Misuse',
-                     checked: checked("session-rar-category", "Substance Misuse")
-                   },
-                   {
-                     text: "Alcohol Treatment Requirements or Mental Health Treatment Requirements",
-                     value: 'Alcohol Treatment Requirements or Mental Health Treatment Requirements',
-                     checked: checked("session-rar-category", "Alcohol Treatment Requirements or Mental Health Treatment Requirements")
-                   },
-                   {
-                     text: "Thinking skills, attitudes and behaviour",
-                     value: 'Thinking skills, attitudes and behaviour',
-                     checked: checked("session-rar-category", "Thinking skills, attitudes and behaviour")
-                   }
-                 ]
+                 items: rarRadioItems
                  }) }}
           {% endset %}
 
@@ -110,7 +89,7 @@ Case summary
                   classes: 'govuk-label--l'
                 },
                 name: 'session-notes',
-                value: data['session-notes'] 
+                value: data['session-notes']
               }) }}
 
 
