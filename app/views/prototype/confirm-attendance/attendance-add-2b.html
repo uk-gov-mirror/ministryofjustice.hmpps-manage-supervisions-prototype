@@ -18,33 +18,35 @@ Case summary
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="attendance-add-7" method="post" class="form">
+    <form action="attendance-add-3b" method="post" class="form">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h2 class="govuk-fieldset__heading">
-              Would you like to add notes about this session?
+              Did {{ case.serviceUserPersonalDetails.firstName }} comply?
             </h2>
-            <div id="event-name-hint" class="govuk-hint" style="margin-top:5px ;">
-              Notes can also be added later
-            </div>
           </legend>
           <div class="govuk-radios govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="session-notes-yes" name="session-notes" type="radio" value="true">
-              <label class="govuk-label govuk-radios__label" for="session-notes-yes">
+              <input class="govuk-radios__input" id="comply-yes" name="comply" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="comply-yes">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="session-notes-no" name="session-notes" type="radio" value="false">
-              <label class="govuk-label govuk-radios__label" for="session-notes-no">
+              <input class="govuk-radios__input" id="over18-no" name="comply" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="comply-no">
                 No
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="over18-absent" name="comply" type="radio">
+              <label class="govuk-label govuk-radios__label" for="comply-absent">
+                {{ case.serviceUserPersonalDetails.firstName }} was absent
               </label>
             </div>
           </div>
@@ -57,7 +59,9 @@ Case summary
 
     </form>
 
+
   </div>
+
 </div>
 
 {% endblock %}
