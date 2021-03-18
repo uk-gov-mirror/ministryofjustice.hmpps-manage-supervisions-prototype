@@ -5,8 +5,52 @@ module.exports = {
         'name': 'Dylan Adam Armstrong',
         'firstName': 'Dylan',
         'dateOfBirth': '1984-09-27',
-        'age': 35
+        'age': 35,
+        'address': [
+          '1 Grey Lane',
+          'Sheffield',
+          'South Yorkshire',
+          'S10 1AG'
+        ],
+        'phone': '07700 900 077',
+        'email': 'example@example.com',
+        'aliases': ['Dee'],
+        'preferredLanguage': 'English',
+        'nationality': 'British',
+        'ethnicity': 'White: British',
+        'religion': 'None',
+        'gender': 'Male',
+        'sexualOrientation': 'Heterosexual',
+        'disabilitiesAndAdjustments': ['Autism spectrum condition'],
+        'circumstances': {
+          'employment': 'Full-time employed',
+          'housingStatus': 'Living alone',
+          'safeguardingIssues': []
+        }
       },
+      'personalContacts': [
+        {
+          'name': 'Pippa Wade',
+          'relationship': 'Mum',
+          'address': [
+            '2 Grey Lane',
+            'Sheffield',
+            'South Yorkshire',
+            'S10 1AG'
+          ]
+        }
+      ],
+      'professionalContacts': [
+        {
+          'name': 'Gary Millar',
+          'phone': '0114 123 0000',
+          'email': 'example@example.com',
+          'provider': 'CPA South Yorkshire',
+          'localDeliveryUnit': 'Rotherham',
+          'team': 'Rotherham LMC',
+          'allocatedUntilDate': '2019-11-19'
+        }
+      ],
       'PNC': '2012/123400000F',
       'CRN': 'J678910',
       'currentOrder': {

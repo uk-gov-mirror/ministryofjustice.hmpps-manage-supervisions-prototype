@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+<a href="progress" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s progress</a>
 {% endblock %}
 
 {% block content %}
@@ -41,7 +41,7 @@ Case summary
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Dylan complied
+            {{ case.serviceUserPersonalDetails.firstName }} complied
           </dt>
           <dd class="govuk-summary-list__value">
             Yes

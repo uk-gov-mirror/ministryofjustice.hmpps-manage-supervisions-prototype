@@ -23,7 +23,7 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's details</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}’s details</h1>
   </div>
 </div>
 
@@ -35,35 +35,24 @@ Case summary
       <h2 class="govuk-heading-m">
         Contact details
       </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            1 Grey Lane<br>
-            Sheffield<br>
-            South Yorkshire<br>
-            S10 1AG
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            07700 900 077
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email
-          </dt>
-          <dd class="govuk-summary-list__value">
-            example@example.com
-          </dd>
-        </div>
-      </dl>
+
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: { text: "Address" },
+            value: { html: case.serviceUserPersonalDetails.address.join('<br>') }
+          },
+          {
+            key: { text: "Phone number" },
+            value: { text: case.serviceUserPersonalDetails.phone }
+          },
+          {
+            key: { text: "Email" },
+            value: { text: case.serviceUserPersonalDetails.email }
+          }
+        ]
+      }) }}
     </div>
 
     <a class="govuk-body" href="address-book-personal">
@@ -76,109 +65,41 @@ Case summary
       <h2 class="govuk-heading-m">
         Personal details
       </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Dylan Adam Armstrong
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Aliases
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Dee
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            27 September 1984 (35 years old)
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Preferred language
-          </dt>
-          <dd class="govuk-summary-list__value">
-            English
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Disabilities and adjustments
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Autism spectrum condition
-          </dd>
-        </div>
-      </dl>
+
+      {% set dateOfBirthAndAge %}
+        {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years old)
+      {% endset %}
+
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: { text: "Name" },
+            value: { text: case.serviceUserPersonalDetails.name }
+          },
+          {
+            key: { text: "Aliases" },
+            value: { text: case.serviceUserPersonalDetails.aliases.join(', ') }
+          },
+          {
+            key: { text: "Date of birth" },
+            value: { text: dateOfBirthAndAge }
+          },
+          {
+            key: { text: "Preferred language" },
+            value: { text: case.serviceUserPersonalDetails.preferredLanguage }
+          },
+          {
+            key: { text: "Disabilities and adjustments" },
+            value: { text: case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }
+          }
+        ]
+      }) }}
     </div>
 
     <a class="govuk-body" href="personal-details">
       View more personal details
     </a>
-
-    <!--<div class="govuk-!-margin-bottom-7">
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          View more personal details
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Nationality
-              </dt>
-              <dd class="govuk-summary-list__value">
-                British
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Ethnicity
-              </dt>
-              <dd class="govuk-summary-list__value">
-                White: British
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Religion or belief
-              </dt>
-              <dd class="govuk-summary-list__value">
-                None
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Gender
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Male
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Sexual orientation
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Heterosexual
-              </dd>
-            </div>
-          </dl>
-        </div>
-    </details>
-    </div>-->
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -186,32 +107,24 @@ Case summary
       <h2 class="govuk-heading-m">
         Circumstances
       </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Employment status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Full-time employed
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Housing status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Living alone
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Safeguarding issues
-          </dt>
-          <dd class="govuk-summary-list__value">
-            None
-          </dd>
-        </div>
-      </dl>
+
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: { text: "Employment status" },
+            value: { text: case.serviceUserPersonalDetails.circumstances.employment }
+          },
+          {
+            key: { text: "Housing status" },
+            value: { text: case.serviceUserPersonalDetails.circumstances.housingStatus }
+          },
+          {
+            key: { text: "Safeguarding issues" },
+            value: { text: case.serviceUserPersonalDetails.circumstances.safeguardingIssues.join(', ') or 'None' }
+          }
+        ]
+      }) }}
     </div>
 
     <a class="govuk-body" href="#">
@@ -236,8 +149,6 @@ Case summary
         </ul>
       </div>
     </div>
-
-
 
   </div>
 

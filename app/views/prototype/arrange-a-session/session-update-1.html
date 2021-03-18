@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="progress" class="govuk-back-link">Back to Dylan's progress</a>
+<a href="../progress" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s progress</a>
 {% endblock %}
 
 {% block content %}
@@ -27,7 +27,7 @@ Case summary
             <h1 class="govuk-fieldset__heading govuk-label--l">
               What would you like to do?
             </h1>
-         
+
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">

@@ -13,14 +13,14 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="details" class="govuk-back-link">Back to Dylan's details</a>
+<a href="details" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s details</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Dylan's address book</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}’s address book</h1>
   </div>
 </div>
 
@@ -47,65 +47,49 @@ Case summary
 
     <div class="govuk-!-margin-bottom-7">
       <h2 class="govuk-heading-m">
-        Dylan's contact details
+        {{ case.serviceUserPersonalDetails.firstName }}’s contact details
       </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            1 Grey Lane<br>
-            Sheffield<br>
-            South Yorkshire<br>
-            S10 1AG
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            07700 900 077
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email
-          </dt>
-          <dd class="govuk-summary-list__value">
-            example@example.com
-          </dd>
-        </div>
-      </dl>
+
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: { text: "Address" },
+            value: { html: case.serviceUserPersonalDetails.address.join('<br>') }
+          },
+          {
+            key: { text: "Phone number" },
+            value: { text: case.serviceUserPersonalDetails.phone }
+          },
+          {
+            key: { text: "Email" },
+            value: { text: case.serviceUserPersonalDetails.email }
+          }
+        ]
+      }) }}
     </div>
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    {% for contact in case.personalContacts %}
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">Pippa Wade</h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Relationship to Dylan
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Mum
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            2 Grey Lane<br>
-            Sheffield<br>
-            South Yorkshire<br>
-            S10 1AG
-          </dd>
-        </div>
-      </dl>
-    </div>
+      <div class="govuk-!-margin-bottom-7">
+        <h2 class="govuk-heading-m">{{ contact.name }}</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-summary-list--no-border',
+          rows: [
+            {
+              key: { text: "Relationship to " + case.serviceUserPersonalDetails.firstName },
+              value: { text: contact.relationship }
+            },
+            {
+              key: { text: "Address" },
+              value: { html: contact.address.join('<br>') }
+            }
+          ]
+        }) }}
+      </div>
+    {% endfor %}
 
   </div>
 </div>
