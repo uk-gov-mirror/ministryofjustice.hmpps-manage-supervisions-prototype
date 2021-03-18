@@ -22,38 +22,14 @@ Case summary
     <div class="govuk-grid-column-two-thirds">
 
         <form action="session-add-4" method="post" class="form">
-          {% set rarCategories = [
-            'Employment, Training and Education',
-            'Wellbeing – both physical and mental',
-            'Finance, benefit and debt',
-            'Relationships',
-            'Restorative Justice Interventions',
-            'Substance Misuse',
-            'Alcohol Treatment Requirements or Mental Health Treatment Requirements',
-            'Thinking skills, attitudes and behaviour'
-          ] %}
-
           {% set rarRadioItems = [] %}
-          {% for rarCategory in rarCategories %}
+          {% for rarCategory in possibleRARCategories() %}
             {% set rarRadioItems = (rarRadioItems.push({
               text: rarCategory,
               value: rarCategory,
               checked: checked("session-rar-category", rarCategory)
             }), rarRadioItems) %}
           {% endfor %}
-
-          {% set rarCategoryHtml %}
-            {{ govukRadios({
-                 fieldset: {
-                   legend: {
-                     text: "What will this session count towards?",
-                     classes: 'govuk-!-font-weight-bold'
-                   }
-                 },
-                 name: 'session-rar-category',
-                 items: rarRadioItems
-                 }) }}
-          {% endset %}
 
           {{ govukRadios({
                fieldset: {
@@ -72,7 +48,16 @@ Case summary
                    value: 'Yes',
                    checked: checked('session-counts-towards-rar', 'Yes'),
                    conditional: {
-                     html: rarCategoryHtml
+                     html: govukRadios({
+                            fieldset: {
+                              legend: {
+                                text: "What will this session count towards?",
+                                classes: 'govuk-!-font-weight-bold'
+                              }
+                            },
+                            name: 'session-rar-category',
+                            items: rarRadioItems
+                            })
                    }
                  },
                  {
