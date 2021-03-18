@@ -25,89 +25,89 @@ Case summary
 
       <h1 class="govuk-heading-l">Check your answers</h1>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Type of session
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session'] == 'Other' else data['type-of-session'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="session-add-1">
-              Change<span class="govuk-visually-hidden"> type of session</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['session-date'] | dateWithDayAndWithoutYear }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="session-add-2">
-              Change<span class="govuk-visually-hidden"> date</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Time
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">{{ data['session-start-time'] }} to {{ data['session-end-time'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="session-add-2">
-              Change<span class="govuk-visually-hidden"> time</span>
-            </a>
-          </dd>
-        </div>
-        {% if data['session-counts-towards-rar'] == 'Yes' %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              RAR activity
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['session-rar-category'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="session-add-3">
-                Change<span class="govuk-visually-hidden"> RAR activity</span>
-              </a>
-            </dd>
-          </div>
-        {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Counts towards RAR?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['session-counts-towards-rar'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="session-add-3">
-                Change<span class="govuk-visually-hidden"> RAR activity</span>
-              </a>
-            </dd>
-          </div>
-        {% endif %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Calendar note
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['session-notes'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="session-add-3">
-              Change<span class="govuk-visually-hidden"> calendar note</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: { text: "Type of session" },
+            value: { text: 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session'] == 'Other' else data['type-of-session'] },
+            actions: {
+              items: [
+                {
+                  href: "session-add-1",
+                  text: "Change",
+                  visuallyHiddenText: "type of session"
+                }
+              ]
+            }
+          },
+          {
+            key: { text: "Date" },
+            value: { text: data['session-date'] | dateWithDayAndWithoutYear },
+            actions: {
+              items: [
+                {
+                  href: "session-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "date"
+                }
+              ]
+            }
+          },
+          {
+            key: { text: "Time" },
+            value: { text: data['session-start-time'] + ' to ' + data['session-end-time'] },
+            actions: {
+              items: [
+                {
+                  href: "session-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "time"
+                }
+              ]
+            }
+          },
+          {
+            key: { text: "RAR activity" },
+            value: { text: data['session-rar-category'] },
+            actions: {
+              items: [
+                {
+                  href: "session-add-3",
+                  text: "Change",
+                  visuallyHiddenText: "RAR activity"
+                }
+              ]
+            }
+          } if data['session-counts-towards-rar'] == 'Yes',
+          {
+            key: { text: "Counts towards RAR?" },
+            value: { text: data['session-counts-towards-rar'] },
+            actions: {
+              items: [
+                {
+                  href: "session-add-3",
+                  text: "Change",
+                  visuallyHiddenText: "RAR activity"
+                }
+              ]
+            }
+          } if data['session-counts-towards-rar'] !== 'Yes',
+          {
+            key: { text: "Calendar note" },
+            value: { text: data['session-notes'] },
+            actions: {
+              items: [
+                {
+                  href: "session-add-3",
+                  text: "Change",
+                  visuallyHiddenText: "calendar note"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
 
       <button class="govuk-button" data-module="govuk-button">
         Arrange this session
