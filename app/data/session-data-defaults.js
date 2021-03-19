@@ -18,7 +18,7 @@ Example usage:
 */
 
 module.exports = {
-
+  'provider-code': 'C17' // CPA London
   // Insert values here
 
 }

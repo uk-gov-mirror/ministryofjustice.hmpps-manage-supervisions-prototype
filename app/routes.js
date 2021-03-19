@@ -7,6 +7,12 @@ const helpers = require('../lib/helpers.js')
 // Branching
 
 //  Iteration 6
+router.get('/switch-provider/:newProvider', function (req, res) {
+  req.session.data['provider-code'] = req.params['newProvider']
+
+  res.redirect('/prototype/progress')
+})
+
 router.post('/arrange-a-session/session-add-3', function (req, res) {
   let possibleRARCategories = helpers.possibleRARCategories(req.session.data['type-of-session'], 'N07')
 
