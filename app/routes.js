@@ -6,16 +6,16 @@ const router = express.Router()
 // Branching
 
 //  Iteration 6
-router.post('/prototype/confirm-attendance/attendance-add-4', function (req, res) {
+router.post('/prototype/confirm-attendance/attendance-add-3', function (req, res) {
   let complybranch = req.session.data['comply']
 
   if (complybranch === 'false') {
-    res.redirect('/prototype/confirm-attendance/attendance-add-4')
+    res.redirect('/prototype/confirm-attendance/attendance-add-3')
   }
   if (complybranch === 'true') {
-    res.redirect('/prototype/confirm-attendance/attendance-add-6')
-  } else {
     res.redirect('/prototype/confirm-attendance/attendance-add-5')
+  } else {
+    res.redirect('/prototype/confirm-attendance/attendance-add-4')
   }
 })
 
@@ -30,16 +30,16 @@ router.post('/prototype/confirm-attendance/attendance-add-7', function (req, res
 })
 
 //  Iteration 6 - version b - Remove RAR
-router.post('/prototype/confirm-attendance/attendance-add-4b', function (req, res) {
+router.post('/prototype/confirm-attendance/attendance-add-3b', function (req, res) {
   let complybranch = req.session.data['comply']
 
   if (complybranch === 'false') {
-    res.redirect('/prototype/confirm-attendance/attendance-add-4b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-3b')
   }
   if (complybranch === 'true') {
-    res.redirect('/prototype/confirm-attendance/attendance-add-6b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-5b-remove-RAR')
   } else {
-    res.redirect('/prototype/confirm-attendance/attendance-add-5b')
+    res.redirect('/prototype/confirm-attendance/attendance-add-4b')
   }
 })
 
@@ -70,74 +70,6 @@ router.post('/prototype/arrange-a-session/session-update-2', function (req, res)
     res.redirect('/prototype/arrange-a-session/session-update-2')
   } else {
     res.redirect('/prototype/arrange-a-session/session-update-5-cancel')
-  }
-})
-
-//  Iteration 5
-router.post('/v5/attendance-add-2', function (req, res) {
-  let complybranch = req.session.data['comply']
-
-  if (complybranch === 'false') {
-    res.redirect('/v5/attendance-add-2')
-  }
-  if (complybranch === 'true') {
-    res.redirect('/v5/attendance-add-4')
-  } else {
-    res.redirect('/v5/attendance-add-3')
-  }
-})
-
-router.post('/v5/attendance-add-6', function (req, res) {
-  let sessionnotes = req.session.data['session-notes']
-
-  if (sessionnotes === 'true') {
-    res.redirect('/v5/attendance-add-6')
-  } else {
-    res.redirect('/v5/attendance-add-7')
-  }
-})
-
-// Iteration 4
-router.post('/confirm-attendance/v2/attendance-add-2', function (req, res) {
-  let complybranch = req.session.data['comply']
-
-  if (complybranch === 'false') {
-    res.redirect('/confirm-attendance/v2/attendance-add-2')
-  }
-  if (complybranch === 'true') {
-    res.redirect('/confirm-attendance/v2/attendance-add-4')
-  } else {
-    res.redirect('/confirm-attendance/v2/attendance-add-3')
-  }
-})
-
-router.post('/confirm-attendance/v2/attendance-add-6', function (req, res) {
-  let sessionnotes = req.session.data['session-notes']
-
-  if (sessionnotes === 'true') {
-    res.redirect('/confirm-attendance/v2/attendance-add-6')
-  } else {
-    res.redirect('/confirm-attendance/v2/attendance-confirm')
-  }
-})
-
-router.post('/arrange-a-session/v4/session-add-4', function (req, res) {
-  let appointmentnotes = req.session.data['appointment-notes']
-
-  if (appointmentnotes === 'true') {
-    res.redirect('/arrange-a-session/v4/session-add-4')
-  } else {
-    res.redirect('/arrange-a-session/v4/session-add-5')
-  }
-})
-
-router.post('/arrange-a-session/v4/session-update-4', function (req, res) {
-  let updatenotes = req.session.data['update-notes']
-
-  if (updatenotes === 'true') {
-    res.redirect('/arrange-a-session/v4/session-update-4')
-  } else {
-    res.redirect('/arrange-a-session/v4/session-update-5')
   }
 })
 

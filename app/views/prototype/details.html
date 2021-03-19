@@ -37,27 +37,32 @@ Case summary
       </h2>
 
       {{ govukSummaryList({
-        classes: 'govuk-summary-list--no-border',
-        rows: [
-          {
-            key: { text: "Address" },
-            value: { html: case.serviceUserPersonalDetails.address.join('<br>') }
-          },
-          {
-            key: { text: "Phone number" },
-            value: { text: case.serviceUserPersonalDetails.phone }
-          },
-          {
-            key: { text: "Email" },
-            value: { text: case.serviceUserPersonalDetails.email }
-          }
-        ]
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+      {
+      key: { text: "Address" },
+      value: { html: case.serviceUserPersonalDetails.address.join('<br>') }
+      },
+      {
+      key: { text: "Phone number" },
+      value: { text: case.serviceUserPersonalDetails.phone }
+      },
+      {
+      key: { text: "Email" },
+      value: { text: case.serviceUserPersonalDetails.email }
+      }
+      ]
       }) }}
-    </div>
 
-    <a class="govuk-body" href="address-book-personal">
-      View address book
-    </a>
+      <p class="govuk-body">
+        <a href="address-book-personal">
+          View address book
+        </a>
+      </p>
+      <p class="govuk-body-s govuk-hint-s">
+        Last updated 15 March 2021
+      </p>
+    </div>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -67,39 +72,45 @@ Case summary
       </h2>
 
       {% set dateOfBirthAndAge %}
-        {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years old)
+      {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years
+      old)
       {% endset %}
 
       {{ govukSummaryList({
-        classes: 'govuk-summary-list--no-border',
-        rows: [
-          {
-            key: { text: "Name" },
-            value: { text: case.serviceUserPersonalDetails.name }
-          },
-          {
-            key: { text: "Aliases" },
-            value: { text: case.serviceUserPersonalDetails.aliases.join(', ') }
-          },
-          {
-            key: { text: "Date of birth" },
-            value: { text: dateOfBirthAndAge }
-          },
-          {
-            key: { text: "Preferred language" },
-            value: { text: case.serviceUserPersonalDetails.preferredLanguage }
-          },
-          {
-            key: { text: "Disabilities and adjustments" },
-            value: { text: case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }
-          }
-        ]
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+      {
+      key: { text: "Name" },
+      value: { text: case.serviceUserPersonalDetails.name }
+      },
+      {
+      key: { text: "Aliases" },
+      value: { text: case.serviceUserPersonalDetails.aliases.join(', ') }
+      },
+      {
+      key: { text: "Date of birth" },
+      value: { text: dateOfBirthAndAge }
+      },
+      {
+      key: { text: "Preferred language" },
+      value: { text: case.serviceUserPersonalDetails.preferredLanguage }
+      },
+      {
+      key: { text: "Disabilities and adjustments" },
+      value: { text: case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }
+      }
+      ]
       }) }}
-    </div>
 
-    <a class="govuk-body" href="personal-details">
-      View more personal details
-    </a>
+      <p class="govuk-body">
+        <a href="personal-details">
+          View more personal details
+        </a>
+      </p>
+      <p class="govuk-body-s govuk-hint-s">
+        Last updated 6 January 2021
+      </p>
+    </div>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -109,27 +120,32 @@ Case summary
       </h2>
 
       {{ govukSummaryList({
-        classes: 'govuk-summary-list--no-border',
-        rows: [
-          {
-            key: { text: "Employment status" },
-            value: { text: case.serviceUserPersonalDetails.circumstances.employment }
-          },
-          {
-            key: { text: "Housing status" },
-            value: { text: case.serviceUserPersonalDetails.circumstances.housingStatus }
-          },
-          {
-            key: { text: "Safeguarding issues" },
-            value: { text: case.serviceUserPersonalDetails.circumstances.safeguardingIssues.join(', ') or 'None' }
-          }
-        ]
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+      {
+      key: { text: "Employment status" },
+      value: { text: case.serviceUserPersonalDetails.circumstances.employment }
+      },
+      {
+      key: { text: "Housing status" },
+      value: { text: case.serviceUserPersonalDetails.circumstances.housingStatus }
+      },
+      {
+      key: { text: "Safeguarding issues" },
+      value: { text: case.serviceUserPersonalDetails.circumstances.safeguardingIssues.join(', ') or 'None' }
+      }
+      ]
       }) }}
-    </div>
 
-    <a class="govuk-body" href="#">
-      View more circumstances
-    </a>
+      <p class="govuk-body">
+        <a href="#">
+          View more circumstances
+        </a>
+      </p>
+      <p class="govuk-body-s govuk-hint-s">
+        Last updated 10 March 2021
+      </p>
+    </div>
 
   </div>
 
