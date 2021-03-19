@@ -14,7 +14,7 @@ router.get('/switch-provider/:newProvider', function (req, res) {
 })
 
 router.post('/arrange-a-session/session-add-3', function (req, res) {
-  let possibleRARCategories = helpers.possibleRARCategories(req.session.data['type-of-session'], 'N07')
+  let possibleRARCategories = helpers.possibleRARCategories(req.session.data['type-of-session'], req.session.data['provider-code'])
 
   if (possibleRARCategories === undefined || possibleRARCategories.length == 0) {
     req.session.data['session-counts-towards-rar'] = 'No'
