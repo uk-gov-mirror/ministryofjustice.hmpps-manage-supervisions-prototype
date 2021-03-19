@@ -1,11 +1,23 @@
 const express = require('express')
 const router = express.Router()
+const helpers = require('../lib/helpers.js')
 
 // Add your routes here - above the module.exports line
 
 // Branching
 
 //  Iteration 6
+router.post('/arrange-a-session/session-add-3', function (req, res) {
+  let possibleRARCategories = helpers.possibleRARCategories(req.session.data['type-of-session'], 'N07')
+
+  if (possibleRARCategories === undefined || possibleRARCategories.length == 0) {
+    req.session.data['session-counts-towards-rar'] = 'No'
+    res.redirect('/prototype/arrange-a-session/session-add-4')
+  } else {
+    res.redirect('/prototype/arrange-a-session/session-add-3')
+  }
+})
+
 router.post('/confirm-attendance/attendance-add-3', function (req, res) {
   let complybranch = req.session.data['comply']
 

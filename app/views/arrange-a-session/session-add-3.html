@@ -23,7 +23,7 @@ Case summary
 
         <form action="session-add-4" method="post" class="form">
           {% set rarRadioItems = [] %}
-          {% for rarCategory in possibleRARCategories() %}
+          {% for rarCategory in possibleRARCategories(data['type-of-session'], 'N07') %}
             {% set rarRadioItems = (rarRadioItems.push({
               text: rarCategory,
               value: rarCategory,
