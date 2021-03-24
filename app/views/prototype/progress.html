@@ -35,16 +35,18 @@ Case summary
       Sentence
     </h2>
     <div class="govuk-!-margin-bottom-9">
-      <p class="govuk-body"><strong>ORA Community Order (12 Months)</strong><br>
-        Using violence to secure entry (Criminal Law Act/CJ and Public Order Act) - 19563</p>
+      <p class="govuk-body"><strong>{{ case.currentOrder.type }}</strong><br>
+        {{ case.currentOrder.description }}</p>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
           <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Started</p>
-          <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>18 Feb 2020</strong></p>
+          <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>{{ case.currentOrder.startDate |
+              dateWithYearShortMonth }}</strong></p>
         </div>
         <div class="govuk-grid-column-one-third">
           <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Ends</p>
-          <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>17 Feb 2021</strong></p>
+          <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>{{ case.currentOrder.endDate |
+              dateWithYearShortMonth }}</strong></p>
         </div>
         <div class="govuk-grid-column-one-third">
           <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Time elapsed</p>
@@ -75,8 +77,7 @@ Case summary
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Fine</td>
-            <td class="govuk-table__cell">£1000</td>
-            <td class="govuk-table__cell">£155</td>
+            <td class="govuk-table__cell" colspan="2">£1000</td>
           </tr>
         </tbody>
       </table>
