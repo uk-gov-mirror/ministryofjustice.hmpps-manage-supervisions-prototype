@@ -25,12 +25,22 @@ Case summary
 
       <h1 class="govuk-heading-l">Check your answers</h1>
 
+      {% set arrangedSession = arrangedSession(
+          data['provider-code'],
+          data['type-of-session'],
+          data['session-date'],
+          data['session-start-time'],
+          data['session-end-time'],
+          data['session-counts-towards-rar'] == 'Yes',
+          data['session-rar-category']
+      ) %}
+
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
           {
             key: { text: "Type of session" },
-            value: { text: 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session'] == 'Other' else data['type-of-session'] },
+            value: { text: arrangedSession.summary.typeOfSession },
             actions: {
               items: [
                 {
@@ -43,7 +53,7 @@ Case summary
           },
           {
             key: { text: "Date" },
-            value: { text: data['session-date'] | dateWithDayAndWithoutYear },
+            value: { text: arrangedSession.summary.date | dateWithDayAndWithoutYear },
             actions: {
               items: [
                 {
@@ -56,7 +66,7 @@ Case summary
           },
           {
             key: { text: "Time" },
-            value: { text: data['session-start-time'] + ' to ' + data['session-end-time'] },
+            value: { text: arrangedSession.summary.time },
             actions: {
               items: [
                 {
@@ -69,7 +79,7 @@ Case summary
           },
           {
             key: { text: "RAR activity" },
-            value: { text: data['session-rar-category'] },
+            value: { text: arrangedSession.summary.rarCategory },
             actions: {
               items: [
                 {
@@ -79,10 +89,10 @@ Case summary
                 }
               ]
             }
-          } if data['session-counts-towards-rar'] == 'Yes',
+          } if arrangedSession.summary.rarCategory,
           {
             key: { text: "Counts towards RAR?" },
-            value: { text: data['session-counts-towards-rar'] },
+            value: { text: 'Yes' if arrangedSession.summary.countsTowardsRAR else 'No' },
             actions: {
               items: [
                 {
@@ -92,7 +102,7 @@ Case summary
                 }
               ]
             }
-          } if data['session-counts-towards-rar'] !== 'Yes',
+          } if not arrangedSession.summary.countsTowardsRAR,
           {
             key: { text: "Calendar note" },
             value: { text: data['session-notes'] },
