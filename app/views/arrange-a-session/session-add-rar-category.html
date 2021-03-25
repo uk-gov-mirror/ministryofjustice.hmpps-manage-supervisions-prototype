@@ -24,10 +24,23 @@ Case summary
         <form action="session-add-4" method="post" class="form">
           {% set rarRadioItems = [] %}
           {% for rarCategory in possibleRARCategories(data['provider-code'], data['type-of-session'], data['type-of-session-other']) %}
+            {% set rarSubCategoryRadioItems = [] %}
+            {% for rarSubCategoryCode, subCategory in rarCategory.nsiSubTypes %}
+              {% set rarSubCategoryRadioItems = (rarSubCategoryRadioItems.push({
+                text: subCategory.description,
+                value: subCategory.description
+              }), rarSubCategoryRadioItems) %}
+            {% endfor %}
             {% set rarRadioItems = (rarRadioItems.push({
-              text: rarCategory,
-              value: rarCategory,
-              checked: checked("session-rar-category", rarCategory)
+              text: rarCategory.description,
+              value: rarCategory.description,
+              checked: checked("session-rar-category", rarCategory.description),
+              conditional: {
+                html: govukRadios({
+                       name: 'session-rar-subcategory',
+                       items: rarSubCategoryRadioItems
+                     })
+              }
             }), rarRadioItems) %}
           {% endfor %}
 
