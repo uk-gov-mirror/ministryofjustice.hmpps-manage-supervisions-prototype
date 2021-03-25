@@ -7,233 +7,33 @@ Prototypes | Steel thread | HMPPS
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <!--SCENARIO-->
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Scenario
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <h3 class="govuk-heading-m">The scenario</h3>
-        <ul>
-          <li>It's Day 1 of the new National Probation Service
-          </li>
-          <li>Previous systems don't exist anymore (eg Delius/OASys)
-          </li>
-          <li>You've been allocated a new service user
-          </li>
-          <li>They've already had their induction
-          </li>
-          <li>The first appointment has been arranged for next Tuesday morning
-          </li>
-        </ul>
-        <h3 class="govuk-heading-m">The service user</h3>
-        <p><span class="govuk-body govuk-!-font-weight-bold">Dylan Adam Armstrong</span><br>Male, 35 years old</p>
-        <ul>
-          <li>Previously known to probation
-          </li>
-          <li>Medium risk case
-          </li>
-          <li>12 month Community Order
-          </li>
-          <li>15 RAR days
-          </li>
-          <li>Fined £1,000
-          </li>
-        </ul>
-      </div>
-    </details>
-
-    <!--<p class="govuk-heading-m"><a href="prototype/case-list">Iteration 6</a> - MVP (work in progress)</p>-->
-    <!--<p class="govuk-body"><a href="v5/case-list">Iteration 5</a> - Includes blue sky thinking from design sprint</p>-->
-    <!--<p class="govuk-body"><a href="v4/case-list">Iteration 4</a></p>-->
-
-    <!--DESIGN HISTORY-->
-    <h2 class="govuk-heading-l">
-      Design history
-    </h2>
-
-    <div class="moj-timeline">
-
-      <div class="moj-timeline__item">
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Current prototype - MVP for initial pilot</h2>
-        </div>
-        <div class="moj-timeline__description">
-          <a class="govuk-button govuk-!-margin-bottom-0" href="prototype/case-list">View clickable prototype</a>
-        </div>
-      </div>
-
-      <div class="moj-timeline__item">
-        {% include "includes/timeline-item-iteration-06.html" %}
-        <a class="govuk-button" href="design-history/iteration-06">
-          View iteration 6 screenshots
-        </a>
-      </div>
-
-      <div class="moj-timeline__item">
-        {% include "includes/timeline-item-iteration-05.html" %}
-        <a class="govuk-button" href="design-history/iteration-05">
-          View iteration 5 screenshots</a>
-      </div>
-
-      <div class="moj-timeline__item">
-        {% include "includes/timeline-item-iteration-04.html" %}
-        <a class="govuk-button" href="design-history/iteration-04">
-          View iteration 4 screenshots
-        </a>
-      </div>
-
-      <div class="moj-timeline__item">
-        {% include "includes/timeline-item-iteration-03.html" %}
-        <a class="govuk-button" href="design-history/iteration-03">
-          View iteration 3 screenshots
-        </a>
-      </div>
-
-      <div class="moj-timeline__item">
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">
-            Card sorting workshop with Probation Practitioners
-          </h2>
-        </div>
-        <p class="moj-timeline__date">
-          <time>11 December 2020 and 7 January 2021</time>
-        </p>
-        <div class="moj-timeline__description">
-          <p class="govuk-body">Tasks covered:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              review current information provided about a service user
-            </li>
-            <li>
-              group information you'd need when preparing for the first appointment and second appointment
-            </li>
-            <li>prioritise the information in each group</li>
-            <li>
-              name the groups
-            </li>
-          </ul>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              Outputs
-            </summary>
-            <div class="govuk-details__text">
-              <p class="govuk-body">Main groupings:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Identify the service user
-                </li>
-                <li>Understand their background
-                </li>
-                <li>Understand the case
-                </li>
-              </ul>
-              <p class="govuk-body">Prepare for the induction appointment:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Appointment date and time
-                </li>
-                <li>Information to identify the service user
-                </li>
-                <li>Contact details for the service user
-                </li>
-                <li>Personal circumstances (from pre-sentence report if applicable)
-                </li>
-                <li>Case information (High level information of offence, sentence/order and risk level)
-                </li>
-              </ul>
-              <p class="govuk-body">Prepare for the second appointment (Initial Sentence Plan):</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Appointment date and time
-                </li>
-                <li>Background from last appointment
-                </li>
-                <li>More detail on the offence
-                </li>
-                <li>More detail of risk level and past risk assessments
-                </li>
-                <li>Previous order details
-                </li>
-              </ul>
-              <p class="govuk-body"><strong>Next steps</strong> - Update Information Architecture in the prototype based
-                on findings and test with users.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <div class="moj-timeline__item">
-        {% include "includes/timeline-item-iteration-02.html" %}
-        <a class="govuk-button" href="design-history/iteration-02">
-          View iteration 2 screenshots
-        </a>
-      </div>
-
-      <div class="moj-timeline__item">
-        <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">
-            Co-design workshops with Probation Practitioners
-          </h2>
-        </div>
-        <p class="moj-timeline__date">
-          <time>24 and 25 November 2020</time>
-        </p>
-        <div class="moj-timeline__description">
-          <p class="govuk-body">
-            Theme of the workshop: "How might we make the start of the probation journey
-            better?"
-          </p>
-          <p class="govuk-body">Tasks covered:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              preparing for the first appointment
-            </li>
-            <li>
-              recording an appointment
-            </li>
-            <li>
-              booking the next appointment
-            </li>
-          </ul>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Outputs
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <p class="govuk-body">User stories from the workshops.</p>
-              <p class="govuk-body">As a Probation Practitioner, in order to prepare for an appointment I need to...</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>...see their previous offences
-                </li>
-                <li>...see their risk score
-                </li>
-                <li>...see their past appointments
-                </li>
-                <li>...see their how much time is left on their current order / RAR days
-                </li>
-                <li>...see my past notes
-                </li>
-              </ul>
-              <p class="govuk-body"><strong>Next steps</strong> - Use findings to update and test the prototype.
-              </p>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <div class="moj-timeline__item">
-        {% include "includes/timeline-item-iteration-01.html" %}
-        <a class="govuk-button" href="design-history/iteration-01">
-          View iteration 1 screenshots
-        </a>
-      </div>
-
-    </div>
-    <!--END TIMELINE-->
-
+    <h2 class="govuk-heading-l">Scenario</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>It’s Day 1 of the new National Probation Service
+      </li>
+      <li>Previous systems don’t exist anymore (eg Delius/OASys)
+      </li>
+      <li>You’ve been allocated a new service user
+      </li>
+      <li>They’ve already had their induction
+      </li>
+      <li>The first appointment has been arranged for next Tuesday morning
+      </li>
+    </ul>
+    <h2 class="govuk-heading-l">Service user</h2>
+    <p><span class="govuk-body govuk-!-font-weight-bold">Dylan Adam Armstrong</span><br>Male, 35 years old</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Previously known to probation
+      </li>
+      <li>Medium risk case
+      </li>
+      <li>12 month Community Order
+      </li>
+      <li>15 RAR days
+      </li>
+      <li>Fined £1,000
+      </li>
+    </ul>
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -246,12 +46,11 @@ Prototypes | Steel thread | HMPPS
       </a>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list useful-links govuk-!-font-size-16">
-          <!--<li>
-            <a href="https://dsdmoj.atlassian.net/wiki/spaces/NDSS/pages/2490761516/Steel+thread+project"
-              class="govuk-link--no-visited-state">
-              Project Confluence
+          <li>
+            <a href="https://ms-design-history.herokuapp.com/" class="govuk-link--no-visited-state">
+              Design history
             </a>
-          </li>-->
+          </li>
           <li>
             <a href="https://trello.com/b/YQ7Xmh13/steel-thread-inception" class="govuk-link--no-visited-state">
               Project Trello
