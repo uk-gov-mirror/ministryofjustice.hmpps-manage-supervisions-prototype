@@ -10,7 +10,7 @@ const helpers = require('../lib/helpers.js')
 router.get('/switch-provider/:newProvider', function (req, res) {
   req.session.data['provider-code'] = req.params['newProvider']
 
-  res.redirect('/prototype/progress')
+  res.redirect('/progress')
 })
 
 router.post('/arrange-a-session/session-add-3', function (req, res) {
@@ -18,9 +18,9 @@ router.post('/arrange-a-session/session-add-3', function (req, res) {
 
   if (possibleRARCategories === undefined || possibleRARCategories.length == 0) {
     req.session.data['session-counts-towards-rar'] = 'No'
-    res.redirect('/prototype/arrange-a-session/session-add-4')
+    res.redirect('/arrange-a-session/session-add-4')
   } else {
-    res.redirect('/prototype/arrange-a-session/session-add-3')
+    res.redirect('/arrange-a-session/session-add-3')
   }
 })
 
