@@ -24,6 +24,14 @@ router.post('/arrange-a-session/session-add-3', function (req, res) {
   }
 })
 
+router.post('/arrange-a-session/session-add-rar-category', function (req, res) {
+  if (req.session.data['session-counts-towards-rar'] == 'Yes') {
+    res.redirect('/arrange-a-session/session-add-rar-category')
+  } else {
+    res.redirect('/arrange-a-session/session-add-4')
+  }
+})
+
 router.post('/confirm-attendance/attendance-add-3', function (req, res) {
   let complybranch = req.session.data['comply']
 
