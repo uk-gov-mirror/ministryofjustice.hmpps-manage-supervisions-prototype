@@ -22,7 +22,7 @@ Case summary
   <div class="govuk-grid-column-two-thirds">
     <form action="session-add-2" method="post" class="form">
 
-      {% set contactTypeSelectItems = [] %}
+      {% set contactTypeSelectItems = [{ text: '', value: ''}] %}
       {% for contactType in possibleContactTypes(data['provider-code']) | sort(false, false, 'description') %}
         {% set contactTypeSelectItems = (contactTypeSelectItems.push({
           text: contactType.description,
