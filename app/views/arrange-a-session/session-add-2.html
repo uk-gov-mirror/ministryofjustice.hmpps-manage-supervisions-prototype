@@ -151,10 +151,12 @@ Case summary
           </div>
       </div>
 
-      <button class="govuk-button send-message">
-        Save and continue
-      </button>
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
     </form>
+
+    {% include "includes/ndelius-record-details.html" %}
   </div>
 
 </div>

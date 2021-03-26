@@ -1,0 +1,52 @@
+{% set session = arrangedSession(
+    data['provider-code'],
+    data['type-of-session'],
+    data['type-of-session-other'],
+    data['session-date'],
+    data['session-start-time'],
+    data['session-end-time'],
+    data['session-counts-towards-rar'] == 'Yes',
+    data['session-rar-category'],
+    data['session-rar-subcategory']
+) %}
+
+{% set ndeliusDataHTML %}
+  <h2 class="govuk-heading-m">Contact record</h2>
+  {{ govukSummaryList({
+    classes: 'govuk-summary-list--no-border',
+    rows: [
+      {
+        key: { text: "Contact type code" },
+        value: { text: session.contactRecord.typeCode }
+      },
+      {
+        key: { text: "Contact type description" },
+        value: { text: session.contactRecord.typeDescription }
+      }
+    ]
+  }) }}
+
+  {% if session.nsiRecord %}
+    <h2 class="govuk-heading-m">NSI record</h2>
+
+    {{ govukSummaryList({
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+        {
+          key: { text: "RAR type description" },
+          value: { text: session.nsiRecord.typeDescription }
+        },
+        {
+          key: { text: "RAR subtype description" },
+          value: { text: session.nsiRecord.subtypeDescription }
+        }
+      ]
+    }) }}
+
+  {% endif %}
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "What’s going to be recorded into NDelius",
+  html: ndeliusDataHTML
+}) }}
