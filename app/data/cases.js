@@ -155,7 +155,7 @@ module.exports = {
           'type': 'Office visit',
           'probationPractitioner': 'Mark Berridge',
           'timestamp': '2021-04-23T13:00',
-          'outcome': null,
+          'outcome': null
         },
         {
           'type': 'Text message from Service User',
@@ -184,7 +184,7 @@ module.exports = {
           'probationPractitioner': 'Mark Berridge',
           'timestamp': '2021-03-16T13:00',
           'outcome': {
-            'comply': false,
+            'comply': false
           },
           'contents': 'Dylan turned up for his appointment on time however he refused to talk about anything with me until “his new room was sorted out” I explained it wasn’t possible to move him until the 19th to which he stormed out of the meeting.'
         },
@@ -213,7 +213,7 @@ module.exports = {
           'probationPractitioner': 'Mark Berridge',
           'timestamp': '2021-02-08T13:00',
           'outcome': {
-            'comply': true,
+            'comply': true
           },
           'contents': 'Dylan arrived on time and presented well for his induction appointment. He filled in all the paperwork required without any resistance and said he understood the process. He mentioned his mum had talked to him a lot over the weekend and helped him to calm down. His mum appears to be a positive influence in his life, which I would like to explore further with him.'
         },
@@ -222,7 +222,7 @@ module.exports = {
           'probationPractitioner': 'Mark Berridge',
           'timestamp': '2021-02-03T13:00',
           'outcome': {
-            'comply': false,
+            'comply': false
           },
           'contents': 'I called Dylan to confirm he had understood where he needed to be and when for his induction appointment. He was rude and abusive and in general very hostile in reaction to his sentence saying this wasn’t his fault. He mentioned he “doesn’t have time for this”. I reiterated that he must be at the office on Monday as part of his sentence requirements and if he doesn’t it’s going to reflect very poorly.'
         },
