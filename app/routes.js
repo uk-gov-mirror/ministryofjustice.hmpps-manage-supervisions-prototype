@@ -8,7 +8,9 @@ const helpers = require('../lib/helpers.js')
 
 //  Iteration 6
 router.get('/switch-provider/:newProvider', function (req, res) {
-  req.session.data['provider-code'] = req.params['newProvider']
+  const newProvider = req.params['newProvider']
+  req.session.data['provider-code'] = newProvider
+  req.session.data['team-codes'] = req.session.data['default-teams'][newProvider]
 
   res.redirect('/progress')
 })
