@@ -4,15 +4,23 @@ const helpers = require('../lib/helpers.js')
 
 // Add your routes here - above the module.exports line
 
-// Branching
-
-//  Iteration 6
 router.get('/switch-provider/:newProvider', function (req, res) {
   const newProvider = req.params['newProvider']
   req.session.data['provider-code'] = newProvider
   req.session.data['team-codes'] = req.session.data['default-teams'][newProvider]
 
   res.redirect('/progress')
+})
+
+router.post('/arrange-a-session/session-add-where', function (req, res) {
+  const session = helpers.arrangedSession(req.session.data['provider-code'], req.session.data['type-of-session'], req.session.data['type-of-session-other'])
+  const contactType = session.contactType
+
+  if (contactType && contactType.requiresLocation == 'Y') {
+    res.redirect('/arrange-a-session/session-add-where')
+  } else {
+    res.redirect('/arrange-a-session/session-add-2')
+  }
 })
 
 router.post('/arrange-a-session/session-add-3', function (req, res) {

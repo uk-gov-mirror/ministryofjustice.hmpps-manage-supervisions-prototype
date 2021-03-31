@@ -7,7 +7,8 @@
     data['session-end-time'],
     data['session-counts-towards-rar'] == 'Yes',
     data['session-rar-category'],
-    data['session-rar-subcategory']
+    data['session-rar-subcategory'],
+    data['session-location-code']
 ) %}
 
 {% set ndeliusDataHTML %}
@@ -22,6 +23,10 @@
       {
         key: { text: "Contact type description" },
         value: { text: session.contactRecord.typeDescription }
+      },
+      {
+        key: { text: "Location code" },
+        value: { text: session.contactRecord.locationCode }
       }
     ]
   }) }}
