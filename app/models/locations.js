@@ -2,7 +2,7 @@ const path = require('path')
 const locations = require(path.join(__dirname, '../data/locations.js'))
 
 class Locations {
-  static forTeams(teamCodes) {
+  static forTeams (teamCodes) {
     const potentialLocations = teamCodes
       .flatMap(teamCode => locations.teamsToLocations[teamCode])
       .map(code => locations.locations[code])
@@ -10,7 +10,7 @@ class Locations {
     return this.deduplicatedLocations(potentialLocations)
   }
 
-  static deduplicatedLocations(locations) {
+  static deduplicatedLocations (locations) {
     const result = []
     const map = new Map()
     for (const location of locations) {
