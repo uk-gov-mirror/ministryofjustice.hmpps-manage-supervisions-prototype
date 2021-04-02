@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../progress" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s progress</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="session-add-4" method="post" class="form">
+          {% set rarRadioItems = [] %}
+          {% for rarCategory in possibleRARCategories(data['provider-code'], data['type-of-session'], data['type-of-session-other']) %}
+            {% set rarSubCategoryRadioItems = [] %}
+            {% for rarSubCategoryCode, subCategory in rarCategory.nsiSubTypes %}
+              {% set rarSubCategoryRadioItems = (rarSubCategoryRadioItems.push({
+                text: subCategory.description,
+                value: subCategory.description
+              }), rarSubCategoryRadioItems) %}
+            {% endfor %}
+            {% set rarRadioItems = (rarRadioItems.push({
+              text: rarCategory.description,
+              value: rarCategory.description,
+              checked: checked("session-rar-category", rarCategory.description),
+              conditional: {
+                html: govukRadios({
+                       name: 'session-rar-subcategory',
+                       items: rarSubCategoryRadioItems
+                     })
+              }
+            }), rarRadioItems) %}
+          {% endfor %}
+
+          {{ govukRadios({
+                 fieldset: {
+                   legend: {
+                     text: "What will this session count towards?",
+                     classes: "govuk-label--l"
+                   }
+                 },
+                 name: 'session-rar-category',
+                 items: rarRadioItems
+               })
+            }}
+
+           {{ govukButton({
+             text: "Save and continue"
+           }) }}
+        </form>
+
+        {% include "includes/ndelius-record-details.html" %}
+    </div>
+</div>
+
+{% endblock %}

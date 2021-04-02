@@ -25,12 +25,25 @@ Case summary
 
       <h1 class="govuk-heading-l">Check your answers</h1>
 
+      {% set session = arrangedSession({
+          providerCode: data['provider-code'],
+          typeOfSession: data['type-of-session'],
+          contactType: data['type-of-session-other'],
+          date: data['session-date'],
+          startTime: data['session-start-time'],
+          endTime: data['session-end-time'],
+          countsTowardsRAR: data['session-counts-towards-rar'] == 'Yes',
+          rarCategory: data['session-rar-category'],
+          rarSubCategory: data['session-rar-subcategory'],
+          locationCode: data['session-location-code']
+      }) %}
+
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
           {
             key: { text: "Type of session" },
-            value: { text: 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session'] == 'Other' else data['type-of-session'] },
+            value: { text: session.summary.typeOfSession },
             actions: {
               items: [
                 {
@@ -43,7 +56,7 @@ Case summary
           },
           {
             key: { text: "Date" },
-            value: { text: data['session-date'] | dateWithDayAndWithoutYear },
+            value: { text: session.summary.date | dateWithDayAndWithoutYear },
             actions: {
               items: [
                 {
@@ -56,7 +69,7 @@ Case summary
           },
           {
             key: { text: "Time" },
-            value: { text: data['session-start-time'] + ' to ' + data['session-end-time'] },
+            value: { text: session.summary.time },
             actions: {
               items: [
                 {
@@ -69,7 +82,7 @@ Case summary
           },
           {
             key: { text: "RAR activity" },
-            value: { text: data['session-rar-category'] },
+            value: { text: session.summary.rarCategory },
             actions: {
               items: [
                 {
@@ -79,10 +92,23 @@ Case summary
                 }
               ]
             }
-          } if data['session-counts-towards-rar'] == 'Yes',
+          } if session.summary.rarCategory,
+          {
+            key: { text: "RAR activity subcategory" },
+            value: { text: session.summary.rarSubCategory },
+            actions: {
+              items: [
+                {
+                  href: "session-add-3",
+                  text: "Change",
+                  visuallyHiddenText: "RAR activity"
+                }
+              ]
+            }
+          } if session.summary.rarCategory,
           {
             key: { text: "Counts towards RAR?" },
-            value: { text: data['session-counts-towards-rar'] },
+            value: { text: 'Yes' if session.summary.countsTowardsRAR else 'No' },
             actions: {
               items: [
                 {
@@ -92,7 +118,7 @@ Case summary
                 }
               ]
             }
-          } if data['session-counts-towards-rar'] !== 'Yes',
+          } if not session.summary.countsTowardsRAR,
           {
             key: { text: "Calendar note" },
             value: { text: data['session-notes'] },
@@ -115,6 +141,7 @@ Case summary
 
     </form>
 
+    {% include "includes/ndelius-record-details.html" %}
   </div>
 </div>
 

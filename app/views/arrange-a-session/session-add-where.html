@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../progress" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s progress</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="session-add-2" method="post" class="form">
+
+      {% set locationItems = [] %}
+      {% for location in possibleLocations(data['provider-code'], data['team-codes']) | sort(false, false, 'description') %}
+        {% set locationItems = (locationItems.push({
+          text: location.description,
+          value: location.code
+        }), locationItems) %}
+      {% endfor %}
+
+      {{ govukRadios({
+           fieldset: {
+             legend: {
+               text: "Where will the appointment happen?",
+               classes: "govuk-label--l"
+             }
+           },
+           name: 'session-location-code',
+           items: locationItems
+           }) }}
+
+       {{ govukButton({
+         text: "Save and continue"
+       }) }}
+    </form>
+
+    {% include "includes/ndelius-record-details.html" %}
+  </div>
+
+</div>
+
+{% endblock %}

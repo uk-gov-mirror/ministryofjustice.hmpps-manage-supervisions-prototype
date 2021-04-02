@@ -20,7 +20,16 @@ Case summary
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="session-add-2" method="post" class="form">
+    <form action="session-add-where" method="post" class="form">
+
+      {% set contactTypeSelectItems = [{ text: '', value: ''}] %}
+      {% for contactType in possibleContactTypes(data['provider-code']) | sort(false, false, 'description') %}
+        {% set contactTypeSelectItems = (contactTypeSelectItems.push({
+          text: contactType.description,
+          value: contactType.code,
+          checked: checked("type-of-session-other", contactType.code)
+        }), contactTypeSelectItems) %}
+      {% endfor %}
 
       {{ govukRadios({
            fieldset: {
@@ -56,15 +65,15 @@ Case summary
                value: "Other",
                checked: checked("type-of-session", "Other"),
                conditional: {
-                 html: govukInput({
-                   label: {
-                     text: "Type of session",
-                     classes: "govuk-label--s"
-                   },
-                   classes: "govuk-!-width-two-thirds",
-                   name: 'type-of-session-other',
-                   value: data['type-of-session-other']
-                 })
+                 html: govukSelect({
+                        id: "type-of-session-other",
+                        name: "type-of-session-other",
+                        label: {
+                          text: "Type of session",
+                          classes: "govuk-label--s"
+                        },
+                        items: contactTypeSelectItems
+                      })
                }
              }
            ]

@@ -21,14 +21,27 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% set arrangedSession = arrangedSession({
+        providerCode: data['provider-code'],
+        typeOfSession: data['type-of-session'],
+        contactType: data['type-of-session-other'],
+        date: data['session-date'],
+        startTime: data['session-start-time'],
+        endTime: data['session-end-time'],
+        countsTowardsRAR: data['session-counts-towards-rar'] == 'Yes',
+        rarCategory: data['session-rar-category'],
+        rarSubCategory: data['session-rar-subcategory'],
+        locationCode: data['session-location-code']
+    }) %}
+
     <div class="govuk-!-margin-bottom-7">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
           Session arranged
         </h1>
         <div class="govuk-panel__body">
-          <strong>{{ 'Other (' + data['type-of-session-other'] + ')' if data['type-of-session'] == 'Other' else data['type-of-session'] }}</strong><br>
-          {{ data['session-date'] | dateWithDayAndWithoutYear }} from {{ data['session-start-time'] }} to {{ data['session-end-time'] }}
+          <strong>{{ arrangedSession.summary.typeOfSession }}</strong><br>
+          {{ arrangedSession.summary.date | dateWithDayAndWithoutYear }} from {{ arrangedSession.summary.time }}
         </div>
       </div>
     </div>

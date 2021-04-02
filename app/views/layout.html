@@ -60,7 +60,15 @@
           {
             href: "/prototype-admin/clear-data",
             text: "Clear data"
-          }
+          },
+          {
+            href: "/switch-provider/N07",
+            text: "Switch to NPS practitioner"
+          } if data['provider-code'] !== 'N07',
+          {
+            href: "/switch-provider/C17",
+            text: "Switch to CRC practitioner"
+          } if data['provider-code'] !== 'C17'
         ]
       }
     }) }}

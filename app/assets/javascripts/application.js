@@ -8,6 +8,10 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
+
+accessibleAutocomplete.enhanceSelectElement({
+  selectElement: document.querySelector('#type-of-session-other')
+})
 /*
   $(window).click(function () {
     toggleFilter()
