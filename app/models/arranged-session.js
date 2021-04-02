@@ -13,7 +13,7 @@ class ArrangedSession {
 
   get summary () {
     return {
-      'typeOfSession': this.params.sessionLabel || 'Office visit',
+      'typeOfSession': this.sessionLabel || 'Office visit',
       'date': this.params.date,
       'time': this.params.startTime + ' to ' + this.params.endTime,
       'countsTowardsRAR': this.params.countsTowardsRAR,
