@@ -3,27 +3,22 @@ const contactTypes = require(path.join(__dirname, '../data/contact-types.js'))
 const { RARCategories } = require(path.join(__dirname, './rar-categories.js'))
 
 class ArrangedSession {
-  constructor (providerCode, typeOfSession, contactTypeCode, date, startTime, endTime, countsTowardsRAR, rarCategory, rarSubCategory, locationCode) {
-    this.providerCode = providerCode
-    this.typeOfSession = typeOfSession
-    this.contactTypeCode = contactTypeCode
-    this.date = date || '2021-03-25'
-    this.startTime = startTime || '10am'
-    this.endTime = endTime || '11am'
-    this.countsTowardsRAR = countsTowardsRAR
-    this.rarCategory = rarCategory
-    this.rarSubCategory = rarSubCategory
-    this.locationCode = locationCode
+  constructor (params) {
+    this.params = params
+
+    this.params.date = params.date || '2021-03-25'
+    this.params.startTime = params.startTime || '10am'
+    this.params.endTime = params.endTime || '11am'
   }
 
   get summary () {
     return {
-      'typeOfSession': this.sessionLabel || 'Office visit',
-      'date': this.date,
-      'time': this.startTime + ' to ' + this.endTime,
-      'countsTowardsRAR': this.countsTowardsRAR,
-      'rarCategory': this.countsTowardsRAR ? this.rarCategory : null,
-      'rarSubCategory': this.countsTowardsRAR ? this.rarSubCategory : null
+      'typeOfSession': this.params.sessionLabel || 'Office visit',
+      'date': this.params.date,
+      'time': this.params.startTime + ' to ' + this.params.endTime,
+      'countsTowardsRAR': this.params.countsTowardsRAR,
+      'rarCategory': this.params.countsTowardsRAR ? this.params.rarCategory : null,
+      'rarSubCategory': this.params.countsTowardsRAR ? this.params.rarSubCategory : null
     }
   }
 
@@ -31,29 +26,29 @@ class ArrangedSession {
     return {
       'typeCode': this.rarCategories.contactTypeCode,
       'typeDescription': this.rarCategories.contactTypeCode ? contactTypes[this.rarCategories.contactTypeCode].description : null,
-      'locationCode': this.locationCode
+      'locationCode': this.params.locationCode
     }
   }
 
   get nsiRecord () {
-    if (this.countsTowardsRAR) {
+    if (this.params.countsTowardsRAR) {
       return {
-        'typeDescription': this.rarCategory,
-        'subtypeDescription': this.rarSubCategory
+        'typeDescription': this.params.rarCategory,
+        'subtypeDescription': this.params.rarSubCategory
       }
     }
   }
 
   get sessionLabel () {
-    if (this.typeOfSession === 'Other' && this.contactTypeCode) {
-      return contactTypes[this.contactTypeCode].description
+    if (this.params.typeOfSession === 'Other' && this.params.contactTypeCode) {
+      return contactTypes[this.params.contactTypeCode].description
     } else {
-      return this.typeOfSession
+      return this.params.typeOfSession
     }
   }
 
   get rarCategories () {
-    return new RARCategories(this.providerCode, this.typeOfSession, this.contactTypeCode)
+    return new RARCategories(this.params.providerCode, this.params.typeOfSession, this.params.contactTypeCode)
   }
 
   get contactType () {

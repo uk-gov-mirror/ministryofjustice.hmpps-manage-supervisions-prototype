@@ -21,16 +21,18 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% set arrangedSession = arrangedSession(
-        data['provider-code'],
-        data['type-of-session'],
-        data['type-of-session-other'],
-        data['session-date'],
-        data['session-start-time'],
-        data['session-end-time'],
-        data['session-counts-towards-rar'] == 'Yes',
-        data['session-rar-category']
-    ) %}
+    {% set arrangedSession = arrangedSession({
+        providerCode: data['provider-code'],
+        typeOfSession: data['type-of-session'],
+        contactType: data['type-of-session-other'],
+        date: data['session-date'],
+        startTime: data['session-start-time'],
+        endTime: data['session-end-time'],
+        countsTowardsRAR: data['session-counts-towards-rar'] == 'Yes',
+        rarCategory: data['session-rar-category'],
+        rarSubCategory: data['session-rar-subcategory'],
+        locationCode: data['session-location-code']
+    }) %}
 
     <div class="govuk-!-margin-bottom-7">
       <div class="govuk-panel govuk-panel--confirmation">

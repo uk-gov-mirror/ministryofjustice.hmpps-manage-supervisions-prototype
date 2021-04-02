@@ -13,7 +13,11 @@ router.get('/switch-provider/:newProvider', function (req, res) {
 })
 
 router.post('/arrange-a-session/session-add-where', function (req, res) {
-  const session = helpers.arrangedSession(req.session.data['provider-code'], req.session.data['type-of-session'], req.session.data['type-of-session-other'])
+  const session = helpers.arrangedSession({
+    providerCode: req.session.data['provider-code'],
+    typeOfSession: req.session.data['type-of-session'],
+    contactType: req.session.data['type-of-session-other']
+  })
   const contactType = session.contactType
 
   if (contactType && contactType.requiresLocation === 'Y') {
