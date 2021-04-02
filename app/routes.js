@@ -16,7 +16,7 @@ router.post('/arrange-a-session/session-add-where', function (req, res) {
   const session = helpers.arrangedSession(req.session.data['provider-code'], req.session.data['type-of-session'], req.session.data['type-of-session-other'])
   const contactType = session.contactType
 
-  if (contactType && contactType.requiresLocation == 'Y') {
+  if (contactType && contactType.requiresLocation === 'Y') {
     res.redirect('/arrange-a-session/session-add-where')
   } else {
     res.redirect('/arrange-a-session/session-add-2')
@@ -26,7 +26,7 @@ router.post('/arrange-a-session/session-add-where', function (req, res) {
 router.post('/arrange-a-session/session-add-3', function (req, res) {
   let possibleRARCategories = helpers.possibleRARCategories(req.session.data['provider-code'], req.session.data['type-of-session'], req.session.data['type-of-session-other'])
 
-  if (possibleRARCategories === undefined || possibleRARCategories.length == 0) {
+  if (possibleRARCategories === undefined || possibleRARCategories.length === 0) {
     req.session.data['session-counts-towards-rar'] = 'No'
     res.redirect('/arrange-a-session/session-add-4')
   } else {
@@ -35,7 +35,7 @@ router.post('/arrange-a-session/session-add-3', function (req, res) {
 })
 
 router.post('/arrange-a-session/session-add-rar-category', function (req, res) {
-  if (req.session.data['session-counts-towards-rar'] == 'Yes') {
+  if (req.session.data['session-counts-towards-rar'] === 'Yes') {
     res.redirect('/arrange-a-session/session-add-rar-category')
   } else {
     res.redirect('/arrange-a-session/session-add-4')
