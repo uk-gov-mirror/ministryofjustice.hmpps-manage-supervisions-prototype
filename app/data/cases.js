@@ -1,3 +1,6 @@
+const path = require('path')
+const helpers = require(path.join(__dirname, '../../lib/helpers.js'))
+
 module.exports = {
   'cases': [
     {
@@ -146,8 +149,8 @@ module.exports = {
       'previousOrderStatus': 'Order ended 24 Nov 2016',
       'risk': 'Medium',
       'nextAppointment': {
-        'timestamp': '2021-04-23T13:00',
-        'endTime': '2021-04-23T14:00',
+        'timestamp': helpers.tomorrowAt('13:00'),
+        'endTime': helpers.tomorrowAt('14:00'),
         'type': 'Office visit'
       },
       'contactHistory': [
