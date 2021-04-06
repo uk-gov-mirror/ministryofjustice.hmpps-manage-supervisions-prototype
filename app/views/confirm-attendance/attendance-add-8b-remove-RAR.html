@@ -80,11 +80,11 @@ Case summary
         </div>
       </dl>
 
-      <p class="govuk-body">You're confirming attendance for:</p>
+      <p class="govuk-body">You’re confirming attendance for:</p>
 
       <div class="govuk-inset-text">
-        <strong>Office visit</strong><br>
-        Wednesday 23 April from 1pm to 2pm
+        <strong>{{ case.previousAppointment.type }}</strong><br>
+        {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
       </div>
 
       <button class="govuk-button" data-module="govuk-button">

@@ -153,11 +153,16 @@ module.exports = {
         'endTime': helpers.tomorrowAt('14:00'),
         'type': 'Office visit'
       },
+      'previousAppointment': {
+        'timestamp': helpers.yesterdayAt('13:00'),
+        'endTime': helpers.yesterdayAt('14:00'),
+        'type': 'Office visit'
+      },
       'contactHistory': [
         {
           'type': 'Office visit',
           'probationPractitioner': 'Mark Berridge',
-          'timestamp': '2021-04-23T13:00',
+          'timestamp': helpers.yesterdayAt('13:00'),
           'outcome': null
         },
         {
