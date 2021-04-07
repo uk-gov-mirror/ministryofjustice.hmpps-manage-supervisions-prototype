@@ -5,6 +5,7 @@ const helpers = require('../lib/helpers.js')
 // Add your routes here - above the module.exports line
 
 require('./routes/cases')(router)
+require('./routes/confirm-attendance')(router)
 
 router.get('/switch-provider/:newProvider', function (req, res) {
   const newProvider = req.params['newProvider']
