@@ -50,9 +50,8 @@ Case summary
                    text: "What will this session count towards?"
                  }
                },
-               name: 'session-rar-category',
                items: rarRadioItems
-             })
+             } | decorateFormAttributes(['confirm-a-session', CRN, 'RARCategory']) )
           }}
       {% endset %}
 
@@ -66,23 +65,20 @@ Case summary
            hint: {
              html: 'This will account for one day of Rehabilitation Activity Requirement (RAR).'
            },
-           name: 'session-counts-towards-rar',
            items: [
              {
                text: 'Yes',
                value: 'Yes',
-               checked: checked('session-counts-towards-rar', 'Yes'),
                conditional: {
                  html: rarCategoryHtml
                }
              },
              {
                text: 'No',
-               value: 'No',
-               checked: checked('session-counts-towards-rar', 'No')
+               value: 'No'
              }
            ]
-           }) }}
+           } | decorateFormAttributes(['confirm-a-session', CRN, 'countsTowardsRAR']) ) }}
 
       <button class="govuk-button" data-module="govuk-button">
         Save and continue

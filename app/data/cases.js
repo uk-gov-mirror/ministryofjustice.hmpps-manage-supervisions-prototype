@@ -154,7 +154,9 @@ module.exports = [
     'previousAppointment': {
       'timestamp': helpers.yesterdayAt('13:00'),
       'endTime': helpers.yesterdayAt('14:00'),
-      'type': 'Office visit'
+      'type': 'Office visit',
+      'countsTowardsRAR': true,
+      'RARCategory': 'Thinking skills, attitudes and behaviour'
     },
     'contactHistory': [
       {
