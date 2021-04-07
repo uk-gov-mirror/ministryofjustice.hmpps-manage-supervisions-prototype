@@ -25,6 +25,7 @@ const routes = require('./app/routes.js')
 const utils = require('./lib/utils.js')
 const helpers = require('./lib/helpers.js')
 const extensions = require('./lib/extensions/extensions.js')
+const addNunjucksFiltersWithAppContext = require('./app/utils/filters-with-app-context')
 
 // Variables for v6 backwards compatibility
 // Set false by default, then turn on if we find /app/prototype/routes.js
@@ -105,6 +106,9 @@ var nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig)
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv)
+
+// Add Nunjucks filters with access to app, req and res
+addNunjucksFiltersWithAppContext(nunjucksAppEnv, app)
 
 // Set views engine
 app.set('view engine', 'html')
