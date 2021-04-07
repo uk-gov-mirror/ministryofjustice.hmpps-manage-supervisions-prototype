@@ -1,3 +1,5 @@
+const helpers = require('./helpers')
+
 function originalQuery (req) {
   var originalQueryString = req.originalUrl.split('?')[1]
   return originalQueryString ? `?${originalQueryString}` : ''
@@ -32,32 +34,31 @@ function nextAndBackPaths (paths, req) {
 function nextForkPath (forks, req) {
   const currentPath = req.path
   const data = req.session.data
-  const fork = forks[currentPath]
+  const fork = forks.find(obj => { return obj.currentPath === currentPath })
 
   if (fork) {
-    for (const [key, condition] of Object.entries(fork)) {
-      const storedValues = Array.isArray(data[key]) ? data[key] : [data[key]]
+    const storedData = helpers.getDataValue(req.session.data, fork.storedData)
+    const storedValues = Array.isArray(storedData) ? storedData : [storedData]
 
-      if (condition.values) {
-        const values = Array.isArray(condition.values) ? condition.values : [condition.values]
+    if (fork.values) {
+      const values = Array.isArray(fork.values) ? fork.values : [fork.values]
 
-        if (values.some(v => storedValues.indexOf(v) >= 0)) {
-          data['forked-from'] = currentPath
-          data['forked-to'] = condition.path
+      if (values.some(v => storedValues.indexOf(v) >= 0)) {
+        data['forked-from'] = currentPath
+        data['forked-to'] = fork.forkPath
 
-          return condition.path
-        }
+        return fork.forkPath
       }
+    }
 
-      if (condition.excludedValues) {
-        const excludedValues = Array.isArray(condition.excludedValues) ? condition.excludedValues : [condition.excludedValues]
+    if (fork.excludedValues) {
+      const excludedValues = Array.isArray(fork.excludedValues) ? fork.excludedValues : [fork.excludedValues]
 
-        if (!excludedValues.some(v => storedValues.indexOf(v) >= 0)) {
-          data['forked-from'] = currentPath
-          data['forked-to'] = condition.path
+      if (!excludedValues.some(v => storedValues.indexOf(v) >= 0)) {
+        data['forked-from'] = currentPath
+        data['forked-to'] = fork.forkPath
 
-          return condition.path
-        }
+        return fork.forkPath
       }
     }
   }
