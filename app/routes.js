@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const helpers = require('../lib/helpers.js')
 
 // Add your routes here - above the module.exports line
 
 require('./routes/cases')(router)
+require('./routes/arrange-a-session')(router)
 
 router.get('/switch-provider/:newProvider', function (req, res) {
   const newProvider = req.params['newProvider']
@@ -12,29 +12,6 @@ router.get('/switch-provider/:newProvider', function (req, res) {
   req.session.data['team-codes'] = req.session.data['default-teams'][newProvider]
 
   res.redirect('/progress')
-})
-
-router.post('/arrange-a-session/session-add-where', function (req, res) {
-  const session = helpers.arrangedSession({
-    providerCode: req.session.data['provider-code'],
-    typeOfSession: req.session.data['type-of-session'],
-    contactType: req.session.data['type-of-session-other']
-  })
-  const contactType = session.contactType
-
-  if (contactType && contactType.requiresLocation === 'Y') {
-    res.redirect('/arrange-a-session/session-add-where')
-  } else {
-    res.redirect('/arrange-a-session/session-add-2')
-  }
-})
-
-router.post('/arrange-a-session/session-add-rar-category', function (req, res) {
-  if (req.session.data['session-counts-towards-rar'] === 'Yes') {
-    res.redirect('/arrange-a-session/session-add-rar-category')
-  } else {
-    res.redirect('/arrange-a-session/session-add-4')
-  }
 })
 
 router.post('/confirm-attendance/attendance-add-3', function (req, res) {
@@ -91,16 +68,6 @@ router.post('/confirm-attendance/attendance-add-7', function (req, res) {
     res.redirect('/confirm-attendance/attendance-add-7b')
   } else {
     res.redirect('/confirm-attendance/attendance-add-8b')
-  }
-})
-
-router.post('/arrange-a-session/session-update-2', function (req, res) {
-  let rearrangesession = req.session.data['rearrange-session']
-
-  if (rearrangesession === 'true') {
-    res.redirect('/arrange-a-session/session-update-2')
-  } else {
-    res.redirect('/arrange-a-session/session-update-5-cancel')
   }
 })
 
