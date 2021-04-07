@@ -30,7 +30,7 @@ Case summary
         rows: [
           {
             key: { text: "RAR activity" },
-            value: { text: "Thinking skills, attitudes and behaviour" if data['session-counts-towards-rar'] == 'Yes' else 'None'  },
+            value: { text: data['session-rar-category'] if data['session-counts-towards-rar'] == 'Yes' else 'None'  },
             actions: {
               items: [
                 {
