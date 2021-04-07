@@ -78,7 +78,7 @@ router.post('/confirm-attendance/attendance-add-7b', function (req, res) {
   if (sessionnotes === 'true') {
     res.redirect('/confirm-attendance/attendance-add-7b')
   } else {
-    res.redirect('/confirm-attendance/attendance-add-8b-remove-RAR')
+    res.redirect('/confirm-attendance/attendance-add-8')
   }
 })
 

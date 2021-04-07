@@ -21,70 +21,60 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
     <form action="attendance-add-9" method="post" class="form">
 
-      <h1 class="govuk-heading-l">Check your answers</h1>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: { text: "RAR activity" },
+            value: { text: "Thinking skills, attitudes and behaviour" if data['session-counts-towards-rar'] == 'Yes' else 'None'  },
+            actions: {
+              items: [
+                {
+                  href: "attendance-add-5",
+                  text: "Change",
+                  visuallyHiddenText: "RAR activity"
+                }
+              ]
+            }
+          },
+          {
+            key: { text: case.serviceUserPersonalDetails.firstName + " complied" },
+            value: { text: "Yes" },
+            actions: {
+              items: [
+                {
+                  href: "attendance-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "compliance"
+                }
+              ]
+            }
+          },
+          {
+            key: { text: "Session notes" },
+            value: { text: "None" },
+            actions: {
+              items: [
+                {
+                  href: "attendance-add-6",
+                  text: "Change",
+                  visuallyHiddenText: "session notes"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            RAR activity
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Thinking skills, attitudes and behaviour
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> RAR activity</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ case.serviceUserPersonalDetails.firstName }} complied
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> compliance</span>
-            </a>
-          </dd>
-        </div>
-        <!--<div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Reason for not complying
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Behavioural issues
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> reason for not complying</span>
-            </a>
-          </dd>
-        </div>--->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Session notes
-          </dt>
-          <dd class="govuk-summary-list__value">
-            None
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> session notes</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
-
-      <p class="govuk-body">You're confirming attendance for:</p>
+      <p class="govuk-body">You’re confirming attendance for:</p>
 
       <div class="govuk-inset-text">
-        <strong>Office visit</strong><br>
-        Wednesday 23 April from 1pm to 2pm
+        <strong>{{ case.previousAppointment.type }}</strong><br>
+        {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
       </div>
 
       <button class="govuk-button" data-module="govuk-button">
