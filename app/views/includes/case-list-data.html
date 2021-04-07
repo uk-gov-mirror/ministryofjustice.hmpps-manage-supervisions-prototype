@@ -18,7 +18,7 @@
         {% for case in data.cases %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
-            <a href="{{ case.link }}" class="govuk-link govuk-link--no-visited-state">
+            <a href="{% if case.CRN %}/cases/{{ case.CRN }}{% else %}#{% endif %}" class="govuk-link govuk-link--no-visited-state">
               {{ case.serviceUserPersonalDetails.name }}
             </a>
           </td>

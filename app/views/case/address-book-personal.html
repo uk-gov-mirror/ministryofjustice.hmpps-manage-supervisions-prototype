@@ -13,7 +13,7 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="details" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s details</a>
+<a href="/cases/{{ CRN }}/details" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s details</a>
 {% endblock %}
 
 {% block content %}

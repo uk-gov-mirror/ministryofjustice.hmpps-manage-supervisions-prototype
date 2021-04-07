@@ -143,7 +143,6 @@ module.exports = [
       'Relationships',
       'Thinking and attitudes'
     ],
-    'link': 'progress',
     'status': 'Previously known',
     'previousOrderStatus': 'Order ended 24 Nov 2016',
     'risk': 'Medium',
@@ -245,7 +244,6 @@ module.exports = [
     'serviceUserPersonalDetails': {
       'name': 'Džiugas Atraskevicius'
     },
-    'link': '',
     'status': 'Current',
     'currentOrder': {
       'type': 'CJA - Indeterminate Public Prot.'
@@ -261,7 +259,6 @@ module.exports = [
     'serviceUserPersonalDetails': {
       'name': 'Spencer Gill'
     },
-    'link': '',
     'status': 'No record',
     'currentOrder': {
       'type': 'ORA Suspended Sentence Order'

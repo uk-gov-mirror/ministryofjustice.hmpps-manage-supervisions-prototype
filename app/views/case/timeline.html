@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-{% set case = data.cases[0] %}
 
 {% block pageTitle %}
 Case summary
@@ -14,12 +13,12 @@ Case summary
 {% endblock %}
 
 {% block beforeContent %}
-<a href="case-list" class="govuk-back-link">Back to my cases</a>
+<a href="/cases" class="govuk-back-link">Back to my cases</a>
 {% endblock %}
 
 {% block content %}
 {% set currentNavSection = 'timeline' %}
-{% include "includes/navigation.html" %}
+{% include "case/_case-nav.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
