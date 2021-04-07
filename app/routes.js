@@ -15,36 +15,26 @@ router.get('/switch-provider/:newProvider', function (req, res) {
   res.redirect('/progress')
 })
 
-router.post('/confirm-attendance/attendance-add-3', function (req, res) {
+router.post('/confirm-attendance/non-compliance-reason', function (req, res) {
   let complybranch = req.session.data['comply']
 
   if (complybranch === 'false') {
-    res.redirect('/confirm-attendance/attendance-add-3')
+    res.redirect('/confirm-attendance/non-compliance-reason')
   }
   if (complybranch === 'true') {
-    res.redirect('/confirm-attendance/attendance-add-5')
+    res.redirect('/confirm-attendance/rar-categories')
   } else {
-    res.redirect('/confirm-attendance/attendance-add-4')
+    res.redirect('/confirm-attendance/absence-acceptable')
   }
 })
 
-router.post('/confirm-attendance/attendance-add-7', function (req, res) {
+router.post('/confirm-attendance/notes', function (req, res) {
   let sessionnotes = req.session.data['session-notes']
 
   if (sessionnotes === 'true') {
-    res.redirect('/confirm-attendance/attendance-add-7')
+    res.redirect('/confirm-attendance/notes')
   } else {
-    res.redirect('/confirm-attendance/attendance-add-8')
-  }
-})
-
-router.post('/confirm-attendance/attendance-add-7', function (req, res) {
-  let sessionnotes = req.session.data['session-notes']
-
-  if (sessionnotes === 'true') {
-    res.redirect('/confirm-attendance/attendance-add-7b')
-  } else {
-    res.redirect('/confirm-attendance/attendance-add-8b')
+    res.redirect('/confirm-attendance/check')
   }
 })
 
