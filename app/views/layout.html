@@ -77,6 +77,7 @@
 
 {% block bodyEnd %}
   {% block scripts %}
+    {{ data | log }}
     {% include "includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
