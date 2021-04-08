@@ -18,14 +18,14 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="rar-categories" method="post" class="form">
+    <form action="/confirm-attendance/{{ case.CRN }}/{{ sessionId }}/rar-categories" method="post" class="form">
       {% set whyAcceptableHtml %}
         {{ govukInput({
           label: {
             text: "Give details"
           },
           classes: 'govuk-!-width-two-thirds'
-        } | decorateFormAttributes(['confirm-a-session', CRN, 'non-compliance-reason'])) }}
+        } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'non-compliance-reason'])) }}
       {% endset %}
 
       {{ govukRadios({
@@ -49,7 +49,7 @@ Case summary
                }
              }
            ]
-           } | decorateFormAttributes(['confirm-a-session', CRN, 'was-absence-acceptable']))
+           } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'was-absence-acceptable']))
       }}
 
       <button class="govuk-button send-message">

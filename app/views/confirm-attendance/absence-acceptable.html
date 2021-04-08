@@ -18,7 +18,7 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="rar-categories" method="post" class="form">
+    <form action="/confirm-attendance/{{ case.CRN }}/{{ sessionId }}/rar-categories" method="post" class="form">
 
       {% set whyAcceptableHtml %}
         {{ govukInput({
@@ -26,7 +26,7 @@ Case summary
             text: "Why was this absence acceptable?"
           },
           classes: 'govuk-!-width-two-thirds'
-        } | decorateFormAttributes(['confirm-a-session', CRN, 'why-absence-acceptable'])) }}
+        } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'why-absence-acceptable'])) }}
       {% endset %}
 
       {{ govukRadios({
@@ -50,7 +50,7 @@ Case summary
                value: 'No'
              }
            ]
-           } | decorateFormAttributes(['confirm-a-session', CRN, 'was-absence-acceptable']))
+           } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'was-absence-acceptable']))
       }}
 
       <button class="govuk-button send-message">

@@ -156,13 +156,15 @@ module.exports = [
       'endTime': helpers.yesterdayAt('14:00'),
       'type': 'Office visit',
       'countsTowardsRAR': true,
-      'RARCategory': 'Thinking skills, attitudes and behaviour'
+      'RARCategory': 'Thinking skills, attitudes and behaviour',
+      'sessionId': 456
     },
     'contactHistory': [
       {
         'type': 'Office visit',
         'probationPractitioner': 'Mark Berridge',
         'timestamp': helpers.yesterdayAt('13:00'),
+        'sessionId': 456,
         'outcome': null
       },
       {

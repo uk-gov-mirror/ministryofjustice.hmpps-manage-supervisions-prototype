@@ -19,16 +19,16 @@ Case summary
 
     <h1 class="govuk-heading-l">Check your answers</h1>
 
-    <form action="confirmation" method="post" class="form">
+    <form action="/confirm-attendance/{{ case.CRN }}/{{ sessionId }}/confirmation" method="post" class="form">
 
-      {% set complianceText = case.serviceUserPersonalDetails.firstName + ' was absent' if data['confirm-a-session'][CRN]['did-service-user-comply'] == 'Absent' else data['confirm-a-session'][CRN]['did-service-user-comply']  %}
+      {% set complianceText = case.serviceUserPersonalDetails.firstName + ' was absent' if data['confirm-attendance'][CRN][sessionId]['did-service-user-comply'] == 'Absent' else data['confirm-attendance'][CRN][sessionId]['did-service-user-comply']  %}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
           {
             key: { text: "RAR activity" },
-            value: { text: data['confirm-a-session'][CRN]['RARCategory'] if data['confirm-a-session'][CRN]['countsTowardsRAR'] == 'Yes' else 'None'  },
+            value: { text: data['confirm-attendance'][CRN][sessionId]['RARCategory'] if data['confirm-attendance'][CRN][sessionId]['countsTowardsRAR'] == 'Yes' else 'None'  },
             actions: {
               items: [
                 {
@@ -54,7 +54,7 @@ Case summary
           },
           {
             key: { text: "Session notes" },
-            value: { text: data['confirm-a-session'][CRN]['notes'] if data['confirm-a-session'][CRN]['add-notes'] == 'Yes' else 'None' },
+            value: { text: data['confirm-attendance'][CRN][sessionId]['notes'] if data['confirm-attendance'][CRN][sessionId]['add-notes'] == 'Yes' else 'None' },
             actions: {
               items: [
                 {

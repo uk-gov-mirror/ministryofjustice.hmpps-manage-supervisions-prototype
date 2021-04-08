@@ -17,7 +17,7 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="add-notes" method="post" class="form">
+    <form action="/confirm-attendance/{{ case.CRN }}/{{ sessionId }}/add-notes" method="post" class="form">
 
       {% set rarCategories = [
         'Employment, Training and Education',
@@ -47,7 +47,7 @@ Case summary
                  }
                },
                items: rarRadioItems
-             } | decorateFormAttributes(['confirm-a-session', CRN, 'RARCategory']) )
+             } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'RARCategory']) )
           }}
       {% endset %}
 
@@ -74,7 +74,7 @@ Case summary
                value: 'No'
              }
            ]
-           } | decorateFormAttributes(['confirm-a-session', CRN, 'countsTowardsRAR']) ) }}
+           } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'countsTowardsRAR']) ) }}
 
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
