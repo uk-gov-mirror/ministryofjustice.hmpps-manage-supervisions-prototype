@@ -15,7 +15,7 @@
     countsTowardsRAR: data['arrange-a-session'][CRN]['session-counts-towards-rar'] == 'Yes',
     rarCategory: data['arrange-a-session'][CRN]['session-rar-category'],
     rarSubCategory: data['arrange-a-session'][CRN]['session-rar-subcategory'],
-    locationCode: data['session-location-code']
+    locationCode: data['arrange-a-session'][CRN]['session-location-code']
   }) %}
 
   {{ govukSummaryList({
