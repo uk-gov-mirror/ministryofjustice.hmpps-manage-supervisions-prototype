@@ -165,12 +165,12 @@ Case summary
       <div class="govuk-panel govuk-panel--appointment-timeline">
         <div class="govuk-panel__body">
           <strong>
-            {{ case.nextAppointment.timestamp | dateWithDayAndWithoutYear }} from<br>
-            {{ case.nextAppointment.timestamp | govukTime }} to {{ case.nextAppointment.endTime | govukTime }}
+            {{ data['arrange-a-session'][CRN][123]['session-date'] | dateWithDayAndWithoutYear }} from<br>
+            {{ data['arrange-a-session'][CRN][123]['session-start-time'] }} to {{ data['arrange-a-session'][CRN][123]['session-end-time'] }}
           </strong><br>
-          {{ case.nextAppointment.type }}<br>
+          {{ data['arrange-a-session'][CRN][123]['type-of-session'] }}<br>
           <br>
-          <a href="/arrange-a-session/{{ CRN }}/rearrange-or-cancel" class="govuk-button govuk-button--secondary"
+          <a href="/arrange-a-session/{{ CRN }}/123/rearrange-or-cancel" class="govuk-button govuk-button--secondary"
             data-module="govuk-button" style="margin-bottom: 0;">
             Rearrange or cancel session
           </a>
