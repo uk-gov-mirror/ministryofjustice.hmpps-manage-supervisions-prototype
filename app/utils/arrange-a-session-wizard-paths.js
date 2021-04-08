@@ -17,7 +17,10 @@ function arrangeSessionWizardPaths (req) {
     `/arrange-a-session/${CRN}/${sessionId}/check`,
     `/arrange-a-session/${CRN}/${sessionId}/confirmation`,
     `/cases/${CRN}`,
-    `/arrange-a-session/${CRN}/${sessionId}/rearrange-or-cancel`
+    `/arrange-a-session/${CRN}/${sessionId}/rearrange-or-cancel`,
+    `/arrange-a-session/${CRN}/${sessionId}/cancel`,
+    `/arrange-a-session/${CRN}/${sessionId}/cancel-confirmation`,
+    `/cases/${CRN}`
   ]
 
   return nextAndBackPaths(paths, req)
@@ -39,6 +42,12 @@ function arrangeSessionWizardForks (req) {
       storedData: ['arrange-a-session', CRN, sessionId, 'session-counts-towards-rar'],
       values: ['No'],
       forkPath: `/arrange-a-session/${CRN}/${sessionId}/check`
+    },
+    {
+      currentPath: `/arrange-a-session/${CRN}/${sessionId}/rearrange-or-cancel`,
+      storedData: ['arrange-a-session', CRN, sessionId, 'rearrange-or-cancel'],
+      values: ['Rearrange session'],
+      forkPath: `/arrange-a-session/${CRN}/${sessionId}`
     }
   ]
 

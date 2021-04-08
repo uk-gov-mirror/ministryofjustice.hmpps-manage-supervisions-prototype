@@ -1,5 +1,4 @@
 {% extends "_wizard-page.html" %}
-{% set rearranging = data['arrange-a-session'][CRN][sessionId]['rearrange-or-cancel'] %}
 {% set buttonText = 'Finish' %}
 
 {% block page %}
@@ -22,15 +21,15 @@
   {% endset %}
 
   {{ govukPanel({
-    titleText: "Session rearranged" if rearranging else "Session arranged",
+    titleText: "Session cancelled",
     html: panelHtml
   }) }}
 
   <h2 class="govuk-heading-m govuk-!-margin-top-6">Next steps</h2>
   <p class="govuk-body">
-    Add this session to your calendar.
+    Remove this session from your calendar.
   </p>
   <p class="govuk-body">
-    Give details of the session to {{ case.serviceUserPersonalDetails.firstName }}.<br>
+    Let {{ case.serviceUserPersonalDetails.firstName }} know.<br>
     {{ case.serviceUserPersonalDetails.firstName }}’s phone number is <strong>{{ case.serviceUserPersonalDetails.phone }}</strong>.</p>
 {% endblock %}

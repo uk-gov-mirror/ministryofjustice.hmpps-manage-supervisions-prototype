@@ -26,6 +26,17 @@ module.exports = router => {
     next()
   })
 
+  router.get('/arrange-a-session/:CRN/:sessionId/cancel-confirmation', (req, res, next) => {
+    setDataValue(req.session.data,
+      [
+        'arrange-a-session',
+        req.params.CRN,
+        req.params.sessionId,
+        'cancelled'
+      ], true)
+    next()
+  })
+
   router.all([
     '/arrange-a-session/:CRN/:sessionId',
     '/arrange-a-session/:CRN/:sessionId/:view'
@@ -38,16 +49,6 @@ module.exports = router => {
     })
     next()
   })
-
-  // router.post('/arrange-a-session/session-update-2', function (req, res) {
-  //   let rearrangesession = req.session.data['rearrange-session']
-  //
-  //   if (rearrangesession === 'true') {
-  //     res.redirect('/arrange-a-session/session-update-2')
-  //   } else {
-  //     res.redirect('/arrange-a-session/session-update-5-cancel')
-  //   }
-  // })
 
   router.get('/arrange-a-session/:CRN/:sessionId', function (req, res) {
     res.render('arrange-a-session/index', { paths: arrangeSessionWizardPaths(req) })
