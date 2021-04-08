@@ -1,4 +1,8 @@
-const { generateRandomString } = require('../utils/helpers')
+const {
+  generateRandomString,
+  getDataValue,
+  setDataValue
+} = require('../utils/helpers')
 
 const {
   arrangeSessionWizardPaths,
@@ -9,6 +13,17 @@ module.exports = router => {
   router.get('/arrange-a-session/:CRN/start', (req, res) => {
     const sessionId = generateRandomString()
     res.redirect(`/arrange-a-session/${req.params.CRN}/${sessionId}`)
+  })
+
+  router.get('/arrange-a-session/:CRN/:sessionId/confirmation', (req, res, next) => {
+    setDataValue(req.session.data,
+      [
+        'arrange-a-session',
+        req.params.CRN,
+        req.params.sessionId,
+        'confirmed'
+      ], true)
+    next()
   })
 
   router.all([
