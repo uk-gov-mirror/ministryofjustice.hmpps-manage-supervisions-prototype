@@ -1,4 +1,3 @@
-const helpers = require('../../lib/helpers.js')
 const {
   arrangeSessionWizardPaths,
   arrangeSessionWizardForks

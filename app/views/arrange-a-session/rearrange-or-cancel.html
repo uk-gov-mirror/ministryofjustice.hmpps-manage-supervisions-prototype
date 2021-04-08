@@ -1,0 +1,28 @@
+{% extends "_wizard-form.html" %}
+
+{% block form %}
+  {{ govukRadios({
+    fieldset: {
+      legend: {
+        text: "Do you need to rearrange or cancel this session?",
+        isPageHeading: true,
+        classes: "govuk-label--xl"
+      }
+    },
+    items: [
+      {
+        text: 'Rearrange session'
+      },
+      {
+        text: 'Cancel session'
+      }
+    ]
+  } | decorateFormAttributes(['arrange-a-session', CRN, 'rearrange-or-cancel'])) }}
+
+  {{ govukTextarea({
+      label: {
+        text: 'Why do you need to make this change?',
+        classes: 'govuk-label--m'
+      }
+  } | decorateFormAttributes(['arrange-a-session', CRN, 'rearrange-or-cancel-reason'])) }}
+{% endblock %}

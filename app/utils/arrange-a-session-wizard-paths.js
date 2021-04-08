@@ -15,7 +15,8 @@ function arrangeSessionWizardPaths (req) {
     `/arrange-a-session/${CRN}/rar-categories`,
     `/arrange-a-session/${CRN}/check`,
     `/arrange-a-session/${CRN}/confirmation`,
-    `/cases/${CRN}`
+    `/cases/${CRN}`,
+    `/arrange-a-session/${CRN}/rearrange-or-cancel`
   ]
 
   return nextAndBackPaths(paths, req)
