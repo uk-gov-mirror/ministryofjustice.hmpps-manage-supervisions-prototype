@@ -18,4 +18,17 @@ module.exports = router => {
       res.redirect('/confirm-attendance/check')
     }
   })
+
+  router.post('/confirm-attendance/non-compliance-reason', function (req, res) {
+    switch (req.session.data['confirm-a-session'][CRN]['did-service-user-comply']) {
+      case 'Yes':
+        res.redirect('/confirm-attendance/rar-categories')
+        break;
+      case 'No':
+        res.redirect('/confirm-attendance/non-compliance-reason')
+        break;
+      default:
+        res.redirect('/confirm-attendance/absence-acceptable')
+    }
+  })
 }

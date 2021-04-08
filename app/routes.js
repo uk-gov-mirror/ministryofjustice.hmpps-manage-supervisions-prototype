@@ -15,17 +15,4 @@ router.get('/switch-provider/:newProvider', function (req, res) {
   res.redirect('/progress')
 })
 
-router.post('/confirm-attendance/non-compliance-reason', function (req, res) {
-  let complybranch = req.session.data['comply']
-
-  if (complybranch === 'false') {
-    res.redirect('/confirm-attendance/non-compliance-reason')
-  }
-  if (complybranch === 'true') {
-    res.redirect('/confirm-attendance/rar-categories')
-  } else {
-    res.redirect('/confirm-attendance/absence-acceptable')
-  }
-})
-
 module.exports = router

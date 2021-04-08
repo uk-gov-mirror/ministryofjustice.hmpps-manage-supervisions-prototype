@@ -25,6 +25,8 @@ Case summary
 
     <form action="confirmation" method="post" class="form">
 
+      {% set complianceText = case.serviceUserPersonalDetails.firstName + ' was absent' if data['confirm-a-session'][CRN]['did-service-user-comply'] == 'Absent' else data['confirm-a-session'][CRN]['did-service-user-comply']  %}
+
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -42,8 +44,8 @@ Case summary
             }
           },
           {
-            key: { text: case.serviceUserPersonalDetails.firstName + " complied" },
-            value: { text: "Yes" },
+            key: { text: case.serviceUserPersonalDetails.firstName + " complied?" },
+            value: { text: complianceText },
             actions: {
               items: [
                 {
