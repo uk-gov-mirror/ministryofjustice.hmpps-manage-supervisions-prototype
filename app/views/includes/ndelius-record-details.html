@@ -1,14 +1,14 @@
 {% set session = arrangedSession({
-    providerCode: data['provider-code'],
-    typeOfSession: data['type-of-session'],
-    contactType: data['type-of-session-other'],
-    date: data['session-date'],
-    startTime: data['session-start-time'],
-    endTime: data['session-end-time'],
-    countsTowardsRAR: data['session-counts-towards-rar'] == 'Yes',
-    rarCategory: data['session-rar-category'],
-    rarSubCategory: data['session-rar-subcategory'],
-    locationCode: data['session-location-code']
+  providerCode: data['provider-code'],
+  typeOfSession: data['arrange-a-session'][CRN]['type-of-session'],
+  contactType: data['arrange-a-session'][CRN]['other-type-of-session'],
+  date: data['arrange-a-session'][CRN]['session-date'],
+  startTime: data['arrange-a-session'][CRN]['session-start-time'],
+  endTime: data['arrange-a-session'][CRN]['session-end-time'],
+  countsTowardsRAR: data['arrange-a-session'][CRN]['session-counts-towards-rar'] == 'Yes',
+  rarCategory: data['arrange-a-session'][CRN]['session-rar-category'],
+  rarSubCategory: data['arrange-a-session'][CRN]['session-rar-subcategory'],
+  locationCode: data['arrange-a-session'][CRN]['session-location-code']
 }) %}
 
 {% set ndeliusDataHTML %}
