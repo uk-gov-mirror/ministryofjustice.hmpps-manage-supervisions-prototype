@@ -7,11 +7,14 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+
+  if (document.querySelector('#other-type-of-session')) {
+    window.accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector('#other-type-of-session')
+    })
+  }
 })
 
-accessibleAutocomplete.enhanceSelectElement({
-  selectElement: document.querySelector('#type-of-session-other')
-})
 /*
   $(window).click(function () {
     toggleFilter()
