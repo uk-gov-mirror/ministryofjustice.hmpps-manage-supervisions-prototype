@@ -22,7 +22,7 @@ Case summary
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="attendance-add-8" method="post" class="form">
+    <form action="check" method="post" class="form">
 
       <div class="govuk-form-group">
         <details class="govuk-details" data-module="govuk-details">
@@ -70,7 +70,13 @@ Case summary
             </h2>
           </div>
         </details>
-        <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
+
+        {{ govukTextarea({
+          name: "notes",
+          id: "notes",
+          rows: 10
+        } | decorateFormAttributes(['confirm-a-session', CRN, 'notes'])) }}
+
       </div>
 
       <div class="govuk-form-group">

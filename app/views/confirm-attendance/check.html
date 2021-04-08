@@ -23,7 +23,9 @@ Case summary
 
     <h1 class="govuk-heading-l">Check your answers</h1>
 
-    <form action="attendance-add-9" method="post" class="form">
+    <form action="confirmation" method="post" class="form">
+
+      {% set complianceText = case.serviceUserPersonalDetails.firstName + ' was absent' if data['confirm-a-session'][CRN]['did-service-user-comply'] == 'Absent' else data['confirm-a-session'][CRN]['did-service-user-comply']  %}
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -34,7 +36,7 @@ Case summary
             actions: {
               items: [
                 {
-                  href: "attendance-add-5",
+                  href: "rar-categories",
                   text: "Change",
                   visuallyHiddenText: "RAR activity"
                 }
@@ -42,12 +44,12 @@ Case summary
             }
           },
           {
-            key: { text: case.serviceUserPersonalDetails.firstName + " complied" },
-            value: { text: "Yes" },
+            key: { text: case.serviceUserPersonalDetails.firstName + " complied?" },
+            value: { text: complianceText },
             actions: {
               items: [
                 {
-                  href: "attendance-add-2",
+                  href: "compliance",
                   text: "Change",
                   visuallyHiddenText: "compliance"
                 }
@@ -56,11 +58,11 @@ Case summary
           },
           {
             key: { text: "Session notes" },
-            value: { text: "None" },
+            value: { text: data['confirm-a-session'][CRN]['notes'] if data['confirm-a-session'][CRN]['add-notes'] == 'Yes' else 'None' },
             actions: {
               items: [
                 {
-                  href: "attendance-add-6",
+                  href: "add-notes",
                   text: "Change",
                   visuallyHiddenText: "session notes"
                 }

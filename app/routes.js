@@ -15,37 +15,4 @@ router.get('/switch-provider/:newProvider', function (req, res) {
   res.redirect('/progress')
 })
 
-router.post('/confirm-attendance/attendance-add-3', function (req, res) {
-  let complybranch = req.session.data['comply']
-
-  if (complybranch === 'false') {
-    res.redirect('/confirm-attendance/attendance-add-3')
-  }
-  if (complybranch === 'true') {
-    res.redirect('/confirm-attendance/attendance-add-5')
-  } else {
-    res.redirect('/confirm-attendance/attendance-add-4')
-  }
-})
-
-router.post('/confirm-attendance/attendance-add-7', function (req, res) {
-  let sessionnotes = req.session.data['session-notes']
-
-  if (sessionnotes === 'true') {
-    res.redirect('/confirm-attendance/attendance-add-7')
-  } else {
-    res.redirect('/confirm-attendance/attendance-add-8')
-  }
-})
-
-router.post('/confirm-attendance/attendance-add-7', function (req, res) {
-  let sessionnotes = req.session.data['session-notes']
-
-  if (sessionnotes === 'true') {
-    res.redirect('/confirm-attendance/attendance-add-7b')
-  } else {
-    res.redirect('/confirm-attendance/attendance-add-8b')
-  }
-})
-
 module.exports = router

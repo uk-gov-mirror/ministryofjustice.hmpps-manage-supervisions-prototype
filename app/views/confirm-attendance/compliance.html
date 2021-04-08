@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="/cases/{{ case.CRN }}/timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
+  sessions</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="non-compliance-reason" method="post" class="form">
+
+      {{ govukRadios({
+           fieldset: {
+             legend: {
+               text: 'Did ' + case.serviceUserPersonalDetails.firstName + ' comply?',
+               classes: "govuk-label--l"
+             }
+           },
+           items: [
+             {
+               text: 'Yes',
+               value: 'Yes'
+             },
+             {
+               text: 'No',
+               value: 'No'
+             },
+             {
+               text: case.serviceUserPersonalDetails.firstName + ' was absent',
+               value: 'Absent'
+             }
+           ]
+           } | decorateFormAttributes(['confirm-a-session', CRN, 'did-service-user-comply']))
+      }}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+
+
+  </div>
+
+</div>
+
+{% endblock %}

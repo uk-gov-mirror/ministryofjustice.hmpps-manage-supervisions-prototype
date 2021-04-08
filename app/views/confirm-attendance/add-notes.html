@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Case summary
+{% endblock %}
+
+{% block bodyStart %}
+
+{% block keyDetails %}
+{% include "includes/service-user-banner.html" %}
+{% endblock %}
+
+{% endblock %}
+
+{% block beforeContent %}
+<a href="/cases/{{ case.CRN }}/timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
+  sessions</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="notes" method="post" class="form">
+
+      {{ govukRadios({
+           fieldset: {
+             legend: {
+               text: "Would you like to add notes about this session?",
+               classes: "govuk-label--l"
+             }
+           },
+           hint: {
+             html: 'Notes can also be added later'
+           },
+           name: 'session-counts-towards-rar',
+           items: [
+             {
+               text: 'Yes',
+               value: 'Yes'
+             },
+             {
+               text: 'No',
+               value: 'No'
+             }
+           ]
+           } | decorateFormAttributes(['confirm-a-session', CRN, 'add-notes']))
+      }}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
