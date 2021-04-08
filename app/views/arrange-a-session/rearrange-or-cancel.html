@@ -1,10 +1,11 @@
 {% extends "_wizard-form.html" %}
+{% set title = 'Are you rearranging or cancelling?' %}
 
 {% block form %}
   {{ govukRadios({
     fieldset: {
       legend: {
-        text: "Are you rearranging or cancelling?",
+        text: title,
         isPageHeading: true,
         classes: "govuk-label--xl govuk-!-margin-bottom-6"
       }

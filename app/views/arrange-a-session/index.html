@@ -1,4 +1,5 @@
 {% extends "_wizard-form.html" %}
+{% set title = 'What type of session are you arranging?' %}
 
 {% block form %}
   {% set contactTypeSelectItems = [{ text: '', value: ''}] %}
@@ -23,7 +24,8 @@
   {{ govukRadios({
     fieldset: {
       legend: {
-        text: "What type of session are you arranging?",
+        text: title,
+        isPageHeading: true,
         classes: "govuk-label--xl govuk-!-margin-bottom-6"
       }
     },

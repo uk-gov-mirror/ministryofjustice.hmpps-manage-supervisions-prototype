@@ -1,4 +1,5 @@
 {% extends "_wizard-form.html" %}
+{% set title = 'Where will the session be?' %}
 
 {% block form %}
   {% set locationItems = [] %}
@@ -12,8 +13,9 @@
   {{ govukRadios({
     fieldset: {
       legend: {
-        text: "Where will the session be?",
-        classes: "govuk-label--xl govuk-!-margin-bottom-6"
+        text: title,
+        classes: "govuk-label--xl govuk-!-margin-bottom-6",
+        isPageHeading: true
       }
     },
     items: locationItems

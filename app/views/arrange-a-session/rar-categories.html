@@ -1,4 +1,5 @@
 {% extends "_wizard-form.html" %}
+{% set title = 'What will this session count towards?' %}
 
 {% block form %}
   {% set rarRadioItems = [] %}
@@ -32,8 +33,9 @@
   {{ govukRadios({
       fieldset: {
         legend: {
-          text: "What will this session count towards?",
-          classes: "govuk-label--xl"
+          text: title,
+          classes: "govuk-label--xl",
+          isPageHeading: true
         }
       },
       items: rarRadioItems

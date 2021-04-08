@@ -1,25 +1,21 @@
-{% extends "layout-index.html" %}
-
-{% block pageTitle %}
-Prototypes | Steel thread | HMPPS
-{% endblock %}
+{% extends "layout-govuk.html" %}
+{% set title = 'User testing' %}
+{% block pageTitle %}{{ title }}{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <h2 class="govuk-heading-l">
-      User testing
+      {{ title }}
     </h2>
 
-    <a class="image-thumbnail-link" href="/public/images/profile.pdf">
+    <a href="/public/images/profile.pdf">
       Profile
     </a>
     <br><br>
-    <a class="image-thumbnail-link" href="/public/images/profile2.pdf">
+    <a href="/public/images/profile2.pdf">
       Profile 2
     </a>
-
   </div>
 </div>
 
