@@ -7,6 +7,7 @@ function arrangeSessionWizardPaths (req) {
   const CRN = req.params.CRN
 
   var paths = [
+    `/cases/${CRN}`,
     `/arrange-a-session/${CRN}`,
     `/arrange-a-session/${CRN}/where`,
     `/arrange-a-session/${CRN}/when`,
@@ -26,7 +27,7 @@ function arrangeSessionWizardForks (req) {
     {
       currentPath: `/arrange-a-session/${CRN}`,
       storedData: ['arrange-a-session', CRN, 'type-of-session'],
-      excludedValues: ['Office visit'],
+      excludedValues: ['Office visit', 'Other'],
       forkPath: `/arrange-a-session/${CRN}/when`
     },
     {
