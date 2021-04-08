@@ -1,6 +1,7 @@
 {% extends "_wizard-page.html" %}
 {% set rearranging = data['arrange-a-session'][CRN][sessionId]['rearrange-or-cancel'] %}
 {% set buttonText = 'Finish' %}
+{% set title = "Session rearranged" if rearranging else "Session arranged" %}
 
 {% block page %}
   {% set session = arrangedSession({
@@ -22,7 +23,7 @@
   {% endset %}
 
   {{ govukPanel({
-    titleText: "Session rearranged" if rearranging else "Session arranged",
+    titleText: title,
     html: panelHtml
   }) }}
 
