@@ -22,7 +22,7 @@ class RARCategories {
       return this.providedContactTypeCode
     } else {
       const typeOfSessionToContactTypeCode = {
-        'Office visit': 'COAP',
+        'Office visit': 'APAT',
         'Home visit': 'CHVS',
         'Video call': 'COVC',
         'Phone call': 'COPT'
