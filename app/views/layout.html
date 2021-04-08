@@ -46,8 +46,9 @@
 {% endblock %}
 
 {% block header %}
+  {% include "includes/moj-header.html" %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
+  {% block keyDetails %}{% endblock %}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
