@@ -1,57 +1,29 @@
-{% extends "layout.html" %}
+{% extends "_wizard-form.html" %}
+{% set title = 'Did ' + case.serviceUserPersonalDetails.firstName + ' comply?' %}
+{% set buttonText = 'Save and continue' %}
 
-{% block pageTitle %}
-Case summary
-{% endblock %}
-
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
-
-{% block beforeContent %}
-<a href="/cases/{{ case.CRN }}/timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
-  sessions</a>
-{% endblock %}
-
-{% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <form action="/confirm-attendance/{{ case.CRN }}/{{ sessionId }}/non-compliance-reason" method="post" class="form">
-
-      {{ govukRadios({
-           fieldset: {
-             legend: {
-               text: 'Did ' + case.serviceUserPersonalDetails.firstName + ' comply?',
-               classes: "govuk-label--l"
-             }
-           },
-           items: [
-             {
-               text: 'Yes',
-               value: 'Yes'
-             },
-             {
-               text: 'No',
-               value: 'No'
-             },
-             {
-               text: case.serviceUserPersonalDetails.firstName + ' was absent',
-               value: 'Absent'
-             }
-           ]
-           } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'did-service-user-comply']))
-      }}
-
-      <button class="govuk-button" data-module="govuk-button">
-        Save and continue
-      </button>
-
-    </form>
-
-
-  </div>
-
-</div>
-
+{% block form %}
+  {{ govukRadios({
+       fieldset: {
+         legend: {
+           text: 'Did ' + case.serviceUserPersonalDetails.firstName + ' comply?',
+           classes: "govuk-label--l"
+         }
+       },
+       items: [
+         {
+           text: 'Yes',
+           value: 'Yes'
+         },
+         {
+           text: 'No',
+           value: 'No'
+         },
+         {
+           text: case.serviceUserPersonalDetails.firstName + ' was absent',
+           value: 'Absent'
+         }
+       ]
+       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'did-service-user-comply']))
+  }}
 {% endblock %}

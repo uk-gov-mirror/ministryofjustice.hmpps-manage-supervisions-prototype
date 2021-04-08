@@ -1,63 +1,37 @@
-{% extends "layout.html" %}
+{% extends "_wizard-form.html" %}
+{% set title = "Was " + case.serviceUserPersonalDetails.firstName + "’s absence acceptable?" %}
 
-{% block pageTitle %}
-Case summary
-{% endblock %}
+{% block form %}
+  {% set whyAcceptableHtml %}
+    {{ govukInput({
+      label: {
+        text: "Why was this absence acceptable?"
+      },
+      classes: 'govuk-!-width-two-thirds'
+    } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'why-absence-acceptable'])) }}
+  {% endset %}
 
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
-
-{% block beforeContent %}
-<a href="/cases/{{ case.CRN }}/timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
-  sessions</a>
-{% endblock %}
-
-{% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <form action="/confirm-attendance/{{ case.CRN }}/{{ sessionId }}/rar-categories" method="post" class="form">
-
-      {% set whyAcceptableHtml %}
-        {{ govukInput({
-          label: {
-            text: "Why was this absence acceptable?"
-          },
-          classes: 'govuk-!-width-two-thirds'
-        } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'why-absence-acceptable'])) }}
-      {% endset %}
-
-      {{ govukRadios({
-           fieldset: {
-             legend: {
-               text: "Was " + case.serviceUserPersonalDetails.firstName + "’s absence acceptable?",
-               classes: "govuk-label--l"
-             }
-           },
-           name: 'session-counts-towards-rar',
-           items: [
-             {
-               text: 'Yes',
-               value: 'Yes',
-               conditional: {
-                 html: whyAcceptableHtml
-               }
-             },
-             {
-               text: 'No',
-               value: 'No'
-             }
-           ]
-           } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'was-absence-acceptable']))
-      }}
-
-      <button class="govuk-button send-message">
-        Save and continue
-      </button>
-    </form>
-  </div>
-</div>
-
+  {{ govukRadios({
+       fieldset: {
+         legend: {
+           text: "Was " + case.serviceUserPersonalDetails.firstName + "’s absence acceptable?",
+           classes: "govuk-label--l"
+         }
+       },
+       name: 'session-counts-towards-rar',
+       items: [
+         {
+           text: 'Yes',
+           value: 'Yes',
+           conditional: {
+             html: whyAcceptableHtml
+           }
+         },
+         {
+           text: 'No',
+           value: 'No'
+         }
+       ]
+       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'was-absence-acceptable']))
+  }}
 {% endblock %}

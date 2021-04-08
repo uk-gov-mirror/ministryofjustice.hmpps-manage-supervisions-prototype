@@ -1,3 +1,8 @@
+const {
+  confirmAttendanceWizardPaths,
+  confirmAttendanceWizardForks
+} = require('../utils/confirm-attendance-wizard-paths')
+
 module.exports = router => {
   router.all([
     '/confirm-attendance/:CRN/:sessionId',
@@ -13,33 +18,19 @@ module.exports = router => {
   })
 
   router.get('/confirm-attendance/:CRN/:sessionId/:view', function (req, res) {
-    res.render(`confirm-attendance/${req.params.view}`)
+    res.render(`confirm-attendance/${req.params.view}`, { paths: confirmAttendanceWizardPaths(req) })
   })
 
   router.get('/confirm-attendance/:CRN/:sessionId', function (req, res) {
-    res.render('confirm-attendance/start')
+    res.render('confirm-attendance/start', { paths: confirmAttendanceWizardPaths(req) })
   })
 
-  router.post('/confirm-attendance/:CRN/:sessionId/notes', function (req, res) {
-    let shouldAddNotes = req.session.data['confirm-attendance'][req.params.CRN][req.params.sessionId]['add-notes'] === 'Yes'
-
-    if (shouldAddNotes) {
-      res.redirect(`/confirm-attendance/${req.params.CRN}/${req.params.sessionId}/notes`)
-    } else {
-      res.redirect(`/confirm-attendance/${req.params.CRN}/${req.params.sessionId}/check`)
-    }
-  })
-
-  router.post('/confirm-attendance/:CRN/:sessionId/non-compliance-reason', function (req, res) {
-    switch (req.session.data['confirm-attendance'][req.params.CRN][req.params.sessionId]['did-service-user-comply']) {
-      case 'Yes':
-        res.redirect(`/confirm-attendance/${req.params.CRN}/${req.params.sessionId}/rar-categories`)
-        break;
-      case 'No':
-        res.redirect(`/confirm-attendance/${req.params.CRN}/${req.params.sessionId}/non-compliance-reason`)
-        break;
-      default:
-        res.redirect(`/confirm-attendance/${req.params.CRN}/${req.params.sessionId}/absence-acceptable`)
-    }
+  router.post([
+    '/confirm-attendance/:CRN/:sessionId',
+    '/confirm-attendance/:CRN/:sessionId/:view'
+  ], function (req, res) {
+    const fork = confirmAttendanceWizardForks(req)
+    const paths = confirmAttendanceWizardPaths(req)
+    fork ? res.redirect(fork) : res.redirect(paths.next)
   })
 }

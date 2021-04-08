@@ -1,62 +1,38 @@
-{% extends "layout.html" %}
+{% extends "_wizard-form.html" %}
+{% set title = "How did " + case.serviceUserPersonalDetails.firstName + " not comply?" %}
+{% set buttonText = 'Save and continue' %}
 
-{% block pageTitle %}
-Case summary
-{% endblock %}
+{% block form %}
+  {% set whyAcceptableHtml %}
+    {{ govukInput({
+      label: {
+        text: "Give details"
+      },
+      classes: 'govuk-!-width-two-thirds'
+    } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'non-compliance-reason'])) }}
+  {% endset %}
 
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
-
-{% block beforeContent %}
-<a href="/cases/{{ case.CRN }}/timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
-  sessions</a>
-{% endblock %}
-
-{% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <form action="/confirm-attendance/{{ case.CRN }}/{{ sessionId }}/rar-categories" method="post" class="form">
-      {% set whyAcceptableHtml %}
-        {{ govukInput({
-          label: {
-            text: "Give details"
-          },
-          classes: 'govuk-!-width-two-thirds'
-        } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'non-compliance-reason'])) }}
-      {% endset %}
-
-      {{ govukRadios({
-           fieldset: {
-             legend: {
-               text: "How did " + case.serviceUserPersonalDetails.firstName + " not comply?",
-               classes: "govuk-label--l"
-             }
-           },
-           name: 'session-counts-towards-rar',
-           items: [
-             {
-               text: 'Behavioural issues',
-               value: 'Behavioural issues'
-             },
-             {
-               text: 'Other',
-               value: 'Other',
-               conditional: {
-                 html: whyAcceptableHtml
-               }
-             }
-           ]
-           } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'was-absence-acceptable']))
-      }}
-
-      <button class="govuk-button send-message">
-        Save and continue
-      </button>
-    </form>
-  </div>
-</div>
-
+  {{ govukRadios({
+       fieldset: {
+         legend: {
+           text: "How did " + case.serviceUserPersonalDetails.firstName + " not comply?",
+           classes: "govuk-label--l"
+         }
+       },
+       name: 'session-counts-towards-rar',
+       items: [
+         {
+           text: 'Behavioural issues',
+           value: 'Behavioural issues'
+         },
+         {
+           text: 'Other',
+           value: 'Other',
+           conditional: {
+             html: whyAcceptableHtml
+           }
+         }
+       ]
+       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'was-absence-acceptable']))
+  }}
 {% endblock %}
