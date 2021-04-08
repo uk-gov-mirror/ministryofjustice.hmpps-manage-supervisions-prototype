@@ -12,10 +12,10 @@
   {{ govukRadios({
     fieldset: {
       legend: {
-        text: "Where will the appointment happen?",
-        classes: "govuk-label--l"
+        text: "Where will the session be?",
+        classes: "govuk-label--xl govuk-!-margin-bottom-6"
       }
     },
     items: locationItems
-  }  | decorateFormAttributes(['arrange-a-session', CRN, 'session-location-code'])) }}
+  }  | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'session-location-code'])) }}
 {% endblock %}

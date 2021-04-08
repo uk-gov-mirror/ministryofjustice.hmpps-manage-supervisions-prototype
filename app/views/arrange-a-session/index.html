@@ -16,14 +16,14 @@
          classes: "govuk-label--s"
        },
        items: contactTypeSelectItems
-    } | decorateFormAttributes(['arrange-a-session', CRN, 'other-type-of-session'])) }}
+    } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'other-type-of-session'])) }}
   {% endset %}
 
   {{ govukRadios({
     fieldset: {
       legend: {
-        text: "What type of session would you like to arrange?",
-        classes: "govuk-label--l"
+        text: "What type of session are you arranging?",
+        classes: "govuk-label--xl govuk-!-margin-bottom-6"
       }
     },
     items: [
@@ -44,5 +44,5 @@
          conditional: { html: otherHtml }
       }
     ]
-  } | decorateFormAttributes(['arrange-a-session', CRN, 'type-of-session'])) }}
+  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'type-of-session'])) }}
 {% endblock %}
