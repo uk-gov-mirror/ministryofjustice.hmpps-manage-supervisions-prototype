@@ -1,0 +1,41 @@
+{% extends "_wizard-form.html" %}
+
+{% block form %}
+  {% set rarRadioItems = [] %}
+  {% for rarCategory in possibleRARCategories(
+    data['provider-code'],
+    data['arrange-a-session'][CRN]['type-of-session'],
+    data['arrange-a-session'][CRN]['other-type-of-session']) %}
+    {% set rarSubCategoryRadioItems = [] %}
+    {% for rarSubCategoryCode, subCategory in rarCategory.nsiSubTypes %}
+      {% set rarSubCategoryRadioItems = (rarSubCategoryRadioItems.push({
+        text: subCategory.description,
+        value: subCategory.description
+      }), rarSubCategoryRadioItems) %}
+    {% endfor %}
+
+    {% set rarSubCategoryHtml %}
+      {{ govukRadios({
+        items: rarSubCategoryRadioItems
+      } | decorateFormAttributes(['arrange-a-session', CRN, 'session-rar-subcategory'])) }}
+    {% endset %}
+
+    {% set rarRadioItems = (rarRadioItems.push({
+      text: rarCategory.description,
+      value: rarCategory.description,
+      conditional: {
+        html: rarSubCategoryHtml
+      }
+    }), rarRadioItems) %}
+  {% endfor %}
+
+  {{ govukRadios({
+      fieldset: {
+        legend: {
+          text: "What will this session count towards?",
+          classes: "govuk-label--l"
+        }
+      },
+      items: rarRadioItems
+  } | decorateFormAttributes(['arrange-a-session', CRN, 'session-rar-category'])) }}
+{% endblock %}

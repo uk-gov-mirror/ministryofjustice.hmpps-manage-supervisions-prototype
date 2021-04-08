@@ -1,0 +1,117 @@
+{% extends "_wizard-form.html" %}
+{% set arrangeSessionPath = "/arrange-a-session/" +  CRN %}
+{% set buttonText = 'Arrange session' %}
+
+{% block form %}
+  <h1 class="govuk-heading-l">Check your answers</h1>
+
+  {% set session = arrangedSession({
+    providerCode: data['provider-code'],
+    typeOfSession: data['arrange-a-session'][CRN]['type-of-session'],
+    contactType: data['arrange-a-session'][CRN]['other-type-of-session'],
+    date: data['arrange-a-session'][CRN]['session-date'],
+    startTime: data['arrange-a-session'][CRN]['session-start-time'],
+    endTime: data['arrange-a-session'][CRN]['session-end-time'],
+    countsTowardsRAR: data['arrange-a-session'][CRN]['session-counts-towards-rar'] == 'Yes',
+    rarCategory: data['arrange-a-session'][CRN]['session-rar-category'],
+    rarSubCategory: data['arrange-a-session'][CRN]['session-rar-subcategory'],
+    locationCode: data['session-location-code']
+  }) %}
+
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
+      {
+        key: { text: "Type of session" },
+        value: { text: session.summary.typeOfSession },
+        actions: {
+          items: [
+            {
+              href: arrangeSessionPath,
+              text: "Change",
+              visuallyHiddenText: "type of session"
+            }
+          ]
+        }
+      },
+      {
+        key: { text: "Date" },
+        value: { text: session.summary.date | dateWithDayAndWithoutYear },
+        actions: {
+          items: [
+            {
+              href: arrangeSessionPath + "/when",
+              text: "Change",
+              visuallyHiddenText: "date"
+            }
+          ]
+        }
+      },
+      {
+        key: { text: "Time" },
+        value: { text: session.summary.time },
+        actions: {
+          items: [
+            {
+              href: arrangeSessionPath + "/when",
+              text: "Change",
+              visuallyHiddenText: "time"
+            }
+          ]
+        }
+      },
+      {
+        key: { text: "RAR activity" },
+        value: { text: session.summary.rarCategory },
+        actions: {
+          items: [
+            {
+              href: arrangeSessionPath + "/rar-categories",
+              text: "Change",
+              visuallyHiddenText: "RAR activity"
+            }
+          ]
+        }
+      } if session.summary.rarCategory,
+      {
+        key: { text: "RAR activity subcategory" },
+        value: { text: session.summary.rarSubCategory },
+        actions: {
+          items: [
+            {
+              href: arrangeSessionPath + "/rar-categories",
+              text: "Change",
+              visuallyHiddenText: "RAR activity"
+            }
+          ]
+        }
+      } if session.summary.rarCategory,
+      {
+        key: { text: "Counts towards RAR?" },
+        value: { text: 'Yes' if session.summary.countsTowardsRAR else 'No' },
+        actions: {
+          items: [
+            {
+              href: arrangeSessionPath + "/rar",
+              text: "Change",
+              visuallyHiddenText: "RAR activity"
+            }
+          ]
+        }
+      } if not session.summary.countsTowardsRAR,
+      {
+        key: { text: "Calendar note" },
+        value: { text: data['arrange-a-session'][CRN]['session-notes'] },
+        actions: {
+          items: [
+            {
+              href: arrangeSessionPath + "/rar",
+              text: "Change",
+              visuallyHiddenText: "calendar note"
+            }
+          ]
+        }
+      }
+    ]
+    }) }}
+{% endblock %}

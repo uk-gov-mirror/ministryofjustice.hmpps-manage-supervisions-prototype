@@ -1,0 +1,30 @@
+{% extends "_wizard-form.html" %}
+
+{% block form %}
+  {{ govukRadios({
+    fieldset: {
+      legend: {
+        text: "Would you like this to count towards RAR?",
+        classes: "govuk-label--l"
+      }
+      },
+      hint: {
+        html: 'This will account for one day of Rehabilitation Activity Requirement (RAR).'
+      },
+      items: [
+        {
+          text: 'Yes'
+        },
+        {
+          text: 'No'
+        }
+      ]
+  } | decorateFormAttributes(['arrange-a-session', CRN, 'session-counts-towards-rar'])) }}
+
+  {{ govukTextarea({
+    label: {
+      text: 'Add a calendar note (optional)',
+      classes: 'govuk-label--l'
+    }
+  } | decorateFormAttributes(['arrange-a-session', CRN, 'session-notes'])) }}
+{% endblock %}

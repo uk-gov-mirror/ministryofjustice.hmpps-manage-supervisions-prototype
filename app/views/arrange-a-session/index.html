@@ -1,0 +1,48 @@
+{% extends "_wizard-form.html" %}
+
+{% block form %}
+  {% set contactTypeSelectItems = [{ text: '', value: ''}] %}
+  {% for contactType in possibleContactTypes(data['provider-code']) | sort(false, false, 'description') %}
+    {% set contactTypeSelectItems = (contactTypeSelectItems.push({
+      text: contactType.description,
+      value: contactType.code
+    }), contactTypeSelectItems) %}
+  {% endfor %}
+
+  {% set otherHtml %}
+    {{ govukSelect({
+       label: {
+         text: "Type of session",
+         classes: "govuk-label--s"
+       },
+       items: contactTypeSelectItems
+    } | decorateFormAttributes(['arrange-a-session', CRN, 'other-type-of-session'])) }}
+  {% endset %}
+
+  {{ govukRadios({
+    fieldset: {
+      legend: {
+        text: "What type of session would you like to arrange?",
+        classes: "govuk-label--l"
+      }
+    },
+    items: [
+      {
+        text: "Office visit"
+      },
+      {
+        text: "Home visit"
+      },
+      {
+        text: "Video call"
+      },
+      {
+        text: "Phone call"
+      },
+      {
+         text: "Other",
+         conditional: { html: otherHtml }
+      }
+    ]
+  } | decorateFormAttributes(['arrange-a-session', CRN, 'type-of-session'])) }}
+{% endblock %}

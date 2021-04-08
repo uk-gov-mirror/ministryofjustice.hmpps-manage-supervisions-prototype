@@ -1,0 +1,35 @@
+{% extends "_wizard-page.html" %}
+{% set buttonText = 'Finish' %}
+
+{% block page %}
+  {% set session = arrangedSession({
+    providerCode: data['provider-code'],
+    typeOfSession: data['arrange-a-session'][CRN]['type-of-session'],
+    contactType: data['arrange-a-session'][CRN]['other-type-of-session'],
+    date: data['arrange-a-session'][CRN]['session-date'],
+    startTime: data['arrange-a-session'][CRN]['session-start-time'],
+    endTime: data['arrange-a-session'][CRN]['session-end-time'],
+    countsTowardsRAR: data['arrange-a-session'][CRN]['session-counts-towards-rar'] == 'Yes',
+    rarCategory: data['arrange-a-session'][CRN]['session-rar-category'],
+    rarSubCategory: data['arrange-a-session'][CRN]['session-rar-subcategory'],
+    locationCode: data['session-location-code']
+  }) %}
+
+  {% set panelHtml %}
+    <strong>{{ session.summary.typeOfSession }}</strong><br />
+    {{ session.summary.date | dateWithDayAndWithoutYear }} from {{ session.summary.time }}
+  {% endset %}
+
+  {{ govukPanel({
+    titleText: "Session arranged",
+    html: panelHtml
+  }) }}
+
+  <h2 class="govuk-heading-m govuk-!-margin-top-6">Next steps</h2>
+  <p class="govuk-body">
+    Add this session to your calendar.
+  </p>
+  <p class="govuk-body">
+    Give details of the session to {{ case.serviceUserPersonalDetails.firstName }}.<br>
+    {{ case.serviceUserPersonalDetails.firstName }}’s phone number is <strong>{{ case.serviceUserPersonalDetails.phone }}</strong>.</p>
+{% endblock %}
