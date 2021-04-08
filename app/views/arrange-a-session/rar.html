@@ -19,12 +19,12 @@
           text: 'No'
         }
       ]
-  } | decorateFormAttributes(['arrange-a-session', CRN, 'session-counts-towards-rar'])) }}
+  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'session-counts-towards-rar'])) }}
 
   {{ govukTextarea({
     label: {
       text: 'Add a calendar note (optional)',
       classes: 'govuk-label--l'
     }
-  } | decorateFormAttributes(['arrange-a-session', CRN, 'session-notes'])) }}
+  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'session-notes'])) }}
 {% endblock %}

@@ -4,15 +4,15 @@
 {% block page %}
   {% set session = arrangedSession({
     providerCode: data['provider-code'],
-    typeOfSession: data['arrange-a-session'][CRN]['type-of-session'],
-    contactType: data['arrange-a-session'][CRN]['other-type-of-session'],
-    date: data['arrange-a-session'][CRN]['session-date'],
-    startTime: data['arrange-a-session'][CRN]['session-start-time'],
-    endTime: data['arrange-a-session'][CRN]['session-end-time'],
-    countsTowardsRAR: data['arrange-a-session'][CRN]['session-counts-towards-rar'] == 'Yes',
-    rarCategory: data['arrange-a-session'][CRN]['session-rar-category'],
-    rarSubCategory: data['arrange-a-session'][CRN]['session-rar-subcategory'],
-    locationCode: data['arrange-a-session'][CRN]['session-location-code']
+    typeOfSession: data['arrange-a-session'][CRN][sessionId]['type-of-session'],
+    contactType: data['arrange-a-session'][CRN][sessionId]['other-type-of-session'],
+    date: data['arrange-a-session'][CRN][sessionId]['session-date'],
+    startTime: data['arrange-a-session'][CRN][sessionId]['session-start-time'],
+    endTime: data['arrange-a-session'][CRN][sessionId]['session-end-time'],
+    countsTowardsRAR: data['arrange-a-session'][CRN][sessionId]['session-counts-towards-rar'] == 'Yes',
+    rarCategory: data['arrange-a-session'][CRN][sessionId]['session-rar-category'],
+    rarSubCategory: data['arrange-a-session'][CRN][sessionId]['session-rar-subcategory'],
+    locationCode: data['arrange-a-session'][CRN][sessionId]['session-location-code']
   }) %}
 
   {% set panelHtml %}

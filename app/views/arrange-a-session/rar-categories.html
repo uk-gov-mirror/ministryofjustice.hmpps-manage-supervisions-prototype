@@ -4,8 +4,8 @@
   {% set rarRadioItems = [] %}
   {% for rarCategory in possibleRARCategories(
     data['provider-code'],
-    data['arrange-a-session'][CRN]['type-of-session'],
-    data['arrange-a-session'][CRN]['other-type-of-session']) %}
+    data['arrange-a-session'][CRN][sessionId]['type-of-session'],
+    data['arrange-a-session'][CRN][sessionId]['other-type-of-session']) %}
     {% set rarSubCategoryRadioItems = [] %}
     {% for rarSubCategoryCode, subCategory in rarCategory.nsiSubTypes %}
       {% set rarSubCategoryRadioItems = (rarSubCategoryRadioItems.push({
@@ -17,7 +17,7 @@
     {% set rarSubCategoryHtml %}
       {{ govukRadios({
         items: rarSubCategoryRadioItems
-      } | decorateFormAttributes(['arrange-a-session', CRN, 'session-rar-subcategory'])) }}
+      } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'session-rar-subcategory'])) }}
     {% endset %}
 
     {% set rarRadioItems = (rarRadioItems.push({
@@ -37,5 +37,5 @@
         }
       },
       items: rarRadioItems
-  } | decorateFormAttributes(['arrange-a-session', CRN, 'session-rar-category'])) }}
+  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'session-rar-category'])) }}
 {% endblock %}

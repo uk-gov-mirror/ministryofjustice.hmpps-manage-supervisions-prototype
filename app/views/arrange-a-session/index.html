@@ -16,7 +16,7 @@
          classes: "govuk-label--s"
        },
        items: contactTypeSelectItems
-    } | decorateFormAttributes(['arrange-a-session', CRN, 'other-type-of-session'])) }}
+    } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'other-type-of-session'])) }}
   {% endset %}
 
   {{ govukRadios({
@@ -44,5 +44,5 @@
          conditional: { html: otherHtml }
       }
     ]
-  } | decorateFormAttributes(['arrange-a-session', CRN, 'type-of-session'])) }}
+  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'type-of-session'])) }}
 {% endblock %}
