@@ -3,6 +3,8 @@
 {% set title = 'Check your answers' %}
 
 {% block form %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
   {% set complianceText = case.serviceUserPersonalDetails.firstName + ' was absent' if data['confirm-attendance'][CRN][sessionId]['did-service-user-comply'] == 'Absent' else data['confirm-attendance'][CRN][sessionId]['did-service-user-comply']  %}
 
   {{ govukSummaryList({

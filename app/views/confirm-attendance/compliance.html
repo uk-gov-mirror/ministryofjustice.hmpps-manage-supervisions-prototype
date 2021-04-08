@@ -6,8 +6,9 @@
   {{ govukRadios({
        fieldset: {
          legend: {
-           text: 'Did ' + case.serviceUserPersonalDetails.firstName + ' comply?',
-           classes: "govuk-label--l"
+           text: title,
+           classes: "govuk-label--xl",
+           isPageHeading: true
          }
        },
        items: [

@@ -14,8 +14,9 @@
   {{ govukRadios({
        fieldset: {
          legend: {
-           text: "Was " + case.serviceUserPersonalDetails.firstName + "’s absence acceptable?",
-           classes: "govuk-label--l"
+           text: title,
+           classes: "govuk-label--xl",
+           isPageHeading: true
          }
        },
        name: 'session-counts-towards-rar',
