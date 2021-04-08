@@ -46,7 +46,9 @@ module.exports = (nunjucksAppEnv, app) => {
         obj.value = storedValue
       }
 
-      obj.id = sections.join('-')
+      if (typeof obj.id === 'undefined') {
+        obj.id = sections.join('-')
+      }
       obj.name = sections.map(s => `[${s}]`).join('')
       return obj
     })

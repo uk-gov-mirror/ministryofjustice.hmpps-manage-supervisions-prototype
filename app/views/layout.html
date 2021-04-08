@@ -32,7 +32,6 @@
 {% from "_components/timeline-item/macro.njk"         import appTimelineItem %}
 {% from "_components/warning-banner/macro.njk"        import appWarningBanner %}
 
-
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
@@ -41,13 +40,18 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% block bodyStart %}
+  <div data-module="edge">
+{% endblock %}
+
 {% block beforeContent %}
   {% block pageNavigation %}{% endblock %}
 {% endblock %}
 
 {% block header %}
+  {% include "includes/moj-header.html" %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
+  {% block keyDetails %}{% endblock %}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
@@ -80,6 +84,7 @@
 {% endif %}
 
 {% block bodyEnd %}
+  </div> <!-- </div data-module="edge"> -->
   {% block scripts %}
     {{ data | log }}
     {% include "includes/scripts.html" %}
