@@ -56,7 +56,7 @@ Case summary
           },
           {
             key: { text: "Session notes" },
-            value: { text: "None" },
+            value: { text: data['confirm-a-session'][CRN]['notes'] if data['confirm-a-session'][CRN]['add-notes'] == 'Yes' else 'None' },
             actions: {
               items: [
                 {

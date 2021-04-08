@@ -28,14 +28,4 @@ router.post('/confirm-attendance/non-compliance-reason', function (req, res) {
   }
 })
 
-router.post('/confirm-attendance/notes', function (req, res) {
-  let sessionnotes = req.session.data['session-notes']
-
-  if (sessionnotes === 'true') {
-    res.redirect('/confirm-attendance/notes')
-  } else {
-    res.redirect('/confirm-attendance/check')
-  }
-})
-
 module.exports = router

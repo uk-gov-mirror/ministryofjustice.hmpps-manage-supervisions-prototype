@@ -70,7 +70,13 @@ Case summary
             </h2>
           </div>
         </details>
-        <textarea class="govuk-textarea" rows="10" style="max-width:none;"></textarea>
+
+        {{ govukTextarea({
+          name: "notes",
+          id: "notes",
+          rows: 10
+        } | decorateFormAttributes(['confirm-a-session', CRN, 'notes'])) }}
+
       </div>
 
       <div class="govuk-form-group">
