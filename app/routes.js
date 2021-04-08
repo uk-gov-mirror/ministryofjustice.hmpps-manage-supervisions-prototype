@@ -12,7 +12,7 @@ router.get('/switch-provider/:newProvider', function (req, res) {
   req.session.data['provider-code'] = newProvider
   req.session.data['team-codes'] = req.session.data['default-teams'][newProvider]
 
-  res.redirect('/progress')
+  res.redirect('/cases')
 })
 
 module.exports = router
