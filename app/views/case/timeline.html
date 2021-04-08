@@ -60,7 +60,7 @@ Case summary
           {% endset %}
         {% elseif entry.type === 'Office visit' and not entry.outcome %}
           {% set body %}
-            {{ appWarningBanner('Attendance not confirmed. <a href="../../confirm-attendance/start.html">Confirm attendance</a>') }}
+            {{ appWarningBanner('Attendance not confirmed. <a href="/confirm-attendance/' + CRN + '/start">Confirm attendance</a>') }}
           {% endset %}
         {% endif %}
 
