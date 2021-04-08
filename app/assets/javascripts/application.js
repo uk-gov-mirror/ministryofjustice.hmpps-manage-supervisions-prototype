@@ -1,4 +1,4 @@
-/* global $ */
+/* global $, PrototypeKit */
 
 // Warn about using the kit in production
 if (window.console && window.console.info) {
@@ -6,6 +6,7 @@ if (window.console && window.console.info) {
 }
 
 $(document).ready(function () {
+  PrototypeKit.modules.start()
   window.GOVUKFrontend.initAll()
 
   if (document.querySelector('#other-type-of-session')) {

@@ -32,13 +32,16 @@
 {% from "_components/timeline-item/macro.njk"         import appTimelineItem %}
 {% from "_components/warning-banner/macro.njk"        import appWarningBanner %}
 
-
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
+{% endblock %}
+
+{% block bodyStart %}
+  <div data-module="edge">
 {% endblock %}
 
 {% block beforeContent %}
@@ -81,6 +84,7 @@
 {% endif %}
 
 {% block bodyEnd %}
+  </div> <!-- </div data-module="edge"> -->
   {% block scripts %}
     {{ data | log }}
     {% include "includes/scripts.html" %}
