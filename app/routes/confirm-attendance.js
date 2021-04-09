@@ -1,34 +1,36 @@
-module.exports = router => {
-  const CRN = 'J678910'
+const {
+  confirmAttendanceWizardPaths,
+  confirmAttendanceWizardForks
+} = require('../utils/confirm-attendance-wizard-paths')
 
-  router.get([
-    '/confirm-attendance/:view'
+module.exports = router => {
+  router.all([
+    '/confirm-attendance/:CRN/:sessionId',
+    '/confirm-attendance/:CRN/:sessionId/:view'
   ], (req, res, next) => {
     const data = req.session.data
-    res.locals.CRN = CRN
+    res.locals.CRN = req.params.CRN
+    res.locals.sessionId = req.params.sessionId
+    res.locals.case = data.cases.find(obj => {
+      return obj.CRN === req.params.CRN
+    })
     next()
   })
 
-  router.post('/confirm-attendance/notes', function (req, res) {
-    let shouldAddNotes = req.session.data['confirm-a-session'][CRN]['add-notes'] === 'Yes'
-
-    if (shouldAddNotes) {
-      res.redirect('/confirm-attendance/notes')
-    } else {
-      res.redirect('/confirm-attendance/check')
-    }
+  router.get('/confirm-attendance/:CRN/:sessionId/:view', function (req, res) {
+    res.render(`confirm-attendance/${req.params.view}`, { paths: confirmAttendanceWizardPaths(req) })
   })
 
-  router.post('/confirm-attendance/non-compliance-reason', function (req, res) {
-    switch (req.session.data['confirm-a-session'][CRN]['did-service-user-comply']) {
-      case 'Yes':
-        res.redirect('/confirm-attendance/rar-categories')
-        break;
-      case 'No':
-        res.redirect('/confirm-attendance/non-compliance-reason')
-        break;
-      default:
-        res.redirect('/confirm-attendance/absence-acceptable')
-    }
+  router.get('/confirm-attendance/:CRN/:sessionId', function (req, res) {
+    res.render('confirm-attendance/start', { paths: confirmAttendanceWizardPaths(req) })
+  })
+
+  router.post([
+    '/confirm-attendance/:CRN/:sessionId',
+    '/confirm-attendance/:CRN/:sessionId/:view'
+  ], function (req, res) {
+    const fork = confirmAttendanceWizardForks(req)
+    const paths = confirmAttendanceWizardPaths(req)
+    fork ? res.redirect(fork) : res.redirect(paths.next)
   })
 }

@@ -1,42 +1,13 @@
-{% extends "layout.html" %}
+{% extends "_wizard-form.html" %}
+{% set title = 'Confirm attendance' %}
 
-{% block pageTitle %}
-Case summary
-{% endblock %}
+{% block form %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
 
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
+  <p class="govuk-body">You’re confirming attendance for:</p>
 
-{% block beforeContent %}
-<a href="/cases/{{ case.CRN }}/timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
-  sessions</a>
-{% endblock %}
-
-{% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">Confirm attendance</h1>
-
-    <form action="compliance" method="post" class="form">
-
-      <p class="govuk-body">You’re confirming attendance for:</p>
-
-      <div class="govuk-inset-text">
-        <strong>{{ case.previousAppointment.type }}</strong><br>
-        {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
-      </div>
-
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
-
-    </form>
-
-
+  <div class="govuk-inset-text">
+    <strong>{{ case.previousAppointment.type }}</strong><br>
+    {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
   </div>
-
-</div>
-
 {% endblock %}

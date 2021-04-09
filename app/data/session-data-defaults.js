@@ -2,12 +2,14 @@ const path = require('path')
 const cases = require('./cases')
 const helpers = require(path.join(__dirname, '../../lib/helpers.js'))
 
-const confirmASessionDefaults = (map, su) => {
+const confirmAttendanceDefaults = (map, su) => {
   if (su.previousAppointment) {
-    map[su.CRN] = {
+    var defaults = {}
+    defaults[su.previousAppointment.sessionId] = {
       'countsTowardsRAR': su.previousAppointment.countsTowardsRAR ? 'Yes' : 'No',
       'RARCategory': su.previousAppointment.RARCategory
     }
+    map[su.CRN] = defaults
   }
   return map
 }
@@ -20,7 +22,7 @@ module.exports = {
   },
   'team-codes': ['C17ETE'],
   cases: cases,
-  'confirm-a-session': cases.reduce(confirmASessionDefaults, {}),
+  'confirm-attendance': cases.reduce(confirmAttendanceDefaults, {}),
   'arrange-a-session': {
     'J678910': {
       123: {

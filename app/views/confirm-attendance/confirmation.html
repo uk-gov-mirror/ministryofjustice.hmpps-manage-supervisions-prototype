@@ -1,48 +1,23 @@
-{% extends "layout.html" %}
+{% extends "_wizard-page.html" %}
+{% set buttonText = 'Arrange a session' %}
+{% set title = "Attendance confirmed" %}
 
-{% block pageTitle %}
-Case summary
-{% endblock %}
+{% block page %}
 
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
+  {% set panelHtml %}
+    <strong>{{ case.previousAppointment.type }}</strong><br>
+    {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
+  {% endset %}
 
-{% block beforeContent %}
-<a href="/cases/{{ case.CRN }}/timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
-  sessions</a>
-{% endblock %}
+  {{ govukPanel({
+    titleText: title,
+    html: panelHtml
+  }) }}
 
-{% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <div class="govuk-!-margin-bottom-7">
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">
-          Attendance confirmed
-        </h1>
-        <div class="govuk-panel__body">
-          <strong>{{ case.previousAppointment.type }}</strong><br>
-          {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
-        </div>
-      </div>
-    </div>
-
-    <h2 class="govuk-heading-m">Next steps</h2>
-
-
-    <a href="/arrange-a-session/{{ case.CRN }}/start" class="govuk-button">
-      Arrange a session
-    </a>
+  <h2 class="govuk-heading-m">Next steps</h2>
 
     <div style="margin-top: 20px;">
       <a class="govuk-body" href="/cases/{{ case.CRN }}/timeline">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
         sessions</a>
     </div>
-
-  </div>
-</div>
-
 {% endblock %}

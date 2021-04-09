@@ -1,90 +1,63 @@
-{% extends "layout.html" %}
+{% extends "_wizard-form.html" %}
+{% set title = "Would you like this to count towards RAR?" %}
+{% set buttonText = 'Save and continue' %}
 
-{% block pageTitle %}
-Case summary
-{% endblock %}
+{% block form %}
+  {% set rarCategories = [
+    'Employment, Training and Education',
+    'Wellbeing – both physical and mental',
+    'Finance, benefit and debt',
+    'Relationships',
+    'Restorative Justice Interventions',
+    'Substance Misuse',
+    'Alcohol Treatment Requirements or Mental Health Treatment Requirements',
+    'Thinking skills, attitudes and behaviour'
+  ] %}
 
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
+  {% set rarRadioItems = [] %}
+  {% for rarCategory in rarCategories %}
+    {% set rarRadioItems = (rarRadioItems.push({
+      text: rarCategory,
+      value: rarCategory,
+      checked: checked("session-rar-category", rarCategory)
+    }), rarRadioItems) %}
+  {% endfor %}
 
-{% block beforeContent %}
-<a href="/cases/{{ case.CRN }}/timeline" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
-  sessions</a>
-{% endblock %}
-
-{% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <form action="add-notes" method="post" class="form">
-
-      {% set rarCategories = [
-        'Employment, Training and Education',
-        'Wellbeing – both physical and mental',
-        'Finance, benefit and debt',
-        'Relationships',
-        'Restorative Justice Interventions',
-        'Substance Misuse',
-        'Alcohol Treatment Requirements or Mental Health Treatment Requirements',
-        'Thinking skills, attitudes and behaviour'
-      ] %}
-
-      {% set rarRadioItems = [] %}
-      {% for rarCategory in rarCategories %}
-        {% set rarRadioItems = (rarRadioItems.push({
-          text: rarCategory,
-          value: rarCategory,
-          checked: checked("session-rar-category", rarCategory)
-        }), rarRadioItems) %}
-      {% endfor %}
-
-      {% set rarCategoryHtml %}
-        {{ govukRadios({
-               fieldset: {
-                 legend: {
-                   text: "What will this session count towards?"
-                 }
-               },
-               items: rarRadioItems
-             } | decorateFormAttributes(['confirm-a-session', CRN, 'RARCategory']) )
-          }}
-      {% endset %}
-
-      {{ govukRadios({
+  {% set rarCategoryHtml %}
+    {{ govukRadios({
            fieldset: {
              legend: {
-               text: "Would you like this to count towards RAR?",
-               classes: "govuk-label--l"
+               text: "What will this session count towards?"
              }
            },
-           hint: {
-             html: 'This will account for one day of Rehabilitation Activity Requirement (RAR).'
-           },
-           items: [
-             {
-               text: 'Yes',
-               value: 'Yes',
-               conditional: {
-                 html: rarCategoryHtml
-               }
-             },
-             {
-               text: 'No',
-               value: 'No'
-             }
-           ]
-           } | decorateFormAttributes(['confirm-a-session', CRN, 'countsTowardsRAR']) ) }}
+           items: rarRadioItems
+         } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'RARCategory']) )
+      }}
+  {% endset %}
 
-      <button class="govuk-button" data-module="govuk-button">
-        Save and continue
-      </button>
-
-    </form>
-
-
-  </div>
-
-</div>
-
+  {{ govukRadios({
+       fieldset: {
+         legend: {
+           text: title,
+           classes: "govuk-label--xl",
+           isPageHeading: true
+         }
+       },
+       hint: {
+         html: 'This will account for one day of Rehabilitation Activity Requirement (RAR).'
+       },
+       items: [
+         {
+           text: 'Yes',
+           value: 'Yes',
+           conditional: {
+             html: rarCategoryHtml
+           }
+         },
+         {
+           text: 'No',
+           value: 'No'
+         }
+       ]
+       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'countsTowardsRAR']) ) }}
 {% endblock %}

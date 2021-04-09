@@ -39,15 +39,16 @@ function nextForkPath (forks, req) {
   if (fork) {
     const storedData = helpers.getDataValue(req.session.data, fork.storedData)
     const storedValues = Array.isArray(storedData) ? storedData : [storedData]
+    const forkPath = (typeof fork.forkPath === 'function' ? fork.forkPath(storedData) : fork.forkPath)
 
     if (fork.values) {
       const values = Array.isArray(fork.values) ? fork.values : [fork.values]
 
       if (values.some(v => storedValues.indexOf(v) >= 0)) {
         data['forked-from'] = currentPath
-        data['forked-to'] = fork.forkPath
+        data['forked-to'] = forkPath
 
-        return fork.forkPath
+        return forkPath
       }
     }
 
@@ -56,9 +57,9 @@ function nextForkPath (forks, req) {
 
       if (!excludedValues.some(v => storedValues.indexOf(v) >= 0)) {
         data['forked-from'] = currentPath
-        data['forked-to'] = fork.forkPath
+        data['forked-to'] = forkPath
 
-        return fork.forkPath
+        return forkPath
       }
     }
   }

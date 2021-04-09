@@ -1,87 +1,61 @@
-{% extends "layout.html" %}
+{% extends "_wizard-form.html" %}
+{% set buttonText = 'Confirm attendance' %}
+{% set title = 'Check your answers' %}
 
-{% block pageTitle %}
-Case summary
-{% endblock %}
+{% block form %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
 
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
+  {% set complianceText = case.serviceUserPersonalDetails.firstName + ' was absent' if data['confirm-attendance'][CRN][sessionId]['did-service-user-comply'] == 'Absent' else data['confirm-attendance'][CRN][sessionId]['did-service-user-comply']  %}
 
-{% block beforeContent %}
-<a href="progress" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s progress</a>
-{% endblock %}
-
-{% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">Check your answers</h1>
-
-    <form action="confirmation" method="post" class="form">
-
-      {% set complianceText = case.serviceUserPersonalDetails.firstName + ' was absent' if data['confirm-a-session'][CRN]['did-service-user-comply'] == 'Absent' else data['confirm-a-session'][CRN]['did-service-user-comply']  %}
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-          {
-            key: { text: "RAR activity" },
-            value: { text: data['confirm-a-session'][CRN]['RARCategory'] if data['confirm-a-session'][CRN]['countsTowardsRAR'] == 'Yes' else 'None'  },
-            actions: {
-              items: [
-                {
-                  href: "rar-categories",
-                  text: "Change",
-                  visuallyHiddenText: "RAR activity"
-                }
-              ]
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: [
+      {
+        key: { text: "RAR activity" },
+        value: { text: data['confirm-attendance'][CRN][sessionId]['RARCategory'] if data['confirm-attendance'][CRN][sessionId]['countsTowardsRAR'] == 'Yes' else 'None'  },
+        actions: {
+          items: [
+            {
+              href: "rar-categories",
+              text: "Change",
+              visuallyHiddenText: "RAR activity"
             }
-          },
-          {
-            key: { text: case.serviceUserPersonalDetails.firstName + " complied?" },
-            value: { text: complianceText },
-            actions: {
-              items: [
-                {
-                  href: "compliance",
-                  text: "Change",
-                  visuallyHiddenText: "compliance"
-                }
-              ]
+          ]
+        }
+      },
+      {
+        key: { text: case.serviceUserPersonalDetails.firstName + " complied?" },
+        value: { text: complianceText },
+        actions: {
+          items: [
+            {
+              href: "compliance",
+              text: "Change",
+              visuallyHiddenText: "compliance"
             }
-          },
-          {
-            key: { text: "Session notes" },
-            value: { text: data['confirm-a-session'][CRN]['notes'] if data['confirm-a-session'][CRN]['add-notes'] == 'Yes' else 'None' },
-            actions: {
-              items: [
-                {
-                  href: "add-notes",
-                  text: "Change",
-                  visuallyHiddenText: "session notes"
-                }
-              ]
+          ]
+        }
+      },
+      {
+        key: { text: "Session notes" },
+        value: { text: data['confirm-attendance'][CRN][sessionId]['notes'] if data['confirm-attendance'][CRN][sessionId]['add-notes'] == 'Yes' else 'None' },
+        actions: {
+          items: [
+            {
+              href: "add-notes",
+              text: "Change",
+              visuallyHiddenText: "session notes"
             }
-          }
-        ]
-        }) }}
+          ]
+        }
+      }
+    ]
+    }) }}
 
-      <p class="govuk-body">You’re confirming attendance for:</p>
+  <p class="govuk-body">You’re confirming attendance for:</p>
 
-      <div class="govuk-inset-text">
-        <strong>{{ case.previousAppointment.type }}</strong><br>
-        {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
-      </div>
-
-      <button class="govuk-button" data-module="govuk-button">
-        Confirm attendance
-      </button>
-
-    </form>
-
+  <div class="govuk-inset-text">
+    <strong>{{ case.previousAppointment.type }}</strong><br>
+    {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
   </div>
-</div>
-
 {% endblock %}
