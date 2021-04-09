@@ -1,145 +1,149 @@
 {% extends "layout.html" %}
+{% set alias = case.serviceUserPersonalDetails.aliases[0] %}
+{% set title = case.serviceUserPersonalDetails.name + " (" + alias + ")" if alias else case.serviceUserPersonalDetails.name %}
+{% block pageTitle %}{{ title }}{% endblock %}
 
-{% block pageTitle %}
-Case summary
-{% endblock %}
-
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
-
-{% block beforeContent %}
-<a href="/cases" class="govuk-back-link">Back to my cases</a>
+{% block pageNavigation %}
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Cases",
+      href: "/cases"
+    },
+    {
+      text: title
+    }
+  ]
+  }) }}
 {% endblock %}
 
 {% block content %}
 
-{% set currentNavSection = 'progress' %}
-{% include "case/_case-nav.html" %}
-
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}’s progress</h1>
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+    <p>
+      <span class="govuk-tag govuk-tag--red govuk-!-margin-right-2">Risk to themselves</span>
+      <span class="govuk-tag govuk-tag--red">Risk to children</span>
+    </p>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: { text: "Date of birth" },
+          value: { text: case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + case.serviceUserPersonalDetails.age + " years old)" }
+        },
+        {
+          key: { text: "CRN" },
+          value: { text: CRN }
+        },
+        {
+          key: { text: "PNC" },
+          value: { text: case.PNC }
+        }
+      ]
+    }) }}
   </div>
 </div>
 
+{% set currentNavSection = 'quick-look' %}
+{% include "case/_case-nav.html" %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <!--PROGRESSED SENTENCE STATUS-->
-    <h2 class="govuk-heading-m">
+    <h2 class="govuk-heading-l">
       Sentence
     </h2>
-    <div class="govuk-!-margin-bottom-9">
-      <p class="govuk-body"><strong>{{ case.currentOrder.type }}</strong><br>
-        {{ case.currentOrder.description }}</p>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Started</p>
-          <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>{{ case.currentOrder.startDate |
-              dateWithYearShortMonth }}</strong></p>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Ends</p>
-          <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>{{ case.currentOrder.endDate |
-              dateWithYearShortMonth }}</strong></p>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <p class="govuk-body govuk-!-margin-bottom-0 secondary-text-col">Time elapsed</p>
-          <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>7 months, 18 days</strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="govuk-!-margin-bottom-9">
-      <h3 class="govuk-heading-m">Requirements</h3>
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Requirement</th>
-            <th scope="col" class="govuk-table__header">Total</th>
-            <th scope="col" class="govuk-table__header">Completed</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <!--<tr class="govuk-table__row">
-            <td class="govuk-table__cell">Alcohol Treatment</td>
-            <td class="govuk-table__cell">9 months</td>
-            <td class="govuk-table__cell">3 months </td>
-          </tr>-->
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Rehabilitation Activity Requirement (RAR)</td>
-            <td class="govuk-table__cell">15 days</td>
-            <td class="govuk-table__cell">5 days</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Fine</td>
-            <td class="govuk-table__cell" colspan="2">£1000</td>
-          </tr>
-        </tbody>
-      </table>
+
+    <div class="app-card govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+        <a href="#">{{ case.currentOrder.type }}</a>
+      </h3>
+
+      <p>
+        {{ case.currentOrder.progressInMonths }} months elapsed (of {{ case.currentOrder.lengthInMonths }} months)
+      </p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+        <a href="#">Rehabilitation activity requirement</a>
+      </h3>
+      <p>
+        {{ case.currentOrder.requirements.rar.progressInDays }} days completed (of {{ case.currentOrder.requirements.rar.lengthInDays }} days)
+      </p>
     </div>
 
-    <div class="govuk-!-margin-bottom-7">
-      <h3 class="govuk-heading-m">Breaches</h3>
-      <p class="govuk-body">No breaches</p>
-      <!--<table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Breach</th>
-            <th scope="col" class="govuk-table__header">Status</th>
-            <th scope="col" class="govuk-table__header">Status date</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state"
-                href="nsi/breach.html">Community Order / SSO Breach</a></td>
-            <td class="govuk-table__cell">Breach initiated</td>
-            <td class="govuk-table__cell">23 Feb 2021</td>
-          </tr>
-        </tbody>
-      </table>-->
-    </div>
+    <h2 class="govuk-heading-l">
+      Risk of harm
+    </h2>
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <p>
+      Risk to known adults, children, staff, and/or the public (ROSH)
+      <span class="govuk-tag govuk-tag--red govuk-!-margin-left-2">{{ case.riskIndicators[0].value }}</span>
+    </p>
 
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Risks
-      </h2>
+    {% set riskTable %}
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Risk to</th>
+          <th class="govuk-table__header">In community</th>
+          <th class="govuk-table__header">In custody</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Themselves</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">High</span></td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Children</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">High</span></td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Public</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">High</span></td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Known adult</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">High</span></td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Staff</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not scored</span></td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Prisoners</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Low</span></td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Low</span></td>
+        </tr>
+      </tbody>
+    </table>
+    {% endset %}
 
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        {% for riskIndicator in case.riskIndicators %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ riskIndicator.type }}
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ riskIndicator.value }}
-          </dd>
-        </div>
-        {% endfor %}
-      </dl>
-    </div>
+    {{ govukDetails({
+      summaryText: "View those at risk",
+      html: riskTable
+    }) }}
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <h2 class="govuk-heading-l">
+      Criminogenic needs
+    </h2>
 
-    <div class="govuk-!-margin-bottom-7">
-      <h2 class="govuk-heading-m">
-        Needs
-      </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Criminogenic needs
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ case.criminogenicNeeds | join('<br>') | safe }}
-          </dd>
-        </div>
-      </dl>
-    </div>
+    <ul class="govuk-list govuk-list--bullet">
+      {% for need in case.criminogenicNeeds %}
+        <li>{{ need }}</li>
+      {% endfor %}
+    </ul>
 
+    <p>
+      <a href="#">View sentence plan</a>
+    </p>
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -157,21 +161,16 @@ Case summary
     <h2 class="govuk-heading-m">
       Next session
     </h2>
-    <div class="govuk-!-margin-bottom-9">
-      <div class="govuk-panel govuk-panel--appointment-timeline">
-        <div class="govuk-panel__body">
-          <strong>
-            {{ data['arrange-a-session'][CRN][123]['session-date'] | dateWithDayAndWithoutYear }} from<br>
-            {{ data['arrange-a-session'][CRN][123]['session-start-time'] }} to {{ data['arrange-a-session'][CRN][123]['session-end-time'] }}
-          </strong><br>
-          {{ data['arrange-a-session'][CRN][123]['type-of-session'] }}<br>
-          <br>
-          <a href="/arrange-a-session/{{ CRN }}/123/rearrange-or-cancel" class="govuk-button govuk-button--secondary"
-            data-module="govuk-button" style="margin-bottom: 0;">
-            Rearrange or cancel session
-          </a>
-        </div>
-      </div>
+    <div class="app-card app-card--blue">
+      {{ data['arrange-a-session'][CRN][123]['type-of-session'] }}<br>
+      <strong>
+        {{ data['arrange-a-session'][CRN][123]['session-date'] | dateWithDayAndWithoutYear }} from<br>
+        {{ data['arrange-a-session'][CRN][123]['session-start-time'] }} to {{ data['arrange-a-session'][CRN][123]['session-end-time'] }}
+      </strong>
+      <a href="/arrange-a-session/{{ CRN }}/123/rearrange-or-cancel" class="govuk-button govuk-button--secondary govuk-!-margin-top-4"
+        data-module="govuk-button" style="margin-bottom: 0;">
+        Rearrange or cancel session
+      </a>
     </div>
   </div>
 </div>
