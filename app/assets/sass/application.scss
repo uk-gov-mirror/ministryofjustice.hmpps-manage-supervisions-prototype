@@ -31,19 +31,6 @@ $govuk-assets-path: '/govuk/assets/';
     background-image: url(/public/images/icon-document.svg) !important;
 }
 
-// Caselist timestamp
-.case-list-timestamp {
-    float: none;
-    margin-right: 0;
-}
-
-@media (min-width: 1024px) {
-    .case-list-timestamp {
-        float: right;
-        margin-right: 0;
-    }
-}
-
 .app-cases-table td ol {
   margin-top: 0;
   margin-bottom: 0;
