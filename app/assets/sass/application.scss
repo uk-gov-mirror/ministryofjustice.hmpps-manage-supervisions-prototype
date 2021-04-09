@@ -62,23 +62,23 @@ $govuk-assets-path: '/govuk/assets/';
 // Prototype index page styles
 
 .app-masthead {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #ffffff;
-    background-color: $govuk-brand-colour;
-    margin-top: -20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: govuk-colour("white");
+  background-color: $govuk-brand-colour;
+  margin-top: -20px;
 }
 
 @media (min-width: 40.0625em) {
-    .app-masthead {
-        padding-top: 40px;
-    }
+  .app-masthead {
+    padding-top: 40px;
+  }
 }
 
 .app-masthead__title,
 .app-masthead__subtitle,
 .app-masthead p {
-    color: #ffffff !important;
+    color: govuk-colour("white") !important;
 }
 
 .app-masthead__subtitle {
