@@ -57,14 +57,14 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .govuk-panel--appointment-timeline {
-  color: #ffffff;
-  background: #1d70b8;
+  color: govuk-colour("white");
+  background: govuk-colour("blue");
   margin-bottom: 2rem;
   padding: 20px;
 }
 
 .note-panel {
-  background-color: #f3f2f1;
+  background-color: govuk-colour("light-grey");
   padding: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -74,5 +74,5 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .govuk-hint-s {
-  color: #505a5f;
+  color: govuk-colour("dark-grey");
 }
