@@ -21,6 +21,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/timeline";
 @import "components/key-details-bar";
 @import "components/time-autocomplete";
+@import "components/cases-table";
 
 @import 'accessible-autocomplete.min';
 @import 'max-widths';
@@ -31,29 +32,6 @@ $govuk-assets-path: '/govuk/assets/';
 // Document icon image
 .moj-timeline__document-link {
   background-image: url(/public/images/icon-document.svg) !important;
-}
-
-.app-cases-table td ol {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 1.4em;
-}
-
-.app-cases-table td ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style-type: none;
-}
-
-@media screen and (min-width: 40.0625em) {
-  .app-cases-table .custom-delius-record-width {
-    min-width: 180px;
-  }
-
-  .app-cases-table .custom-defendant-width {
-    min-width: 160px;
-  }
 }
 
 // Secondary text colour
