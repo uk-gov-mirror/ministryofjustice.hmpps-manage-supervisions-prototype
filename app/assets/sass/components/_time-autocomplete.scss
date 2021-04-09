@@ -1,0 +1,32 @@
+.app-time-autocomplete {
+
+  // the container must be positioned relative
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+
+  .autocomplete-items {
+    @include govuk-font($size: 19);
+    position: absolute;
+    border: 2px solid govuk-colour("black");
+    border-top: none;
+    z-index: 99;
+    // position the autocomplete items to be the same width as the container
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .autocomplete-items div {
+    padding: 8px;
+    cursor: pointer;
+    background-color: govuk-colour("white");
+    border-bottom: 1px solid govuk-colour("mid-grey");
+  }
+
+  // when hovering an item
+  .autocomplete-items div:hover {
+    background-color: govuk-colour("light-grey");
+  }
+}
