@@ -138,6 +138,74 @@ module.exports = [
         'value': '3 - 6.89% - Medium'
       }
     ],
+    'riskOfHarm': [
+      {
+        'riskTo': 'Themselves',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Children',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Public',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Known adult',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Staff',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Prisoners',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      }
+    ],
     'criminogenicNeeds': [
       'Accommodation',
       'Relationships',

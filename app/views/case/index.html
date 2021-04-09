@@ -92,36 +92,17 @@
         </tr>
       </thead>
       <tbody class="govuk-table__body">
+        {% for risks in case.riskOfHarm %}
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Themselves</td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">High</span></td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
+          <td class="govuk-table__cell">{{ risks.riskTo }}</td>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--{{ risks.inCommunity.class }}">{{ risks.inCommunity.text }}</span>
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--{{ risks.inCustody.class }}">{{ risks.inCustody.text }}</span>
+          </td>
         </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Children</td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">High</span></td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Public</td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">High</span></td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Known adult</td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">High</span></td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Staff</td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not scored</span></td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Medium</span></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Prisoners</td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Low</span></td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Low</span></td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
     {% endset %}
