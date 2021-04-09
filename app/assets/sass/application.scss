@@ -24,6 +24,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 @import 'accessible-autocomplete.min';
 @import 'max-widths';
+@import 'govuk-page-masthead';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -60,34 +61,9 @@ $govuk-assets-path: '/govuk/assets/';
   color: $govuk-secondary-text-colour;
 }
 
-// Prototype index page styles
-
-.app-masthead {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: govuk-colour("white");
-  background-color: $govuk-brand-colour;
-  margin-top: -20px;
-}
-
-@media (min-width: 40.0625em) {
-  .app-masthead {
-    padding-top: 40px;
-  }
-}
-
-.app-masthead__title,
-.app-masthead__subtitle,
-.app-masthead p {
-    color: govuk-colour("white") !important;
-}
-
-.app-masthead__subtitle {
-  font-weight: normal !important;
-}
-
-.panel .grid-row {
-    margin-top: 32px;
+.app-organisation-nav-title {
+  float: right;
+  padding-top: 19px;
 }
 
 .app-case-updates {
