@@ -1,12 +1,31 @@
 {% extends "layout.html" %}
+{% set alias = case.serviceUserPersonalDetails.aliases[0] %}
+{% set name = case.serviceUserPersonalDetails.name + " (" + alias + ")" if alias else case.serviceUserPersonalDetails.name %}
 {% set title = 'Case activity' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
-{% block beforeContent %}
-<a href="/cases" class="govuk-back-link">Back to my cases</a>
+{% block pageNavigation %}
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Cases",
+      href: "/cases"
+    },
+    {
+      text: name,
+      href: "/cases/" + CRN
+    },
+    {
+      text: title
+    }
+  ]
+  }) }}
 {% endblock %}
 
 {% block content %}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ name }}</h1>
+
 {% set currentNavSection = 'timeline' %}
 {% include "case/_case-nav.html" %}
 

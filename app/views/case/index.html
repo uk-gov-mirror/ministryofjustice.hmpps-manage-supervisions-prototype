@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% set alias = case.serviceUserPersonalDetails.aliases[0] %}
-{% set title = case.serviceUserPersonalDetails.name + " (" + alias + ")" if alias else case.serviceUserPersonalDetails.name %}
+{% set name = case.serviceUserPersonalDetails.name + " (" + alias + ")" if alias else case.serviceUserPersonalDetails.name %}
+{% set title = name %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
 {% block pageNavigation %}
@@ -19,11 +20,14 @@
 
 {% block content %}
 
-<h1 class="govuk-heading-xl">{{ title }}</h1>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ title }}</h1>
+
+{% set currentNavSection = 'quick-look' %}
+{% include "case/_case-nav.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Quick look</h1>
 
     <p>
       <span class="govuk-tag govuk-tag--red govuk-!-margin-right-2">Risk to themselves</span>
@@ -46,15 +50,6 @@
         }
       ]
     }) }}
-  </div>
-</div>
-
-{% set currentNavSection = 'quick-look' %}
-{% include "case/_case-nav.html" %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Quick look</h1>
 
     <h2 class="govuk-heading-m">
       Sentence
