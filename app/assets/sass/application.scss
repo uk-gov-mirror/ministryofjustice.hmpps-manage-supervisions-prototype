@@ -163,45 +163,15 @@ td ul {
     }
 }
 
-
-// Tag modifiers
-// .moj-tag--grey, .moj-tag--green {
-//     border: none;
-// }
 .moj-tag--small--nowrap {
     white-space: nowrap;
     font-size: 0.875rem;
     padding-bottom: 5px;
 }
 
-.moj-badge-wrapper {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.moj-badge-wrapper .moj-badge {
-    margin-right: 5px;
-}
-
-// .moj-badge {
-//     white-space: nowrap;
-// }
-
-
-
 .card .govuk-inset-text {
     border-left: 5px solid #b1b4b6;
     padding: 0 15px;
-}
-
-
-// Filter
-@media (min-width: 48.0625em) {
-    .moj-filter-layout__filter {
-        float: left;
-        margin-right: 40px;
-        max-width: 250px;
-    }
 }
 
 
@@ -302,48 +272,6 @@ td ul {
         line-height: 1.25;
     }
 }
-
-// Match table
-.match-record-table {
-    max-width: 960px;
-}
-
-.govuk-table__cell .govuk-radios__label {
-    padding: 0;
-}
-
-.match-table-radio {
-    width: 5%;
-}
-
-.match-table-radio2 {
-    width: 6%;
-}
-
-.match-table-name {
-    width: 25%;
-}
-
-.match-table-dob {
-    width: 16%;
-}
-
-.match-table-gender {
-    width: 12%;
-}
-
-.match-table-pnc {
-    width: 16%;
-}
-
-.match-table-summary {
-    width: 20%;
-}
-
-.reject-btn {
-    background-color: #dee0e2;
-}
-
 
 // DASHBOARD
 
@@ -479,54 +407,8 @@ a:link {
         display: grid;
         grid-template-columns: auto auto;
     }
-    // #donate {
-    //     justify-content: center;
-    //     align-items: center;
-    //     text-align: center;
-    // }
-    #donate label {
-        padding: 10px;
-    }
-    #donate label span {
-        width: 90%!important;
-    }
 }
 
-
-// Radio styles
-
-#donate label {
-    padding-bottom: 15px;
-}
-
-#donate label span {
-    display: inline-block;
-    text-align: center;
-    cursor: default;
-    box-sizing: border-box;
-    margin: 0em;
-    padding: 6px 7px 2px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-    border-image: initial;
-    background-color: #f3f2f1;
-    box-shadow: 0 2px 0 #929191;
-    width: 60%;
-    height: 38px;
-}
-
-#donate label input {
-    position:absolute;
-    top:-20px;
-    visibility: hidden;
-}
-
-#donate input:checked + span {
-    background-color: #00703c;
-    box-shadow: 0 2px 0 #002d18;
-    color: white;
-}
 
 // Overall attendance counts
 
@@ -603,18 +485,6 @@ a:link {
 
 .app-related-items .useful-links>li {
     margin-bottom: 15px !important;
-}
-
-.prototype-index {
-    margin-bottom: 80px;
-}
-
-.prototype-write-up .govuk-heading-s {
-    margin-bottom: 10px;
-}
-
-.prototype-write-up .govuk-grid-column-one-third:first-child {
-    padding-left: 0;
 }
 
 @media (min-width: 641px) {
@@ -803,18 +673,7 @@ tr.system td{
 }
 
 .note-panel ul {
-    margin-top: 0;
-}
-
-/*autocomplete*/
-* {
-  box-sizing: border-box;
-}
-
-body {
-    font-family: "GDS Transport", Arial, sans-serif;
-    font-size: 19px;
-
+  margin-top: 0;
 }
 
 /*the container must be positioned relative:*/
@@ -846,54 +705,6 @@ body {
   background-color: #f3f2f1;
 }
 
-/*screenshots*/
-.image-thumbnail {
-    box-shadow: 0 0 0 0.25rem black;
-    width: 100%;
-  }
-
-  .image-thumbnail-link {
-    padding-bottom: 0;
-  }
-
-  figure {
-    display: grid;
-    grid-gap: 1rem 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 2rem;
-  }
-
-  figure:first-child {
-    margin-top: 20rem;
-    padding-top: 20rem;
-  }
-
-  figcaption {
-    margin-top: 1rem !important;
-  }
-
-  .design-history-image {
-    box-shadow: 0 0 0 0.25rem black;
-    height: auto;
-    width: 75%;
-    margin-right: 0rem;
-    margin-bottom: 2rem;
-    margin-top: 0.25rem;
-  }
-
-  @media (min-width: 40.0625em) {
-    .design-history-image {
-        height: auto;
-        width: 30%;
-        margin-right: 1rem;
-        margin-bottom: 2rem;
-        margin-top: 0.25rem;
-        }
-    }
-
-    .govuk-hint-s {
-        color: #505a5f;
-    }
+.govuk-hint-s {
+  color: #505a5f;
+}
