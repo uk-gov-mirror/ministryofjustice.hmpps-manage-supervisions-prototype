@@ -20,6 +20,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/filter";
 @import "components/timeline";
 @import "components/key-details-bar";
+@import "components/time-autocomplete";
 
 @import 'accessible-autocomplete.min';
 @import 'max-widths';
@@ -169,35 +170,6 @@ $govuk-assets-path: '/govuk/assets/';
 
 .note-panel ul {
   margin-top: 0;
-}
-
-/*the container must be positioned relative:*/
-.autocomplete {
-  position: relative;
-  display: inline-block;
-}
-
-.autocomplete-items {
-  position: absolute;
-  border: 2px solid #0b0c0c;
-  border-top: none;
-  z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
-}
-
-.autocomplete-items div {
-  padding: 8px;
-  cursor: pointer;
-  background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
-}
-
-/*when hovering an item:*/
-.autocomplete-items div:hover {
-  background-color: #f3f2f1;
 }
 
 .govuk-hint-s {
