@@ -56,59 +56,11 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
-.govuk-panel--appointment {
-  color: #ffffff;
-  background: #28a197;
-  margin-bottom: 2rem;
-}
-
-.govuk-panel--appointment-none {
-  color: #0b0c0c;
-  background: #f3f2f1;
-  margin-bottom: 2rem;
-}
-
 .govuk-panel--appointment-timeline {
   color: #ffffff;
   background: #1d70b8;
   margin-bottom: 2rem;
   padding: 20px;
-}
-
-.govuk-panel__title {
-  font-size: 27px;
-  line-height: 1;
-}
-
-@media (min-width: 40.0625em) {
-  .govuk-panel__title {
-    font-size: 36px;
-    line-height: 1;
-  }
-}
-
-.govuk-panel__body {
-  font-size: 19px;
-  line-height: 1.3;
-}
-
-@media (min-width: 40.0625em) {
-  .govuk-panel__body {
-    font-size: 24px;
-    line-height: 1.4;
-  }
-}
-
-.govuk-panel__small {
-  font-size: 16px;
-  line-height: 1.3;
-}
-
-@media (min-width: 40.0625em) {
-  .govuk-panel__small {
-    font-size: 19px;
-    line-height: 1.4;
-  }
 }
 
 .note-panel {
