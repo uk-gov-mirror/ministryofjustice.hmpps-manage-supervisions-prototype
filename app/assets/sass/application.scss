@@ -24,24 +24,9 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-
-// Search toggle image
-.moj-search-toggle__button:after {
-    background-image: url(/public/images/icon-search-blue.svg) !important;
-}
-
 // Document icon image
 .moj-timeline__document-link {
     background-image: url(/public/images/icon-document.svg) !important;
-}
-
-// Button menu toggle icon
-.moj-button-menu__toggle-button--secondary:after {
-    background-image: url(/public/images/icon-arrow-black-down.svg) !important;
-}
-
-.moj-button-menu button {
-    color: #000000 !important;
 }
 
 // Container max width
@@ -138,8 +123,6 @@ $govuk-assets-path: '/govuk/assets/';
     }
 }
 
-
-// Case list overrides
 .app-cases-table td ol {
   margin-top: 0;
   margin-bottom: 0;
@@ -163,32 +146,15 @@ $govuk-assets-path: '/govuk/assets/';
     }
 }
 
-.moj-tag--small--nowrap {
-    white-space: nowrap;
-    font-size: 0.875rem;
-    padding-bottom: 5px;
-}
-
 .card .govuk-inset-text {
     border-left: 5px solid #b1b4b6;
     padding: 0 15px;
 }
 
-
-// Highlight
-.highlight {
-    border-bottom: 3px solid #ffbf47;
-    margin-right: 1px;
-    background-color: #fff2d3;
-    padding: 2px 0px 0px;
-}
-
-
 // Secondary text colour
 .secondary-text-col {
-    color: $govuk-secondary-text-colour;
+  color: $govuk-secondary-text-colour;
 }
-
 
 // Key details bar
 .key-details-bar {
@@ -196,8 +162,6 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .key-details-bar .key-details-bar__key-details {
-    // max-width: 1200px;
-    // margin: 0 auto;
     padding: 20px 0;
     position: relative;
 }
@@ -218,8 +182,6 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .key-details-bar .key-details-bar__key-details .key-details-bar__bottom-block {
-    // border-top: 1px solid rgba(255, 255, 255, 0.3);
-    // content: ' ';
     padding-top: 10px;
     margin-top: 6px;
 }
@@ -255,13 +217,7 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 @media (min-width: 40.0625em) {
-
-    // .key-details-bar .key-details-bar__key-details {
-    //     margin: 0 auto;
-    // }
     .key-details-bar .key-details-bar__key-details .key-details-bar__name {
-        // font-size: 36px;
-        // font-size: 2.25rem;
         font-size: 1.675rem;
         line-height: 1.11111;
     }
@@ -271,110 +227,6 @@ $govuk-assets-path: '/govuk/assets/';
         font-size: 1rem;
         line-height: 1.25;
     }
-}
-
-// DASHBOARD
-
-.app-pagination__list {
-    padding-left: 0;
-    margin: 0;
-}
-
-.app-pagination--inline .app-pagination__list-item {
-    display: inline-block;
-}
-
-.app-pagination__list-item {
-    display: block;
-}
-
-.app-pagination--inline .app-pagination__link {
-    display: block;
-}
-
-.app-pagination__link:active,
-.app-pagination__link:hover,
-.app-pagination__link:link,
-.app-pagination__link:visited {
-    color: #1d70b8;
-}
-
-.app-pagination__link {
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-}
-
-
-.app-pagination__link-title {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.25;
-    display: block;
-    font-weight: 700;
-}
-
-.app-pagination__link-icon {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    font-size: 18px;
-    font-size: 1.125rem;
-    line-height: 1.11111;
-    float: left;
-    height: 1em;
-    position: relative;
-    top: 1px;
-    width: .63em;
-}
-
-@media (min-width: 40.0625em) {
-
-    .app-pagination__link-title {
-        font-size: 19px;
-        font-size: 1.1875rem;
-        line-height: 1.31579;
-    }
-}
-
-@media (min-width: 40.0625em) {
-    .app-pagination__link-icon {
-        font-size: 24px;
-        font-size: 1.5rem;
-        line-height: 1.25;
-    }
-}
-
-.app-pagination__link:hover {
-    background-color: #f3f2f1;
-}
-
-.app-pagination--inline .app-pagination__list-item--next .app-pagination__link-icon {
-    float: right;
-}
-
-.app-pagination {
-    display: block;
-    list-style: none;
-    margin-left: -15px;
-    margin-right: -15px;
-}
-
-
-.app-pagination--inline .app-pagination__list-item--next .app-pagination__link-text {
-    margin-left: 0;
-    margin-right: 10px;
-}
-
-.app-pagination__list-item--next .app-pagination__link-text,
-.app-pagination__list-item--prev .app-pagination__link-text {
-    margin-left: 10px;
-}
-
-.app-pagination--inline .app-pagination__link-text {
-    font-weight: 400;
 }
 
 // Sub navigation
@@ -398,54 +250,6 @@ $govuk-assets-path: '/govuk/assets/';
         grid-template-columns: auto auto;
     }
 }
-
-
-// Overall attendance counts
-
-.app-dashboard-count {
-    padding-right: 10px !important;
-    text-align: right;
-    min-width: 30px !important;
-    display: inline-block;
-    margin-bottom: 0;
-}
-
-
-// Delius contact
-.delius-contact {
-    max-width: none;
-}
-
-.delius-contact .govuk-summary-list__key {
-    text-align: right !important;
-}
-
-.delius-contact .govuk-select {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9em;
-    border: 1px solid #ccc;
-    height: 2rem;
-    width: 100%;
-    background-color: white;
-}
-
-.delius-contact .mandatory {
-    color: $govuk-error-colour;
-}
-
-.delius-contact .govuk-summary-list__value {
-    padding: 5px 0 5px 0;
-}
-
-.delius-contact button {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9em;
-    border: 1px solid #ccc;
-    box-shadow: none;
-    padding: 10px 12px 9px;
-    border-radius: 4px;
-}
-
 
 // Prototype index page styles
 
@@ -477,54 +281,8 @@ $govuk-assets-path: '/govuk/assets/';
     margin-bottom: 15px !important;
 }
 
-@media (min-width: 641px) {
-    .most-recent {
-        padding-bottom: 50px;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-top: 50px;
-    }
-}
-
-.most-recent {
-    border: 1px solid $govuk-border-colour;
-    margin-bottom: 60px;
-    margin-top: 15px;
-    overflow: hidden;
-    position: relative;
-}
-
-.most-recent .recent-tag {
-    position: absolute;
-    top: -1px;
-    left: 0;
-}
-
-.prototype-index summary {
-    color: $govuk-link-colour;
-    font-family: "GDS Transport", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    font-size: 19px;
-}
-
 .panel .grid-row {
     margin-top: 32px;
-}
-
-
-// Show more show less links
-.morecontent span {
-    display: none;
-}
-
-a.morelink {
-    color: #1d70b8;
-}
-
-a.morelink:visited {
-    color: #1d70b8;
 }
 
 .app-case-updates {
@@ -554,52 +312,6 @@ a.morelink:visited {
         margin-top: 15px;
     }
 }
-
-tr.case-history {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: flex-start;
-}
-.expanded-row-content {
-    display: grid;
-    grid-column: 1/-1;
-    justify-content: flex-start;
-}
-.hide-row {
-    display: none;
-}
-tr.system td{
-    background-color: #ccc;
-  }
-
-.graph {
-    background: #d4ecea;
-}
-
-.graph div .amount {
-    font-family: "GDS Transport", Arial, sans-serif;
-    display: block;
-    height: 100%;
-    background: #28a197;
-    line-height: 1.8em;
-    color: #fff;
-    text-align: right;
-    font-size: 1.3em;
-    font-weight: 700;
-    padding-right: 0.75rem;
-}
-    .graph div .amount--none {
-        font-family: "GDS Transport", Arial, sans-serif;
-        display: block;
-        height: 100%;
-        background: #d4ecea;
-        line-height: 1.8em;
-        color: #0b0c0c;
-        text-align: left;
-        font-size: 1.3em;
-        font-weight: 700;
-        padding-left: 0.75rem;
-    }
 
 .govuk-panel--appointment {
         color: #ffffff;
@@ -639,27 +351,27 @@ tr.system td{
 
 @media (min-width: 40.0625em) {
 .govuk-panel__body {
-    font-size: 24px;
-    line-height: 1.4;
+  font-size: 24px;
+  line-height: 1.4;
     }
 }
 
 .govuk-panel__small {
-    font-size: 16px;
-    line-height: 1.3;
+  font-size: 16px;
+  line-height: 1.3;
 }
 
 @media (min-width: 40.0625em) {
-.govuk-panel__small {
+  .govuk-panel__small {
     font-size: 19px;
     line-height: 1.4;
-    }
+  }
 }
 
 .note-panel {
-    background-color: #f3f2f1;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
+  background-color: #f3f2f1;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .note-panel ul {
