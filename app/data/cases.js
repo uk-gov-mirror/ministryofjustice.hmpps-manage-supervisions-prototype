@@ -124,6 +124,8 @@ module.exports = [
         'endDate': '2010-06-30'
       }
     ],
+    'breachesCount': 0,
+    'restrainingOrdersCount': 0,
     'riskIndicators': [
       {
         'type': 'ROSHA score',
