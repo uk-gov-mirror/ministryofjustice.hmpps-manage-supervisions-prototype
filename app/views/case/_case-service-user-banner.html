@@ -1,0 +1,32 @@
+{% set alias = case.serviceUserPersonalDetails.aliases[0] %}
+{% set name = case.serviceUserPersonalDetails.name + " (" + alias + ")" if alias else case.serviceUserPersonalDetails.name %}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-4">{{ name }}</h1>
+
+<p>
+  <span class="govuk-tag govuk-tag--red govuk-!-margin-right-2">Risk to themselves</span>
+  <span class="govuk-tag govuk-tag--red">Risk to children</span>
+</p>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukSummaryList({
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+        {
+          key: { text: "Date of birth" },
+          value: { text: case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + case.serviceUserPersonalDetails.age + " years old)" }
+        },
+        {
+          key: { text: "CRN" },
+          value: { text: CRN }
+        },
+        {
+          key: { text: "PNC" },
+          value: { text: case.PNC }
+        }
+      ]
+    }) }}
+  </div>
+</div>

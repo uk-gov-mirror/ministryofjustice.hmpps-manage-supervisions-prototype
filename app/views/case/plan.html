@@ -23,7 +23,8 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ name }}</h1>
+
+{% include "case/_case-service-user-banner.html" %}
 
 {% set currentNavSection = 'plan' %}
 {% include "case/_case-nav.html" %}
