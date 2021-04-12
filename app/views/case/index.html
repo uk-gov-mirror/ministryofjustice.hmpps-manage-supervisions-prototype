@@ -1,22 +1,6 @@
 {% extends "layout.html" %}
-{% set alias = case.serviceUserPersonalDetails.aliases[0] %}
-{% set name = case.serviceUserPersonalDetails.name + " (" + alias + ")" if alias else case.serviceUserPersonalDetails.name %}
 {% set title = name %}
 {% block pageTitle %}{{ title }}{% endblock %}
-
-{% block pageNavigation %}
-  {{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Cases",
-      href: "/cases"
-    },
-    {
-      text: title
-    }
-  ]
-  }) }}
-{% endblock %}
 
 {% block content %}
 
