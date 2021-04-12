@@ -1,28 +1,19 @@
 {% extends "layout.html" %}
-
-{% block pageTitle %}
-Case summary
-{% endblock %}
-
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
-
-{% block beforeContent %}
-<a href="/cases" class="govuk-back-link">Back to my cases</a>
-{% endblock %}
+{% set title = 'Sentence' %}
+{% block pageTitle %}{{ title }}{% endblock %}
 
 {% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
 
 {% set currentNavSection = 'sentence' %}
 {% include "case/_case-nav.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}’s sentence</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Sentence</h1>
   </div>
 </div>
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -125,52 +116,37 @@ Case summary
   </div><!--END COL TWO THIRDS-->
 
   <div class="govuk-grid-column-one-third">
-    <div class="govuk-!-margin-bottom-7">
-
-      <h2 class="govuk-heading-m">
-        Court documents</h2>
-
-      <div class="moj-timeline__description">
-        <div class="note-panel">
-          <ul class="moj-timeline__documents">
-            {% for doc in case.currentOrder.courtDocuments %}
-            <li class="moj-timeline__document-item" style="margin-bottom: 20px;">
-              <a class="moj-timeline__document-link" href="#"><strong>{{ doc.name }}</strong></a><br>
-              <span style="padding-left: 25px;">Last updated {{ doc.lastUpdateDate | dateWithYearShortMonth }}</span>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+    <h2 class="govuk-heading-m">Court documents</h2>
+    <div class="moj-timeline__description govuk-!-margin-bottom-7">
+      <div class="note-panel">
+        <ul class="moj-timeline__documents">
+          {% for doc in case.currentOrder.courtDocuments %}
+          <li class="moj-timeline__document-item" style="margin-bottom: 20px;">
+            <a class="moj-timeline__document-link" href="#"><strong>{{ doc.name }}</strong></a><br>
+            <span style="padding-left: 25px;">Last updated {{ doc.lastUpdateDate | dateWithYearShortMonth }}</span>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
+    </div>
 
-   </div>
-    <h2 class="govuk-heading-m">{{ case.serviceUserPersonalDetails.firstName }}’s history</h2>
+    <h2 class="govuk-heading-m">History</h2>
+    <div class="app-card app-card--blue govuk-!-margin-bottom-6">
+      <strong>Probation status</strong><br>
+      {{ case.status }}
+    </div>
 
-    <!--TIME ARRANGED-->
-<div class="govuk-panel govuk-panel--appointment-timeline">
-  <div class="govuk-panel__body">
-    <strong>Probation status</strong><br>
-    {{ case.status  }}
+    <p class="govuk-body">
+      <a href="previous-orders" class="govuk-!-font-weight-bold">
+        Previous orders
+      </a>
+    </p>
+    <p class="govuk-body">
+      <a href="address-book-professional" class="govuk-!-font-weight-bold">
+        Address book
+      </a>
+    </p>
   </div>
 </div>
-
-    <p class="govuk-body">
-      <a href="previous-orders">
-        <span class="govuk-!-font-weight-bold">
-          Previous orders
-        </span>
-      </a>
-      <br>
-    </p>
-    <p class="govuk-body">
-      <a href="address-book-professional">
-        <span class="govuk-!-font-weight-bold">
-          Address book
-        </span>
-      </a>
-    </p>
-  </div>
-
-</div><!--END GRID ROW-->
 
 {% endblock %}

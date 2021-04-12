@@ -1,22 +1,19 @@
 {% extends "layout.html" %}
-
-{% block pageTitle %}
-Case summary
-{% endblock %}
-
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
-
-{% block beforeContent %}
-<a href="/cases/{{ CRN }}/details" class="govuk-back-link">Back to {{ case.serviceUserPersonalDetails.firstName }}’s details</a>
-{% endblock %}
+{% set title = 'Address book' %}
+{% block pageTitle %}{{ title }}{% endblock %}
 
 {% block content %}
 
+{% include "case/_case-service-user-banner.html" %}
+
+{{ govukBackLink({
+  text: "Back to personal details",
+  href: "/cases/" + CRN + "/details"
+}) }}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}’s address book</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ title }}</h1>
   </div>
 </div>
 

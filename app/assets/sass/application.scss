@@ -14,7 +14,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Components that aren't in Frontend
 @import "components/button";
-@import "components/cards";
+@import "components/card";
 @import "components/case-notes";
 @import "components/cookie-banner";
 @import "components/filter";
@@ -24,7 +24,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cases-table";
 
 @import 'accessible-autocomplete.min';
-@import 'max-widths';
+// @import 'max-widths';
 @import 'govuk-page-masthead';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

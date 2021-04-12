@@ -124,6 +124,8 @@ module.exports = [
         'endDate': '2010-06-30'
       }
     ],
+    'breachesCount': 0,
+    'restrainingOrdersCount': 0,
     'riskIndicators': [
       {
         'type': 'ROSHA score',
@@ -136,6 +138,74 @@ module.exports = [
       {
         'type': 'RSR score',
         'value': '3 - 6.89% - Medium'
+      }
+    ],
+    'riskOfHarm': [
+      {
+        'riskTo': 'Themselves',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Children',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Public',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Known adult',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Staff',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Prisoners',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
       }
     ],
     'criminogenicNeeds': [
@@ -158,6 +228,11 @@ module.exports = [
       'countsTowardsRAR': true,
       'RARCategory': 'Thinking skills, attitudes and behaviour',
       'sessionId': 456
+    },
+    'appointmentStatistics': {
+      'complied': 5,
+      'acceptableAbsence': 1,
+      'failureToComply': 2
     },
     'contactHistory': [
       {

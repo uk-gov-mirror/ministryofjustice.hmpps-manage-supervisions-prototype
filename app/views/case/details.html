@@ -1,26 +1,17 @@
 {% extends "layout.html" %}
-{% set case = data.cases[0] %}
-
-{% block pageTitle %}
-Case summary
-{% endblock %}
-
-{% block keyDetails %}
-  {% include "includes/service-user-banner.html" %}
-{% endblock %}
-
-{% block beforeContent %}
-<a href="/cases" class="govuk-back-link">Back to my cases</a>
-{% endblock %}
+{% set title = 'Personal details' %}
+{% block pageTitle %}{{ title }}{% endblock %}
 
 {% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
 
 {% set currentNavSection = 'details' %}
 {% include "case/_case-nav.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{ case.serviceUserPersonalDetails.firstName }}’s details</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{title}}</h1>
   </div>
 </div>
 
