@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set title = 'Contacts and personal details' %}
+{% set title = 'Personal details' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
 {% set alias = case.serviceUserPersonalDetails.aliases[0] %}
@@ -31,7 +31,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Contacts and personal details</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">{{title}}</h1>
   </div>
 </div>
 
