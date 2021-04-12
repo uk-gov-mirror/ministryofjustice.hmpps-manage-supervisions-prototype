@@ -227,6 +227,11 @@ module.exports = [
       'RARCategory': 'Thinking skills, attitudes and behaviour',
       'sessionId': 456
     },
+    'appointmentStatistics': {
+      'complied': 5,
+      'acceptableAbsence': 1,
+      'failureToComply': 2
+    },
     'contactHistory': [
       {
         'type': 'Office visit',

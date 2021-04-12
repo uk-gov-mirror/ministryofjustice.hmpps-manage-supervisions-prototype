@@ -163,7 +163,7 @@
     <h2 class="govuk-heading-m">
       Next session
     </h2>
-    <div class="app-card app-card--blue">
+    <div class="app-card app-card--blue govuk-!-margin-bottom-3">
       {{ data['arrange-a-session'][CRN][123]['type-of-session'] }}<br>
       <strong>
         {{ data['arrange-a-session'][CRN][123]['session-date'] | dateWithDayAndWithoutYear }} from<br>
@@ -174,6 +174,76 @@
         Rearrange or cancel session
       </a>
     </div>
+
+    <h2 class="govuk-heading-m">
+      Attendance
+    </h2>
+
+    <p class="govuk-body">
+      <ul class="govuk-list">
+        <li>
+          <span class="govuk-tag govuk-tag--green">{{ case.appointmentStatistics.complied }}</span> Complied
+        </li>
+        <li>
+          <span class="govuk-tag govuk-tag--green">{{ case.appointmentStatistics.acceptableAbsence }}</span> Acceptable absence
+        </li>
+        <li>
+          <span class="govuk-tag govuk-tag--red">{{ case.appointmentStatistics.failureToComply }}</span> Failure to comply
+        </li>
+      </ul>
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Contact details
+    </h2>
+
+    {{ govukSummaryList({
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+        {
+          key: { text: "Address" },
+          value: { html: case.serviceUserPersonalDetails.address.join('<br>') }
+        },
+        {
+          key: { text: "Phone number" },
+          value: { text: case.serviceUserPersonalDetails.phone }
+        },
+        {
+          key: { text: "Email" },
+          value: { text: case.serviceUserPersonalDetails.email }
+        }
+      ]
+    }) }}
+
+    <p class="govuk-body">
+      <a href="/cases/{{ CRN }}/address-book-personal">View address book</a>
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Personal details and circumstances
+    </h2>
+
+    {{ govukSummaryList({
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+        {
+          key: { text: "Preferred language" },
+          value: { text: case.serviceUserPersonalDetails.preferredLanguage }
+        },
+        {
+          key: { text: "Disabilities and adjustments" },
+          value: { text: case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }
+        },
+        {
+          key: { text: "Employment status" },
+          value: { text: case.serviceUserPersonalDetails.circumstances.employment }
+        },
+        {
+          key: { text: "Housing status" },
+          value: { text: case.serviceUserPersonalDetails.circumstances.housingStatus }
+        }
+      ]
+      }) }}
   </div>
 </div>
 
