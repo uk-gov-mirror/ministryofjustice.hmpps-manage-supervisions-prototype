@@ -15,16 +15,16 @@
       classes: 'govuk-summary-list--no-border',
       rows: [
         {
-          key: { text: "Date of birth" },
-          value: { text: case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + case.serviceUserPersonalDetails.age + " years old)" }
-        },
-        {
           key: { text: "CRN" },
           value: { text: CRN }
         },
         {
           key: { text: "PNC" },
           value: { text: case.PNC }
+        },
+        {
+          key: { text: "Date of birth" },
+          value: { text: case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + case.serviceUserPersonalDetails.age + " years old)" }
         }
       ]
     }) }}
