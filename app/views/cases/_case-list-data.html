@@ -34,11 +34,10 @@
           <td class="govuk-table__cell">{{ case.currentOrder.type }}</td>
           <td class="govuk-table__cell">{{ case.risk }}</td>
           <td class="govuk-table__cell">
-            {% if case.nextAppointment %}
-            {{ case.nextAppointment.timestamp | dateWithDayAndWithoutYear }} at {{ case.nextAppointment.timestamp |
-            govukTime }}
+            {% if data['arrange-a-session'][case.CRN][123] %}
+              {{ data['arrange-a-session'][case.CRN][123]['session-date'] | dateWithDayAndWithoutYear }} at {{ data['arrange-a-session'][case.CRN][123]['session-start-time'] }}
             {% else %}
-            {{ govukTag({text: 'Unscheduled', classes: 'govuk-tag--grey'}) }}
+              {{ govukTag({text: 'Unscheduled', classes: 'govuk-tag--grey'}) }}
             {% endif %}
           </td>
         </tr>
