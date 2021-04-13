@@ -4,12 +4,9 @@ const helpers = require(path.join(__dirname, '../../lib/helpers.js'))
 
 const confirmAttendanceDefaults = (map, su) => {
   if (su.previousAppointment) {
-    var defaults = {}
-    defaults[su.previousAppointment.sessionId] = {
-      'countsTowardsRAR': su.previousAppointment.countsTowardsRAR ? 'Yes' : 'No',
-      'RARCategory': su.previousAppointment.RARCategory
+    map[su.CRN] = {
+      [su.previousAppointment.sessionId]: su.previousAppointment
     }
-    map[su.CRN] = defaults
   }
   return map
 }

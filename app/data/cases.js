@@ -213,7 +213,7 @@ module.exports = [
       'timestamp': helpers.yesterdayAt('13:00'),
       'endTime': helpers.yesterdayAt('14:00'),
       'type': 'Office visit',
-      'countsTowardsRAR': true,
+      'countsTowardsRAR': 'Yes',
       'RARCategory': 'Thinking skills, attitudes and behaviour',
       'sessionId': 456
     },
