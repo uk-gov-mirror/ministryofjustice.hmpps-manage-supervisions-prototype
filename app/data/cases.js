@@ -129,14 +129,6 @@ module.exports = [
       {
         'type': 'ROSHA score',
         'value': 'Medium'
-      },
-      {
-        'type': 'OGRS score',
-        'value': '0.5'
-      },
-      {
-        'type': 'RSR score',
-        'value': '3 - 6.89% - Medium'
       }
     ],
     'riskOfHarm': [
