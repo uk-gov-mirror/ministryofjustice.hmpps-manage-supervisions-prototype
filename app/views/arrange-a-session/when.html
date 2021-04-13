@@ -1,5 +1,5 @@
 {% extends "_wizard-form.html" %}
-{% set title = 'When will the session be?' %}
+{% set title = 'When will the appointment be?' %}
 
 {% block form %}
   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
@@ -119,7 +119,7 @@
   {{ govukRadios({
     fieldset: {
       legend: {
-        text: "Will this be a repeating session?",
+        text: "Will this be a repeating appointment?",
         classes: "govuk-label--m"
       }
     },
@@ -131,7 +131,7 @@
         }
       },
       {
-        text: "No, it’s a one-off session"
+        text: "No, it’s a one-off appointment"
       }
     ]
   } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'repeating'])) }}

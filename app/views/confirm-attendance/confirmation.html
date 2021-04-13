@@ -1,5 +1,5 @@
 {% extends "_wizard-page.html" %}
-{% set buttonText = 'Arrange a session' %}
+{% set buttonText = 'Arrange an appointment' %}
 {% set title = "Attendance confirmed" %}
 
 {% block page %}
@@ -17,7 +17,6 @@
   <h2 class="govuk-heading-m">Next steps</h2>
 
     <div style="margin-top: 20px;">
-      <a class="govuk-body" href="/cases/{{ case.CRN }}/timeline">Back to {{ case.serviceUserPersonalDetails.firstName }}’s previous
-        sessions</a>
+      <a class="govuk-body" href="/cases/{{ case.CRN }}/timeline">Back to {{ case.serviceUserPersonalDetails.firstName }}’s communication</a>
     </div>
 {% endblock %}
