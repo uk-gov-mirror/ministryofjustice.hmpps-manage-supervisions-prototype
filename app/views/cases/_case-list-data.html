@@ -32,7 +32,9 @@
             </ul>
           </td>
           <td class="govuk-table__cell">{{ case.currentOrder.type }}</td>
-          <td class="govuk-table__cell">{{ case.risk }}</td>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--{{ case.riskOfSeriousHarmLevel.class }}">{{ case.riskOfSeriousHarmLevel.text }}</span>
+          </td>
           <td class="govuk-table__cell">
             {% if data['arrange-a-session'][case.CRN][123] %}
               {{ data['arrange-a-session'][case.CRN][123]['session-date'] | dateWithDayAndWithoutYear }} at {{ data['arrange-a-session'][case.CRN][123]['session-start-time'] }}
