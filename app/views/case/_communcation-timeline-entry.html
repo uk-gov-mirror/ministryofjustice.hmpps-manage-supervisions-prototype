@@ -1,0 +1,38 @@
+<h3 class="govuk-body govuk-!-font-size-19">
+  <a class="govuk-!-font-weight-bold govuk-!-margin-right-2" href="#">
+    {{ entry.type }} to {{ case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to }}
+  </a>
+  <br>
+  {{ entry.timestamp | dateWithYear }}
+</h3>
+
+{{ govukSummaryList({
+  classes: 'govuk-summary-list--no-border',
+  rows: [
+    {
+      key: {
+        text: "From"
+      },
+      value: {
+        text: case.serviceUserPersonalDetails.name if entry.from === 'Service user' else entry.from
+      }
+    },
+    {
+      key: {
+        text: "To"
+      },
+      value: {
+        text: case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to
+      }
+    }
+  ]
+}) }}
+
+<div class="note-panel">
+  {% set truncatedContents = entry.contents | truncate(300) %}
+  {% set isTruncated = (truncatedContents !== entry.contents) %}
+  <p class="govuk-body {{ 'govuk-!-margin-bottom-0' if not isTruncated }}">{{ truncatedContents | nl2br | safe }}</p>
+  {% if isTruncated %}
+    <a href="#">View full details</a>
+  {% endif %}
+</div>

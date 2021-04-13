@@ -16,126 +16,21 @@
 </div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
+    {% set hr = joiner('<hr>') %}
+    {% for entry in case.contactHistory %}
 
-    <div class="moj-timeline">
-      {% for entry in case.contactHistory %}
-        {% if entry.outcome %}
-          {% set tagText = 'Comply' if entry.outcome.comply else 'Failed to comply' %}
-          {% set tagColour = 'green' if entry.outcome.comply else 'red' %}
-        {% else %}
-          {% set tagText = null %}
-          {% set tagColour = null %}
-        {% endif %}
+      {{ hr() | safe }}
 
-        {% if entry.contents %}
-          {% set truncatedContents = entry.contents | truncate(300) %}
-          {% set isTruncated = (truncatedContents !== entry.contents) %}
-          {% set body %}
-            <div class="note-panel">
-              <p class="{{ 'govuk-!-margin-bottom-0' if not isTruncated }}">{{ truncatedContents | nl2br | safe }}</p>
-              {% if isTruncated %}
-                <a href="#">View full details</a>
-              {% endif %}
-            </div>
-          {% endset %}
-        {% elseif entry.attachments %}
-          {% set body %}
-            <div class="note-panel">
-              <ul class="moj-timeline__documents">
-                {% for attachment in entry.attachments %}
-                  <li class="moj-timeline__document-item">
-                    <a class="moj-timeline__document-link" href="#">{{ attachment }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endset %}
-        {% elseif entry.type === 'Office visit' and not entry.outcome %}
-          {% set body %}
-            {{ appWarningBanner('Attendance not confirmed. <a href="/confirm-attendance/' + CRN + '/' + entry.sessionId + '">Confirm attendance</a>') }}
-          {% endset %}
-        {% endif %}
+      {% if entry.type === 'Appointment' %}
+        {% include "case/_appointment-timeline-entry.html" %}
+      {% elseif entry.type === 'Text message' or entry.type === 'Email' %}
+        {% include "case/_communcation-timeline-entry.html" %}
+      {% endif %}
 
-        {{ appTimelineItem({
-            title: entry.type | replace('Service User', case.serviceUserPersonalDetails.firstName),
-            time: entry.timestamp,
-            author: entry.probationPractitioner,
-            tagText: tagText,
-            tagColour: tagColour,
-            body: body})
-           }}
-      {% endfor %}
-    </div>
+      <p class="govuk-body-s govuk-hint-s">Last updated by {{ entry.lastUpdatedBy }} on {{ entry.timestamp | dateWithYear }} at {{ entry.timestamp | govukTimeWithMinutes }}</p>
+    {% endfor %}
   </div>
+</div>
 
-  <div class="govuk-grid-column-one-third">
-
-    <div class="govuk-!-margin-bottom-7">
-
-      <!--ADD A NOTE OR DOCUMENT-->
-      <!--<h2 class="govuk-heading-m">
-        Actions
-      </h2>
-      <p class="govuk-body">
-        <a href="timeline-add" class="govuk-button govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
-          Add a note or document
-        </a>
-        </p>
-      </div>-->
-
-      <h2 class="govuk-heading-m">{{ case.serviceUserPersonalDetails.firstName }}’s appointment summary</h2>
-      <p class="govuk-body">Summary up to and including 22 April 2021</p>
-
-      <div class="govuk-!-margin-bottom-7">
-        <table class="govuk-table app-table govuk-!-margin-top-0 govuk-!-margin-bottom-3" style="max-width:none;">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <p class="govuk-heading-s govuk-!-margin-bottom-0">
-                  Office and home visits
-                </p>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                8
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <p class="govuk-heading-s govuk-!-margin-bottom-0">
-                  Phone and video calls
-                </p>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                20
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <p class="govuk-heading-s govuk-!-margin-bottom-0">
-                  Email and text messages
-                </p>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                32
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <p class="govuk-heading-s govuk-!-margin-bottom-0">
-                  Communication with others
-                </p>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                46
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-
-
-  </div>
-  {% endblock %}
+{% endblock %}

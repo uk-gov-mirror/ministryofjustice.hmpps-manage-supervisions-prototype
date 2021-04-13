@@ -223,26 +223,43 @@ module.exports = [
     },
     'contactHistory': [
       {
-        'type': 'Office visit',
-        'probationPractitioner': 'Mark Berridge',
+        'type': 'Appointment',
+        'type-of-session': 'Office visit',
+        'lastUpdatedBy': 'Mark Berridge',
         'timestamp': helpers.yesterday({atTime: '13:00'}),
+        'session-date': helpers.yesterday(),
+        'session-start-time': '10am',
+        'session-end-time': '11am',
+        'repeating': 'No, it’s a one-off session',
+        'session-counts-towards-rar': 'Yes',
+        'session-rar-category': 'Relationships',
+        'session-notes': 'Will use this time to catch up on Dylan’s relationships homework.',
         'sessionId': 456,
         'outcome': null
       },
       {
-        'type': 'Text message from Service User',
+        'lastUpdatedBy': 'Mark Berridge',
+        'type': 'Text message',
+        'from': 'Service user',
+        'to': 'Mark Berridge',
         'timestamp': '2021-04-22T13:00',
         'contents': 'Hi Mark, got the email. I’ll be there. D.'
       },
       {
-        'type': 'Email to Service User',
+        'lastUpdatedBy': 'Mark Berridge',
+        'type': 'Email',
+        'from': 'Mark Berridge',
+        'to': 'Service user',
         'timestamp': '2021-04-10T13:00',
         'contents': `Hi Dylan,
 
         It’s really important that you come back in to see me. I understand that my last letter was sent to your old room so I’m trying you on the email address you provided me. We talked at the beginning of your probation about what might happen if you refuse to comply...`
       },
       {
-        'type': 'Email to a third party',
+        'lastUpdatedBy': 'Mark Berridge',
+        'type': 'Email',
+        'from': 'Mark Berridge',
+        'to': 'Jane Goodhall',
         'timestamp': '2021-03-31T13:00',
         'contents': `Dear Jane
 
@@ -252,16 +269,24 @@ module.exports = [
         Mark`
       },
       {
-        'type': 'Office visit',
-        'probationPractitioner': 'Mark Berridge',
+        'type': 'Appointment',
+        'lastUpdatedBy': 'Mark Berridge',
         'timestamp': '2021-03-16T13:00',
-        'outcome': {
-          'comply': false
-        },
-        'contents': 'Dylan turned up for his appointment on time however he refused to talk about anything with me until “his new room was sorted out” I explained it wasn’t possible to move him until the 19th to which he stormed out of the meeting.'
+        'session-date': '2021-03-16',
+        'session-end-time': '11am',
+        'session-start-time': '10am',
+        'session-counts-towards-rar': 'No',
+        'type-of-session': 'Office visit',
+        'did-service-user-comply': 'No',
+        'repeating': 'No, it’s a one-off session',
+        'confirmed': true,
+        'session-notes': 'Dylan turned up for his appointment on time however he refused to talk about anything with me until “his new room was sorted out” I explained it wasn’t possible to move him until the 19th to which he stormed out of the meeting.'
       },
       {
-        'type': 'Email from a third party',
+        'lastUpdatedBy': 'Mark Berridge',
+        'type': 'Email',
+        'from': 'Jane Goodhall',
+        'to': 'Mark Berridge',
         'timestamp': '2021-03-12T13:00',
         'contents': `Dear Mark,
 
@@ -271,7 +296,10 @@ module.exports = [
         Jane`
       },
       {
-        'type': 'Email to a third party',
+        'lastUpdatedBy': 'Mark Berridge',
+        'type': 'Email',
+        'from': 'Mark Berridge',
+        'to': 'Jane Goodhall',
         'timestamp': '2021-02-27T13:00',
         'contents': `Dear Jane
 
@@ -281,28 +309,28 @@ module.exports = [
         Mark`
       },
       {
-        'type': 'Office visit',
-        'probationPractitioner': 'Mark Berridge',
+        'type': 'Appointment',
+        'lastUpdatedBy': 'Mark Berridge',
         'timestamp': '2021-02-08T13:00',
-        'outcome': {
-          'comply': true
-        },
-        'contents': 'Dylan arrived on time and presented well for his induction appointment. He filled in all the paperwork required without any resistance and said he understood the process. He mentioned his mum had talked to him a lot over the weekend and helped him to calm down. His mum appears to be a positive influence in his life, which I would like to explore further with him.'
+        'session-date': '2021-02-08',
+        'session-start-time': '1pm',
+        'session-end-time': '2pm',
+        'session-counts-towards-rar': 'No',
+        'type-of-session': 'Office visit',
+        'did-service-user-comply': 'Yes',
+        'session-notes': 'Dylan arrived on time and presented well for his induction appointment. He filled in all the paperwork required without any resistance and said he understood the process. He mentioned his mum had talked to him a lot over the weekend and helped him to calm down. His mum appears to be a positive influence in his life, which I would like to explore further with him.'
       },
       {
-        'type': 'Phone call',
-        'probationPractitioner': 'Mark Berridge',
-        'timestamp': '2021-02-03T13:00',
-        'outcome': {
-          'comply': false
-        },
-        'contents': 'I called Dylan to confirm he had understood where he needed to be and when for his induction appointment. He was rude and abusive and in general very hostile in reaction to his sentence saying this wasn’t his fault. He mentioned he “doesn’t have time for this”. I reiterated that he must be at the office on Monday as part of his sentence requirements and if he doesn’t it’s going to reflect very poorly.'
-      },
-      {
-        'type': 'Communication with a third party',
-        'probationPractitioner': 'Mark Berridge',
-        'timestamp': '2021-02-02T22:15',
-        'attachments': ['Email to social worker']
+        'type': 'Appointment',
+        'lastUpdatedBy': 'Mark Berridge',
+        'type-of-session': 'Phone call',
+        'timestamp': '2021-02-03T14:00',
+        'session-date': '2021-02-03',
+        'session-start-time': '1pm',
+        'session-end-time': '2pm',
+        'session-counts-towards-rar': 'No',
+        'did-service-user-comply': 'No',
+        'session-notes': 'I called Dylan to confirm he had understood where he needed to be and when for his induction appointment. He was rude and abusive and in general very hostile in reaction to his sentence saying this wasn’t his fault. He mentioned he “doesn’t have time for this”. I reiterated that he must be at the office on Monday as part of his sentence requirements and if he doesn’t it’s going to reflect very poorly.'
       }
     ]
   },
