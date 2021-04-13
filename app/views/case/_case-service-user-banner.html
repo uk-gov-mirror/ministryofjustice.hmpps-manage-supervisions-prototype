@@ -24,7 +24,7 @@
         },
         {
           key: { text: "Date of birth" },
-          value: { text: case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + case.serviceUserPersonalDetails.age + " years old)" }
+          value: { text: case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + yearsSince(case.serviceUserPersonalDetails.dateOfBirth) + " years old)" }
         }
       ]
     }) }}
