@@ -125,20 +125,10 @@ module.exports = [
     ],
     'breachesCount': 0,
     'restrainingOrdersCount': 0,
-    'riskIndicators': [
-      {
-        'type': 'ROSHA score',
-        'value': 'Medium'
-      },
-      {
-        'type': 'OGRS score',
-        'value': '0.5'
-      },
-      {
-        'type': 'RSR score',
-        'value': '3 - 6.89% - Medium'
-      }
-    ],
+    'riskOfSeriousHarmLevel': {
+      text: 'Medium',
+      class: 'orange'
+    },
     'riskOfHarm': [
       {
         'riskTo': 'Themselves',
@@ -214,7 +204,6 @@ module.exports = [
     ],
     'status': 'Previously known',
     'previousOrderStatus': 'Order ended 24 Nov 2016',
-    'risk': 'Medium',
     'nextAppointment': {
       'timestamp': helpers.tomorrowAt('13:00'),
       'endTime': helpers.tomorrowAt('14:00'),
@@ -326,7 +315,10 @@ module.exports = [
     'currentOrder': {
       'type': 'CJA - Indeterminate Public Prot.'
     },
-    'risk': 'Medium',
+    'riskOfSeriousHarmLevel': {
+      text: 'Medium',
+      class: 'orange'
+    },
     'nextAppointment': {
       'timestamp': '2020-12-07T09:30',
       'endTime': '2020-12-07T10:30',
@@ -341,7 +333,10 @@ module.exports = [
     'currentOrder': {
       'type': 'ORA Suspended Sentence Order'
     },
-    'risk': 'High',
+    'riskOfSeriousHarmLevel': {
+      text: 'High',
+      class: 'red'
+    },
     'nextAppointment': null
   }
 ]

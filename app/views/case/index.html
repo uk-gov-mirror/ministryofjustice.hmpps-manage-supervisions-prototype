@@ -42,7 +42,7 @@
 
     <p>
       Risk to known adults, children, staff, and/or the public (ROSH)
-      <span class="govuk-tag govuk-tag--red govuk-!-margin-left-2">{{ case.riskIndicators[0].value }}</span>
+      <span class="govuk-tag govuk-tag--{{ case.riskOfSeriousHarmLevel.class }} govuk-!-margin-left-2">{{ case.riskOfSeriousHarmLevel.text }}</span>
     </p>
 
     {% set riskTable %}
