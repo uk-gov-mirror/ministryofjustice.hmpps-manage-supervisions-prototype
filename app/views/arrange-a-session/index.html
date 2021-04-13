@@ -1,5 +1,5 @@
 {% extends "_wizard-form.html" %}
-{% set title = 'What type of session are you arranging?' %}
+{% set title = 'What type of appointment are you arranging?' %}
 
 {% block form %}
   {% set contactTypeSelectItems = [{ text: '', value: ''}] %}
@@ -13,7 +13,7 @@
   {% set otherHtml %}
     {{ govukSelect({
        label: {
-         text: "Type of session",
+         text: "Type of appointment",
          classes: "govuk-label--s"
        },
        id: 'other-type-of-session',

@@ -37,14 +37,14 @@
         }
       },
       {
-        key: { text: "Session notes" },
+        key: { text: "Appointment notes" },
         value: { text: data['confirm-attendance'][CRN][sessionId]['notes'] if data['confirm-attendance'][CRN][sessionId]['add-notes'] == 'Yes' else 'None' },
         actions: {
           items: [
             {
               href: "add-notes",
               text: "Change",
-              visuallyHiddenText: "session notes"
+              visuallyHiddenText: "appointment notes"
             }
           ]
         }
