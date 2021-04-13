@@ -23,7 +23,7 @@
 
 <div class="govuk-!-margin-bottom-7">
   {% set dateOfBirthAndAge %}
-  {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years old)
+  {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ yearsSince(case.serviceUserPersonalDetails.dateOfBirth) }} years old)
   {% endset %}
 
   {{ govukSummaryList({

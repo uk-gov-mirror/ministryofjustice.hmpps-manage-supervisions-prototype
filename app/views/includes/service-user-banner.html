@@ -9,7 +9,7 @@
           class="govuk-body"><strong>PNC:</strong> {{ case.PNC }}</span>
       </div>
       <div class="key-details-bar__bottom-block">
-        <span class="govuk-body"><strong>Date of birth:</strong> 	{{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ case.serviceUserPersonalDetails.age }} years old)</span>
+        <span class="govuk-body"><strong>Date of birth:</strong> 	{{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ yearsSince(case.serviceUserPersonalDetails.dateOfBirth) }} years old)</span>
       </div>
     </div>
   </div>
