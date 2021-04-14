@@ -18,8 +18,7 @@
   {% for rarCategory in rarCategories %}
     {% set rarRadioItems = (rarRadioItems.push({
       text: rarCategory,
-      value: rarCategory,
-      checked: checked("session-rar-category", rarCategory)
+      value: rarCategory
     }), rarRadioItems) %}
   {% endfor %}
 
@@ -31,7 +30,7 @@
              }
            },
            items: rarRadioItems
-         } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'RARCategory']) )
+         } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'session-rar-category']) )
       }}
   {% endset %}
 
@@ -59,5 +58,5 @@
            value: 'No'
          }
        ]
-       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'countsTowardsRAR']) ) }}
+       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'session-counts-towards-rar']) ) }}
 {% endblock %}

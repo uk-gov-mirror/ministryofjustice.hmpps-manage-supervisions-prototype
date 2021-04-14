@@ -7,7 +7,7 @@
   <p class="govuk-body">You’re confirming attendance for:</p>
 
   <div class="govuk-inset-text">
-    <strong>{{ data['confirm-attendance'][CRN][sessionId].type }}</strong><br>
-    {{ data['confirm-attendance'][CRN][sessionId].timestamp | dateWithDayAndWithoutYear }} from {{ data['confirm-attendance'][CRN][sessionId].startTime }} to {{ data['confirm-attendance'][CRN][sessionId].endTime | govukTime }}
+    <strong>{{ data['confirm-attendance'][CRN][sessionId]['type-of-session'] }}</strong><br>
+    {{ data['confirm-attendance'][CRN][sessionId]['session-date'] | dateWithDayAndWithoutYear }} from {{ data['confirm-attendance'][CRN][sessionId]['session-start-time'] }} to {{ data['confirm-attendance'][CRN][sessionId]['session-end-time'] }}
   </div>
 {% endblock %}
