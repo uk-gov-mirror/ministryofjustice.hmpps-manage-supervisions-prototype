@@ -204,17 +204,16 @@ module.exports = [
     ],
     'status': 'Previously known',
     'previousOrderStatus': 'Order ended 24 Nov 2016',
-    'nextAppointment': {
-      'timestamp': helpers.tomorrowAt('13:00'),
-      'endTime': helpers.tomorrowAt('14:00'),
-      'type': 'Office visit'
-    },
     'previousAppointment': {
-      'timestamp': helpers.yesterdayAt('13:00'),
-      'endTime': helpers.yesterdayAt('14:00'),
-      'type': 'Office visit',
-      'countsTowardsRAR': true,
-      'RARCategory': 'Thinking skills, attitudes and behaviour',
+      'session-date': helpers.yesterday(),
+      'session-counts-towards-rar': 'Yes',
+      'session-start-time': '1pm',
+      'session-end-time': '2pm',
+      'session-counts-towards-rar': 'Yes',
+      'session-rar-category': 'Thinking skills, attitudes and behaviour',
+      'type-of-session': 'Office visit',
+      'repeating': 'No, it’s a one-off session',
+      'confirmed': true,
       'sessionId': 456
     },
     'appointmentStatistics': {
@@ -226,7 +225,7 @@ module.exports = [
       {
         'type': 'Office visit',
         'probationPractitioner': 'Mark Berridge',
-        'timestamp': helpers.yesterdayAt('13:00'),
+        'timestamp': helpers.yesterday({atTime: '13:00'}),
         'sessionId': 456,
         'outcome': null
       },
@@ -318,11 +317,6 @@ module.exports = [
     'riskOfSeriousHarmLevel': {
       text: 'Medium',
       class: 'orange'
-    },
-    'nextAppointment': {
-      'timestamp': '2020-12-07T09:30',
-      'endTime': '2020-12-07T10:30',
-      'type': 'Office visit'
     }
   },
   {
@@ -336,7 +330,6 @@ module.exports = [
     'riskOfSeriousHarmLevel': {
       text: 'High',
       class: 'red'
-    },
-    'nextAppointment': null
+    }
   }
 ]

@@ -5,8 +5,8 @@
 {% block page %}
 
   {% set panelHtml %}
-    <strong>{{ case.previousAppointment.type }}</strong><br>
-    {{ case.previousAppointment.timestamp | dateWithDayAndWithoutYear }} from {{ case.previousAppointment.timestamp | govukTime }} to {{ case.previousAppointment.endTime | govukTime }}
+    <strong>{{ data['confirm-attendance'][CRN][sessionId]['type-of-session'] }}</strong><br>
+    {{ data['confirm-attendance'][CRN][sessionId]['session-date'] | dateWithDayAndWithoutYear }} from {{ data['confirm-attendance'][CRN][sessionId]['session-start-time'] }} to {{ data['confirm-attendance'][CRN][sessionId]['session-end-time'] }}
   {% endset %}
 
   {{ govukPanel({
