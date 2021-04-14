@@ -48,4 +48,6 @@
       }
     ]
   } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'type-of-session'])) }}
+
+  <input type="hidden" id="type" name="[arrange-a-session][{{ CRN }}][{{ sessionId }}][type]" value="Appointment">
 {% endblock %}

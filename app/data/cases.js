@@ -235,7 +235,6 @@ module.exports = [
         'session-rar-category': 'Relationships',
         'session-notes': 'Will use this time to catch up on Dylan’s relationships homework.',
         'sessionId': 456,
-        'outcome': null
       },
       {
         'lastUpdatedBy': 'Mark Berridge',

@@ -23,6 +23,7 @@ module.exports = {
   'arrange-a-session': {
     'J678910': {
       123: {
+        'type': 'Appointment',
         'session-date': helpers.happeningIn({ daysLater: 5 }),
         'session-end-time': '11am',
         'session-start-time': '10am',
