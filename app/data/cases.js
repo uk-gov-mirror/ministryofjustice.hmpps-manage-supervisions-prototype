@@ -234,7 +234,7 @@ module.exports = [
         'session-counts-towards-rar': 'Yes',
         'session-rar-category': 'Relationships',
         'session-notes': 'Will use this time to catch up on Dylan’s relationships homework.',
-        'sessionId': 456,
+        'sessionId': 456
       },
       {
         'lastUpdatedBy': 'Mark Berridge',
@@ -242,7 +242,8 @@ module.exports = [
         'from': 'Service user',
         'to': 'Mark Berridge',
         'timestamp': '2021-04-22T13:00',
-        'contents': 'Hi Mark, got the email. I’ll be there. D.'
+        'contents': 'Hi Mark, got the email. I’ll be there. D.',
+        'sessionId': 987
       },
       {
         'lastUpdatedBy': 'Mark Berridge',
@@ -252,7 +253,8 @@ module.exports = [
         'timestamp': '2021-04-10T13:00',
         'contents': `Hi Dylan,
 
-        It’s really important that you come back in to see me. I understand that my last letter was sent to your old room so I’m trying you on the email address you provided me. We talked at the beginning of your probation about what might happen if you refuse to comply...`
+        It’s really important that you come back in to see me. I understand that my last letter was sent to your old room so I’m trying you on the email address you provided me. We talked at the beginning of your probation about what might happen if you refuse to comply...`,
+        'sessionId': 986
       },
       {
         'lastUpdatedBy': 'Mark Berridge',
@@ -265,7 +267,8 @@ module.exports = [
         I’m writing to enquire after Dylan and confirm he is settled in his new room? I have written to him about his non compliance in our last meeting and need to confirm that the letter has reached him?
 
         Cheers,
-        Mark`
+        Mark`,
+        'sessionId': 985
       },
       {
         'type': 'Appointment',
@@ -279,7 +282,8 @@ module.exports = [
         'did-service-user-comply': 'No',
         'repeating': 'No, it’s a one-off session',
         'confirmed': true,
-        'session-notes': 'Dylan turned up for his appointment on time however he refused to talk about anything with me until “his new room was sorted out” I explained it wasn’t possible to move him until the 19th to which he stormed out of the meeting.'
+        'session-notes': 'Dylan turned up for his appointment on time however he refused to talk about anything with me until “his new room was sorted out” I explained it wasn’t possible to move him until the 19th to which he stormed out of the meeting.',
+        'sessionId': 984
       },
       {
         'lastUpdatedBy': 'Mark Berridge',
@@ -292,7 +296,8 @@ module.exports = [
         Thanks for your email, I’ve received Dylan’s request and we have a room available on the ground floor coming available on the 19th of March.
 
         All the best,
-        Jane`
+        Jane`,
+        'sessionId': 983
       },
       {
         'lastUpdatedBy': 'Mark Berridge',
@@ -305,7 +310,8 @@ module.exports = [
         I’m writing to confirm that you have received my application on behalf of Dylan to change the room he has been allocated at the hostel. He now has part time work with very early shifts and is struggling with some of the noisier occupants on his floor.
 
         Thanks in advance,
-        Mark`
+        Mark`,
+        'sessionId': 982
       },
       {
         'type': 'Appointment',
@@ -317,7 +323,8 @@ module.exports = [
         'session-counts-towards-rar': 'No',
         'type-of-session': 'Office visit',
         'did-service-user-comply': 'Yes',
-        'session-notes': 'Dylan arrived on time and presented well for his induction appointment. He filled in all the paperwork required without any resistance and said he understood the process. He mentioned his mum had talked to him a lot over the weekend and helped him to calm down. His mum appears to be a positive influence in his life, which I would like to explore further with him.'
+        'session-notes': 'Dylan arrived on time and presented well for his induction appointment. He filled in all the paperwork required without any resistance and said he understood the process. He mentioned his mum had talked to him a lot over the weekend and helped him to calm down. His mum appears to be a positive influence in his life, which I would like to explore further with him.',
+        'sessionId': 981
       },
       {
         'type': 'Appointment',
@@ -329,7 +336,8 @@ module.exports = [
         'session-end-time': '2pm',
         'session-counts-towards-rar': 'No',
         'did-service-user-comply': 'No',
-        'session-notes': 'I called Dylan to confirm he had understood where he needed to be and when for his induction appointment. He was rude and abusive and in general very hostile in reaction to his sentence saying this wasn’t his fault. He mentioned he “doesn’t have time for this”. I reiterated that he must be at the office on Monday as part of his sentence requirements and if he doesn’t it’s going to reflect very poorly.'
+        'session-notes': 'I called Dylan to confirm he had understood where he needed to be and when for his induction appointment. He was rude and abusive and in general very hostile in reaction to his sentence saying this wasn’t his fault. He mentioned he “doesn’t have time for this”. I reiterated that he must be at the office on Monday as part of his sentence requirements and if he doesn’t it’s going to reflect very poorly.',
+        'sessionId': 980
       }
     ]
   },
