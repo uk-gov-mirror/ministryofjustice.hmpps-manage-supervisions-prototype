@@ -30,7 +30,7 @@
       Date of birth
     </dt>
     <dd class="app-card__meta-list-value">
-      {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + yearsSince(case.serviceUserPersonalDetails.dateOfBirth) + " years old)" }}
+      {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYearShortMonth + " (age " + yearsSince(case.serviceUserPersonalDetails.dateOfBirth) + ")" }}
     </dd>
   </div>
 </dl>
