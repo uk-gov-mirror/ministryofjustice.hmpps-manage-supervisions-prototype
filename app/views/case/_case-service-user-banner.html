@@ -8,25 +8,30 @@
   <span class="govuk-tag govuk-tag--red">Risk to children</span>
 </p>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    {{ govukSummaryList({
-      classes: 'govuk-summary-list--no-border',
-      rows: [
-        {
-          key: { text: "CRN" },
-          value: { text: CRN }
-        },
-        {
-          key: { text: "PNC" },
-          value: { text: case.PNC }
-        },
-        {
-          key: { text: "Date of birth" },
-          value: { text: case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + yearsSince(case.serviceUserPersonalDetails.dateOfBirth) + " years old)" }
-        }
-      ]
-    }) }}
+<dl class="app-card__meta-list">
+  <div class="app-card__meta-list-item">
+    <dt class="app-card__meta-list-key">
+      CRN
+    </dt>
+    <dd class="app-card__meta-list-value">
+      J678910
+    </dd>
   </div>
-</div>
+  <div class="app-card__meta-list-item">
+    <dt class="app-card__meta-list-key">
+      PNC
+    </dt>
+    <dd class="app-card__meta-list-value">
+      2012/123400000F
+    </dd>
+  </div>
+  <div class="app-card__meta-list-item">
+    <dt class="app-card__meta-list-key">
+      Date of birth
+    </dt>
+    <dd class="app-card__meta-list-value">
+      27 Sep 1984 (Age 36)
+    </dd>
+  </div>
+</dl>
+
