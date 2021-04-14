@@ -14,7 +14,7 @@
       CRN
     </dt>
     <dd class="app-card__meta-list-value">
-      J678910
+      {{ CRN }} 
     </dd>
   </div>
   <div class="app-card__meta-list-item">
@@ -22,7 +22,7 @@
       PNC
     </dt>
     <dd class="app-card__meta-list-value">
-      2012/123400000F
+      {{ case.PNC }}
     </dd>
   </div>
   <div class="app-card__meta-list-item">
@@ -30,7 +30,7 @@
       Date of birth
     </dt>
     <dd class="app-card__meta-list-value">
-      27 Sep 1984 (Age 36)
+      {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear + " (" + yearsSince(case.serviceUserPersonalDetails.dateOfBirth) + " years old)" }}
     </dd>
   </div>
 </dl>
