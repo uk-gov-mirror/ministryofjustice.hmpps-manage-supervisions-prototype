@@ -204,18 +204,6 @@ module.exports = [
     ],
     'status': 'Previously known',
     'previousOrderStatus': 'Order ended 24 Nov 2016',
-    'previousAppointment': {
-      'session-date': helpers.yesterday(),
-      'session-counts-towards-rar': 'Yes',
-      'session-start-time': '1pm',
-      'session-end-time': '2pm',
-      'session-counts-towards-rar': 'Yes',
-      'session-rar-category': 'Thinking skills, attitudes and behaviour',
-      'type-of-session': 'Office visit',
-      'repeating': 'No, it’s a one-off session',
-      'confirmed': true,
-      'sessionId': 456
-    },
     'appointmentStatistics': {
       'complied': 5,
       'acceptableAbsence': 1,
