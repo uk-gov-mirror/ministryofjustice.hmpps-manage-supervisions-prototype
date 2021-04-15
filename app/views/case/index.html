@@ -93,60 +93,23 @@
       Recent communication
     </h2>
 
-    <div class="moj-timeline">
-      {% for entry in case.contactHistory %}
-        {% if loop.index < 3 %}
-          {% if entry.outcome %}
-            {% set tagText = 'Comply' if entry.outcome.comply else 'Failed to comply' %}
-            {% set tagColour = 'green' if entry.outcome.comply else 'red' %}
-          {% else %}
-            {% set tagText = null %}
-            {% set tagColour = null %}
-          {% endif %}
+    {% set hr = joiner('<hr>') %}
+    {% for entry in case.contactHistory %}
+      {% if loop.index <= 3 %}
+        {{ hr() | safe }}
 
-          {% if entry.contents %}
-            {% set truncatedContents = entry.contents | truncate(300) %}
-            {% set isTruncated = (truncatedContents !== entry.contents) %}
-            {% set body %}
-              <div class="note-panel">
-                <p class="{{ 'govuk-!-margin-bottom-0' if not isTruncated }}">{{ truncatedContents | nl2br | safe }}</p>
-                {% if isTruncated %}
-                  <a href="#">View full details</a>
-                {% endif %}
-              </div>
-            {% endset %}
-          {% elseif entry.attachments %}
-            {% set body %}
-              <div class="note-panel">
-                <ul class="moj-timeline__documents">
-                  {% for attachment in entry.attachments %}
-                    <li class="moj-timeline__document-item">
-                      <a class="moj-timeline__document-link" href="#">{{ attachment }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            {% endset %}
-          {% elseif entry.type === 'Office visit' and not entry.outcome %}
-            {% set body %}
-              {{ appWarningBanner('Attendance not confirmed. <a href="/confirm-attendance/' + CRN + '/' + entry.sessionId + '">Confirm attendance</a>') }}
-            {% endset %}
-          {% endif %}
-
-          {{ appTimelineItem({
-              title: entry.type | replace('Service User', case.serviceUserPersonalDetails.firstName),
-              time: entry.timestamp,
-              author: entry.probationPractitioner,
-              tagText: tagText,
-              tagColour: tagColour,
-              body: body})
-             }}
+        {% if entry.type === 'Appointment' %}
+          {% include "case/_appointment-timeline-entry.html" %}
+        {% elseif entry.type === 'Text message' or entry.type === 'Email' %}
+          {% include "case/_communcation-timeline-entry.html" %}
         {% endif %}
-      {% endfor %}
-    </div>
+
+        <p class="govuk-body-s govuk-hint-s">Last updated by {{ entry.lastUpdatedBy }} on {{ entry.timestamp | dateWithYear }} at {{ entry.timestamp | govukTimeWithMinutes }}</p>
+      {% endif %}
+    {% endfor %}
 
     <p>
-      <a href="/cases/{{ CRN }}/timeline">View all communication</a>
+      <a href="/cases/{{ CRN }}/communication">View all communication</a>
     </p>
   </div>
 
