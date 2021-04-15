@@ -38,7 +38,7 @@
       },
       {
         key: { text: "Appointment notes" },
-        value: { text: data['communication'][CRN][sessionId]['notes'] if data['communication'][CRN][sessionId]['add-notes'] == 'Yes' else 'None' },
+        value: { text: data['communication'][CRN][sessionId]['session-notes'] if data['communication'][CRN][sessionId]['add-notes'] == 'Yes' else 'None' },
         actions: {
           items: [
             {
