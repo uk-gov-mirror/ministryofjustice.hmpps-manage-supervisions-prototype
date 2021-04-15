@@ -89,28 +89,6 @@
       <a href="#">View sentence plan</a>
     </p>
 
-    <h2 class="govuk-heading-m">
-      Recent communication
-    </h2>
-
-    {% set hr = joiner('<hr>') %}
-    {% for entry in case.contactHistory %}
-      {% if loop.index <= 3 %}
-        {{ hr() | safe }}
-
-        {% if entry.type === 'Appointment' %}
-          {% include "case/_appointment-timeline-entry.html" %}
-        {% elseif entry.type === 'Text message' or entry.type === 'Email' %}
-          {% include "case/_communcation-timeline-entry.html" %}
-        {% endif %}
-
-        <p class="govuk-body-s govuk-hint-s">Last updated by {{ entry.lastUpdatedBy }} on {{ entry.timestamp | dateWithYear }} at {{ entry.timestamp | govukTimeWithMinutes }}</p>
-      {% endif %}
-    {% endfor %}
-
-    <p>
-      <a href="/cases/{{ CRN }}/communication">View all communication</a>
-    </p>
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -141,7 +119,7 @@
     </div>
 
     <h2 class="govuk-heading-m">
-      Attendance
+      Appointment attendance
     </h2>
 
     <p class="govuk-body">
@@ -162,57 +140,94 @@
       Contact details
     </h2>
 
-    {{ govukSummaryList({
-      classes: 'govuk-summary-list--no-border',
-      rows: [
-        {
-          key: { text: "Address" },
-          value: { html: case.serviceUserPersonalDetails.address.join('<br>') }
-        },
-        {
-          key: { text: "Phone number" },
-          value: { text: case.serviceUserPersonalDetails.phone }
-        },
-        {
-          key: { text: "Email" },
-          value: { text: case.serviceUserPersonalDetails.email }
-        }
-      ]
-    }) }}
+    <dl class="app-card__one-third-column-list">
+      <div class="app-card__one-third-column-list-item">
+        <dt class="app-card__one-third-column-list-key">
+          Address
+        </dt>
+        <dd class="app-card__one-third-column-list-value">
+          {{ case.serviceUserPersonalDetails.address.join('<br>') | safe }}
+        </dd>
+      </div>
+      <div class="app-card__one-third-column-list-item">
+        <dt class="app-card__one-third-column-list-key">
+          Phone number
+        </dt>
+        <dd class="app-card__one-third-column-list-value">
+          {{ case.serviceUserPersonalDetails.phone }}
+        </dd>
+      </div>
+      <div class="app-card__one-third-column-list-item">
+        <dt class="app-card__one-third-column-list-key">
+          Email
+        </dt>
+        <dd class="app-card__one-third-column-list-value">
+          {{ case.serviceUserPersonalDetails.email }}
+        </dd>
+      </div>
+    </dl>
 
+    {% if case.personalContacts.length > 0 %}
     <p class="govuk-body">
-      <a href="/cases/{{ CRN }}/address-book-personal">View address book</a>
+      <a class="govuk-heading-s" href="/cases/{{ CRN }}/address-book-personal">View all personal contacts ({{ case.personalContacts.length }})</a>
     </p>
+  {% endif %}
 
     <h2 class="govuk-heading-m">
       Personal details and circumstances
     </h2>
 
-    {{ govukSummaryList({
-      classes: 'govuk-summary-list--no-border',
-      rows: [
-        {
-          key: { text: "Preferred language" },
-          value: { text: case.serviceUserPersonalDetails.preferredLanguage }
-        },
-        {
-          key: { text: "Disabilities and adjustments" },
-          value: { text: case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }
-        },
-        {
-          key: { text: "Employment status" },
-          value: { text: case.serviceUserPersonalDetails.circumstances.employment }
-        },
-        {
-          key: { text: "Housing status" },
-          value: { text: case.serviceUserPersonalDetails.circumstances.housingStatus }
-        }
-      ]
-      }) }}
+    <dl class="app-card__one-third-column-list">
+      <div class="app-card__one-third-column-list-item">
+        <dt class="app-card__one-third-column-list-key">
+          Preferred language
+        </dt>
+        <dd class="app-card__one-third-column-list-value">
+          {{ case.serviceUserPersonalDetails.preferredLanguage }}
+        </dd>
+      </div>
+      <div class="app-card__one-third-column-list-item">
+        <dt class="app-card__one-third-column-list-key">
+          Disabilities and adjustments
+        </dt>
+        <dd class="app-card__one-third-column-list-value">
+          {{ case.serviceUserPersonalDetails.disabilitiesAndAdjustments }}
+        </dd>
+      </div>
+      <div class="app-card__one-third-column-list-item">
+        <dt class="app-card__one-third-column-list-key">
+          Employment status
+        </dt>
+        <dd class="app-card__one-third-column-list-value">
+          {{ case.serviceUserPersonalDetails.circumstances.employment }}
+        </dd>
+      </div>
+      <div class="app-card__one-third-column-list-item">
+        <dt class="app-card__one-third-column-list-key">
+          Housing status
+        </dt>
+        <dd class="app-card__one-third-column-list-value">
+          {{ case.serviceUserPersonalDetails.circumstances.housingStatus }}
+        </dd>
+      </div>
+      <div class="app-card__one-third-column-list-item">
+        <dt class="app-card__one-third-column-list-key">
+          Safeguarding issues
+        </dt>
+        <dd class="app-card__one-third-column-list-value">
+          {{ case.serviceUserPersonalDetails.circumstances.safeguardingIssues.join(', ') or 'None' }}
+        </dd>
+      </div>
+    </dl>
 
     <h2 class="govuk-heading-m">
       Probation history
     </h2>
+
+    <div class="app-card app-card--blue govuk-!-margin-bottom-6">
+      <strong>Probation status</strong><br>
+      {{ case.status }}
+    </div>
 
     <p class="govuk-body">
       <ul class="govuk-list">
@@ -227,10 +242,7 @@
 
     {% if case.previousOrders.length > 0 %}
       <p class="govuk-body">
-        <a class="govuk-heading-s" href="/cases/{{ CRN }}/previous-orders">Previous orders ({{ case.previousOrders.length }})</a>
-      </p>
-
-      <p class="govuk-body">
+        <a class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-1" href="/cases/{{ CRN }}/previous-orders">Previous orders ({{ case.previousOrders.length }})</a>
         Last ended on {{ case.previousOrders[0].endDate | dateWithYearShortMonth }}
       </p>
     {% endif %}
@@ -241,9 +253,6 @@
       </p>
     {% endif %}
 
-    <p class="govuk-body">
-      <a href="/cases/{{ CRN }}/previous-orders">View full probation history</a>
-    </p>
   </div>
 </div>
 
