@@ -8,7 +8,7 @@
         text: "Why was this absence acceptable?"
       },
       classes: 'govuk-!-width-two-thirds'
-    } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'why-absence-acceptable'])) }}
+    } | decorateFormAttributes(['communication', CRN, sessionId, 'why-absence-acceptable'])) }}
   {% endset %}
 
   {{ govukRadios({
@@ -33,6 +33,6 @@
            value: 'No'
          }
        ]
-       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'was-absence-acceptable']))
+       } | decorateFormAttributes(['communication', CRN, sessionId, 'was-absence-acceptable']))
   }}
 {% endblock %}

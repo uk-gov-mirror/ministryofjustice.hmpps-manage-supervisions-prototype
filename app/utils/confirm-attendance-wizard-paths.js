@@ -8,7 +8,7 @@ function confirmAttendanceWizardPaths (req) {
   const sessionId = req.params.sessionId
 
   var paths = [
-    `/cases/${CRN}/timeline`,
+    `/cases/${CRN}/communication`,
     `/confirm-attendance/${CRN}/${sessionId}`,
     `/confirm-attendance/${CRN}/${sessionId}/compliance`,
     `/confirm-attendance/${CRN}/${sessionId}/non-compliance-reason`,

@@ -9,7 +9,7 @@
         text: "Give details"
       },
       classes: 'govuk-!-width-two-thirds'
-    } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'non-compliance-reason'])) }}
+    } | decorateFormAttributes(['communication', CRN, sessionId, 'non-compliance-reason'])) }}
   {% endset %}
 
   {{ govukRadios({
@@ -34,6 +34,6 @@
            }
          }
        ]
-       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'was-absence-acceptable']))
+       } | decorateFormAttributes(['communication', CRN, sessionId, 'was-absence-acceptable']))
   }}
 {% endblock %}
