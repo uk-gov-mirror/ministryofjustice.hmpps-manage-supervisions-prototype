@@ -220,7 +220,7 @@ module.exports = [
         'session-rar-category': 'ES - Accommodation LDN',
         'session-rar-subcategory': 'Accommodation (Custody Transition)',
         'type-of-session': 'Home visit',
-        'repeating': 'No, it’s a one-off session',
+        'repeating': 'No, it’s a one-off appointment',
         'confirmed': true,
         'lastUpdatedBy': 'Mark Berridge',
         'sessionId': 123
