@@ -42,11 +42,11 @@
       ]
       }) }}
 
+      {% if case.personalContacts.length > 0 %}
       <p class="govuk-body">
-        <a href="/cases/{{ CRN }}/address-book-personal">
-          View address book
-        </a>
+        <a href="/cases/{{ CRN }}/address-book-personal">View all personal contacts ({{ case.personalContacts.length }})</a>
       </p>
+    {% endif %}
       <p class="govuk-body-s govuk-hint-s">
         Last updated 15 March 2021
       </p>
@@ -92,7 +92,7 @@
 
       <p class="govuk-body">
         <a href="personal-details">
-          View more personal details
+          View all personal details
         </a>
       </p>
       <p class="govuk-body-s govuk-hint-s">
@@ -127,7 +127,7 @@
 
       <p class="govuk-body">
         <a href="#">
-          View more circumstances
+          View all circumstances
         </a>
       </p>
       <p class="govuk-body-s govuk-hint-s">

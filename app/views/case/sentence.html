@@ -48,6 +48,14 @@
             {{ case.currentOrder.endDate | dateWithYear }}
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Time elapsed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ case.currentOrder.progressInMonths }} months elapsed (of {{ case.currentOrder.lengthInMonths }} months)
+          </dd>
+        </div>
         </dl>
       </div>
 
@@ -130,22 +138,39 @@
       </div>
     </div>
 
-    <h2 class="govuk-heading-m">History</h2>
+    <h2 class="govuk-heading-m">
+      Probation history
+    </h2>
+
     <div class="app-card app-card--blue govuk-!-margin-bottom-6">
       <strong>Probation status</strong><br>
       {{ case.status }}
     </div>
 
     <p class="govuk-body">
-      <a href="previous-orders" class="govuk-!-font-weight-bold">
-        Previous orders
-      </a>
+      <ul class="govuk-list">
+        <li>
+          <span class="govuk-tag govuk-tag--grey">{{ case.breachesCount }}</span> Breaches
+        </li>
+        <li>
+          <span class="govuk-tag govuk-tag--grey">{{ case.restrainingOrdersCount }}</span> Restraining orders
+        </li>
+      </ul>
     </p>
+
+    {% if case.previousOrders.length > 0 %}
     <p class="govuk-body">
-      <a href="address-book-professional" class="govuk-!-font-weight-bold">
-        Address book
-      </a>
+      <a class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-1" href="/cases/{{ CRN }}/previous-orders">Previous orders ({{ case.previousOrders.length }})</a>
+      Last ended on {{ case.previousOrders[0].endDate | dateWithYearShortMonth }}
     </p>
+    {% endif %}
+
+    {% if case.professionalContacts.length > 0 %}
+      <p class="govuk-body">
+        <a class="govuk-heading-s" href="/cases/{{ CRN }}/address-book-professional">Previous professional contacts ({{ case.professionalContacts.length }})</a>
+      </p>
+    {% endif %}
+
   </div>
 </div>
 
