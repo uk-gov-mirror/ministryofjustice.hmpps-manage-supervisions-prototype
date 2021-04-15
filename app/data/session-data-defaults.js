@@ -30,18 +30,10 @@ module.exports = {
   'confirm-attendance': cases.reduce(confirmAttendanceDefaults, {}),
   'arrange-a-session': {
     'J678910': {
-      123: {
-        'type': 'Appointment',
-        'session-date': helpers.happeningIn({ daysLater: 5 }),
-        'session-end-time': '11am',
-        'session-start-time': '10am',
-        'session-counts-towards-rar': 'Yes',
-        'session-rar-category': 'ES - Accommodation LDN',
-        'session-rar-subcategory': 'Accommodation (Custody Transition)',
-        'type-of-session': 'Home visit',
-        'repeating': 'No, it’s a one-off session',
-        'confirmed': true,
-      }
+      123: cases
+        .find(entry => entry.CRN === 'J678910')
+        .contactHistory
+        .find(entry => entry.sessionId === 123)
     }
   }
 }
