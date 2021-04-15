@@ -106,13 +106,14 @@
     <h2 class="govuk-heading-m">
       Next appointment
     </h2>
+    {% set nextApp = nextAppointment(CRN, data) %}
     <div class="app-card app-card--blue govuk-!-margin-bottom-3">
-      {{ data['arrange-a-session'][CRN][123]['type-of-session'] }}<br>
+      {{ nextApp['type-of-session'] }}<br>
       <strong>
-        {{ data['arrange-a-session'][CRN][123]['session-date'] | dateWithDayAndWithoutYear }} from<br>
-        {{ data['arrange-a-session'][CRN][123]['session-start-time'] }} to {{ data['arrange-a-session'][CRN][123]['session-end-time'] }}
+        {{ nextApp['session-date'] | dateWithDayAndWithoutYear }} from<br>
+        {{ nextApp['session-start-time'] }} to {{ nextApp['session-end-time'] }}
       </strong>
-      <a href="/arrange-a-session/{{ CRN }}/123/rearrange-or-cancel" class="govuk-button govuk-button--secondary govuk-!-margin-top-4 govuk-!-margin-bottom-0"
+      <a href="/arrange-a-session/{{ CRN }}/{{ nextApp.sessionId }}/rearrange-or-cancel" class="govuk-button govuk-button--secondary govuk-!-margin-top-4 govuk-!-margin-bottom-0"
         data-module="govuk-button">
         Rearrange or cancel appointment
       </a>

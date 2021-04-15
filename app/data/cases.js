@@ -367,7 +367,8 @@ module.exports = [
     'riskOfSeriousHarmLevel': {
       text: 'Medium',
       class: 'orange'
-    }
+    },
+    'contactHistory': []
   },
   {
     'serviceUserPersonalDetails': {
@@ -380,6 +381,7 @@ module.exports = [
     'riskOfSeriousHarmLevel': {
       text: 'High',
       class: 'red'
-    }
+    },
+    'contactHistory': []
   }
 ]
