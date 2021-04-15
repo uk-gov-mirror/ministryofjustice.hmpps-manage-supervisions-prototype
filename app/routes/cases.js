@@ -1,7 +1,7 @@
 module.exports = router => {
   router.get([
     '/cases/:CRN',
-    '/cases/:CRN/:view'
+    '/cases/:CRN/*'
   ], (req, res, next) => {
     const data = req.session.data
     res.locals.CRN = req.params.CRN
@@ -13,6 +13,11 @@ module.exports = router => {
 
   router.all('/cases/:CRN', function (req, res) {
     res.render('case/index')
+  })
+
+  router.all('/cases/:CRN/communication/:category', function (req, res) {
+    res.locals.category = req.params.category
+    res.render('case/communication')
   })
 
   router.all('/cases/:CRN/:view', function (req, res) {
