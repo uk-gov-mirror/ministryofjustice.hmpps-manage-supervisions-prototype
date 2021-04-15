@@ -37,9 +37,9 @@
             <input
               class="govuk-input govuk-date-input__input"
               type="date"
-              id="[arrange-a-session][{{CRN}}][{{sessionId}}][session-date]"
-              name="[arrange-a-session][{{CRN}}][{{sessionId}}][session-date]"
-              value="{{ data['arrange-a-session'][CRN][sessionId]['session-date'] }}"
+              id="[communication][{{CRN}}][{{sessionId}}][session-date]"
+              name="[communication][{{CRN}}][{{sessionId}}][session-date]"
+              value="{{ data['communication'][CRN][sessionId]['session-date'] }}"
               placeholder="DD/MM/YYYY">
           </div>
         </div>
@@ -56,8 +56,8 @@
         class="govuk-input govuk-input--width-5"
         type="text"
         id="session-start-time"
-        name="[arrange-a-session][{{CRN}}][{{sessionId}}][session-start-time]"
-        value="{{ data['arrange-a-session'][CRN][sessionId]['session-start-time'] }}">
+        name="[communication][{{CRN}}][{{sessionId}}][session-start-time]"
+        value="{{ data['communication'][CRN][sessionId]['session-start-time'] }}">
     </div>
     <span class="govuk-body" style="margin:0 0.75rem 0 0.75rem;">to</span>
     <div class="autocomplete">
@@ -65,8 +65,8 @@
         class="govuk-input govuk-input--width-5"
         type="text"
         id="session-end-time"
-        name="[arrange-a-session][{{CRN}}][{{sessionId}}][session-end-time]"
-        value="{{ data['arrange-a-session'][CRN][sessionId]['session-end-time'] }}">
+        name="[communication][{{CRN}}][{{sessionId}}][session-end-time]"
+        value="{{ data['communication'][CRN][sessionId]['session-end-time'] }}">
     </div>
   </div>
 
@@ -92,7 +92,7 @@
           text: "Monthly"
         }
       ]
-    } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'repeating-frequency'])) }}
+    } | decorateFormAttributes(['communication', CRN, sessionId, 'repeating-frequency'])) }}
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group">
@@ -105,9 +105,9 @@
               <input
                 class="govuk-input govuk-date-input__input"
                 type="date"
-                id="[arrange-a-session][{{CRN}}][{{sessionId}}][repeat-end-date]"
-                name="[arrange-a-session][{{CRN}}][{{sessionId}}][repeat-end-date]"
-                value="{{ data['arrange-a-session'][CRN][sessionId]['repeat-end-date'] }}"
+                id="[communication][{{CRN}}][{{sessionId}}][repeat-end-date]"
+                name="[communication][{{CRN}}][{{sessionId}}][repeat-end-date]"
+                value="{{ data['communication'][CRN][sessionId]['repeat-end-date'] }}"
                 placeholder="DD/MM/YYYY">
             </div>
           </div>
@@ -134,5 +134,5 @@
         text: "No, it’s a one-off appointment"
       }
     ]
-  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'repeating'])) }}
+  } | decorateFormAttributes(['communication', CRN, sessionId, 'repeating'])) }}
 {% endblock %}

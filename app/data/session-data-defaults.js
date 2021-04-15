@@ -2,11 +2,9 @@ const path = require('path')
 const cases = require('./cases')
 const helpers = require(path.join(__dirname, '../../lib/helpers.js'))
 
-const confirmAttendanceDefaults = (map, su) => {
-  if (su.previousAppointment) {
-    map[su.CRN] = {
-      [su.previousAppointment.sessionId]: su.previousAppointment
-    }
+const contactHistoryDefaults = (map, su) => {
+  if (su.contactHistory) {
+    map[su.CRN] = su.contactHistory.reduce((o, contact) => ({ ...o, [contact.sessionId]: contact}), {})
   }
   return map
 }
@@ -19,20 +17,5 @@ module.exports = {
   },
   'team-codes': ['C17ETE'],
   cases: cases,
-  'confirm-attendance': cases.reduce(confirmAttendanceDefaults, {}),
-  'arrange-a-session': {
-    'J678910': {
-      123: {
-        'session-date': helpers.happeningIn({ daysLater: 5 }),
-        'session-end-time': '11am',
-        'session-start-time': '10am',
-        'session-counts-towards-rar': 'Yes',
-        'session-rar-category': 'ES - Accommodation LDN',
-        'session-rar-subcategory': 'Accommodation (Custody Transition)',
-        'type-of-session': 'Home visit',
-        'repeating': 'No, it’s a one-off session',
-        'confirmed': true
-      }
-    }
-  }
+  'communication': cases.reduce(contactHistoryDefaults, {})
 }

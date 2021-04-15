@@ -33,19 +33,19 @@ function arrangeSessionWizardForks (req) {
   var forks = [
     {
       currentPath: `/arrange-a-session/${CRN}/${sessionId}`,
-      storedData: ['arrange-a-session', CRN, sessionId, 'type-of-session'],
+      storedData: ['communication', CRN, sessionId, 'type-of-session'],
       excludedValues: ['Office visit', 'Other'],
       forkPath: `/arrange-a-session/${CRN}/${sessionId}/when`
     },
     {
       currentPath: `/arrange-a-session/${CRN}/${sessionId}/rar`,
-      storedData: ['arrange-a-session', CRN, sessionId, 'session-counts-towards-rar'],
+      storedData: ['communication', CRN, sessionId, 'session-counts-towards-rar'],
       values: ['No'],
       forkPath: `/arrange-a-session/${CRN}/${sessionId}/check`
     },
     {
       currentPath: `/arrange-a-session/${CRN}/${sessionId}/rearrange-or-cancel`,
-      storedData: ['arrange-a-session', CRN, sessionId, 'rearrange-or-cancel'],
+      storedData: ['communication', CRN, sessionId, 'rearrange-or-cancel'],
       values: ['Rearrange session'],
       forkPath: `/arrange-a-session/${CRN}/${sessionId}`
     }

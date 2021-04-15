@@ -30,7 +30,7 @@
              }
            },
            items: rarRadioItems
-         } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'session-rar-category']) )
+         } | decorateFormAttributes(['communication', CRN, sessionId, 'session-rar-category']) )
       }}
   {% endset %}
 
@@ -58,5 +58,5 @@
            value: 'No'
          }
        ]
-       } | decorateFormAttributes(['confirm-attendance', CRN, sessionId, 'session-counts-towards-rar']) ) }}
+       } | decorateFormAttributes(['communication', CRN, sessionId, 'session-counts-towards-rar']) ) }}
 {% endblock %}
