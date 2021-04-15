@@ -18,7 +18,7 @@
        },
        id: 'other-type-of-session',
        items: contactTypeSelectItems
-    } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'other-type-of-session'])) }}
+    } | decorateFormAttributes(['communication', CRN, sessionId, 'other-type-of-session'])) }}
   {% endset %}
 
   {{ govukRadios({
@@ -47,7 +47,10 @@
          conditional: { html: otherHtml }
       }
     ]
-  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'type-of-session'])) }}
+  } | decorateFormAttributes(['communication', CRN, sessionId, 'type-of-session'])) }}
 
-  <input type="hidden" id="type" name="[arrange-a-session][{{ CRN }}][{{ sessionId }}][type]" value="Appointment">
+  <input type="hidden" id="type" name="[communication][{{ CRN }}][{{ sessionId }}][type]" value="Appointment">
+  <input type="hidden" id="lastUpdatedBy" name="[communication][{{ CRN }}][{{ sessionId }}][lastUpdatedBy]" value="Mark Berridge">
+  <input type="hidden" id="timestamp" name="[communication][{{ CRN }}][{{ sessionId }}][timestamp]" value="{{ currentTimeString() }}">
+  <input type="hidden" id="sessionId" name="[communication][{{ CRN }}][{{ sessionId }}][sessionId]" value="{{ sessionId }}">
 {% endblock %}

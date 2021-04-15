@@ -18,12 +18,12 @@
         text: 'Cancel appointment'
       }
     ]
-  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'rearrange-or-cancel'])) }}
+  } | decorateFormAttributes(['communication', CRN, sessionId, 'rearrange-or-cancel'])) }}
 
   {{ govukTextarea({
       label: {
         text: 'Why do you need to make this change?',
         classes: 'govuk-label--m'
       }
-  } | decorateFormAttributes(['arrange-a-session', CRN, sessionId, 'rearrange-or-cancel-reason'])) }}
+  } | decorateFormAttributes(['communication', CRN, sessionId, 'rearrange-or-cancel-reason'])) }}
 {% endblock %}

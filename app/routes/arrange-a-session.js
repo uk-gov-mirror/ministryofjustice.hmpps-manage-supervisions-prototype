@@ -18,7 +18,7 @@ module.exports = router => {
   router.get('/arrange-a-session/:CRN/:sessionId/confirmation', (req, res, next) => {
     setDataValue(req.session.data,
       [
-        'arrange-a-session',
+        'communication',
         req.params.CRN,
         req.params.sessionId,
         'confirmed'
@@ -29,7 +29,7 @@ module.exports = router => {
   router.get('/arrange-a-session/:CRN/:sessionId/cancel-confirmation', (req, res, next) => {
     setDataValue(req.session.data,
       [
-        'arrange-a-session',
+        'communication',
         req.params.CRN,
         req.params.sessionId,
         'cancelled'

@@ -17,13 +17,5 @@ module.exports = {
   },
   'team-codes': ['C17ETE'],
   cases: cases,
-  'communication': cases.reduce(contactHistoryDefaults, {}),
-  'arrange-a-session': {
-    'J678910': {
-      123: cases
-        .find(entry => entry.CRN === 'J678910')
-        .contactHistory
-        .find(entry => entry.sessionId === 123)
-    }
-  }
+  'communication': cases.reduce(contactHistoryDefaults, {})
 }

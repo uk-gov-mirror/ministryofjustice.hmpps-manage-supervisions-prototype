@@ -1,20 +1,20 @@
 {% extends "_wizard-page.html" %}
-{% set rearranging = data['arrange-a-session'][CRN][sessionId]['rearrange-or-cancel'] %}
+{% set rearranging = data['communication'][CRN][sessionId]['rearrange-or-cancel'] %}
 {% set buttonText = 'Finish' %}
 {% set title = "Appointment rearranged" if rearranging else "Appointment arranged" %}
 
 {% block page %}
   {% set session = arrangedSession({
     providerCode: data['provider-code'],
-    typeOfSession: data['arrange-a-session'][CRN][sessionId]['type-of-session'],
-    contactType: data['arrange-a-session'][CRN][sessionId]['other-type-of-session'],
-    date: data['arrange-a-session'][CRN][sessionId]['session-date'],
-    startTime: data['arrange-a-session'][CRN][sessionId]['session-start-time'],
-    endTime: data['arrange-a-session'][CRN][sessionId]['session-end-time'],
-    countsTowardsRAR: data['arrange-a-session'][CRN][sessionId]['session-counts-towards-rar'] == 'Yes',
-    rarCategory: data['arrange-a-session'][CRN][sessionId]['session-rar-category'],
-    rarSubCategory: data['arrange-a-session'][CRN][sessionId]['session-rar-subcategory'],
-    locationCode: data['arrange-a-session'][CRN][sessionId]['session-location-code']
+    typeOfSession: data['communication'][CRN][sessionId]['type-of-session'],
+    contactType: data['communication'][CRN][sessionId]['other-type-of-session'],
+    date: data['communication'][CRN][sessionId]['session-date'],
+    startTime: data['communication'][CRN][sessionId]['session-start-time'],
+    endTime: data['communication'][CRN][sessionId]['session-end-time'],
+    countsTowardsRAR: data['communication'][CRN][sessionId]['session-counts-towards-rar'] == 'Yes',
+    rarCategory: data['communication'][CRN][sessionId]['session-rar-category'],
+    rarSubCategory: data['communication'][CRN][sessionId]['session-rar-subcategory'],
+    locationCode: data['communication'][CRN][sessionId]['session-location-code']
   }) %}
 
   {% set panelHtml %}
