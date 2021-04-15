@@ -46,7 +46,7 @@ function arrangeSessionWizardForks (req) {
     {
       currentPath: `/arrange-a-session/${CRN}/${sessionId}/rearrange-or-cancel`,
       storedData: ['communication', CRN, sessionId, 'rearrange-or-cancel'],
-      values: ['Rearrange session'],
+      values: ['Rearrange appointment'],
       forkPath: `/arrange-a-session/${CRN}/${sessionId}`
     }
   ]
