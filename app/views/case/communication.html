@@ -18,7 +18,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     {% set hr = joiner('<hr>') %}
-    {% for entry in case.contactHistory %}
+    {% for entry in communicationEntries(CRN, data) %}
 
       {{ hr() | safe }}
 

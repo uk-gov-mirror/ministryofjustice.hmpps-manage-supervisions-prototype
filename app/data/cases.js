@@ -241,7 +241,7 @@ module.exports = [
         'type': 'Text message',
         'from': 'Service user',
         'to': 'Mark Berridge',
-        'timestamp': '2021-04-22T13:00',
+        'timestamp': '2021-04-11T13:00',
         'contents': 'Hi Mark, got the email. I’ll be there. D.',
         'sessionId': 987
       },
