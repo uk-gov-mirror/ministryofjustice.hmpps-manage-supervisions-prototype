@@ -224,6 +224,21 @@ module.exports = [
     'contactHistory': [
       {
         'type': 'Appointment',
+        'timestamp': helpers.happeningIn({ daysLater: 5, atTime: '11:00' }),
+        'session-date': helpers.happeningIn({ daysLater: 5 }),
+        'session-end-time': '11am',
+        'session-start-time': '10am',
+        'session-counts-towards-rar': 'Yes',
+        'session-rar-category': 'ES - Accommodation LDN',
+        'session-rar-subcategory': 'Accommodation (Custody Transition)',
+        'type-of-session': 'Home visit',
+        'repeating': 'No, it’s a one-off session',
+        'confirmed': true,
+        'lastUpdatedBy': 'Mark Berridge',
+        'sessionId': 123
+      },
+      {
+        'type': 'Appointment',
         'type-of-session': 'Office visit',
         'lastUpdatedBy': 'Mark Berridge',
         'timestamp': helpers.yesterday({atTime: '13:00'}),

@@ -26,7 +26,7 @@ module.exports = {
   },
   'team-codes': ['C17ETE'],
   cases: cases,
-  'contact-history': cases.reduce(contactHistoryDefaults, {}),
+  'communication': cases.reduce(contactHistoryDefaults, {}),
   'confirm-attendance': cases.reduce(confirmAttendanceDefaults, {}),
   'arrange-a-session': {
     'J678910': {
@@ -40,7 +40,7 @@ module.exports = {
         'session-rar-subcategory': 'Accommodation (Custody Transition)',
         'type-of-session': 'Home visit',
         'repeating': 'No, it’s a one-off session',
-        'confirmed': true
+        'confirmed': true,
       }
     }
   }
