@@ -20,6 +20,11 @@ module.exports = router => {
     res.render('case/communication')
   })
 
+  router.all('/cases/:CRN/appointments/:sessionId', function (req, res) {
+    res.locals.sessionId = req.params.sessionId
+    res.render('case/appointment')
+  })
+
   router.all('/cases/:CRN/:view', function (req, res) {
     res.render(`case/${req.params.view}`)
   })
