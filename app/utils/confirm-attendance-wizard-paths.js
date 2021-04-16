@@ -13,6 +13,7 @@ function confirmAttendanceWizardPaths (req) {
     `/confirm-attendance/${CRN}/${sessionId}/compliance`,
     `/confirm-attendance/${CRN}/${sessionId}/non-compliance-reason`,
     `/confirm-attendance/${CRN}/${sessionId}/absence-acceptable`,
+    `/confirm-attendance/${CRN}/${sessionId}/rar`,
     `/confirm-attendance/${CRN}/${sessionId}/rar-categories`,
     `/confirm-attendance/${CRN}/${sessionId}/add-notes`,
     `/confirm-attendance/${CRN}/${sessionId}/notes`,
@@ -40,7 +41,7 @@ function confirmAttendanceWizardForks (req) {
           case 'No':
             return `/confirm-attendance/${CRN}/${sessionId}/non-compliance-reason`
           default:
-            return `/confirm-attendance/${CRN}/${sessionId}/rar-categories`
+            return `/confirm-attendance/${CRN}/${sessionId}/rar`
         }
       }
     },
@@ -48,7 +49,13 @@ function confirmAttendanceWizardForks (req) {
       currentPath: `/confirm-attendance/${CRN}/${sessionId}/non-compliance-reason`,
       storedData: ['confirm-attendance', CRN, sessionId, 'was-absence-acceptable'],
       excludedValues: [],
-      forkPath: `/confirm-attendance/${CRN}/${sessionId}/rar-categories`
+      forkPath: `/confirm-attendance/${CRN}/${sessionId}/rar`
+    },
+    {
+      currentPath: `/confirm-attendance/${CRN}/${sessionId}/rar`,
+      storedData: ['communication', CRN, sessionId, 'session-counts-towards-rar'],
+      values: ['No'],
+      forkPath: `/confirm-attendance/${CRN}/${sessionId}/add-notes`
     },
     {
       currentPath: `/confirm-attendance/${CRN}/${sessionId}/add-notes`,
