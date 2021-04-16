@@ -1,0 +1,37 @@
+<h3 class="govuk-heading-s">
+  <a class="govuk-!-font-weight-bold govuk-!-margin-right-2" href="#">
+    {{ entry.type }} to {{ case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to }}
+  </a>
+  <br>
+  <div class="govuk-!-margin-top-1">
+  {{ entry.timestamp | dateWithYear }}
+  </div>
+</h3>
+
+<dl class="app-card__one-third-column-list">
+  <div class="app-card__one-third-column-list-item">
+    <dt class="app-card__one-third-column-list-key">
+      From
+    </dt>
+    <dd class="app-card__one-third-column-list-value">
+      {{ case.serviceUserPersonalDetails.name if entry.from === 'Service user' else entry.from }}
+    </dd>
+  </div>
+  <div class="app-card__one-third-column-list-item">
+    <dt class="app-card__one-third-column-list-key">
+     To
+    </dt>
+    <dd class="app-card__one-third-column-list-value">
+      {{ case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to }}
+    </dd>
+  </div>
+</dl>
+
+<div class="note-panel">
+  {% set truncatedContents = entry.contents | truncate(300) %}
+  {% set isTruncated = (truncatedContents !== entry.contents) %}
+  <p class="govuk-body {{ 'govuk-!-margin-bottom-0' if not isTruncated }}">{{ truncatedContents | nl2br | safe }}</p>
+  {% if isTruncated %}
+    <a href="#">View full details</a>
+  {% endif %}
+</div>
