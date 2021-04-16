@@ -11,19 +11,6 @@
     classes: 'govuk-!-margin-bottom-9',
     rows: [
       {
-        key: { text: "RAR activity" },
-        value: { text: data['communication'][CRN][sessionId]['session-rar-category'] if data['communication'][CRN][sessionId]['session-counts-towards-rar'] == 'Yes' else 'None'  },
-        actions: {
-          items: [
-            {
-              href: "rar-categories",
-              text: "Change",
-              visuallyHiddenText: "RAR activity"
-            }
-          ]
-        }
-      },
-      {
         key: { text: case.serviceUserPersonalDetails.firstName + " complied?" },
         value: { text: complianceText },
         actions: {
@@ -36,6 +23,32 @@
           ]
         }
       },
+      {
+        key: { text: "RAR activity" },
+        value: { text: data['communication'][CRN][sessionId]['session-rar-category'] if data['communication'][CRN][sessionId]['session-counts-towards-rar'] == 'Yes' else 'None'  },
+        actions: {
+          items: [
+            {
+              href: "rar",
+              text: "Change",
+              visuallyHiddenText: "RAR activity"
+            }
+          ]
+        }
+      },
+      {
+        key: { text: "RAR activity subcategory" },
+        value: { text: data['communication'][CRN][sessionId]['session-rar-subcategory'] },
+        actions: {
+          items: [
+            {
+              href: "rar",
+              text: "Change",
+              visuallyHiddenText: "RAR activity"
+            }
+          ]
+        }
+      } if data['communication'][CRN][sessionId]['session-counts-towards-rar'] == 'Yes',
       {
         key: { text: "Appointment notes" },
         value: { text: data['communication'][CRN][sessionId]['session-notes'] if data['communication'][CRN][sessionId]['add-notes'] == 'Yes' else 'None' },

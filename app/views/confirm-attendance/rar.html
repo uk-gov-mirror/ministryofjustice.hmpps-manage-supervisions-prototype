@@ -1,0 +1,26 @@
+{% extends "_wizard-form.html" %}
+{% set title = 'Should this appointment count towards RAR?' %}
+
+{% block form %}
+  {{ govukRadios({
+    fieldset: {
+      legend: {
+        text: title,
+        classes: "govuk-label--xl",
+        isPageHeading: true
+      }
+      },
+      hint: {
+        html: 'This will account for one day of Rehabilitation Activity Requirement (RAR).'
+      },
+      items: [
+        {
+          text: 'Yes'
+        },
+        {
+          text: 'No'
+        }
+      ]
+  } | decorateFormAttributes(['communication', CRN, sessionId, 'session-counts-towards-rar'])) }}
+
+{% endblock %}
