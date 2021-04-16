@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set entry = data['communication'][CRN][sessionId] %}
+{% set appointmentType = 'previous' if isInThePast({date: entry['session-date'], time: entry['session-end-time']}) else 'upcoming' %}
 {% set title = entry['type-of-session'] + ' details' %}
 {% block pageTitle %}{{ title }}{% endblock %}
 
@@ -12,12 +13,10 @@
   href: "/cases/" + CRN + "/communication"
 }) }}
 
-{% set caption = 'Previous appointment' if isInThePast({date: entry['session-date'], time: entry['session-end-time']}) else 'Upcoming appointment' %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-      <span class="govuk-caption-l">{{ caption }}</span>
+      <span class="govuk-caption-l">{{ appointmentType | capitalize }} appointment</span>
       {{ entry['type-of-session'] }}
 
       {% if entry['session-counts-towards-rar'] === 'Yes' %}
@@ -52,6 +51,12 @@
     {% set showAction = false %}
     {% set hideNotes = isOutcomeRecorded %}
     {% include 'arrange-a-session/_session-details.html' %}
+
+    {% if appointmentType === 'upcoming' %}
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        <a href="/arrange-a-session/{{ CRN }}/{{ sessionId }}/cancel">Cancel appointment</a>
+      </p>
+    {% endif %}
 
     <p class="govuk-body-s govuk-hint-s">Last updated by {{ entry.lastUpdatedBy }} on {{ entry.timestamp | dateWithYear }} at {{ entry.timestamp | govukTimeWithMinutes }}</p>
   </div>
