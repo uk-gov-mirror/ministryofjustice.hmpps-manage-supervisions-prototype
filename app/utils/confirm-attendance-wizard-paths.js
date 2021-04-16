@@ -49,7 +49,7 @@ function confirmAttendanceWizardForks (req) {
     },
     {
       currentPath: `${basePath}/non-compliance-reason`,
-      storedData: ['confirm-attendance', CRN, sessionId, 'was-absence-acceptable'],
+      storedData: ['communication', CRN, sessionId, 'was-absence-acceptable'],
       excludedValues: [],
       forkPath: `${basePath}/rar`
     },
@@ -61,7 +61,7 @@ function confirmAttendanceWizardForks (req) {
     },
     {
       currentPath: `${basePath}/add-notes`,
-      storedData: ['confirm-attendance', CRN, sessionId, 'add-notes'],
+      storedData: ['communication', CRN, sessionId, 'add-notes'],
       values: ['No'],
       forkPath: `${basePath}/check`
     }
