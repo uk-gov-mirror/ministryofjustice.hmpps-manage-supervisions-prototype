@@ -1,4 +1,4 @@
-<h3 class="govuk-body govuk-!-font-size-19">
+<h3 class="govuk-heading-s">
   <a class="govuk-!-font-weight-bold govuk-!-margin-right-2" href="#">
     {{ entry['type-of-session'] }}
   </a>
@@ -17,33 +17,34 @@
   {% endif %}
   <br>
 
-  {{ entry['session-date'] | dateWithYear }} from {{ entry['session-start-time'] }} to {{ entry['session-end-time'] }}
-  {% if entry.repeat === 'Yes' %}
-    {{ govukTag({text: 'Repeat', classes: 'govuk-tag--turquoise'}) }}
-  {% endif %}
+  <div class="govuk-!-margin-top-1">
+    {{ entry['session-date'] | dateWithYear }} from {{ entry['session-start-time'] }} to {{ entry['session-end-time'] }}
+    {% if entry.repeat === 'Yes' %}
+      {{ govukTag({text: 'Repeat', classes: 'govuk-tag--turquoise'}) }}
+    {% endif %}
+  </div>
 </h3>
 
-{{ govukSummaryList({
-  classes: 'govuk-summary-list--no-border',
-  rows: [
-    {
-      key: {
-        text: "With"
-      },
-      value: {
-        text: entry.lastUpdatedBy
-      }
-    },
-    {
-      key: {
-        text: "RAR"
-      },
-      value: {
-        text: entry['session-rar-category']
-      }
-    } if entry['session-counts-towards-rar'] == 'Yes'
-  ]
-}) }}
+<dl class="app-card__one-third-column-list">
+  <div class="app-card__one-third-column-list-item">
+    <dt class="app-card__one-third-column-list-key">
+      With
+    </dt>
+    <dd class="app-card__one-third-column-list-value">
+      {{ entry.lastUpdatedBy }}
+    </dd>
+  </div>
+  <div class="app-card__one-third-column-list-item">
+    {% if entry['session-counts-towards-rar'] == 'Yes' %}
+    <dt class="app-card__one-third-column-list-key">
+     RAR
+    </dt>
+    <dd class="app-card__one-third-column-list-value">
+      {{ entry['session-rar-category'] }}
+    </dd>
+    {% endif %}
+  </div>
+</dl>
 
 {% set hasAttendanceAlreadyBeenConfirmed = not not entry['did-service-user-comply'] %}
 {% set hasAppointmentTimePassed = isInThePast({date: entry['session-date'], time: entry['session-end-time']}) %}

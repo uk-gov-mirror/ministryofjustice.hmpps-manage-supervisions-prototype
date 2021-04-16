@@ -1,32 +1,31 @@
-<h3 class="govuk-body govuk-!-font-size-19">
+<h3 class="govuk-heading-s">
   <a class="govuk-!-font-weight-bold govuk-!-margin-right-2" href="#">
     {{ entry.type }} to {{ case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to }}
   </a>
   <br>
+  <div class="govuk-!-margin-top-1">
   {{ entry.timestamp | dateWithYear }}
+  </div>
 </h3>
 
-{{ govukSummaryList({
-  classes: 'govuk-summary-list--no-border',
-  rows: [
-    {
-      key: {
-        text: "From"
-      },
-      value: {
-        text: case.serviceUserPersonalDetails.name if entry.from === 'Service user' else entry.from
-      }
-    },
-    {
-      key: {
-        text: "To"
-      },
-      value: {
-        text: case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to
-      }
-    }
-  ]
-}) }}
+<dl class="app-card__one-third-column-list">
+  <div class="app-card__one-third-column-list-item">
+    <dt class="app-card__one-third-column-list-key">
+      From
+    </dt>
+    <dd class="app-card__one-third-column-list-value">
+      {{ case.serviceUserPersonalDetails.name if entry.from === 'Service user' else entry.from }}
+    </dd>
+  </div>
+  <div class="app-card__one-third-column-list-item">
+    <dt class="app-card__one-third-column-list-key">
+     To
+    </dt>
+    <dd class="app-card__one-third-column-list-value">
+      {{ case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to }}
+    </dd>
+  </div>
+</dl>
 
 <div class="note-panel">
   {% set truncatedContents = entry.contents | truncate(300) %}
