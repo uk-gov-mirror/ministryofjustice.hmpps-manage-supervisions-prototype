@@ -6,19 +6,20 @@ const {
 function confirmAttendanceWizardPaths (req) {
   const CRN = req.params.CRN
   const sessionId = req.params.sessionId
+  const basePath = `/confirm-attendance/${CRN}/${sessionId}`
 
   var paths = [
     `/cases/${CRN}/communication`,
-    `/confirm-attendance/${CRN}/${sessionId}`,
-    `/confirm-attendance/${CRN}/${sessionId}/compliance`,
-    `/confirm-attendance/${CRN}/${sessionId}/non-compliance-reason`,
-    `/confirm-attendance/${CRN}/${sessionId}/absence-acceptable`,
-    `/confirm-attendance/${CRN}/${sessionId}/rar`,
-    `/confirm-attendance/${CRN}/${sessionId}/rar-categories`,
-    `/confirm-attendance/${CRN}/${sessionId}/add-notes`,
-    `/confirm-attendance/${CRN}/${sessionId}/notes`,
-    `/confirm-attendance/${CRN}/${sessionId}/check`,
-    `/confirm-attendance/${CRN}/${sessionId}/confirmation`,
+    `${basePath}`,
+    `${basePath}/compliance`,
+    `${basePath}/non-compliance-reason`,
+    `${basePath}/absence-acceptable`,
+    `${basePath}/rar`,
+    `${basePath}/rar-categories`,
+    `${basePath}/add-notes`,
+    `${basePath}/notes`,
+    `${basePath}/check`,
+    `${basePath}/confirmation`,
     `/arrange-a-session/${CRN}/start`
   ]
 
@@ -28,40 +29,41 @@ function confirmAttendanceWizardPaths (req) {
 function confirmAttendanceWizardForks (req) {
   const CRN = req.params.CRN
   const sessionId = req.params.sessionId
+  const basePath = `/confirm-attendance/${CRN}/${sessionId}`
 
   var forks = [
     {
-      currentPath: `/confirm-attendance/${CRN}/${sessionId}/compliance`,
+      currentPath: `${basePath}/compliance`,
       storedData: ['confirm-attendance', CRN, sessionId, 'did-service-user-comply'],
       excludedValues: [],
       forkPath: (value) => {
         switch (value) {
           case 'Absent':
-            return `/confirm-attendance/${CRN}/${sessionId}/absence-acceptable`
+            return `${basePath}/absence-acceptable`
           case 'No':
-            return `/confirm-attendance/${CRN}/${sessionId}/non-compliance-reason`
+            return `${basePath}/non-compliance-reason`
           default:
-            return `/confirm-attendance/${CRN}/${sessionId}/rar`
+            return `${basePath}/rar`
         }
       }
     },
     {
-      currentPath: `/confirm-attendance/${CRN}/${sessionId}/non-compliance-reason`,
+      currentPath: `${basePath}/non-compliance-reason`,
       storedData: ['confirm-attendance', CRN, sessionId, 'was-absence-acceptable'],
       excludedValues: [],
-      forkPath: `/confirm-attendance/${CRN}/${sessionId}/rar`
+      forkPath: `${basePath}/rar`
     },
     {
-      currentPath: `/confirm-attendance/${CRN}/${sessionId}/rar`,
+      currentPath: `${basePath}/rar`,
       storedData: ['communication', CRN, sessionId, 'session-counts-towards-rar'],
       values: ['No'],
-      forkPath: `/confirm-attendance/${CRN}/${sessionId}/add-notes`
+      forkPath: `${basePath}/add-notes`
     },
     {
-      currentPath: `/confirm-attendance/${CRN}/${sessionId}/add-notes`,
+      currentPath: `${basePath}/add-notes`,
       storedData: ['confirm-attendance', CRN, sessionId, 'add-notes'],
       values: ['No'],
-      forkPath: `/confirm-attendance/${CRN}/${sessionId}/check`
+      forkPath: `${basePath}/check`
     }
   ]
 
