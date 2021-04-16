@@ -235,7 +235,8 @@ module.exports = [
         'session-end-time': '11am',
         'repeating': 'No, it’s a one-off session',
         'session-counts-towards-rar': 'Yes',
-        'session-rar-category': 'Relationships',
+        'session-rar-category': 'ES - Accommodation LDN',
+        'session-rar-subcategory': 'Accommodation (Custody Transition)',
         'session-notes': 'Will use this time to catch up on Dylan’s relationships homework.',
         'sessionId': 456
       },
