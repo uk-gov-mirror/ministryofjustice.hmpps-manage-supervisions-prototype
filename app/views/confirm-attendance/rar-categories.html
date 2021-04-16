@@ -1,62 +1,43 @@
 {% extends "_wizard-form.html" %}
-{% set title = "Would you like this to count towards RAR?" %}
-{% set buttonText = 'Save and continue' %}
+{% set title = 'What should this appointment count towards?' %}
 
 {% block form %}
-  {% set rarCategories = [
-    'Employment, Training and Education',
-    'Wellbeing – both physical and mental',
-    'Finance, benefit and debt',
-    'Relationships',
-    'Restorative Justice Interventions',
-    'Substance Misuse',
-    'Alcohol Treatment Requirements or Mental Health Treatment Requirements',
-    'Thinking skills, attitudes and behaviour'
-  ] %}
-
   {% set rarRadioItems = [] %}
-  {% for rarCategory in rarCategories %}
+  {% for rarCategory in possibleRARCategories(
+    data['provider-code'],
+    data['communication'][CRN][sessionId]['type-of-session'],
+    data['communication'][CRN][sessionId]['other-type-of-session']) %}
+    {% set rarSubCategoryRadioItems = [] %}
+    {% for rarSubCategoryCode, subCategory in rarCategory.nsiSubTypes %}
+      {% set rarSubCategoryRadioItems = (rarSubCategoryRadioItems.push({
+        text: subCategory.description,
+        value: subCategory.description
+      }), rarSubCategoryRadioItems) %}
+    {% endfor %}
+
+    {% set rarSubCategoryHtml %}
+      {{ govukRadios({
+        items: rarSubCategoryRadioItems
+      } | decorateFormAttributes(['communication', CRN, sessionId, 'session-rar-subcategory'])) }}
+    {% endset %}
+
     {% set rarRadioItems = (rarRadioItems.push({
-      text: rarCategory,
-      value: rarCategory
+      text: rarCategory.description,
+      value: rarCategory.description,
+      conditional: {
+        html: rarSubCategoryHtml
+      }
     }), rarRadioItems) %}
   {% endfor %}
 
-  {% set rarCategoryHtml %}
-    {{ govukRadios({
-           fieldset: {
-             legend: {
-               text: "What will this appointment count towards?"
-             }
-           },
-           items: rarRadioItems
-         } | decorateFormAttributes(['communication', CRN, sessionId, 'session-rar-category']) )
-      }}
-  {% endset %}
-
   {{ govukRadios({
-       fieldset: {
-         legend: {
-           text: title,
-           classes: "govuk-label--xl",
-           isPageHeading: true
-         }
-       },
-       hint: {
-         html: 'This will account for one day of Rehabilitation Activity Requirement (RAR).'
-       },
-       items: [
-         {
-           text: 'Yes',
-           value: 'Yes',
-           conditional: {
-             html: rarCategoryHtml
-           }
-         },
-         {
-           text: 'No',
-           value: 'No'
-         }
-       ]
-       } | decorateFormAttributes(['communication', CRN, sessionId, 'session-counts-towards-rar']) ) }}
+      fieldset: {
+        legend: {
+          text: title,
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        }
+      },
+      items: rarRadioItems
+  } | decorateFormAttributes(['communication', CRN, sessionId, 'session-rar-category'])) }}
 {% endblock %}
