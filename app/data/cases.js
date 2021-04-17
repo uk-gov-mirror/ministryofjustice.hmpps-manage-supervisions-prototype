@@ -363,15 +363,165 @@ module.exports = [
   },
   {
     'serviceUserPersonalDetails': {
-      'name': 'Spencer Gill'
+      'name': 'Spencer Gil',
+      'firstName': 'Spencer',
+      'dateOfBirth': '1998-01-04',
+      'address': [
+        '27 Camber Road',
+        'Leeds',
+        'West Yorkshire',
+        'LS6 5BR'
+      ],
+      'phone': '07811 011 188',
+      'email': 'gilspencer@gmail.com',
+      'aliases': [],
+      'preferredLanguage': 'English',
+      'nationality': 'British',
+      'ethnicity': 'White',
+      'religion': 'None',
+      'gender': 'Male',
+      'sexualOrientation': 'Heterosexual',
+      'disabilitiesAndAdjustments': ['Attention Deficit Hyperactivity Disorder (ADHD)'],
+      'circumstances': {
+        'employment': 'Full-time employed',
+        'housingStatus': 'Living with family',
+        'safeguardingIssues': []
+      }
     },
-    'status': 'No record',
+    'personalContacts': [
+      {
+        'name': 'Gerry Gil',
+        'relationship': 'Dad',
+        'address': [
+          '27 Camber Road',
+          'Leeds',
+          'West Yorkshire',
+          'LS6 5BR'
+        ]
+      }
+    ],
+    'professionalContacts': [],
+    'PNC': '2021/234511111G',
+    'CRN': 'K789021',
     'currentOrder': {
-      'type': 'ORA Suspended Sentence Order'
+      'type': 'Suspended Sentence',
+      'description': 'Driving while disqualified',
+      'lengthInMonths': 12,
+      'progressInMonths': 0,
+      'startDate': helpers.happenedOn({daysAgo: '5'}),
+      'endDate': helpers.sentenceEndDate({lengthInMonths: 12, startDate: helpers.happenedOn({daysAgo: '5'})}),
+      'offenceDate': '2021-01-03',
+      'convictionDate': helpers.happenedOn({daysAgo: '5'}),
+      'court': "Leeds Crown Court",
+      'responsibleCourt': "Leeds Crown Court",
+      'requirements': {
+        'rar': {
+          'type': 'Rehabilitation Activity Requirement (RAR)',
+          'value': '20 days',
+          'lengthInDays': 20,
+          'progressInDays': 0
+        },
+        'upw': {
+          'type': 'Unpaid work',
+          'value': '150 hours',
+          'lengthInHours': 150,
+          'progressInHours': 5
+        }
+      },
+      'courtDocuments': [
+        {
+          'name': 'CPS Pack',
+          'lastUpdateDate': helpers.happenedOn({daysAgo: '9'})
+        },
+        {
+          'name': 'Induction pack',
+          'lastUpdateDate': helpers.happenedOn({daysAgo: '6'})
+        }
+      ]
     },
+    'previousOrders': [],
+    'breachesCount': 0,
+    'restrainingOrdersCount': 0,
     'riskOfSeriousHarmLevel': {
-      text: 'High',
-      class: 'red'
+      text: 'Medium',
+      class: 'orange'
+    },
+    'riskOfHarm': [
+      {
+        'riskTo': 'Themselves',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Children',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Public',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Known adult',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Staff',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Prisoners',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      }
+    ],
+    'criminogenicNeeds': [
+      'Lifestyle & Associates'
+    ],
+    'status': 'No record',
+    'appointmentStatistics': {
+      'complied': 0,
+      'acceptableAbsence': 0,
+      'failureToComply': 0
     },
     'contactHistory': []
   }
