@@ -28,12 +28,23 @@
         {{ case.currentOrder.progressInMonths }} months elapsed (of {{ case.currentOrder.lengthInMonths }} months)
       </p>
 
-      <h3 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-1">
-        Rehabilitation activity requirement
-      </h3>
-      <p class="govuk-!-margin-bottom-0">
-        {{ case.currentOrder.requirements.rar.progressInDays }} days completed (of {{ case.currentOrder.requirements.rar.lengthInDays }} days)
-      </p>
+      {% if case.currentOrder.requirements.rar %}
+        <h3 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+          Rehabilitation activity requirement
+        </h3>
+        <p class="govuk-!-margin-bottom-0">
+          {{ case.currentOrder.requirements.rar.progressInDays }} days completed (of {{ case.currentOrder.requirements.rar.lengthInDays }} days)
+        </p>
+      {% endif %}
+
+      {% if case.currentOrder.requirements.upw %}
+        <h3 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-1">
+          Unpaid work
+        </h3>
+        <p class="govuk-!-margin-bottom-0">
+          {{ case.currentOrder.requirements.upw.progressInHours }} hours completed (of {{ case.currentOrder.requirements.upw.lengthInHours }} hours)
+        </p>
+      {% endif %}
     </div>
 
     <h2 class="govuk-heading-m">
