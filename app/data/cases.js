@@ -414,10 +414,10 @@ module.exports = [
       'description': 'Driving while disqualified',
       'lengthInMonths': 12,
       'progressInMonths': 0,
-      'startDate': helpers.happenedOn({daysAgo: '5'}),
-      'endDate': helpers.sentenceEndDate({lengthInMonths: 12, startDate: helpers.happenedOn({daysAgo: '5'})}),
+      'startDate': helpers.happenedOn({daysAgo: '3'}),
+      'endDate': helpers.sentenceEndDate({lengthInMonths: 12, startDate: helpers.happenedOn({daysAgo: '3'})}),
       'offenceDate': '2021-01-03',
-      'convictionDate': helpers.happenedOn({daysAgo: '5'}),
+      'convictionDate': helpers.happenedOn({daysAgo: '3'}),
       'court': "Leeds Crown Court",
       'responsibleCourt': "Leeds Crown Court",
       'requirements': {
@@ -445,7 +445,7 @@ module.exports = [
         },
         {
           'name': 'CPS Pack',
-          'lastUpdateDate': helpers.happenedOn({daysAgo: '9'})
+          'lastUpdateDate': helpers.happenedOn({daysAgo: '3'})
         },
         {
           'name': 'Previous convictions',
