@@ -140,19 +140,10 @@
 
   <div class="govuk-grid-column-one-third">
 
-    <h2 class="govuk-heading-m">
-      Personal documents</h2>
+    <h2 class="govuk-heading-m">Personal documents</h2>
 
-    <div class="moj-timeline__description">
-      <div class="note-panel">
-        <ul class="moj-timeline__documents">
-          <li class="moj-timeline__document-item">
-            <a class="moj-timeline__document-link" href="#"><strong>Induction pack</strong></a><br>
-            <span style="padding-left: 25px;">Last updated 3 Dec 2020</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+    {% set documents = case.currentOrder.personalDocuments %}
+    {% include "case/_case-documents.html" %}
 
   </div>
 
