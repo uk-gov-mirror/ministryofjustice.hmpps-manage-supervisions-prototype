@@ -436,6 +436,10 @@ module.exports = [
         {
           'name': 'Induction pack',
           'lastUpdateDate': helpers.happenedOn({daysAgo: '6'})
+        },
+        {
+          'name': 'Pre-sentence report',
+          'lastUpdateDate': null
         }
       ]
     },
