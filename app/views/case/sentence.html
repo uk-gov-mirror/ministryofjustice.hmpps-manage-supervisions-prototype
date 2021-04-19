@@ -125,24 +125,9 @@
 
   <div class="govuk-grid-column-one-third">
     <h2 class="govuk-heading-m">Court documents</h2>
-    <div class="moj-timeline__description govuk-!-margin-bottom-7">
-      <div class="note-panel">
-        <ul class="moj-timeline__documents">
-          {% for doc in case.currentOrder.courtDocuments %}
-          <li class="moj-timeline__document-item" style="margin-bottom: 20px;">
-            <a class="moj-timeline__document-link" href="#"><strong>{{ doc.name }}</strong></a><br>
-            <span style="padding-left: 25px;">
-              {% if doc.lastUpdateDate %}
-                Last updated {{ doc.lastUpdateDate | dateWithYearShortMonth }}
-              {% else %}
-                <span class="govuk-hint-s">Unavailable</span>
-              {% endif %}
-            </span>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+
+    {% set documents = case.currentOrder.courtDocuments %}
+    {% include "case/_case-documents.html" %}
 
     <h2 class="govuk-heading-m">
       Probation history
