@@ -431,7 +431,7 @@ module.exports = [
           'type': 'Unpaid work',
           'value': '150 hours',
           'lengthInHours': 150,
-          'progressInHours': 5
+          'progressInHours': 0
         }
       },
       'courtDocuments': [
