@@ -131,6 +131,16 @@ module.exports = [
     ],
     'breachesCount': 0,
     'restrainingOrdersCount': 0,
+    'riskBadges': [
+      {
+        text: 'Risk to themselves',
+        class: 'red'
+      },
+      {
+        text: 'Risk to children',
+        class: 'red'
+      }
+    ],
     'riskOfSeriousHarmLevel': {
       text: 'Medium',
       class: 'orange'
