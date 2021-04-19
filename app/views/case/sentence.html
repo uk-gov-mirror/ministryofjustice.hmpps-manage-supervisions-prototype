@@ -131,7 +131,13 @@
           {% for doc in case.currentOrder.courtDocuments %}
           <li class="moj-timeline__document-item" style="margin-bottom: 20px;">
             <a class="moj-timeline__document-link" href="#"><strong>{{ doc.name }}</strong></a><br>
-            <span style="padding-left: 25px;">Last updated {{ doc.lastUpdateDate | dateWithYearShortMonth }}</span>
+            <span style="padding-left: 25px;">
+              {% if doc.lastUpdateDate %}
+                Last updated {{ doc.lastUpdateDate | dateWithYearShortMonth }}
+              {% else %}
+                <span class="govuk-hint-s">Unavailable</span>
+              {% endif %}
+            </span>
           </li>
           {% endfor %}
         </ul>
