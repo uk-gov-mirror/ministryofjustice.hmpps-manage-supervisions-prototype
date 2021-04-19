@@ -286,7 +286,9 @@ module.exports = [
         'did-service-user-comply': 'No',
         'repeating': 'No, it’s a one-off session',
         'confirmed': true,
-        'session-notes': 'Dylan turned up for his appointment on time however he refused to talk about anything with me until “his new room was sorted out” I explained it wasn’t possible to move him until the 19th to which he stormed out of the meeting.',
+        'session-notes': `Dylan turned up for his appointment on time however he refused to talk about anything with me until “his new room was sorted out”.
+
+                          I explained it wasn’t possible to move him until the 19th to which he stormed out of the meeting.`,
         'sessionId': 984
       },
       {

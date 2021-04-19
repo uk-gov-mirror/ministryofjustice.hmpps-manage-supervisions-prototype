@@ -34,7 +34,7 @@ function confirmAttendanceWizardForks (req) {
   var forks = [
     {
       currentPath: `${basePath}/compliance`,
-      storedData: ['confirm-attendance', CRN, sessionId, 'did-service-user-comply'],
+      storedData: ['communication', CRN, sessionId, 'did-service-user-comply'],
       excludedValues: [],
       forkPath: (value) => {
         switch (value) {

@@ -94,7 +94,7 @@
             visuallyHiddenText: "RAR activity"
           }
         ]
-      }
+      } if showAction
     } if session.summary.rarCategory,
     {
       key: { text: "Counts towards RAR?" },
@@ -121,6 +121,6 @@
           }
         ]
       } if showAction
-    }
+    } if not hideNotes
   ]
   }) }}

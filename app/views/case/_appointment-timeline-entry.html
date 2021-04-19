@@ -1,12 +1,11 @@
 <h3 class="govuk-heading-s">
-  <a class="govuk-!-font-weight-bold govuk-!-margin-right-2" href="#">
+  <a class="govuk-!-font-weight-bold govuk-!-margin-right-2" href="/cases/{{ CRN }}/appointments/{{ entry.sessionId }}">
     {{ entry['type-of-session'] }}
   </a>
 
   {% if entry['session-counts-towards-rar'] === 'Yes' %}
     {{ govukTag({text: 'RAR', classes: 'govuk-tag--purple'}) }}
   {% endif %}
-
 
   {% if entry['did-service-user-comply'] === 'Yes' %}
     {{ govukTag({text: 'Complied', classes: 'govuk-tag--green'}) }}
@@ -60,7 +59,7 @@
     {% set isTruncated = entry['session-notes'] and (truncatedContents !== entry['session-notes']) %}
     <p class="govuk-body {{ 'govuk-!-margin-bottom-0' if not isTruncated }}">{{ truncatedContents | nl2br | safe }}</p>
     {% if isTruncated %}
-      <a href="#">View full details</a>
+      <a href="/cases/{{ CRN }}/appointments/{{ entry.sessionId }}">View full details</a>
     {% endif %}
   </div>
 {% endif %}
