@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% set entry = data['communication'][CRN][sessionId] %}
+{% set title = entry.type + " to " + (case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to) %}
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block content %}
+
+{% include "case/_case-service-user-banner.html" %}
+
+{{ govukBackLink({
+  text: "Back to communication",
+  href: "/cases/" + CRN + "/communication"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+      <span class="govuk-caption-l">Other communication</span>
+      {{ title }}
+    </h1>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-6">
+      {{ entry.timestamp | dateWithYear }} at {{ entry.timestamp | govukTime }}
+    </h2>
+
+    <h3 class="govuk-heading-s">Communication details</h3>
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+        {
+          key: {
+            text: "From"
+          },
+          value: {
+            text: case.serviceUserPersonalDetails.name if entry.from === 'Service user' else entry.from
+          }
+        },
+        {
+          key: {
+            text: "To"
+          },
+          value: {
+            text: case.serviceUserPersonalDetails.name if entry.to === 'Service user' else entry.to
+          }
+        },
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            text: entry.timestamp | dateWithYear
+          }
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            text: entry.timestamp | govukTime
+          }
+        },
+        {
+          key: {
+            text: "Details"
+          },
+          value: {
+            text: entry.contents | nl2br | safe or 'None'
+          }
+        }
+      ]
+      }) }}
+
+    <p class="govuk-body-s govuk-hint-s">Last updated by {{ entry.lastUpdatedBy }} on {{ entry.timestamp | dateWithYear }} at {{ entry.timestamp | govukTimeWithMinutes }}</p>
+  </div>
+</div>
+
+{% endblock %}
