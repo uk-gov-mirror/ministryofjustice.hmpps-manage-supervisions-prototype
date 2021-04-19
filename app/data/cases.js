@@ -94,6 +94,12 @@ module.exports = [
           'name': 'Previous convictions',
           'lastUpdateDate': '2020-12-03'
         }
+      ],
+      'personalDocuments': [
+        {
+          'name': 'Induction pack',
+          'lastUpdateDate': '2020-12-03'
+        }
       ]
     },
     'previousOrders': [
