@@ -430,15 +430,19 @@ module.exports = [
       },
       'courtDocuments': [
         {
+          'name': 'Pre-sentence report',
+          'lastUpdateDate': null
+        },
+        {
+          'name': 'Order',
+          'lastUpdateDate': null
+        },
+        {
           'name': 'CPS Pack',
           'lastUpdateDate': helpers.happenedOn({daysAgo: '9'})
         },
         {
-          'name': 'Induction pack',
-          'lastUpdateDate': helpers.happenedOn({daysAgo: '6'})
-        },
-        {
-          'name': 'Pre-sentence report',
+          'name': 'Previous convictions',
           'lastUpdateDate': null
         }
       ]
