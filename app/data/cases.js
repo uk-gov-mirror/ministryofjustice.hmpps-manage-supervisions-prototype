@@ -556,6 +556,15 @@ module.exports = [
         'confirmed': true,
         'lastUpdatedBy': 'Mark Berridge',
         'sessionId': 123
+      },
+      {
+        'lastUpdatedBy': 'Jeff O’Brien',
+        'type': 'Email',
+        'from': 'Jeff O’Brien',
+        'to': 'Mark Berridge',
+        'timestamp': helpers.yesterday({atTime: '15:00'}),
+        'contents': `New case assigned: Spencer Gil`,
+        'sessionId': 985
       }
     ]
   }
