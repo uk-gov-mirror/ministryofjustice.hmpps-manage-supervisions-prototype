@@ -60,34 +60,34 @@
       </h2>
 
       {% set dateOfBirthAndAge %}
-      {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ yearsSince(case.serviceUserPersonalDetails.dateOfBirth) }} years
+        {{ case.serviceUserPersonalDetails.dateOfBirth | dateWithYear }} ({{ yearsSince(case.serviceUserPersonalDetails.dateOfBirth) }} years
       old)
       {% endset %}
 
       {{ govukSummaryList({
-      classes: 'govuk-summary-list--no-border',
-      rows: [
-      {
-      key: { text: "Name" },
-      value: { text: case.serviceUserPersonalDetails.name }
-      },
-      {
-      key: { text: "Aliases" },
-      value: { text: case.serviceUserPersonalDetails.aliases.join(', ') }
-      },
-      {
-      key: { text: "Date of birth" },
-      value: { text: dateOfBirthAndAge }
-      },
-      {
-      key: { text: "Preferred language" },
-      value: { text: case.serviceUserPersonalDetails.preferredLanguage }
-      },
-      {
-      key: { text: "Disabilities and adjustments" },
-      value: { text: case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }
-      }
-      ]
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: { text: "Name" },
+            value: { text: case.serviceUserPersonalDetails.name }
+          },
+          {
+            key: { text: "Aliases" },
+            value: { text: case.serviceUserPersonalDetails.aliases.join(', ') }
+          },
+          {
+            key: { text: "Date of birth" },
+            value: { text: dateOfBirthAndAge }
+          },
+          {
+            key: { text: "Preferred language" },
+            value: { text: case.serviceUserPersonalDetails.preferredLanguage }
+          },
+          {
+            key: { text: "Disabilities and adjustments" },
+            value: { text: case.serviceUserPersonalDetails.disabilitiesAndAdjustments.join(', ') }
+          }
+        ]
       }) }}
 
       <p class="govuk-body">
@@ -108,22 +108,22 @@
       </h2>
 
       {{ govukSummaryList({
-      classes: 'govuk-summary-list--no-border',
-      rows: [
-      {
-      key: { text: "Employment status" },
-      value: { text: case.serviceUserPersonalDetails.circumstances.employment }
-      },
-      {
-      key: { text: "Housing status" },
-      value: { text: case.serviceUserPersonalDetails.circumstances.housingStatus }
-      },
-      {
-      key: { text: "Safeguarding issues" },
-      value: { text: case.serviceUserPersonalDetails.circumstances.safeguardingIssues.join(', ') or 'None' }
-      }
-      ]
-      }) }}
+        classes: 'govuk-summary-list--no-border',
+        rows: [
+          {
+            key: { text: "Employment status" },
+            value: { text: case.serviceUserPersonalDetails.circumstances.employment }
+          },
+          {
+            key: { text: "Housing status" },
+            value: { text: case.serviceUserPersonalDetails.circumstances.housingStatus }
+          },
+          {
+            key: { text: "Safeguarding issues" },
+            value: { text: case.serviceUserPersonalDetails.circumstances.safeguardingIssues.join(', ') or 'None' }
+          }
+        ]
+        }) }}
 
       <p class="govuk-body">
         <a href="#">
