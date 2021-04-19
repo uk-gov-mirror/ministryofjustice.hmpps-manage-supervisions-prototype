@@ -527,6 +527,20 @@ module.exports = [
       'acceptableAbsence': 0,
       'failureToComply': 0
     },
-    'contactHistory': []
+    'contactHistory': [
+      {
+        'type': 'Appointment',
+        'timestamp': helpers.today({ atTime: '16:00' }),
+        'session-date': helpers.today({ atTime: '16:00' }),
+        'session-start-time': '4pm',
+        'session-end-time': '5pm',
+        'session-counts-towards-rar': 'No',
+        'type-of-session': 'Office visit',
+        'repeating': 'No, it’s a one-off appointment',
+        'confirmed': true,
+        'lastUpdatedBy': 'Mark Berridge',
+        'sessionId': 123
+      }
+    ]
   }
 ]
