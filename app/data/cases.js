@@ -228,21 +228,6 @@ module.exports = [
     'contactHistory': [
       {
         'type': 'Appointment',
-        'timestamp': helpers.happeningIn({ daysLater: 5, atTime: '11:00' }),
-        'session-date': helpers.happeningIn({ daysLater: 5 }),
-        'session-end-time': '11am',
-        'session-start-time': '10am',
-        'session-counts-towards-rar': 'Yes',
-        'session-rar-category': 'ES - Accommodation LDN',
-        'session-rar-subcategory': 'Accommodation (Custody Transition)',
-        'type-of-session': 'Home visit',
-        'repeating': 'No, it’s a one-off appointment',
-        'confirmed': true,
-        'lastUpdatedBy': 'Mark Berridge',
-        'sessionId': 123
-      },
-      {
-        'type': 'Appointment',
         'type-of-session': 'Office visit',
         'lastUpdatedBy': 'Mark Berridge',
         'timestamp': helpers.yesterday({atTime: '13:00'}),
@@ -250,10 +235,7 @@ module.exports = [
         'session-start-time': '10am',
         'session-end-time': '11am',
         'repeating': 'No, it’s a one-off session',
-        'session-counts-towards-rar': 'Yes',
-        'session-rar-category': 'ES - Accommodation LDN',
-        'session-rar-subcategory': 'Accommodation (Custody Transition)',
-        'session-notes': 'Will use this time to catch up on Dylan’s relationships homework.',
+        'session-counts-towards-rar': 'No',
         'sessionId': 456
       },
       {
