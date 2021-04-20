@@ -4,8 +4,11 @@
 <h1 class="govuk-heading-l govuk-!-margin-bottom-4">{{ name }}</h1>
 
 <p>
-  <span class="govuk-tag govuk-tag--red govuk-!-margin-right-2">Risk to themselves</span>
-  <span class="govuk-tag govuk-tag--red">Risk to children</span>
+  {% for badge in case.riskBadges %}
+    <span class="govuk-tag govuk-tag--{{ badge.class }}{{ ' govuk-!-margin-right-2' if loop.first else '' }}">
+      {{ badge.text }}
+    </span>
+  {% endfor %}
 </p>
 
 <dl class="app-card__meta-list">
@@ -14,7 +17,7 @@
       CRN
     </dt>
     <dd class="app-card__meta-list-value">
-      {{ CRN }} 
+      {{ CRN }}
     </dd>
   </div>
   <div class="app-card__meta-list-item">
@@ -34,4 +37,3 @@
     </dd>
   </div>
 </dl>
-
