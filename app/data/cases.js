@@ -379,16 +379,204 @@ module.exports = [
   },
   {
     'serviceUserPersonalDetails': {
-      'name': 'Spencer Gill'
+      'name': 'Spencer Gil',
+      'firstName': 'Spencer',
+      'dateOfBirth': '1998-01-04',
+      'address': [
+        '27 Camber Road',
+        'Leeds',
+        'West Yorkshire',
+        'LS6 5BR'
+      ],
+      'phone': '07811 011 188',
+      'email': 'gilspencer@gmail.com',
+      'aliases': [],
+      'preferredLanguage': 'English',
+      'nationality': 'British',
+      'ethnicity': 'White',
+      'religion': 'None',
+      'gender': 'Male',
+      'sexualOrientation': 'Heterosexual',
+      'disabilitiesAndAdjustments': ['Attention Deficit Hyperactivity Disorder (ADHD)'],
+      'circumstances': {
+        'employment': 'Full-time employed',
+        'housingStatus': 'Living with family',
+        'safeguardingIssues': []
+      }
     },
-    'status': 'No record',
+    'personalContacts': [
+      {
+        'name': 'Gerry Gil',
+        'relationship': 'Dad',
+        'address': [
+          '27 Camber Road',
+          'Leeds',
+          'West Yorkshire',
+          'LS6 5BR'
+        ]
+      }
+    ],
+    'professionalContacts': [],
+    'PNC': '2021/234511111G',
+    'CRN': 'K789021',
     'currentOrder': {
-      'type': 'ORA Suspended Sentence Order'
+      'type': 'Suspended Sentence',
+      'description': 'Drive whilst disqualified (Revised 2017). Road Traffic Act 1988',
+      'lengthInMonths': 12,
+      'progressInMonths': 0,
+      'startDate': helpers.happenedOn({daysAgo: '3'}),
+      'endDate': helpers.sentenceEndDate({lengthInMonths: 12, startDate: helpers.happenedOn({daysAgo: '3'})}),
+      'offenceDate': '2021-01-03',
+      'convictionDate': helpers.happenedOn({daysAgo: '3'}),
+      'court': "Leeds Crown Court",
+      'responsibleCourt': "Leeds Crown Court",
+      'requirements': {
+        'rar': {
+          'type': 'Rehabilitation Activity Requirement (RAR)',
+          'value': '20 days',
+          'lengthInDays': 20,
+          'progressInDays': 0
+        },
+        'upw': {
+          'type': 'Unpaid work',
+          'value': '150 hours',
+          'lengthInHours': 150,
+          'progressInHours': 0
+        }
+      },
+      'courtDocuments': [
+        {
+          'name': 'Pre-sentence report',
+          'lastUpdateDate': null
+        },
+        {
+          'name': 'Order',
+          'lastUpdateDate': null
+        },
+        {
+          'name': 'CPS Pack',
+          'lastUpdateDate': helpers.happenedOn({daysAgo: '3'})
+        },
+        {
+          'name': 'Previous convictions',
+          'lastUpdateDate': null
+        }
+      ],
+      'personalDocuments': [
+        {
+          'name': 'Induction pack',
+          'lastUpdateDate': null
+        }
+      ]
     },
+    'previousOrders': [],
+    'breachesCount': 0,
+    'restrainingOrdersCount': 0,
+    'riskBadges': [
+      {
+        text: 'Risk to themselves',
+        class: 'red'
+      },
+      {
+        text: 'Risk to children',
+        class: 'red'
+      }
+    ],
     'riskOfSeriousHarmLevel': {
-      text: 'High',
-      class: 'red'
+      text: 'Medium',
+      class: 'orange'
     },
-    'contactHistory': []
+    'riskOfHarm': [
+      {
+        'riskTo': 'Themselves',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Children',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Public',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Known adult',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Staff',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Prisoners',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      }
+    ],
+    'criminogenicNeeds': [
+      'Lifestyle & Associates'
+    ],
+    'status': 'No record',
+    'appointmentStatistics': {
+      'complied': 0,
+      'acceptableAbsence': 0,
+      'failureToComply': 0
+    },
+    'contactHistory': [
+      {
+        'type': 'Appointment',
+        'timestamp': helpers.today({ atTime: '16:00' }),
+        'session-date': helpers.today(),
+        'session-start-time': '9:30am',
+        'session-end-time': '10:30am',
+        'session-counts-towards-rar': 'No',
+        'type-of-session': 'Office visit',
+        'repeating': 'No, it’s a one-off appointment',
+        'confirmed': true,
+        'lastUpdatedBy': 'Mark Berridge',
+        'sessionId': 123
+      }
+    ]
   }
 ]
