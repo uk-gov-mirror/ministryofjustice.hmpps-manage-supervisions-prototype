@@ -347,6 +347,308 @@ module.exports = [
   },
   {
     'serviceUserPersonalDetails': {
+      'name': 'Brian Wilson',
+      'firstName': 'Brian',
+      'dateOfBirth': '1958-01-19',
+      'address': [
+        '11 Southern Way',
+        'Bradford',
+        'BR7 6DZ'
+      ],
+      'phone': '07700 900721',
+      'email': 'example@example.biz',
+      'aliases': ['Baz'],
+      'preferredLanguage': 'English',
+      'nationality': 'British',
+      'ethnicity': 'White: British',
+      'religion': 'None',
+      'gender': 'Male',
+      'sexualOrientation': 'Heterosexual',
+      'disabilitiesAndAdjustments': ['Mental Illness'],
+      'circumstances': {
+        'employment': 'Retired (receiving a pension)',
+        'housingStatus': 'Householder (Owner - freehold or leasehold)',
+        'safeguardingIssues': ['Risk to "Adult at Risk"']
+      }
+    },
+    'personalContacts': [
+      {
+        'name': 'Lewis Wilson',
+        'relationship': 'Son',
+        'address': [
+          '57 Whatlington Road',
+          'Coventry',
+          'CV1 3PD'
+        ]
+      }
+    ],
+    'professionalContacts': [
+      {
+        'name': 'Sian McDougall',
+        'phone': '01274 496 0993',
+        'email': 'example@example.gov',
+        'provider': 'National Probation Service',
+        'localDeliveryUnit': 'Bradford Probation Office',
+        'team': 'Sex offenders',
+        'allocatedUntilDate': '2014-04-11'
+      }
+    ],
+    'PNC': '2015/0292174J',
+    'CRN': 'E577913',
+    'currentOrder': {
+      'type': 'ORA Suspended Sentence Order (24 Months)',
+      'description': 'Breach of Sexual Offences Prevention Order (Sex Offs Act 2003) [incl Breaches of Sex Offender Order (C&D Act 1998) & Restraining Order (prior to SOA 2003)] - 06608',
+      'lengthInMonths': 24,
+      'progressInMonths': 17,
+      'startDate': '2019-11-29',
+      'endDate': helpers.sentenceEndDate({lengthInMonths: 24, startDate: '2019-11-29'}),
+      'offenceDate': '2018-08-01',
+      'convictionDate': '2019-10-11',
+      'court': 'Bradford Crown Court',
+      'responsibleCourt': 'Bradford Crown Court',
+      'requirements': {
+        'rar': {
+          'type': 'Rehabilitation Activity Requirement (RAR)',
+          'value': '20 days',
+          'lengthInDays': 20,
+          'progressInDays': 18
+        },
+        'upw': {
+          'type': 'Unpaid work',
+          'value': '150 hours',
+          'lengthInHours': 150,
+          'progressInHours': 5
+        },
+        'ap': {
+          'type': 'Accredited Programme ',
+          'value': 'Horizon'
+        }
+      },
+      'courtDocuments': [
+        {
+          'name': 'Pre-sentence report',
+          'lastUpdateDate': '2019-09-27'
+        },
+        {
+          'name': 'Order',
+          'lastUpdateDate': '2019-09-27'
+        },
+        {
+          'name': 'CPS Pack',
+          'lastUpdateDate': '2019-09-27'
+        },
+        {
+          'name': 'Previous convictions',
+          'lastUpdateDate': '2019-09-27'
+        }
+      ],
+      'personalDocuments': [
+        {
+          'name': 'Induction pack',
+          'lastUpdateDate': '2019-10-08'
+        }
+      ]
+    },
+    'previousOrders': [
+      {
+        'title': 'ORA Suspended Sentence Order (12 Months)',
+        'description': 'Sexual assault on a female (Sexual Offences Act 2003) - 02005',
+        'endDate': '2014-04-11'
+      }
+    ],
+    'breachesCount': 1,
+    'restrainingOrdersCount': 1,
+    'riskBadges': [
+      {
+        text: 'Risk to children',
+        class: 'red'
+      },
+      {
+        text: 'Risk to known adults',
+        class: 'red'
+      }
+    ],
+    'riskOfSeriousHarmLevel': {
+      text: 'High',
+      class: 'red'
+    },
+    'riskOfHarm': [
+      {
+        'riskTo': 'Themselves',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Children',
+        'inCommunity': {
+          text: 'High',
+          class: 'red'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Public',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Known adult',
+        'inCommunity': {
+          text: 'High',
+          class: 'red'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Staff',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      },
+      {
+        'riskTo': 'Prisoners',
+        'inCommunity': {
+          text: 'Medium',
+          class: 'orange'
+        },
+        'inCustody': {
+          text: 'High',
+          class: 'red'
+        }
+      }
+    ],
+    'criminogenicNeeds': [
+      'Alcohol Misuse',
+      'Thinking & Behaviour'
+    ],
+    'status': 'Previously known',
+    'previousOrderStatus': 'Order ended 14 Nov 2014',
+    'appointmentStatistics': {
+      'complied': 4,
+      'acceptableAbsence': 0,
+      'failureToComply': 0
+    },
+    'contactHistory': [
+      {
+        'type': 'Appointment',
+        'type-of-session': 'Office visit',
+        'lastUpdatedBy': 'Mark Berridge',
+        'timestamp': helpers.today({atTime: '10:00'}),
+        'session-date': helpers.today(),
+        'session-start-time': '10am',
+        'session-end-time': '11am',
+        'repeating': 'No, it’s a one-off session',
+        'session-counts-towards-rar': 'Yes',
+        'session-rar-category': 'ES - RAR Programme',
+        'session-rar-subcategory': 'TSP (Thinking Skills)',
+        'sessionId': 600
+      },
+      {
+        'type': 'Appointment',
+        'type-of-session': 'Phone appointment',
+        'lastUpdatedBy': 'Mark Berridge',
+        'timestamp': '2021-04-07T10:32',
+        'session-date': '2021-04-07',
+        'session-start-time': '10am',
+        'session-end-time': '11am',
+        'repeating': 'No, it’s a one-off session',
+        'session-counts-towards-rar': 'No',
+        'did-service-user-comply': 'Yes',
+        'confirmed': true,
+        'session-notes': `Brian answered as arranged. He stated that he has been fine this week and that he hasn’t been up to much and has only been reading books and newspapers. B was happy to discuss the emotional impact of his daughter not wanting contact with him. B says that he has been struggling with this and that it is taking a toll on his mental health.`,
+        'sessionId': 601
+      },
+      {
+        'lastUpdatedBy': 'Mark Berridge',
+        'type': 'Text message',
+        'from': 'Mark Berridge',
+        'to': 'Service user',
+        'timestamp': '2021-04-06T12:23',
+        'contents': 'Hi Brian - it was good to speak today. To confirm, your next probation appointment is by telephone on 7th April 2021 at 10:00. I will call you. Telephone appointments are mandatory and enforceable. Many thanks, Mark',
+        'sessionId': 602
+      },
+      {
+        'lastUpdatedBy': 'Mark Berridge',
+        'type': 'Email',
+        'from': 'Mark Berridge',
+        'to': 'Social Services',
+        'timestamp': '2021-04-06T10:27',
+        'contents': `I have tried to call you today regarding Brian Wilson. Could you give me a call back please when you can to for an update on the case. Kind regards, Mark`,
+        'sessionId': 603
+      },
+      {
+        'type': 'Appointment',
+        'type-of-session': 'Phone appointment',
+        'lastUpdatedBy': 'Mark Berridge',
+        'timestamp': '2021-03-31T10:53',
+        'session-date': '2021-03-31',
+        'session-start-time': '10am',
+        'session-end-time': '11am',
+        'repeating': 'No, it’s a one-off session',
+        'session-counts-towards-rar': 'No',
+        'did-service-user-comply': 'Yes',
+        'confirmed': true,
+        'session-notes': `Brian answered as arranged. Brian is concerned about his living arrangements as he has received a few threats. 
+        We discussed B's objectives and I asked him to reflect on his progress over the last few months. He thinks he is progressing well and when asked what alternatives he now uses to deal with his emotions he explained that he likes to keep himself busy and have a routine in place.`,
+        'sessionId': 604
+      },
+      {
+        'type': 'Appointment',
+        'type-of-session': 'Office visit',
+        'lastUpdatedBy': 'Mark Berridge',
+        'timestamp': '2021-02-19T10:53',
+        'session-date': '2021-02-19',
+        'session-start-time': '10am',
+        'session-end-time': '11am',
+        'repeating': 'No, it’s a one-off session',
+        'session-counts-towards-rar': 'No',
+        'did-service-user-comply': 'Yes',
+        'confirmed': true,
+        'session-notes': `Brian arrived at the office as arranged. He asked his wife to drive him, so she dropped him off and waited for his appointment to finish. We spoke for a while about his SP I asked if there was anything he would particularly like to have as an objective. He said that he wants to speak about the future and have plans in place to put his offence behind him. I informed him that it would be necessary to have objectives regarding his alcohol misuse.`,
+        'sessionId': 605
+      },
+      {
+        'type': 'Appointment',
+        'type-of-session': 'Phone appointment',
+        'lastUpdatedBy': 'Mark Berridge',
+        'timestamp': '2021-03-11T10:16',
+        'session-date': '2021-03-11',
+        'session-start-time': '10am',
+        'session-end-time': '11am',
+        'repeating': 'No, it’s a one-off session',
+        'session-counts-towards-rar': 'No',
+        'did-service-user-comply': 'Yes',
+        'confirmed': true,
+        'session-notes': `Brian answered as arranged. We talked about doing some work around healthy attitudes and how to manage alcohol use and emotions - reminded B of the need to manage any alcohol use especially if he is feeling low or angry and for him to consider the impact of his behaviour on his family. Brian accepted this.`,
+        'sessionId': 606
+      }
+    ]
+  },
+  {
+    'serviceUserPersonalDetails': {
       'name': 'Spencer Gil',
       'firstName': 'Spencer',
       'dateOfBirth': '1998-01-04',
