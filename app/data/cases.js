@@ -365,20 +365,6 @@ module.exports = [
   },
   {
     'serviceUserPersonalDetails': {
-      'name': 'Džiugas Atraskevicius'
-    },
-    'status': 'Current',
-    'currentOrder': {
-      'type': 'CJA - Indeterminate Public Prot.'
-    },
-    'riskOfSeriousHarmLevel': {
-      text: 'Medium',
-      class: 'orange'
-    },
-    'contactHistory': []
-  },
-  {
-    'serviceUserPersonalDetails': {
       'name': 'Spencer Gil',
       'firstName': 'Spencer',
       'dateOfBirth': '1998-01-04',
