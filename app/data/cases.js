@@ -60,7 +60,7 @@ module.exports = [
       'lengthInMonths': 12,
       'progressInMonths': 6,
       'startDate': '2021-01-05',
-      'endDate': '2022-01-04',
+      'endDate': helpers.sentenceEndDate({lengthInMonths: 12, startDate: '2021-01-05'}),
       'offenceDate': '2020-11-15',
       'convictionDate': '2020-12-12',
       'court': "Sheffield Magistrates' Court",
