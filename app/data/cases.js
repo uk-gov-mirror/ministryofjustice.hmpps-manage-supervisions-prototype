@@ -400,7 +400,7 @@ module.exports = [
       'description': 'Breach of Sexual Offences Prevention Order (Sex Offs Act 2003) [incl Breaches of Sex Offender Order (C&D Act 1998) & Restraining Order (prior to SOA 2003)] - 06608',
       'lengthInMonths': 24,
       'progressInMonths': 17,
-      'startDate': '2021-01-05',
+      'startDate': '2019-11-29',
       'endDate': helpers.sentenceEndDate({lengthInMonths: 24, startDate: '2019-11-29'}),
       'offenceDate': '2018-08-01',
       'convictionDate': '2019-10-11',
@@ -464,7 +464,7 @@ module.exports = [
         class: 'red'
       },
       {
-        text: 'Risk to known adult',
+        text: 'Risk to known adults',
         class: 'red'
       }
     ],
